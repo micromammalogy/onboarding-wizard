@@ -1,0 +1,30 @@
+.headerBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.breadcrumbParent {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--amino-gray-500);
+}
+
+.breadcrumbCurrent {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--amino-gray-800);
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}

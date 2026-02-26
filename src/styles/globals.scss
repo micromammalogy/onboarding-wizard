@@ -1,0 +1,138 @@
+:root {
+  --amino-appbar-height: 55px;
+  --amino-text-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, sans-serif;
+  --cover-sheet-width-1-column: 784px;
+  --cover-sheet-width-2-column: 1200px;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--amino-surface-color);
+  font-family: var(--amino-text-base);
+}
+
+/* Scrollbar styling (dashboard pattern) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--amino-gray-300) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--amino-gray-300);
+  border-radius: 3px;
+}
+
+/* Button/input font reset */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+form {
+  width: 100%;
+}
+
+/* Selection color */
+::selection {
+  background: var(--amino-blue-500);
+  color: var(--amino-gray-0);
+}
+
+/* Cover sheet animation */
+@keyframes coverSheetIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes coverSheetOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* Dialog animation */
+@keyframes dialogIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes dialogOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+/* Backdrop animation */
+@keyframes backdropIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes backdropOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Pop animation */
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Save header animation */
+@keyframes saveHeaderIn {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
