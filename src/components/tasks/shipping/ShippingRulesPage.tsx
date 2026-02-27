@@ -1,27 +1,81 @@
 'use client';
 
+import { useState, useCallback } from 'react';
+import { Button } from '@zonos/amino/components/button/Button';
 import { Text } from '@zonos/amino/components/text/Text';
+import { useGraphQL } from '@/hooks/useGraphQL';
+import { RULES_QUERY } from '@/graphql/queries/rules';
+import { LoadingState } from '@/components/ui/LoadingState';
+import { ErrorState } from '@/components/ui/ErrorState';
+import { RulesList } from '@/components/rule-builder/RulesList';
+import { RuleBuilderSlideover } from '@/components/rule-builder/RuleBuilderSlideover';
+import type { IRulesData, IRuleFromAPI } from '@/components/rule-builder/types';
 
 export const ShippingRulesPage = () => {
+  const [slideoverOpen, setSlideoverOpen] = useState(false);
+  const [editingRule, setEditingRule] = useState<IRuleFromAPI | null>(null);
+  const [contextFilter, setContextFilter] = useState('');
+
+  const { data, error, isLoading, mutate } = useGraphQL<IRulesData>({
+    query: RULES_QUERY,
+    schema: 'internal',
+    variables: { first: 50 },
+  });
+
+  const rules: IRuleFromAPI[] =
+    data?.rules?.edges?.map(e => e.node) || [];
+
+  const handleNewRule = useCallback(() => {
+    setEditingRule(null);
+    setSlideoverOpen(true);
+  }, []);
+
+  const handleEdit = useCallback((rule: IRuleFromAPI) => {
+    setEditingRule(rule);
+    setSlideoverOpen(true);
+  }, []);
+
+  const handleClose = useCallback(() => {
+    setSlideoverOpen(false);
+    setEditingRule(null);
+  }, []);
+
+  const handleSaved = useCallback(() => {
+    mutate();
+  }, [mutate]);
+
+  if (isLoading) return <LoadingState />;
+  if (error) return <ErrorState message={error.message || String(error)} />;
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
-      <Text type="title">Shipping Rules</Text>
       <div
         style={{
-          padding: 48,
-          textAlign: 'center',
-          background: 'white',
-          borderRadius: 8,
-          border: '1px solid var(--amino-gray-200)',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
         }}
       >
-        <Text type="subtitle" color="gray500">
-          Custom code and flat rate rules
-        </Text>
-        <p style={{ fontSize: 14, color: 'var(--amino-gray-400)', marginTop: 8 }}>
-          TODO: Wire up shipping rule mutations once GraphQL schema is confirmed.
-        </p>
+        <Text type="title">Shipping Rules</Text>
+        <Button variant="primary" onClick={handleNewRule}>
+          New Rule
+        </Button>
       </div>
+
+      <RulesList
+        rules={rules}
+        contextFilter={contextFilter}
+        onContextFilterChange={setContextFilter}
+        onEdit={handleEdit}
+        onDeleted={handleSaved}
+      />
+
+      <RuleBuilderSlideover
+        open={slideoverOpen}
+        onClose={handleClose}
+        onSaved={handleSaved}
+        editingRule={editingRule}
+      />
     </div>
   );
 };

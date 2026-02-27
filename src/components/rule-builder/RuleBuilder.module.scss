@@ -1,0 +1,259 @@
+/* ── Rule Builder ── */
+
+.builder {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.builderSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── IF / THEN blocks ── */
+
+.builderBlock {
+  border: 1px solid var(--amino-gray-200);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--amino-gray-0);
+}
+
+.blockHeader {
+  padding: 10px 16px;
+  background: var(--amino-blue-50);
+  border-bottom: 1px solid var(--amino-blue-100);
+}
+
+.blockHeaderThen {
+  padding: 10px 16px;
+  background: var(--amino-green-50);
+  border-bottom: 1px solid var(--amino-green-100);
+}
+
+.blockBody {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ── Condition / Action rows ── */
+
+.conditionRow,
+.actionRow {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.conditionFields {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.fieldVariable {
+  flex: 2;
+  min-width: 0;
+}
+
+.fieldOperator {
+  flex: 1.5;
+  min-width: 0;
+}
+
+.fieldValue {
+  flex: 2;
+  min-width: 0;
+}
+
+.fieldRemove {
+  flex-shrink: 0;
+}
+
+.connectorRow {
+  width: 100px;
+  margin-left: 8px;
+}
+
+/* ── Preview ── */
+
+.previewBlock {
+  padding: 16px;
+  border: 1px solid var(--amino-gray-200);
+  border-radius: 8px;
+  background: var(--amino-gray-50);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.previewEmpty {
+  margin: 0;
+  font-size: 13px;
+  color: var(--amino-gray-400);
+}
+
+.previewHuman {
+  margin: 0;
+  font-size: 14px;
+  color: var(--amino-gray-700);
+  line-height: 1.5;
+}
+
+.previewRaw {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px;
+  background: var(--amino-gray-100);
+  border-radius: 6px;
+  font-size: 12px;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+}
+
+.previewRawLine {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.previewLabel {
+  flex-shrink: 0;
+  width: 72px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--amino-gray-500);
+  text-transform: uppercase;
+}
+
+.previewRawLine code {
+  color: var(--amino-gray-800);
+  word-break: break-all;
+}
+
+/* ── Slideover ── */
+
+.slideoverBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 90;
+}
+
+.slideover {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 600px;
+  max-width: 100vw;
+  background: var(--amino-gray-0);
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.12);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+.slideoverHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--amino-gray-200);
+  flex-shrink: 0;
+}
+
+.slideoverBody {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+.slideoverFooter {
+  padding: 16px 24px;
+  border-top: 1px solid var(--amino-gray-200);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.footerActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* ── Validation / error messages ── */
+
+.validationErrors {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.errorText {
+  margin: 0;
+  font-size: 13px;
+  color: var(--amino-red-600);
+}
+
+.successText {
+  margin: 0;
+  font-size: 13px;
+  color: var(--amino-green-600);
+  font-weight: 500;
+}
+
+/* ── Table / List ── */
+
+.tableWrapper {
+  background: white;
+  border-radius: 8px;
+  border: 1px solid var(--amino-gray-200);
+  overflow: hidden;
+}
+
+.emptyState {
+  padding: 48px;
+  text-align: center;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid var(--amino-gray-200);
+}
+
+/* ── Badges ── */
+
+.contextBadge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  background: var(--amino-purple-50);
+  color: var(--amino-purple-700);
+}
+
+.statusEnabled {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  background: var(--amino-green-50);
+  color: var(--amino-green-700);
+}
+
+.statusDisabled {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  background: var(--amino-gray-100);
+  color: var(--amino-gray-500);
+}
