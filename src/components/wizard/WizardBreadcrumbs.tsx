@@ -6,6 +6,8 @@ import { useAuthStore } from '@/hooks/useAuthStore';
 import styles from './WizardBreadcrumbs.module.scss';
 
 const PAGE_BREADCRUMBS: Record<string, { section?: string; page: string }> = {
+  // Shopify App
+  'shopify-app': { page: 'Install Shopify App' },
   // Shipping Settings
   'fulfillment-location': { section: 'Shipping Settings', page: 'Fulfillment Location' },
   'shipping-rules': { section: 'Shipping Settings', page: 'Shipping Rules' },

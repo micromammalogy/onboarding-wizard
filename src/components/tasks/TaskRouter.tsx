@@ -9,6 +9,7 @@ import { CartonizationPage } from './shipping/CartonizationPage';
 import { LcgCertificationPage } from './shipping/LcgCertificationPage';
 
 // Standalone
+import { ShopifyAppPage } from './ShopifyAppPage';
 import { HelloSettingsPage } from './HelloSettingsPage';
 import { CheckoutSettingsPage } from './CheckoutSettingsPage';
 import { OrganizationStatusPage } from './OrganizationStatusPage';
@@ -33,6 +34,7 @@ const PAGE_MAP: Record<string, React.ComponentType> = {
   'lcg-certification': LcgCertificationPage,
 
   // Standalone
+  'shopify-app': ShopifyAppPage,
   'hello-settings': HelloSettingsPage,
   'checkout-settings': CheckoutSettingsPage,
   'organization-status': OrganizationStatusPage,

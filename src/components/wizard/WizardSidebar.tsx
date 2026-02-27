@@ -12,6 +12,7 @@ import { GlobeIcon } from '@zonos/amino/icons/GlobeIcon';
 import { SettingsIcon } from '@zonos/amino/icons/SettingsIcon';
 import { PaletteIcon } from '@zonos/amino/icons/PaletteIcon';
 import { DashboardIcon } from '@zonos/amino/icons/DashboardIcon';
+import { IntegrationIcon } from '@zonos/amino/icons/IntegrationIcon';
 import { useNavStore } from '@/hooks/useNavStore';
 import { useAuthStore } from '@/hooks/useAuthStore';
 import { OrgSwitcher } from './OrgSwitcher';
@@ -88,6 +89,19 @@ export const WizardSidebar = () => {
       <OrgSwitcher />
 
       <nav className={styles.navSection}>
+        {/* Install Shopify App — top standalone item */}
+        <div
+          className={styles.navItemWrapper}
+          onClick={() => setActivePage('shopify-app')}
+        >
+          <NavigationItem
+            content="Install Shopify App"
+            icon={<IntegrationIcon size={24} />}
+            isActive={activePage === 'shopify-app'}
+            style={activePage === 'shopify-app' ? activeStyle : undefined}
+          />
+        </div>
+
         {/* Grouped sections */}
         {NAV_SECTIONS.map(section => (
           <NavigationGroup
