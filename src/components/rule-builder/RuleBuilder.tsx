@@ -30,10 +30,13 @@ export const RuleBuilder = ({ rule, onChange, isEditing, onDateError }: IProps) 
 
   const contextOptions = useMemo(
     () =>
-      contexts.map(ctx => ({
-        value: ctx.name,
-        label: CONTEXT_LABELS[ctx.name] || ctx.name,
-      })),
+      contexts
+        .filter(ctx => ctx.variables.some(v => v.assignable))
+        .map(ctx => ({
+          value: ctx.name,
+          label: CONTEXT_LABELS[ctx.name] || ctx.name,
+        }))
+        .sort((a, b) => a.label.localeCompare(b.label)),
     [contexts],
   );
 

@@ -21,11 +21,13 @@ export const VariableSelector = ({
 }: IProps) => {
   const options = useMemo(
     () =>
-      tokens.map(t => ({
-        value: t.value,
-        label: t.value.replace(/_/g, ' '),
-        description: t.description,
-      })),
+      tokens
+        .map(t => ({
+          value: t.value,
+          label: t.value.replace(/_/g, ' '),
+          description: t.description,
+        }))
+        .sort((a, b) => a.label.localeCompare(b.label)),
     [tokens],
   );
 
