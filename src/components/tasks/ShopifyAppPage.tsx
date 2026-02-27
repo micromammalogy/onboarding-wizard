@@ -31,7 +31,7 @@ export const ShopifyAppPage = () => {
         </p>
 
         <Button
-          intent="primary"
+          variant="primary"
           onClick={() => window.open(SHOPIFY_APP_URL, '_blank')}
           style={{ marginTop: 8 }}
         >
