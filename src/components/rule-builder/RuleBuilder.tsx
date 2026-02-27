@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useMemo, useCallback } from 'react';
 import { Input } from '@zonos/amino/components/input/Input';
 import { Select } from '@zonos/amino/components/select/Select';
 import { Text } from '@zonos/amino/components/text/Text';
@@ -16,9 +16,11 @@ import styles from './RuleBuilder.module.scss';
 type IProps = {
   rule: IStructuredRule;
   onChange: (rule: IStructuredRule) => void;
+  isEditing?: boolean;
+  onDateError?: (hasError: boolean) => void;
 };
 
-export const RuleBuilder = ({ rule, onChange }: IProps) => {
+export const RuleBuilder = ({ rule, onChange, isEditing, onDateError }: IProps) => {
   const {
     contexts,
     getConditionTokens,
@@ -50,15 +52,33 @@ export const RuleBuilder = ({ rule, onChange }: IProps) => {
     [rule.context, getTokenLabels],
   );
 
-  const handleContextChange = (context: string) => {
-    // Reset conditions and actions when context changes (variables differ)
-    onChange({
-      ...rule,
-      context,
-      conditions: [createEmptyCondition()],
-      actions: [createEmptyAction()],
-    });
-  };
+  const hasConditionOrActionData = useMemo(() => {
+    const hasConditionData = rule.conditions.some(
+      c => c.variable || c.value,
+    );
+    const hasActionData = rule.actions.some(a => a.variable || a.value);
+    return hasConditionData || hasActionData;
+  }, [rule.conditions, rule.actions]);
+
+  const handleContextChange = useCallback(
+    (context: string) => {
+      // If there's existing data, confirm before resetting
+      if (hasConditionOrActionData) {
+        const confirmed = window.confirm(
+          'Changing the context will reset all conditions and actions. Continue?',
+        );
+        if (!confirmed) return;
+      }
+
+      onChange({
+        ...rule,
+        context,
+        conditions: [createEmptyCondition()],
+        actions: [createEmptyAction()],
+      });
+    },
+    [rule, onChange, hasConditionOrActionData],
+  );
 
   return (
     <div className={styles.builder}>
@@ -88,11 +108,17 @@ export const RuleBuilder = ({ rule, onChange }: IProps) => {
           }}
           options={contextOptions}
           placeholder="Select when this rule runs..."
+          isDisabled={isEditing}
         />
+        {isEditing && (
+          <Text type="caption" color="gray600">
+            Context cannot be changed after creation
+          </Text>
+        )}
       </div>
 
-      {/* Conditions (IF) */}
-      {rule.context && (
+      {/* Conditions (IF) — disabled until context selected */}
+      {rule.context ? (
         <ConditionBuilder
           conditions={rule.conditions}
           tokens={conditionTokens}
@@ -100,10 +126,19 @@ export const RuleBuilder = ({ rule, onChange }: IProps) => {
             onChange({ ...rule, conditions })
           }
         />
+      ) : (
+        <div className={styles.builderSection} style={{ opacity: 0.5 }}>
+          <Text type="bold-label" color="gray600">
+            IF (conditions)
+          </Text>
+          <Text type="caption" color="gray500">
+            Select a context above to configure conditions
+          </Text>
+        </div>
       )}
 
-      {/* Actions (THEN) */}
-      {rule.context && (
+      {/* Actions (THEN) — disabled until context selected */}
+      {rule.context ? (
         <ActionBuilder
           actions={rule.actions}
           tokens={assignableTokens}
@@ -111,6 +146,15 @@ export const RuleBuilder = ({ rule, onChange }: IProps) => {
             onChange({ ...rule, actions })
           }
         />
+      ) : (
+        <div className={styles.builderSection} style={{ opacity: 0.5 }}>
+          <Text type="bold-label" color="gray600">
+            THEN (actions)
+          </Text>
+          <Text type="caption" color="gray500">
+            Select a context above to configure actions
+          </Text>
+        </div>
       )}
 
       {/* Preview */}
@@ -125,6 +169,7 @@ export const RuleBuilder = ({ rule, onChange }: IProps) => {
           endsAt={rule.endsAt}
           onStartsAtChange={startsAt => onChange({ ...rule, startsAt })}
           onEndsAtChange={endsAt => onChange({ ...rule, endsAt })}
+          onError={onDateError}
         />
       )}
     </div>

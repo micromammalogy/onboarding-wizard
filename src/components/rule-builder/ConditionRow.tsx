@@ -1,5 +1,6 @@
 'use client';
 
+import { useCallback } from 'react';
 import { Button } from '@zonos/amino/components/button/Button';
 import { Select } from '@zonos/amino/components/select/Select';
 import { VariableSelector } from './VariableSelector';
@@ -9,9 +10,9 @@ import type {
   IRuleCondition,
   IRuleToken,
   IRuleTokenType,
-  IConditionOperator,
   IConditionConnector,
 } from './types';
+import { OPERATORS_BY_TYPE } from './types';
 import styles from './RuleBuilder.module.scss';
 
 type IProps = {
@@ -38,6 +39,29 @@ export const ConditionRow = ({
 }: IProps) => {
   const selectedToken = tokens.find(t => t.value === condition.variable);
 
+  const handleVariableChange = useCallback(
+    (variable: string) => {
+      const newToken = tokens.find(t => t.value === variable);
+      const newType = newToken?.ruleTokenType as string | undefined;
+      const validOperators = newType ? OPERATORS_BY_TYPE[newType] || [] : [];
+
+      // Check if current operator is still valid for the new type
+      const currentOperatorValid = validOperators.includes(condition.operator);
+
+      onChange({
+        ...condition,
+        variable,
+        // Reset operator if invalid for new type, or default to first valid
+        operator: currentOperatorValid
+          ? condition.operator
+          : validOperators[0] || '==',
+        // Always clear value — old value is meaningless for a different type
+        value: '',
+      });
+    },
+    [condition, tokens, onChange],
+  );
+
   return (
     <div className={styles.conditionRow}>
       <div className={styles.conditionFields}>
@@ -45,10 +69,7 @@ export const ConditionRow = ({
           <VariableSelector
             tokens={tokens}
             value={condition.variable}
-            onChange={variable => {
-              // Reset operator and value when variable changes
-              onChange({ ...condition, variable, operator: '==', value: '' });
-            }}
+            onChange={handleVariableChange}
             label="Variable"
           />
         </div>

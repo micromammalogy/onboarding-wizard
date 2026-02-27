@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useMemo } from 'react';
 import { Input } from '@zonos/amino/components/input/Input';
 import { Text } from '@zonos/amino/components/text/Text';
 
@@ -8,6 +9,7 @@ type IProps = {
   endsAt: string | null;
   onStartsAtChange: (value: string | null) => void;
   onEndsAtChange: (value: string | null) => void;
+  onError?: (hasError: boolean) => void;
 };
 
 export const RuleDateRange = ({
@@ -15,7 +17,19 @@ export const RuleDateRange = ({
   endsAt,
   onStartsAtChange,
   onEndsAtChange,
+  onError,
 }: IProps) => {
+  const dateError = useMemo(() => {
+    if (startsAt && endsAt && endsAt <= startsAt) {
+      return 'End date must be after start date';
+    }
+    return null;
+  }, [startsAt, endsAt]);
+
+  useEffect(() => {
+    onError?.(!!dateError);
+  }, [dateError, onError]);
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
       <Text type="bold-label" color="gray700">
@@ -37,8 +51,14 @@ export const RuleDateRange = ({
           onChange={e =>
             onEndsAtChange(e.target.value || null)
           }
+          error={!!dateError}
         />
       </div>
+      {dateError && (
+        <Text type="caption" color="red600">
+          {dateError}
+        </Text>
+      )}
     </div>
   );
 };

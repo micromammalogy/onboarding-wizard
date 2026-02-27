@@ -14,45 +14,45 @@ type IProps = {
 };
 
 const COUNTRY_OPTIONS = [
-  { value: 'US', label: 'United States' },
-  { value: 'CA', label: 'Canada' },
-  { value: 'GB', label: 'United Kingdom' },
-  { value: 'AU', label: 'Australia' },
-  { value: 'DE', label: 'Germany' },
-  { value: 'FR', label: 'France' },
-  { value: 'JP', label: 'Japan' },
-  { value: 'CN', label: 'China' },
-  { value: 'MX', label: 'Mexico' },
-  { value: 'BR', label: 'Brazil' },
-  { value: 'IN', label: 'India' },
-  { value: 'KR', label: 'South Korea' },
-  { value: 'IT', label: 'Italy' },
-  { value: 'ES', label: 'Spain' },
-  { value: 'NL', label: 'Netherlands' },
-  { value: 'SE', label: 'Sweden' },
-  { value: 'CH', label: 'Switzerland' },
-  { value: 'NZ', label: 'New Zealand' },
-  { value: 'SG', label: 'Singapore' },
-  { value: 'HK', label: 'Hong Kong' },
+  { value: 'us', label: 'United States' },
+  { value: 'ca', label: 'Canada' },
+  { value: 'gb', label: 'United Kingdom' },
+  { value: 'au', label: 'Australia' },
+  { value: 'de', label: 'Germany' },
+  { value: 'fr', label: 'France' },
+  { value: 'jp', label: 'Japan' },
+  { value: 'cn', label: 'China' },
+  { value: 'mx', label: 'Mexico' },
+  { value: 'br', label: 'Brazil' },
+  { value: 'in', label: 'India' },
+  { value: 'kr', label: 'South Korea' },
+  { value: 'it', label: 'Italy' },
+  { value: 'es', label: 'Spain' },
+  { value: 'nl', label: 'Netherlands' },
+  { value: 'se', label: 'Sweden' },
+  { value: 'ch', label: 'Switzerland' },
+  { value: 'nz', label: 'New Zealand' },
+  { value: 'sg', label: 'Singapore' },
+  { value: 'hk', label: 'Hong Kong' },
 ];
 
 const CURRENCY_OPTIONS = [
-  { value: 'USD', label: 'USD — US Dollar' },
-  { value: 'EUR', label: 'EUR — Euro' },
-  { value: 'GBP', label: 'GBP — British Pound' },
-  { value: 'CAD', label: 'CAD — Canadian Dollar' },
-  { value: 'AUD', label: 'AUD — Australian Dollar' },
-  { value: 'JPY', label: 'JPY — Japanese Yen' },
-  { value: 'CNY', label: 'CNY — Chinese Yuan' },
-  { value: 'MXN', label: 'MXN — Mexican Peso' },
-  { value: 'BRL', label: 'BRL — Brazilian Real' },
-  { value: 'INR', label: 'INR — Indian Rupee' },
-  { value: 'KRW', label: 'KRW — South Korean Won' },
-  { value: 'CHF', label: 'CHF — Swiss Franc' },
-  { value: 'SEK', label: 'SEK — Swedish Krona' },
-  { value: 'NZD', label: 'NZD — New Zealand Dollar' },
-  { value: 'SGD', label: 'SGD — Singapore Dollar' },
-  { value: 'HKD', label: 'HKD — Hong Kong Dollar' },
+  { value: 'usd', label: 'USD — US Dollar' },
+  { value: 'eur', label: 'EUR — Euro' },
+  { value: 'gbp', label: 'GBP — British Pound' },
+  { value: 'cad', label: 'CAD — Canadian Dollar' },
+  { value: 'aud', label: 'AUD — Australian Dollar' },
+  { value: 'jpy', label: 'JPY — Japanese Yen' },
+  { value: 'cny', label: 'CNY — Chinese Yuan' },
+  { value: 'mxn', label: 'MXN — Mexican Peso' },
+  { value: 'brl', label: 'BRL — Brazilian Real' },
+  { value: 'inr', label: 'INR — Indian Rupee' },
+  { value: 'krw', label: 'KRW — South Korean Won' },
+  { value: 'chf', label: 'CHF — Swiss Franc' },
+  { value: 'sek', label: 'SEK — Swedish Krona' },
+  { value: 'nzd', label: 'NZD — New Zealand Dollar' },
+  { value: 'sgd', label: 'SGD — Singapore Dollar' },
+  { value: 'hkd', label: 'HKD — Hong Kong Dollar' },
 ];
 
 const BOOLEAN_OPTIONS = [
@@ -68,18 +68,20 @@ export const ValueInput = ({
   onCurrencyChange,
   label = 'Value',
 }: IProps) => {
+  // No type selected — disabled placeholder
   if (!tokenType) {
     return (
       <Input
         label={label}
-        value={value}
-        onChange={e => onChange(e.target.value)}
-        placeholder="Enter value..."
+        value=""
+        onChange={() => {}}
+        placeholder="Select a variable first"
+        disabled
       />
     );
   }
 
-  // Country dropdown
+  // Country dropdown — lowercase values
   if (tokenType === 'COUNTRY' || tokenType === 'COUNTRY_LIST') {
     return (
       <Select
@@ -94,7 +96,7 @@ export const ValueInput = ({
     );
   }
 
-  // Currency dropdown
+  // Currency dropdown — lowercase values
   if (tokenType === 'CURRENCY' || tokenType === 'CURRENCY_LIST') {
     return (
       <Select
@@ -109,7 +111,7 @@ export const ValueInput = ({
     );
   }
 
-  // Boolean toggle
+  // Boolean — dropdown only, no free text
   if (tokenType === 'BOOLEAN' || tokenType === 'BOOLEAN_LIST') {
     return (
       <Select
@@ -123,7 +125,7 @@ export const ValueInput = ({
     );
   }
 
-  // Money: number input + currency selector
+  // Money: number input + required currency selector
   if (tokenType === 'MONEY' || tokenType === 'MONEY_LIST') {
     return (
       <div style={{ display: 'flex', gap: 8, alignItems: 'flex-end' }}>
@@ -137,12 +139,13 @@ export const ValueInput = ({
           />
         </div>
         {onCurrencyChange && (
-          <div style={{ width: 120 }}>
+          <div style={{ width: 140 }}>
             <Select
               label="Currency"
               value={
-                CURRENCY_OPTIONS.find(o => o.value === (currency || 'USD')) ||
-                null
+                CURRENCY_OPTIONS.find(
+                  o => o.value === (currency || 'usd'),
+                ) || null
               }
               onChange={option => {
                 if (option) onCurrencyChange(option.value);
@@ -155,7 +158,7 @@ export const ValueInput = ({
     );
   }
 
-  // Numeric types
+  // Numeric types — number input only
   if (
     tokenType === 'NUMBER' ||
     tokenType === 'WEIGHT' ||

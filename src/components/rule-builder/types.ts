@@ -170,6 +170,27 @@ export const ACTION_OPERATION_LABELS: Record<IActionOperation, string> = {
   multiply: 'multiply by',
 };
 
+export const OPERATIONS_BY_TYPE: Record<string, IActionOperation[]> = {
+  STRING: ['set'],
+  COUNTRY: ['set'],
+  CURRENCY: ['set'],
+  BOOLEAN: ['set'],
+  NUMBER: ['set', 'add', 'subtract', 'multiply'],
+  MONEY: ['set', 'add', 'subtract', 'multiply'],
+  WEIGHT: ['set', 'add', 'subtract', 'multiply'],
+  LENGTH: ['set', 'add', 'subtract', 'multiply'],
+  VOLUME: ['set', 'add', 'subtract', 'multiply'],
+  STRING_LIST: ['set'],
+  COUNTRY_LIST: ['set'],
+  CURRENCY_LIST: ['set'],
+  BOOLEAN_LIST: ['set'],
+  NUMBER_LIST: ['set'],
+  MONEY_LIST: ['set'],
+  WEIGHT_LIST: ['set'],
+  LENGTH_LIST: ['set'],
+  VOLUME_LIST: ['set'],
+};
+
 export const CONTEXT_LABELS: Record<string, string> = {
   ITEM_CREATE_POST: 'Item Modification',
   LANDED_COST_CALCULATE_POST: 'Landed Cost Adjustment',

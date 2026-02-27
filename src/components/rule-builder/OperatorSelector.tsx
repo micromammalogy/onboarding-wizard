@@ -13,8 +13,8 @@ type IProps = {
 
 export const OperatorSelector = ({ tokenType, value, onChange }: IProps) => {
   const operators = useMemo(() => {
-    if (!tokenType) return Object.keys(OPERATOR_LABELS) as IConditionOperator[];
-    return OPERATORS_BY_TYPE[tokenType] || (['==', '!='] as IConditionOperator[]);
+    if (!tokenType) return [];
+    return OPERATORS_BY_TYPE[tokenType] || [];
   }, [tokenType]);
 
   const options = useMemo(
@@ -27,6 +27,19 @@ export const OperatorSelector = ({ tokenType, value, onChange }: IProps) => {
   );
 
   const selectedOption = options.find(o => o.value === value) || null;
+
+  if (!tokenType) {
+    return (
+      <Select
+        label="Operator"
+        value={null}
+        onChange={() => {}}
+        options={[]}
+        isDisabled
+        placeholder="Select a variable first"
+      />
+    );
+  }
 
   return (
     <Select

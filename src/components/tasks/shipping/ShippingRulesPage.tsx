@@ -14,7 +14,7 @@ import type { IRulesData, IRuleFromAPI } from '@/components/rule-builder/types';
 export const ShippingRulesPage = () => {
   const [slideoverOpen, setSlideoverOpen] = useState(false);
   const [editingRule, setEditingRule] = useState<IRuleFromAPI | null>(null);
-  const [contextFilter, setContextFilter] = useState('');
+  const [statusFilter, setStatusFilter] = useState<'active' | 'expired' | 'scheduled'>('active');
 
   const { data, error, isLoading, mutate } = useGraphQL<IRulesData>({
     query: RULES_QUERY,
@@ -64,8 +64,8 @@ export const ShippingRulesPage = () => {
 
       <RulesList
         rules={rules}
-        contextFilter={contextFilter}
-        onContextFilterChange={setContextFilter}
+        statusFilter={statusFilter}
+        onStatusFilterChange={setStatusFilter}
         onEdit={handleEdit}
         onDeleted={handleSaved}
       />

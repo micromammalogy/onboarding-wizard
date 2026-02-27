@@ -1,11 +1,13 @@
 'use client';
 
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useMemo } from 'react';
 import { Button } from '@zonos/amino/components/button/Button';
 import { Text } from '@zonos/amino/components/text/Text';
 import { RuleBuilder } from './RuleBuilder';
 import { structuredRuleToAPI } from './ruleExpression';
+import type { ITokenTypeMap } from './ruleExpression';
 import { parseRuleFromAPI } from './ruleParser';
+import { useRuleContexts } from './useRuleContexts';
 import { useGraphQLMutation } from '@/hooks/useGraphQLMutation';
 import { RULE_VALIDATE } from '@/graphql/mutations/rules';
 import { RULE_CREATE, RULE_UPDATE } from '@/graphql/mutations/rules';
@@ -16,7 +18,7 @@ import type {
   IRuleCreateData,
   IRuleUpdateData,
 } from './types';
-import { createEmptyRule } from './types';
+import { createEmptyRule, OPERATORS_BY_TYPE, OPERATIONS_BY_TYPE } from './types';
 import styles from './RuleBuilder.module.scss';
 
 type IProps = {
@@ -36,6 +38,19 @@ export const RuleBuilderSlideover = ({
   const [validationErrors, setValidationErrors] = useState<string[]>([]);
   const [validationSuccess, setValidationSuccess] = useState(false);
   const [saveError, setSaveError] = useState('');
+  const [dateError, setDateError] = useState(false);
+
+  const { findToken, getTokensForContext } = useRuleContexts();
+
+  // Build a map of variable name → token type for the current context
+  const tokenTypeMap: ITokenTypeMap = useMemo(() => {
+    if (!rule.context) return {};
+    const tokens = getTokensForContext(rule.context);
+    return tokens.reduce<ITokenTypeMap>((acc, t) => {
+      acc[t.value] = t.ruleTokenType;
+      return acc;
+    }, {});
+  }, [rule.context, getTokensForContext]);
 
   const { execute: validateRule, isLoading: validating } =
     useGraphQLMutation<IRuleValidateData>({
@@ -65,13 +80,14 @@ export const RuleBuilderSlideover = ({
     setValidationErrors([]);
     setValidationSuccess(false);
     setSaveError('');
+    setDateError(false);
   }, [editingRule, open]);
 
   const handleValidate = useCallback(async () => {
     setValidationErrors([]);
     setValidationSuccess(false);
 
-    const apiInput = structuredRuleToAPI(rule);
+    const apiInput = structuredRuleToAPI(rule, tokenTypeMap);
 
     try {
       const result = await validateRule({ input: apiInput });
@@ -85,16 +101,18 @@ export const RuleBuilderSlideover = ({
         err instanceof Error ? err.message : 'Validation request failed',
       ]);
     }
-  }, [rule, validateRule]);
+  }, [rule, tokenTypeMap, validateRule]);
 
   const handleSave = useCallback(async () => {
     setSaveError('');
 
-    const apiInput = structuredRuleToAPI(rule);
+    const apiInput = structuredRuleToAPI(rule, tokenTypeMap);
 
     try {
       if (editingRule) {
-        await updateRule({ input: { ...apiInput, id: editingRule.id } });
+        // RuleUpdateInput doesn't accept context — it's immutable after creation
+        const { context: _context, ...updateFields } = apiInput;
+        await updateRule({ input: { ...updateFields, id: editingRule.id } });
       } else {
         await createRule({ input: apiInput });
       }
@@ -103,13 +121,95 @@ export const RuleBuilderSlideover = ({
     } catch (err) {
       setSaveError(err instanceof Error ? err.message : 'Save failed');
     }
-  }, [rule, editingRule, createRule, updateRule, onSaved, onClose]);
+  }, [rule, tokenTypeMap, editingRule, createRule, updateRule, onSaved, onClose]);
 
-  const isValid =
-    rule.name.trim() &&
-    rule.context &&
-    rule.conditions.some(c => c.variable && c.value) &&
-    rule.actions.some(a => a.variable && a.value);
+  // Enhanced validation with specific reasons
+  const { isValid, invalidReason } = useMemo(() => {
+    if (!rule.name.trim()) {
+      return { isValid: false, invalidReason: 'Rule name is required' };
+    }
+    if (!rule.context) {
+      return { isValid: false, invalidReason: 'Select a rule context' };
+    }
+
+    // Validate all conditions
+    for (let i = 0; i < rule.conditions.length; i++) {
+      const c = rule.conditions[i];
+      if (!c.variable) {
+        return {
+          isValid: false,
+          invalidReason: `Condition ${i + 1}: select a variable`,
+        };
+      }
+      // Check operator is valid for the variable's type
+      const condToken = findToken(rule.context, c.variable);
+      const condType = condToken?.ruleTokenType;
+      if (condType) {
+        const validOps = OPERATORS_BY_TYPE[condType] || [];
+        if (!validOps.includes(c.operator)) {
+          return {
+            isValid: false,
+            invalidReason: `Condition ${i + 1}: invalid operator for ${condType}`,
+          };
+        }
+      }
+      if (!c.value) {
+        return {
+          isValid: false,
+          invalidReason: `Condition ${i + 1}: enter a value`,
+        };
+      }
+    }
+
+    // Validate all actions
+    for (let i = 0; i < rule.actions.length; i++) {
+      const a = rule.actions[i];
+      if (!a.variable) {
+        return {
+          isValid: false,
+          invalidReason: `Action ${i + 1}: select a variable`,
+        };
+      }
+      // Check operation is valid for the variable's type
+      const actToken = findToken(rule.context, a.variable);
+      const actType = actToken?.ruleTokenType;
+      if (actType) {
+        const validOps = OPERATIONS_BY_TYPE[actType] || ['set'];
+        if (!validOps.includes(a.operation)) {
+          return {
+            isValid: false,
+            invalidReason: `Action ${i + 1}: invalid operation for ${actType}`,
+          };
+        }
+        // MONEY actions require currency
+        if (
+          (actType === 'MONEY' || actType === 'MONEY_LIST') &&
+          !a.currency
+        ) {
+          return {
+            isValid: false,
+            invalidReason: `Action ${i + 1}: currency is required for money values`,
+          };
+        }
+      }
+      if (!a.value) {
+        return {
+          isValid: false,
+          invalidReason: `Action ${i + 1}: enter a value`,
+        };
+      }
+    }
+
+    // Date validation
+    if (dateError) {
+      return {
+        isValid: false,
+        invalidReason: 'End date must be after start date',
+      };
+    }
+
+    return { isValid: true, invalidReason: null };
+  }, [rule, dateError, findToken]);
 
   if (!open) return null;
 
@@ -130,7 +230,12 @@ export const RuleBuilderSlideover = ({
         </div>
 
         <div className={styles.slideoverBody}>
-          <RuleBuilder rule={rule} onChange={setRule} />
+          <RuleBuilder
+            rule={rule}
+            onChange={setRule}
+            isEditing={!!editingRule}
+            onDateError={setDateError}
+          />
         </div>
 
         <div className={styles.slideoverFooter}>
@@ -148,6 +253,13 @@ export const RuleBuilderSlideover = ({
             <p className={styles.successText}>Rule is valid</p>
           )}
           {saveError && <p className={styles.errorText}>{saveError}</p>}
+
+          {/* Show why save is disabled */}
+          {!isValid && invalidReason && (
+            <Text type="caption" color="gray600">
+              {invalidReason}
+            </Text>
+          )}
 
           <div className={styles.footerActions}>
             <Button

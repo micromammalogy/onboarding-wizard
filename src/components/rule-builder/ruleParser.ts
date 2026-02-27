@@ -260,7 +260,7 @@ function extractValueAndCurrency(raw: string): {
 } {
   const parts = raw.trim().split(/\s+/);
   if (parts.length === 2 && /^[a-zA-Z]{3}$/.test(parts[1])) {
-    return { value: parts[0], currency: parts[1].toUpperCase() };
+    return { value: parts[0], currency: parts[1].toLowerCase() };
   }
   return { value: raw.trim() };
 }

@@ -10,20 +10,43 @@ import type { IRuleFromAPI, IRuleArchiveData } from './types';
 import { CONTEXT_LABELS } from './types';
 import styles from './RuleBuilder.module.scss';
 
+type IRuleStatus = 'active' | 'expired' | 'scheduled';
+
 type IProps = {
   rules: IRuleFromAPI[];
-  contextFilter: string;
-  onContextFilterChange: (context: string) => void;
+  statusFilter: IRuleStatus;
+  onStatusFilterChange: (status: IRuleStatus) => void;
   onEdit: (rule: IRuleFromAPI) => void;
   onDeleted: () => void;
 };
 
-const ALL_CONTEXT_OPTION = { value: '', label: 'All contexts' };
+const STATUS_OPTIONS: { value: IRuleStatus; label: string }[] = [
+  { value: 'active', label: 'Active' },
+  { value: 'scheduled', label: 'Scheduled' },
+  { value: 'expired', label: 'Expired' },
+];
+
+function getRuleStatus(rule: IRuleFromAPI): IRuleStatus {
+  const now = new Date();
+  if (rule.endsAt && new Date(rule.endsAt) < now) {
+    return 'expired';
+  }
+  if (rule.startsAt && new Date(rule.startsAt) > now) {
+    return 'scheduled';
+  }
+  return 'active';
+}
+
+const STATUS_STYLES: Record<IRuleStatus, { bg: string; color: string }> = {
+  active: { bg: 'var(--amino-green-50)', color: 'var(--amino-green-700)' },
+  expired: { bg: 'var(--amino-gray-100)', color: 'var(--amino-gray-500)' },
+  scheduled: { bg: 'var(--amino-blue-50)', color: 'var(--amino-blue-700)' },
+};
 
 export const RulesList = ({
   rules,
-  contextFilter,
-  onContextFilterChange,
+  statusFilter,
+  onStatusFilterChange,
   onEdit,
   onDeleted,
 }: IProps) => {
@@ -33,23 +56,9 @@ export const RulesList = ({
       schema: 'internal',
     });
 
-  const contextOptions = useMemo(() => {
-    const uniqueContexts = [...new Set(rules.map(r => r.context))];
-    return [
-      ALL_CONTEXT_OPTION,
-      ...uniqueContexts.map(c => ({
-        value: c,
-        label: CONTEXT_LABELS[c] || c,
-      })),
-    ];
-  }, [rules]);
-
   const filteredRules = useMemo(
-    () =>
-      contextFilter
-        ? rules.filter(r => r.context === contextFilter)
-        : rules,
-    [rules, contextFilter],
+    () => rules.filter(r => getRuleStatus(r) === statusFilter),
+    [rules, statusFilter],
   );
 
   const handleDelete = async (rule: IRuleFromAPI) => {
@@ -87,91 +96,124 @@ export const RulesList = ({
       {/* Filter bar */}
       <div style={{ maxWidth: 260 }}>
         <Select
-          label="Filter by context"
-          value={
-            contextOptions.find(o => o.value === contextFilter) ||
-            ALL_CONTEXT_OPTION
-          }
-          onChange={option =>
-            onContextFilterChange(option?.value || '')
-          }
-          options={contextOptions}
+          label="Status"
+          value={STATUS_OPTIONS.find(o => o.value === statusFilter) || STATUS_OPTIONS[0]}
+          onChange={option => {
+            if (option) onStatusFilterChange(option.value as IRuleStatus);
+          }}
+          options={STATUS_OPTIONS}
         />
       </div>
 
       {/* Table */}
-      <div className={styles.tableWrapper}>
-        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-          <thead>
-            <tr style={{ borderBottom: '1px solid var(--amino-gray-200)' }}>
-              {['Name', 'Context', 'Actions'].map(h => (
-                <th
-                  key={h}
-                  style={{
-                    textAlign: 'left',
-                    padding: '10px 16px',
-                    fontSize: 12,
-                    fontWeight: 500,
-                    textTransform: 'uppercase',
-                    color: 'var(--amino-gray-500)',
-                  }}
-                >
-                  {h}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {filteredRules.map(rule => (
-              <tr
-                key={rule.id}
-                style={{
-                  borderBottom: '1px solid var(--amino-gray-100)',
-                }}
-              >
-                <td style={{ padding: '12px 16px', fontSize: 14 }}>
-                  <div style={{ fontWeight: 500 }}>{rule.name}</div>
-                  {rule.description && (
-                    <div
-                      style={{
-                        fontSize: 12,
-                        color: 'var(--amino-gray-400)',
-                        marginTop: 2,
-                      }}
-                    >
-                      {rule.description}
-                    </div>
-                  )}
-                </td>
-                <td style={{ padding: '12px 16px', fontSize: 14 }}>
-                  <span className={styles.contextBadge}>
-                    {CONTEXT_LABELS[rule.context] || rule.context}
-                  </span>
-                </td>
-                <td style={{ padding: '12px 16px' }}>
-                  <div style={{ display: 'flex', gap: 8 }}>
-                    <Button
-                      size="sm"
-                      variant="subtle"
-                      onClick={() => onEdit(rule)}
-                    >
-                      Edit
-                    </Button>
-                    <Button
-                      size="sm"
-                      variant="danger"
-                      onClick={() => handleDelete(rule)}
-                      loading={archiving}
-                    >
-                      Archive
-                    </Button>
-                  </div>
-                </td>
+      {filteredRules.length === 0 ? (
+        <div
+          style={{
+            padding: 32,
+            textAlign: 'center',
+            background: 'white',
+            borderRadius: 8,
+            border: '1px solid var(--amino-gray-200)',
+          }}
+        >
+          <Text type="subtitle" color="gray500">
+            No {statusFilter} rules
+          </Text>
+        </div>
+      ) : (
+        <div className={styles.tableWrapper}>
+          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+            <thead>
+              <tr style={{ borderBottom: '1px solid var(--amino-gray-200)' }}>
+                {['Name', 'Status', 'Context', 'Actions'].map(h => (
+                  <th
+                    key={h}
+                    style={{
+                      textAlign: 'left',
+                      padding: '10px 16px',
+                      fontSize: 12,
+                      fontWeight: 500,
+                      textTransform: 'uppercase',
+                      color: 'var(--amino-gray-500)',
+                    }}
+                  >
+                    {h}
+                  </th>
+                ))}
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody>
+              {filteredRules.map(rule => {
+                const status = getRuleStatus(rule);
+                const statusStyle = STATUS_STYLES[status];
+                return (
+                  <tr
+                    key={rule.id}
+                    style={{
+                      borderBottom: '1px solid var(--amino-gray-100)',
+                    }}
+                  >
+                    <td style={{ padding: '12px 16px', fontSize: 14 }}>
+                      <div style={{ fontWeight: 500 }}>{rule.name}</div>
+                      {rule.description && (
+                        <div
+                          style={{
+                            fontSize: 12,
+                            color: 'var(--amino-gray-400)',
+                            marginTop: 2,
+                          }}
+                        >
+                          {rule.description}
+                        </div>
+                      )}
+                    </td>
+                    <td style={{ padding: '12px 16px', fontSize: 14 }}>
+                      <span
+                        style={{
+                          display: 'inline-block',
+                          padding: '2px 10px',
+                          borderRadius: 10,
+                          fontSize: 12,
+                          fontWeight: 500,
+                          background: statusStyle.bg,
+                          color: statusStyle.color,
+                          textTransform: 'capitalize',
+                        }}
+                      >
+                        {status}
+                      </span>
+                    </td>
+                    <td style={{ padding: '12px 16px', fontSize: 14 }}>
+                      <span className={styles.contextBadge}>
+                        {CONTEXT_LABELS[rule.context] || rule.context}
+                      </span>
+                    </td>
+                    <td style={{ padding: '12px 16px' }}>
+                      <div style={{ display: 'flex', gap: 8 }}>
+                        <Button
+                          size="sm"
+                          variant="subtle"
+                          onClick={() => onEdit(rule)}
+                        >
+                          Edit
+                        </Button>
+                        <Button
+                          size="sm"
+                          variant="danger"
+                          onClick={() => handleDelete(rule)}
+                          loading={archiving}
+                        >
+                          Archive
+                        </Button>
+                      </div>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
 };
