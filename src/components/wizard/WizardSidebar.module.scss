@@ -160,6 +160,26 @@
   font-weight: 500;
 }
 
+.logoutButton {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: var(--amino-gray-400);
+  cursor: pointer;
+  transition: background 0.1s, color 0.1s;
+
+  &:hover {
+    background: var(--amino-red-50);
+    color: var(--amino-red-600);
+  }
+}
+
 /* ===== Settings Sidebar ===== */
 
 .backToHome {

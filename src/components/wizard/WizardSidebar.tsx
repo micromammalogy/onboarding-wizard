@@ -12,6 +12,7 @@ import { GlobeIcon } from '@zonos/amino/icons/GlobeIcon';
 import { SettingsIcon } from '@zonos/amino/icons/SettingsIcon';
 import { PaletteIcon } from '@zonos/amino/icons/PaletteIcon';
 import { DashboardIcon } from '@zonos/amino/icons/DashboardIcon';
+import { LogoutIcon } from '@zonos/amino/icons/LogoutIcon';
 import { useNavStore } from '@/hooks/useNavStore';
 import { useAuthStore } from '@/hooks/useAuthStore';
 import { OrgSwitcher } from './OrgSwitcher';
@@ -76,7 +77,7 @@ const activeStyle: React.CSSProperties = {
 
 export const WizardSidebar = () => {
   const { activePage, activeSection, setActivePage } = useNavStore();
-  const { organizationName } = useAuthStore();
+  const { organizationName, logout } = useAuthStore();
 
   const userInitial = (organizationName || '?').charAt(0).toUpperCase();
 
@@ -151,6 +152,9 @@ export const WizardSidebar = () => {
       <div className={styles.userFooter}>
         <div className={styles.userAvatar}>{userInitial}</div>
         <span className={styles.userName}>{organizationName || 'User'}</span>
+        <button className={styles.logoutButton} onClick={logout} title="Log out">
+          <LogoutIcon size={16} />
+        </button>
       </div>
     </div>
   );
