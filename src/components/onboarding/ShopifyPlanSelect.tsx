@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Button } from '@zonos/amino/components/button/Button';
 import { Text } from '@zonos/amino/components/text/Text';
 import { CheckmarkIcon } from '@zonos/amino/icons/CheckmarkIcon';
@@ -20,43 +20,34 @@ const PLAN_OPTIONS: IPlanOption[] = [
   {
     value: 'basic',
     name: 'Basic',
-    description: 'For individuals & small businesses getting started with international selling.',
+    description:
+      'For individuals & small businesses getting started with international selling.',
   },
   {
     value: 'grow',
     name: 'Grow',
-    description: 'For growing businesses that need more reporting and lower transaction fees.',
+    description:
+      'For growing businesses that need more reporting and lower transaction fees.',
   },
   {
     value: 'advanced',
     name: 'Advanced',
-    description: 'For scaling businesses with advanced reporting and third-party calculated shipping.',
+    description:
+      'For scaling businesses with advanced reporting and third-party calculated shipping.',
   },
   {
     value: 'plus',
     name: 'Plus',
-    description: 'For high-volume merchants and large enterprises needing dedicated support.',
+    description:
+      'For high-volume merchants and large enterprises needing dedicated support.',
   },
 ];
 
 export const ShopifyPlanSelect = () => {
   const { shopifyPlan, setShopifyPlan } = useOnboardingStore();
-  const [selected, setSelected] = useState<IShopifyPlan | null>(shopifyPlan);
-  const [isHydrated, setIsHydrated] = useState(false);
-
-  useEffect(() => {
-    setIsHydrated(true);
-  }, []);
-
-  useEffect(() => {
-    if (isHydrated && shopifyPlan) {
-      setSelected(shopifyPlan);
-    }
-  }, [isHydrated, shopifyPlan]);
-
-  if (!isHydrated) {
-    return null;
-  }
+  const [selected, setSelected] = useState<IShopifyPlan | null>(
+    shopifyPlan,
+  );
 
   const handleContinue = () => {
     if (selected) {
