@@ -2,6 +2,7 @@
 
 import { useEffect, useState, type ReactNode } from 'react';
 import { useOnboardingStore } from '@/hooks/useOnboardingStore';
+import { PlatformSelect } from './PlatformSelect';
 import { ShopifyPlanSelect } from './ShopifyPlanSelect';
 
 type IOnboardingGateProps = {
@@ -9,7 +10,7 @@ type IOnboardingGateProps = {
 };
 
 export const OnboardingGate = ({ children }: IOnboardingGateProps) => {
-  const { shopifyPlan } = useOnboardingStore();
+  const { ecommercePlatform, shopifyPlan } = useOnboardingStore();
   const [isHydrated, setIsHydrated] = useState(false);
 
   useEffect(() => {
@@ -27,7 +28,13 @@ export const OnboardingGate = ({ children }: IOnboardingGateProps) => {
     );
   }
 
-  if (!shopifyPlan) {
+  // Step 1: Select e-commerce platform
+  if (!ecommercePlatform) {
+    return <PlatformSelect />;
+  }
+
+  // Step 2: If Shopify, select plan
+  if (ecommercePlatform === 'shopify' && !shopifyPlan) {
     return <ShopifyPlanSelect />;
   }
 
