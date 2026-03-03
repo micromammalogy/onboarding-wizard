@@ -11,7 +11,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: var(--amino-surface-color);
+  background: var(--amino-surface-color, #f9fafb);
   font-family: var(--amino-text-base);
 }
 

@@ -17,7 +17,14 @@ export const OnboardingGate = ({ children }: IOnboardingGateProps) => {
   }, []);
 
   if (!isHydrated) {
-    return null;
+    return (
+      <div
+        style={{
+          minHeight: '100vh',
+          background: '#f9fafb',
+        }}
+      />
+    );
   }
 
   if (!shopifyPlan) {
