@@ -39,9 +39,6 @@
   height: 40px;
   border-radius: 10px;
   background: #95bf47;
-  color: white;
-  font-weight: 700;
-  font-size: 20px;
 }
 
 .zonosLogo {
@@ -51,10 +48,8 @@
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: var(--amino-blue-600, #2563eb);
+  background: #000000;
   color: white;
-  font-weight: 700;
-  font-size: 18px;
 }
 
 .connector {
@@ -114,11 +109,22 @@
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: var(--amino-blue-600, #2563eb);
+  background: #000000;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.warningBanner {
+  padding: 14px 16px;
+  background: var(--amino-red-50, #fef2f2);
+  border: 1px solid var(--amino-red-200, #fecaca);
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--amino-red-700, #b91c1c);
+  line-height: 1.5;
+  text-align: center;
 }
 
 .footer {

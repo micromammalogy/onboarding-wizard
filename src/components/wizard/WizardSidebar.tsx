@@ -4,6 +4,7 @@ import { NavigationGroup, NavigationItem } from '@zonos/amino/components/layout/
 import { BoxesIcon } from '@zonos/amino/icons/BoxesIcon';
 import { LocationIcon } from '@zonos/amino/icons/LocationIcon';
 import { ShoppingListIcon } from '@zonos/amino/icons/ShoppingListIcon';
+import { IntegrationIcon } from '@zonos/amino/icons/IntegrationIcon';
 import { TruckIcon } from '@zonos/amino/icons/TruckIcon';
 import { FileIcon } from '@zonos/amino/icons/FileIcon';
 import { HelloIcon } from '@zonos/amino/icons/HelloIcon';
@@ -14,6 +15,7 @@ import { PaletteIcon } from '@zonos/amino/icons/PaletteIcon';
 import { DashboardIcon } from '@zonos/amino/icons/DashboardIcon';
 import { useNavStore } from '@/hooks/useNavStore';
 import { useAuthStore } from '@/hooks/useAuthStore';
+import { useOnboardingStore } from '@/hooks/useOnboardingStore';
 import { OrgSwitcher } from './OrgSwitcher';
 import styles from './WizardSidebar.module.scss';
 
@@ -49,20 +51,10 @@ const NAV_SECTIONS: INavSection[] = [
       { label: 'LCG Enable On/Off', page: 'lcg-enable' },
     ],
   },
-  {
-    label: 'General',
-    key: 'general',
-    icon: <SettingsIcon size={24} />,
-    items: [
-      { label: 'Business Name', page: 'business-name' },
-      { label: 'Website URL', page: 'website-url' },
-      { label: 'E-commerce Platform', page: 'ecommerce-platform' },
-      { label: 'Business Address', page: 'business-address' },
-    ],
-  },
 ];
 
 const STANDALONE_ITEMS = [
+  { label: 'General', page: 'general', icon: <SettingsIcon size={24} /> },
   { label: 'Hello Settings', page: 'hello-settings', icon: <HelloIcon size={24} /> },
   { label: 'Checkout Settings', page: 'checkout-settings', icon: <CheckoutIcon size={24} /> },
   { label: 'Organization Status', page: 'organization-status', icon: <DashboardIcon size={24} /> },
@@ -77,6 +69,12 @@ const activeStyle: React.CSSProperties = {
 export const WizardSidebar = () => {
   const { activePage, activeSection, setActivePage } = useNavStore();
   const { organizationName } = useAuthStore();
+  const { setEditingPlan, resetCarrierApi } = useOnboardingStore();
+
+  const handleShopifyPlanClick = () => {
+    resetCarrierApi();
+    setEditingPlan(true);
+  };
 
   const userInitial = (organizationName || '?').charAt(0).toUpperCase();
 
@@ -129,6 +127,14 @@ export const WizardSidebar = () => {
         ))}
 
         <div className={styles.navGap} />
+
+        {/* Shopify Plan — always accessible */}
+        <div className={styles.navItemWrapper} onClick={handleShopifyPlanClick}>
+          <NavigationItem
+            content="Shopify Plan"
+            icon={<IntegrationIcon size={24} />}
+          />
+        </div>
 
         {/* Standalone pages */}
         {STANDALONE_ITEMS.map(item => (

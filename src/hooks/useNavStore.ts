@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 
 type INavState = {
   activePage: string;
@@ -6,10 +7,15 @@ type INavState = {
   setActivePage: (page: string, section?: string) => void;
 };
 
-export const useNavStore = create<INavState>(set => ({
-  activePage: 'fulfillment-location',
-  activeSection: 'shipping-settings',
+export const useNavStore = create<INavState>()(
+  persist(
+    set => ({
+      activePage: 'fulfillment-location',
+      activeSection: 'shipping-settings',
 
-  setActivePage: (page: string, section?: string) =>
-    set({ activePage: page, activeSection: section || '' }),
-}));
+      setActivePage: (page: string, section?: string) =>
+        set({ activePage: page, activeSection: section || '' }),
+    }),
+    { name: 'zonos-nav' },
+  ),
+);

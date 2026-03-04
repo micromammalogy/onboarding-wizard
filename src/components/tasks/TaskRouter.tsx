@@ -20,10 +20,7 @@ import { DefaultHsCodePage } from './defaults/DefaultHsCodePage';
 import { LcgEnablePage } from './defaults/LcgEnablePage';
 
 // General
-import { BusinessNamePage } from './general/BusinessNamePage';
-import { WebsiteUrlPage } from './general/WebsiteUrlPage';
-import { EcommercePlatformPage } from './general/EcommercePlatformPage';
-import { BusinessAddressPage } from './general/BusinessAddressPage';
+import { GeneralSettingsPage } from './general/GeneralSettingsPage';
 
 const PAGE_MAP: Record<string, React.ComponentType> = {
   // Shipping Configuration
@@ -44,10 +41,7 @@ const PAGE_MAP: Record<string, React.ComponentType> = {
   'lcg-enable': LcgEnablePage,
 
   // General
-  'business-name': BusinessNamePage,
-  'website-url': WebsiteUrlPage,
-  'ecommerce-platform': EcommercePlatformPage,
-  'business-address': BusinessAddressPage,
+  'general': GeneralSettingsPage,
 };
 
 export const TaskRouter = () => {

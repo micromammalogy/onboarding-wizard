@@ -1,9 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { Button } from '@zonos/amino/components/button/Button';
 import { Text } from '@zonos/amino/components/text/Text';
 import { CheckmarkIcon } from '@zonos/amino/icons/CheckmarkIcon';
+import { ZonosLogoIcon } from '@zonos/amino/icons/custom/logo/ZonosLogoIcon';
 import {
   useOnboardingStore,
   type IShopifyPlan,
@@ -60,9 +62,13 @@ export const ShopifyPlanSelect = () => {
       <div className={styles.container}>
         <div className={styles.header}>
           <div className={styles.logoRow}>
-            <div className={styles.shopifyLogo}>S</div>
+            <div className={styles.shopifyLogo}>
+              <Image src="/shopify-icon.svg" alt="Shopify" width={22} height={22} />
+            </div>
             <div className={styles.connector} />
-            <div className={styles.zonosLogo}>Z</div>
+            <div className={styles.zonosLogo}>
+              <ZonosLogoIcon size={32} />
+            </div>
           </div>
           <Text type="title">Select your Shopify plan</Text>
           <Text type="body" color="gray600">
@@ -92,9 +98,16 @@ export const ShopifyPlanSelect = () => {
           ))}
         </div>
 
+        {selected === 'basic' && (
+          <div className={styles.warningBanner}>
+            <strong>This plan is not supported with Zonos.</strong> You will
+            need to upgrade to the Shopify Grow plan or higher.
+          </div>
+        )}
+
         <div className={styles.footer}>
           <Button
-            disabled={!selected}
+            disabled={!selected || selected === 'basic'}
             onClick={handleContinue}
             size="lg"
             variant="primary"

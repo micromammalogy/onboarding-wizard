@@ -4,13 +4,14 @@ import { useEffect, useState, type ReactNode } from 'react';
 import { useOnboardingStore } from '@/hooks/useOnboardingStore';
 import { PlatformSelect } from './PlatformSelect';
 import { ShopifyPlanSelect } from './ShopifyPlanSelect';
+import { CarrierServiceApiPage } from './CarrierServiceApiPage';
 
 type IOnboardingGateProps = {
   children: ReactNode;
 };
 
 export const OnboardingGate = ({ children }: IOnboardingGateProps) => {
-  const { ecommercePlatform, shopifyPlan } = useOnboardingStore();
+  const { ecommercePlatform, shopifyPlan, carrierApiAcknowledged, editingPlan } = useOnboardingStore();
   const [isHydrated, setIsHydrated] = useState(false);
 
   useEffect(() => {
@@ -33,9 +34,18 @@ export const OnboardingGate = ({ children }: IOnboardingGateProps) => {
     return <PlatformSelect />;
   }
 
-  // Step 2: If Shopify, select plan
-  if (ecommercePlatform === 'shopify' && !shopifyPlan) {
+  // Step 2: If Shopify, select plan (or re-editing)
+  if (ecommercePlatform === 'shopify' && (!shopifyPlan || editingPlan)) {
     return <ShopifyPlanSelect />;
+  }
+
+  // Step 3: Basic/Grow plans need Carrier Service API instructions
+  if (
+    ecommercePlatform === 'shopify' &&
+    (shopifyPlan === 'basic' || shopifyPlan === 'grow') &&
+    !carrierApiAcknowledged
+  ) {
+    return <CarrierServiceApiPage />;
   }
 
   return <>{children}</>;
