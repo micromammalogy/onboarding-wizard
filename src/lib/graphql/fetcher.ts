@@ -7,6 +7,7 @@ type IFetcherParams = {
   organizationId: string;
   merchantToken?: string;
   credentialToken?: string;
+  authCredential?: string;
 };
 
 /**
@@ -17,7 +18,7 @@ type IFetcherParams = {
 export async function graphqlFetcher<T = Record<string, unknown>>(
   params: IFetcherParams,
 ): Promise<IGraphQLProxyResponse<T>> {
-  const { schema, query, variables, organizationId, merchantToken, credentialToken } = params;
+  const { schema, query, variables, organizationId, merchantToken, credentialToken, authCredential } = params;
 
   const headers: Record<string, string> = {
     'Content-Type': 'application/json',
@@ -28,6 +29,9 @@ export async function graphqlFetcher<T = Record<string, unknown>>(
   }
   if (credentialToken) {
     headers['x-credential-token'] = credentialToken;
+  }
+  if (authCredential) {
+    headers['x-auth-credential'] = authCredential;
   }
 
   const response = await fetch(`/api/graphql/${schema}`, {

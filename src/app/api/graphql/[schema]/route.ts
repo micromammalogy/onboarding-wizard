@@ -43,6 +43,8 @@ export async function POST(
     request.headers.get('x-merchant-token') || undefined;
   const credentialToken =
     request.headers.get('x-credential-token') || undefined;
+  const authCredential =
+    request.headers.get('x-auth-credential') || undefined;
 
   let body: { query?: string; variables?: Record<string, unknown> };
   try {
@@ -71,6 +73,7 @@ export async function POST(
       organizationId,
       merchantToken,
       credentialToken,
+      authCredential,
     });
 
     if (errors.length > 0) {

@@ -51,14 +51,13 @@ const NAV_SECTIONS: INavSection[] = [
     ],
   },
   {
-    label: 'General',
-    key: 'general',
+    label: 'Account',
+    key: 'account',
     icon: <SettingsIcon size={24} />,
     items: [
-      { label: 'Business Name', page: 'business-name' },
-      { label: 'Website URL', page: 'website-url' },
-      { label: 'E-commerce Platform', page: 'ecommerce-platform' },
-      { label: 'Business Address', page: 'business-address' },
+      { label: 'General', page: 'general-settings' },
+      { label: 'Team', page: 'team' },
+      { label: 'Billing', page: 'billing' },
     ],
   },
 ];

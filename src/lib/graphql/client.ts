@@ -9,6 +9,7 @@ type IGqlServerRequestParams = {
   organizationId: string;
   merchantToken?: string;
   credentialToken?: string;
+  authCredential?: string;
 };
 
 /**
@@ -22,12 +23,14 @@ export async function gqlServerRequest<T = Record<string, unknown>>({
   organizationId,
   merchantToken,
   credentialToken,
+  authCredential,
 }: IGqlServerRequestParams): Promise<{ data: T; errors: unknown[] }> {
   const url = getGraphQLUrl(schema);
   const headers = getHeadersForSchema(schema, {
     organizationId,
     merchantToken,
     credentialToken,
+    authCredential,
   });
 
   const client = new GraphQLClient(url, { headers });

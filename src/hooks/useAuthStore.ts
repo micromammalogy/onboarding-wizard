@@ -6,6 +6,7 @@ type IAuthState = {
   organizationName: string;
   credentialToken: string;
   merchantToken: string;
+  authCredential: string;
   isAuthenticated: boolean;
   setCredentialToken: (token: string) => void;
   setOrganization: (org: {
@@ -13,6 +14,7 @@ type IAuthState = {
     organizationName: string;
   }) => void;
   setMerchantToken: (token: string) => void;
+  setAuthCredential: (token: string) => void;
   setAuthenticated: () => void;
   logout: () => void;
 };
@@ -24,6 +26,7 @@ export const useAuthStore = create<IAuthState>()(
       organizationName: '',
       credentialToken: '',
       merchantToken: '',
+      authCredential: '',
       isAuthenticated: false,
 
       setCredentialToken: (token: string) => set({ credentialToken: token }),
@@ -36,6 +39,8 @@ export const useAuthStore = create<IAuthState>()(
 
       setMerchantToken: (token: string) => set({ merchantToken: token }),
 
+      setAuthCredential: (token: string) => set({ authCredential: token }),
+
       setAuthenticated: () => set({ isAuthenticated: true }),
 
       logout: () =>
@@ -45,6 +50,7 @@ export const useAuthStore = create<IAuthState>()(
           isAuthenticated: false,
           credentialToken: '',
           merchantToken: '',
+          authCredential: '',
         }),
     }),
     {

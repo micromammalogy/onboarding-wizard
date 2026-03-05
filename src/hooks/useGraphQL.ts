@@ -21,7 +21,7 @@ export function useGraphQL<T = Record<string, unknown>>({
   variables,
   skip = false,
 }: IUseGraphQLParams) {
-  const { organizationId, isAuthenticated, credentialToken, merchantToken } = useAuthStore();
+  const { organizationId, isAuthenticated, credentialToken, merchantToken, authCredential } = useAuthStore();
 
   const key =
     !skip && isAuthenticated
@@ -38,6 +38,7 @@ export function useGraphQL<T = Record<string, unknown>>({
         organizationId,
         merchantToken,
         credentialToken,
+        authCredential,
       });
       return result;
     },

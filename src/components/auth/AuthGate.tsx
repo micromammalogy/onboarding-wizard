@@ -20,7 +20,7 @@ export const AuthGate = ({ children }: IAuthGateProps) => {
   const [tokenInput, setTokenInput] = useState('');
   const [orgSearch, setOrgSearch] = useState('');
   const [searchResults, setSearchResults] = useState<
-    { id: string; name: string; references?: { storeId: number } }[]
+    { id: string; name: string; references?: { storeId: number; companyId: number } }[]
   >([]);
   const [searching, setSearching] = useState(false);
   const [connecting, setConnecting] = useState<string | null>(null);
@@ -75,7 +75,7 @@ export const AuthGate = ({ children }: IAuthGateProps) => {
     }
   };
 
-  const handleConnect = async (orgId: string, orgName: string) => {
+  const handleConnect = async (orgId: string, orgName: string, storeId?: number) => {
     setConnecting(orgId);
     setError('');
 
@@ -97,6 +97,24 @@ export const AuthGate = ({ children }: IAuthGateProps) => {
       store.setOrganization({ organizationId: orgId, organizationName: orgName });
       store.setMerchantToken(data.merchantToken);
       store.setAuthenticated();
+
+      // Fire-and-forget: get org-scoped auth credential for the auth schema (team, etc.)
+      fetch('/api/auth/login-external', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          organizationId: orgId,
+          credentialToken: store.credentialToken,
+          storeId,
+        }),
+      })
+        .then(r => r.json())
+        .then(authData => {
+          if (authData.credential) {
+            store.setAuthCredential(authData.credential);
+          }
+        })
+        .catch(() => {});
     } catch {
       setError('Failed to connect. Please try again.');
       setConnecting(null);
@@ -287,7 +305,7 @@ export const AuthGate = ({ children }: IAuthGateProps) => {
               return (
                 <button
                   key={org.id}
-                  onClick={() => handleConnect(org.id, org.name)}
+                  onClick={() => handleConnect(org.id, org.name, org.references?.storeId)}
                   disabled={!!connecting}
                   style={{
                     display: 'flex',

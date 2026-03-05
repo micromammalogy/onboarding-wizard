@@ -16,7 +16,7 @@ export function useGraphQLMutation<T = Record<string, unknown>>({
   schema,
   query,
 }: IUseMutationParams) {
-  const { organizationId, credentialToken, merchantToken } = useAuthStore();
+  const { organizationId, credentialToken, merchantToken, authCredential } = useAuthStore();
   const [data, setData] = useState<T | null>(null);
   const [error, setError] = useState<Error | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -34,6 +34,7 @@ export function useGraphQLMutation<T = Record<string, unknown>>({
           organizationId,
           merchantToken,
           credentialToken,
+          authCredential,
         });
         setData(result.data ?? null);
         return result.data ?? null;

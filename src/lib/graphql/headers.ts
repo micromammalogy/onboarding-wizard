@@ -5,6 +5,7 @@ type IAuthContext = {
   organizationId: string;
   merchantToken?: string;
   credentialToken?: string;
+  authCredential?: string;
 };
 
 /**
@@ -44,7 +45,7 @@ export function getHeadersForSchema(
     case 'auth':
       return {
         ...base,
-        credentialtoken: auth.credentialToken || env.INTERNAL_GRAPH_TOKEN,
+        credentialtoken: auth.authCredential || auth.credentialToken || env.INTERNAL_GRAPH_TOKEN,
         senderCredential: env.AUTH_GRAPH_TOKEN,
       };
 

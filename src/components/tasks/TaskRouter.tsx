@@ -19,11 +19,10 @@ import { DefaultCountryOfOriginPage } from './defaults/DefaultCountryOfOriginPag
 import { DefaultHsCodePage } from './defaults/DefaultHsCodePage';
 import { LcgEnablePage } from './defaults/LcgEnablePage';
 
-// General
-import { BusinessNamePage } from './general/BusinessNamePage';
-import { WebsiteUrlPage } from './general/WebsiteUrlPage';
-import { EcommercePlatformPage } from './general/EcommercePlatformPage';
-import { BusinessAddressPage } from './general/BusinessAddressPage';
+// Account
+import { GeneralSettingsPage } from './general/GeneralSettingsPage';
+import { TeamPage } from './account/TeamPage';
+import { BillingPage } from './account/BillingPage';
 
 const PAGE_MAP: Record<string, React.ComponentType> = {
   // Shipping Configuration
@@ -43,11 +42,10 @@ const PAGE_MAP: Record<string, React.ComponentType> = {
   'default-hs-code': DefaultHsCodePage,
   'lcg-enable': LcgEnablePage,
 
-  // General
-  'business-name': BusinessNamePage,
-  'website-url': WebsiteUrlPage,
-  'ecommerce-platform': EcommercePlatformPage,
-  'business-address': BusinessAddressPage,
+  // Account
+  'general-settings': GeneralSettingsPage,
+  'team': TeamPage,
+  'billing': BillingPage,
 };
 
 export const TaskRouter = () => {
