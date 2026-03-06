@@ -1,7 +1,6 @@
 export const CUSTOM_MESSAGES_QUERY = `
   query localeCountryMessages(
     $storeId: Int!
-    $localeTo: String!
     $pageNames: [locale_pageName_enum!]!
     $limit: Int!
     $offset: Int!

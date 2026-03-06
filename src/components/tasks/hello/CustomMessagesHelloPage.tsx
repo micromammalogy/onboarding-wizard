@@ -62,7 +62,6 @@ export const CustomMessagesHelloPage = () => {
     schema: 'frontend',
     variables: {
       storeId: 0,
-      localeTo: 'en',
       pageNames,
       limit: 50,
       offset: 0,
