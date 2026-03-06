@@ -1,72 +1,64 @@
 'use client';
 
-import { NavigationGroup, NavigationItem } from '@zonos/amino/components/layout/NavigationGroup';
-import { BoxesIcon } from '@zonos/amino/icons/BoxesIcon';
-import { LocationIcon } from '@zonos/amino/icons/LocationIcon';
-import { ShoppingListIcon } from '@zonos/amino/icons/ShoppingListIcon';
-import { TruckIcon } from '@zonos/amino/icons/TruckIcon';
-import { FileIcon } from '@zonos/amino/icons/FileIcon';
-import { HelloIcon } from '@zonos/amino/icons/HelloIcon';
-import { CheckoutIcon } from '@zonos/amino/icons/CheckoutIcon';
-import { GlobeIcon } from '@zonos/amino/icons/GlobeIcon';
-import { SettingsIcon } from '@zonos/amino/icons/SettingsIcon';
-import { PaletteIcon } from '@zonos/amino/icons/PaletteIcon';
-import { DashboardIcon } from '@zonos/amino/icons/DashboardIcon';
 import { LogoutIcon } from '@zonos/amino/icons/LogoutIcon';
 import { useNavStore } from '@/hooks/useNavStore';
 import { useAuthStore } from '@/hooks/useAuthStore';
 import { OrgSwitcher } from './OrgSwitcher';
 import styles from './WizardSidebar.module.scss';
 
-type INavSection = {
-  label: string;
-  key: string;
-  icon: React.ReactNode;
-  items: {
-    label: string;
-    page: string;
-  }[];
+type INavGroup = {
+  header: string;
+  items: { label: string; page: string }[];
 };
 
-const NAV_SECTIONS: INavSection[] = [
+const NAV_GROUPS: INavGroup[] = [
   {
-    label: 'Shipping Settings',
-    key: 'shipping-settings',
-    icon: <BoxesIcon size={24} />,
-    items: [
-      { label: 'Fulfillment Location', page: 'fulfillment-location' },
-      { label: 'Shipping Rules', page: 'shipping-rules' },
-      { label: 'Cartonization', page: 'cartonization' },
-      { label: 'LCG Certification', page: 'lcg-certification' },
-    ],
-  },
-  {
-    label: 'Defaults / LCG',
-    key: 'defaults-lcg',
-    icon: <GlobeIcon size={24} />,
-    items: [
-      { label: 'Default Country of Origin', page: 'default-coo' },
-      { label: 'Default HS Code', page: 'default-hs-code' },
-      { label: 'LCG Enable On/Off', page: 'lcg-enable' },
-    ],
-  },
-  {
-    label: 'Account',
-    key: 'account',
-    icon: <SettingsIcon size={24} />,
+    header: 'Account',
     items: [
       { label: 'General', page: 'general-settings' },
       { label: 'Team', page: 'team' },
       { label: 'Billing', page: 'billing' },
     ],
   },
-];
-
-const STANDALONE_ITEMS = [
-  { label: 'Hello Settings', page: 'hello-settings', icon: <HelloIcon size={24} /> },
-  { label: 'Checkout Settings', page: 'checkout-settings', icon: <CheckoutIcon size={24} /> },
-  { label: 'Organization Status', page: 'organization-status', icon: <DashboardIcon size={24} /> },
-  { label: 'Branding Settings', page: 'branding-settings', icon: <PaletteIcon size={24} /> },
+  {
+    header: 'Shipping',
+    items: [
+      { label: 'Locations', page: 'locations' },
+      { label: 'Cartonization', page: 'cartonization' },
+      { label: 'Labels', page: 'labels' },
+      { label: 'Packing slips', page: 'packing-slips' },
+    ],
+  },
+  {
+    header: 'Landed cost',
+    items: [
+      { label: 'Classify', page: 'classify' },
+      { label: 'Catalog', page: 'catalog' },
+      { label: 'Tax IDs', page: 'tax-ids' },
+      { label: 'Rules', page: 'rules' },
+    ],
+  },
+  {
+    header: 'Checkout',
+    items: [
+      { label: 'Checkout settings', page: 'checkout-settings' },
+      { label: 'Custom messages', page: 'custom-messages-checkout' },
+      { label: 'Discounts', page: 'discounts' },
+    ],
+  },
+  {
+    header: 'Branding',
+    items: [
+      { label: 'Branding settings', page: 'branding-settings' },
+    ],
+  },
+  {
+    header: 'Hello',
+    items: [
+      { label: 'Hello settings', page: 'hello-settings' },
+      { label: 'Custom messages', page: 'custom-messages-hello' },
+    ],
+  },
 ];
 
 const activeStyle: React.CSSProperties = {
@@ -75,74 +67,33 @@ const activeStyle: React.CSSProperties = {
 };
 
 export const WizardSidebar = () => {
-  const { activePage, activeSection, setActivePage } = useNavStore();
+  const { activePage, setActivePage } = useNavStore();
   const { organizationName, logout } = useAuthStore();
 
   const userInitial = (organizationName || '?').charAt(0).toUpperCase();
-
-  const isSectionActive = (section: INavSection) =>
-    section.items.some(item => item.page === activePage);
 
   return (
     <div className={styles.sidebar}>
       <OrgSwitcher />
 
       <nav className={styles.navSection}>
-        {/* Grouped sections */}
-        {NAV_SECTIONS.map(section => (
-          <NavigationGroup
-            key={section.key}
-            collapsed={activeSection !== section.key}
-            content={
-              <div
-                onClick={() => {
-                  if (activeSection === section.key) {
-                    setActivePage(activePage, '');
-                  } else {
-                    setActivePage(section.items[0].page, section.key);
-                  }
-                }}
-              >
-                <NavigationItem
-                  content={section.label}
-                  icon={section.icon}
-                  isActive={isSectionActive(section)}
-                  style={isSectionActive(section) ? activeStyle : undefined}
-                />
-              </div>
-            }
-          >
-            {section.items.map(item => (
+        {NAV_GROUPS.map(group => (
+          <div key={group.header} className={styles.navGroup}>
+            <div className={styles.navGroupHeader}>{group.header}</div>
+            {group.items.map(item => (
               <div
                 key={item.page}
                 className={styles.navItemWrapper}
-                onClick={() => setActivePage(item.page, section.key)}
+                onClick={() => setActivePage(item.page)}
               >
-                <NavigationItem
-                  content={item.label}
-                  isActive={activePage === item.page}
+                <div
+                  className={styles.navItem}
                   style={activePage === item.page ? activeStyle : undefined}
-                />
+                >
+                  {item.label}
+                </div>
               </div>
             ))}
-          </NavigationGroup>
-        ))}
-
-        <div className={styles.navGap} />
-
-        {/* Standalone pages */}
-        {STANDALONE_ITEMS.map(item => (
-          <div
-            key={item.page}
-            className={styles.navItemWrapper}
-            onClick={() => setActivePage(item.page)}
-          >
-            <NavigationItem
-              content={item.label}
-              icon={item.icon}
-              isActive={activePage === item.page}
-              style={activePage === item.page ? activeStyle : undefined}
-            />
           </div>
         ))}
       </nav>
