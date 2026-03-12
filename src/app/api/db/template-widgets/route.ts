@@ -29,6 +29,9 @@ export async function GET(request: Request) {
         .order('order_index', { ascending: true });
 
       if (error) {
+        if (error.message.includes('schema cache') || error.message.includes('does not exist')) {
+          return NextResponse.json({ data: [] });
+        }
         console.error('[DB template-widgets] Error:', error.message);
         return NextResponse.json({ error: error.message }, { status: 500 });
       }
@@ -59,6 +62,9 @@ export async function GET(request: Request) {
       .order('order_index', { ascending: true });
 
     if (error) {
+      if (error.message.includes('schema cache') || error.message.includes('does not exist')) {
+        return NextResponse.json({ data: [] });
+      }
       console.error('[DB template-widgets] Error:', error.message);
       return NextResponse.json({ error: error.message }, { status: 500 });
     }

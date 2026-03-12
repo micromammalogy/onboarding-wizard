@@ -10,6 +10,10 @@ import type {
   ITemplateRule,
 } from '@/types/database';
 
+// Stable empty array to prevent infinite re-render loops when SWR errors
+// (data ?? [] creates a new reference each render, breaking useMemo/useEffect deps)
+const EMPTY_ARRAY: never[] = [];
+
 // --- Fetcher ---
 
 async function dbFetcher<T>(url: string): Promise<T> {
@@ -69,7 +73,7 @@ export function useProjects(params: IUseProjectsParams = {}) {
     { revalidateOnFocus: false },
   );
 
-  return { projects: data ?? [], error, isLoading, mutate };
+  return { projects: data ?? EMPTY_ARRAY, error, isLoading, mutate };
 }
 
 type IUseProjectReturn = {
@@ -137,7 +141,7 @@ export function useTasks(projectId: string | null) {
   };
 
   return {
-    tasks: data ?? [],
+    tasks: data ?? EMPTY_ARRAY,
     error,
     isLoading,
     mutate,
@@ -158,7 +162,7 @@ export function useFieldValuesData(projectId: string | null) {
     { revalidateOnFocus: false, shouldRetryOnError: false },
   );
 
-  return { fieldValues: data ?? [], error, isLoading: !error && isLoading, mutate };
+  return { fieldValues: data ?? EMPTY_ARRAY, error, isLoading: !error && isLoading, mutate };
 }
 
 // --- Template Widgets ---
@@ -174,7 +178,7 @@ export function useTemplateWidgets(templateTaskId: string | null) {
     { revalidateOnFocus: false, shouldRetryOnError: false },
   );
 
-  return { widgets: data ?? [], error, isLoading: !error && isLoading };
+  return { widgets: data ?? EMPTY_ARRAY, error, isLoading: !error && isLoading };
 }
 
 export function useAllTemplateWidgets(templateId: string | null) {
@@ -188,7 +192,7 @@ export function useAllTemplateWidgets(templateId: string | null) {
     { revalidateOnFocus: false, shouldRetryOnError: false },
   );
 
-  return { widgets: data ?? [], error, isLoading: !error && isLoading };
+  return { widgets: data ?? EMPTY_ARRAY, error, isLoading: !error && isLoading };
 }
 
 // --- Template Rules ---
@@ -204,7 +208,7 @@ export function useTemplateRules(templateId: string | null) {
     { revalidateOnFocus: false, shouldRetryOnError: false },
   );
 
-  return { rules: data ?? [], error, isLoading: !error && isLoading };
+  return { rules: data ?? EMPTY_ARRAY, error, isLoading: !error && isLoading };
 }
 
 // --- Users ---
@@ -218,5 +222,5 @@ export function useUsers(role?: string) {
     { revalidateOnFocus: false },
   );
 
-  return { users: data ?? [], error, isLoading };
+  return { users: data ?? EMPTY_ARRAY, error, isLoading };
 }

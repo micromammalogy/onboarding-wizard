@@ -32,6 +32,10 @@ export async function GET(request: Request) {
     const { data, error } = await query;
 
     if (error) {
+      // Gracefully handle missing table (migration not yet applied)
+      if (error.message.includes('schema cache') || error.message.includes('does not exist')) {
+        return NextResponse.json({ data: [] });
+      }
       console.error('[DB field-values] Error:', error.message);
       return NextResponse.json({ error: error.message }, { status: 500 });
     }

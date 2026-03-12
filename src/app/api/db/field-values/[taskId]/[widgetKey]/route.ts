@@ -29,6 +29,9 @@ export async function PUT(
           { status: 404 },
         );
       }
+      if (error.message.includes('schema cache') || error.message.includes('does not exist')) {
+        return NextResponse.json({ data: null });
+      }
       console.error('[DB field-values] Update error:', error.message);
       return NextResponse.json({ error: error.message }, { status: 500 });
     }

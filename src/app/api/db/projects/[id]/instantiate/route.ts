@@ -82,6 +82,18 @@ export async function POST(
       .in('template_task_id', templateTaskIds);
 
     if (widgetError) {
+      // Gracefully handle missing table (migration not yet applied)
+      if (widgetError.message.includes('schema cache') || widgetError.message.includes('does not exist')) {
+        // Skip field value creation, just return tasks
+        await supabase
+          .from('projects')
+          .update({ template_id: templateId, status: 'in_progress' })
+          .eq('id', projectId);
+
+        return NextResponse.json({
+          data: { tasks_created: createdTasks.length, field_values_created: 0 },
+        }, { status: 201 });
+      }
       return NextResponse.json({ error: widgetError.message }, { status: 500 });
     }
 

@@ -32,6 +32,9 @@ export async function GET(request: Request) {
     const { data, error } = await query;
 
     if (error) {
+      if (error.message.includes('schema cache') || error.message.includes('does not exist')) {
+        return NextResponse.json({ data: [] });
+      }
       console.error('[DB template-rules] Error:', error.message);
       return NextResponse.json({ error: error.message }, { status: 500 });
     }
