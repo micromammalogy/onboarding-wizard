@@ -9277,7 +9277,7 @@ INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, due_dat
   'due_date',
   ARRAY['b0000126-0000-0000-0000-000000000001']::uuid[],
   'form_field',
-  NULL,
+  'Expected_Go_Live_Date',
   1,
   'hours',
   'before',
@@ -9303,7 +9303,7 @@ INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, due_dat
   'due_date',
   ARRAY['b0000063-0000-0000-0000-000000000001']::uuid[],
   'form_field',
-  NULL,
+  'Meeting_#1_Date_(automates_due_dates_of_tasks)',
   1,
   'hours',
   'before',
@@ -9316,7 +9316,7 @@ INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, due_dat
   'due_date',
   ARRAY['b0000013-0000-0000-0000-000000000001']::uuid[],
   'form_field',
-  NULL,
+  'Meeting_#1_Date_(automates_due_dates_of_tasks)',
   1,
   'days',
   'after',
@@ -9329,7 +9329,7 @@ INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, due_dat
   'due_date',
   ARRAY['b0000036-0000-0000-0000-000000000001']::uuid[],
   'form_field',
-  NULL,
+  'Meeting_#1_Date_(automates_due_dates_of_tasks)',
   1,
   'hours',
   'before',
@@ -9342,7 +9342,7 @@ INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, due_dat
   'due_date',
   ARRAY['b0000039-0000-0000-0000-000000000001']::uuid[],
   'form_field',
-  NULL,
+  'Meeting_#1_Date_(automates_due_dates_of_tasks)',
   5,
   'days',
   'after',
@@ -9355,7 +9355,7 @@ INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, due_dat
   'due_date',
   ARRAY['b0000008-0000-0000-0000-000000000001']::uuid[],
   'form_field',
-  NULL,
+  'Meeting_#1_Date_(automates_due_dates_of_tasks)',
   1,
   'hours',
   'after',
@@ -9368,7 +9368,7 @@ INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, due_dat
   'due_date',
   ARRAY['b0000037-0000-0000-0000-000000000001']::uuid[],
   'form_field',
-  NULL,
+  'Meeting_#1_Date_(automates_due_dates_of_tasks)',
   1,
   'hours',
   'before',
@@ -9381,7 +9381,7 @@ INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, due_dat
   'due_date',
   ARRAY['b0000040-0000-0000-0000-000000000001']::uuid[],
   'form_field',
-  NULL,
+  'Meeting_#1_Date_(automates_due_dates_of_tasks)',
   1,
   'days',
   'after',
@@ -9394,7 +9394,7 @@ INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, due_dat
   'due_date',
   ARRAY['b0000064-0000-0000-0000-000000000001']::uuid[],
   'form_field',
-  NULL,
+  'Meeting_#1_Date_(automates_due_dates_of_tasks)',
   1,
   'hours',
   'before',
@@ -9407,7 +9407,7 @@ INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, due_dat
   'due_date',
   ARRAY['b0000065-0000-0000-0000-000000000001']::uuid[],
   'form_field',
-  NULL,
+  'Meeting_#1_Date_(automates_due_dates_of_tasks)',
   1,
   'hours',
   'before',
@@ -9420,7 +9420,7 @@ INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, due_dat
   'due_date',
   ARRAY['b0000066-0000-0000-0000-000000000001']::uuid[],
   'form_field',
-  NULL,
+  'Meeting_#1_Date_(automates_due_dates_of_tasks)',
   1,
   'hours',
   'before',
@@ -9433,7 +9433,7 @@ INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, due_dat
   'due_date',
   ARRAY['b0000068-0000-0000-0000-000000000001']::uuid[],
   'form_field',
-  NULL,
+  'Meeting_#1_Date_(automates_due_dates_of_tasks)',
   1,
   'hours',
   'before',
@@ -9446,7 +9446,7 @@ INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, due_dat
   'due_date',
   ARRAY['b0000069-0000-0000-0000-000000000001']::uuid[],
   'form_field',
-  NULL,
+  'Meeting_#1_Date_(automates_due_dates_of_tasks)',
   1,
   'days',
   'after',
@@ -9459,7 +9459,7 @@ INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, due_dat
   'due_date',
   ARRAY['b0000074-0000-0000-0000-000000000001']::uuid[],
   'form_field',
-  NULL,
+  'Meeting_#1_Date_(automates_due_dates_of_tasks)',
   5,
   'days',
   'after',
@@ -9472,7 +9472,7 @@ INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, due_dat
   'due_date',
   ARRAY['b0000078-0000-0000-0000-000000000001']::uuid[],
   'form_field',
-  NULL,
+  'Meeting_#1_Date_(automates_due_dates_of_tasks)',
   5,
   'days',
   'after',
@@ -9485,7 +9485,7 @@ INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, due_dat
   'due_date',
   ARRAY['b0000079-0000-0000-0000-000000000001']::uuid[],
   'form_field',
-  NULL,
+  'Meeting_#1_Date_(automates_due_dates_of_tasks)',
   5,
   'days',
   'after',
@@ -9498,7 +9498,7 @@ INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, due_dat
   'due_date',
   ARRAY['b0000080-0000-0000-0000-000000000001']::uuid[],
   'form_field',
-  NULL,
+  'Meeting_#1_Date_(automates_due_dates_of_tasks)',
   7,
   'days',
   'after',
@@ -9525,7 +9525,7 @@ INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, assignm
   'a0000000-0000-0000-0000-000000000001',
   'assignment',
   ARRAY['b0000075-0000-0000-0000-000000000001']::uuid[],
-  NULL,
+  'Project_Manager_Email',
   'tJ0k-yIpKrM76eEbUSlN4Q'
 );
 INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, assignment_source_widget_key, ps_rule_id) VALUES (
@@ -9533,7 +9533,7 @@ INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, assignm
   'a0000000-0000-0000-0000-000000000001',
   'assignment',
   ARRAY['b0000073-0000-0000-0000-000000000001']::uuid[],
-  NULL,
+  'Project_Manager_Email',
   'viFC_Im0ziLgDIT0uxhAkw'
 );
 INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, assignment_source_widget_key, ps_rule_id) VALUES (
@@ -9541,7 +9541,7 @@ INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, assignm
   'a0000000-0000-0000-0000-000000000001',
   'assignment',
   ARRAY['b0000124-0000-0000-0000-000000000001']::uuid[],
-  NULL,
+  'Project_Manager_Email',
   'uXe1vdkadsEK8rUZLwtG7g'
 );
 INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, assignment_source_widget_key, ps_rule_id) VALUES (
@@ -9549,7 +9549,7 @@ INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, assignm
   'a0000000-0000-0000-0000-000000000001',
   'assignment',
   ARRAY['b0000002-0000-0000-0000-000000000001']::uuid[],
-  NULL,
+  'Project_Manager_Email',
   'pFX-tDSUz0-71jAoKP9I3g'
 );
 INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, assignment_source_widget_key, ps_rule_id) VALUES (
@@ -9557,7 +9557,7 @@ INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, assignm
   'a0000000-0000-0000-0000-000000000001',
   'assignment',
   ARRAY['b0000012-0000-0000-0000-000000000001']::uuid[],
-  NULL,
+  'Project_Manager_Email',
   't3cYEMLOT52RhrleQ9dLIg'
 );
 INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, assignment_source_widget_key, ps_rule_id) VALUES (
@@ -9565,7 +9565,7 @@ INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, assignm
   'a0000000-0000-0000-0000-000000000001',
   'assignment',
   ARRAY['b0000001-0000-0000-0000-000000000001']::uuid[],
-  NULL,
+  'Zonos_AE_Email',
   'tIVl1jJ6Fb8RwORVFv9PPA'
 );
 INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, assignment_source_widget_key, ps_rule_id) VALUES (
@@ -9573,7 +9573,7 @@ INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, assignm
   'a0000000-0000-0000-0000-000000000001',
   'assignment',
   ARRAY['b0000001-0000-0000-0000-000000000001']::uuid[],
-  NULL,
+  'Project_Manager_Email',
   'op-E43SZf2pDhH_Ytf9IaA'
 );
 INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, assignment_source_widget_key, ps_rule_id) VALUES (
@@ -9581,7 +9581,7 @@ INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, assignm
   'a0000000-0000-0000-0000-000000000001',
   'assignment',
   ARRAY['b0000006-0000-0000-0000-000000000001']::uuid[],
-  NULL,
+  'Zonos_Accounting',
   't_HKhFNqnyin4R15D0JN8A'
 );
 INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, assignment_source_widget_key, ps_rule_id) VALUES (
@@ -9589,7 +9589,7 @@ INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, assignm
   'a0000000-0000-0000-0000-000000000001',
   'assignment',
   ARRAY['b0000122-0000-0000-0000-000000000001']::uuid[],
-  NULL,
+  'Project_Manager_Email',
   'n8sN41nArZEVuzawv9hL3A'
 );
 INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, assignment_source_widget_key, ps_rule_id) VALUES (
@@ -9597,7 +9597,7 @@ INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, assignm
   'a0000000-0000-0000-0000-000000000001',
   'assignment',
   ARRAY['b0000009-0000-0000-0000-000000000001']::uuid[],
-  NULL,
+  'Project_Manager_Email',
   'uxTKQQqydIi6teoshVBKTA'
 );
 INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, assignment_source_widget_key, ps_rule_id) VALUES (
@@ -9605,7 +9605,7 @@ INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, assignm
   'a0000000-0000-0000-0000-000000000001',
   'assignment',
   ARRAY['b0000067-0000-0000-0000-000000000001']::uuid[],
-  NULL,
+  'Project_Manager_Email',
   'rixaIrv4OeGL2Ln-0Z9GHQ'
 );
 INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, assignment_source_widget_key, ps_rule_id) VALUES (
@@ -9613,7 +9613,7 @@ INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, assignm
   'a0000000-0000-0000-0000-000000000001',
   'assignment',
   ARRAY['b0000013-0000-0000-0000-000000000001']::uuid[],
-  NULL,
+  'Project_Manager_Email',
   'hC50Osp7ePzxHoi1GcZGtQ'
 );
 INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, assignment_source_widget_key, ps_rule_id) VALUES (
@@ -9621,7 +9621,7 @@ INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, assignm
   'a0000000-0000-0000-0000-000000000001',
   'assignment',
   ARRAY['b0000007-0000-0000-0000-000000000001']::uuid[],
-  NULL,
+  'Zonos_Accounting',
   'qqQNiV85rX1YaY3TuCpNPg'
 );
 INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, assignment_source_widget_key, ps_rule_id) VALUES (
@@ -9629,7 +9629,7 @@ INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, assignm
   'a0000000-0000-0000-0000-000000000001',
   'assignment',
   ARRAY['b0000003-0000-0000-0000-000000000001']::uuid[],
-  NULL,
+  'Project_Manager_Email',
   'hvwCi5WWA_TMF3ARtrVKkA'
 );
 INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, assignment_source_widget_key, ps_rule_id) VALUES (
@@ -9637,7 +9637,7 @@ INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, assignm
   'a0000000-0000-0000-0000-000000000001',
   'assignment',
   ARRAY['b0000126-0000-0000-0000-000000000001']::uuid[],
-  NULL,
+  'Project_Manager_Email',
   'hmYySleA-lqkmDp1_r5H_Q'
 );
 

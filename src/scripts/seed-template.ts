@@ -166,7 +166,7 @@ function main() {
   const dueDateRules: IRawDueDateRule[] = raw.dueDateRules || [];
   const assignmentRules: IRawAssignmentRule[] = raw.taskAssignmentRules || [];
 
-  // Build widget groupId -> key mapping for resolving rules
+  // Build widget id -> key mapping from task widgets (used for conditional rules)
   const widgetGroupToKey = new Map<string, string>();
   const widgetGroupToTaskGroup = new Map<string, string>();
   for (const task of tasks) {
@@ -175,6 +175,21 @@ function main() {
         widgetGroupToKey.set(w.id, w.key);
       }
       widgetGroupToTaskGroup.set(w.id, task.groupId);
+    }
+  }
+
+  // Build rawWidget header.group.id -> key mapping (used for due date + assignment rules)
+  // Due date rules reference formFieldWidgetGroup.id which maps to header.group.id in rawWidgets
+  type IRawWidgetFull = { id: string; key?: string; header?: { group?: { id: string } } };
+  const rawWidgets: IRawWidgetFull[] = raw.rawWidgets || [];
+  const widgetHeaderGroupToKey = new Map<string, string>();
+  for (const rw of rawWidgets) {
+    const groupId = rw.header?.group?.id;
+    if (groupId) {
+      const key = rw.key || widgetGroupToKey.get(rw.id);
+      if (key) {
+        widgetHeaderGroupToKey.set(groupId, key);
+      }
     }
   }
 
@@ -390,7 +405,7 @@ function main() {
 
     const source = rule.sourceType === 'ChecklistStartDate' ? 'checklist_start' : 'form_field';
     const sourceWidgetKey = rule.formFieldWidgetGroup
-      ? widgetGroupToKey.get(rule.formFieldWidgetGroup.id) || null
+      ? widgetHeaderGroupToKey.get(rule.formFieldWidgetGroup.id) || widgetGroupToKey.get(rule.formFieldWidgetGroup.id) || null
       : null;
 
     const offset = rule.dueOffset;
@@ -432,7 +447,7 @@ function main() {
     if (!targetTaskId) continue;
 
     const sourceWidgetKey = rule.sourceFormFieldWidgetGroup
-      ? widgetGroupToKey.get(rule.sourceFormFieldWidgetGroup.id) || null
+      ? widgetHeaderGroupToKey.get(rule.sourceFormFieldWidgetGroup.id) || widgetGroupToKey.get(rule.sourceFormFieldWidgetGroup.id) || null
       : null;
 
     lines.push(`INSERT INTO template_rules (id, template_id, rule_type, target_task_ids, assignment_source_widget_key, ps_rule_id) VALUES (`);

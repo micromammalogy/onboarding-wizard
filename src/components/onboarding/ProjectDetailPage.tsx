@@ -127,9 +127,22 @@ export function ProjectDetailPage({ projectId }: IProjectDetailPageProps) {
     }
   }, [tasks, selectedTaskId, selectTask]);
 
-  // Compute due dates
+  // Compute due dates (returns Map<templateTaskId, Date>)
   const projectStartDate = project?.start_date ? new Date(project.start_date) : null;
-  const computedDueDates = useTaskDueDates(dueDateRules, projectStartDate);
+  const rawDueDates = useTaskDueDates(dueDateRules, projectStartDate);
+
+  // Remap template task IDs → project task IDs so lookups work with task.id
+  const computedDueDates = useMemo(() => {
+    if (rawDueDates.size === 0) return rawDueDates;
+    const mapped = new Map<string, Date>();
+    for (const t of tasks) {
+      if (t.template_task_id) {
+        const date = rawDueDates.get(t.template_task_id);
+        if (date) mapped.set(t.id, date);
+      }
+    }
+    return mapped;
+  }, [rawDueDates, tasks]);
 
   // Compute badge data: which template tasks have email widgets, conditional rules, due date rules
   const taskBadges = useMemo(() => {
