@@ -21,21 +21,42 @@ export async function GET(request: Request) {
       );
     }
 
-    let query = supabase
-      .from('template_widgets')
-      .select('*')
-      .order('order_index', { ascending: true });
-
     if (templateTaskId) {
-      query = query.eq('template_task_id', templateTaskId);
-    } else if (templateId) {
-      query = query.eq(
-        'template_task_id',
-        supabase.from('template_tasks').select('id').eq('template_id', templateId),
-      );
+      const { data, error } = await supabase
+        .from('template_widgets')
+        .select('*')
+        .eq('template_task_id', templateTaskId)
+        .order('order_index', { ascending: true });
+
+      if (error) {
+        console.error('[DB template-widgets] Error:', error.message);
+        return NextResponse.json({ error: error.message }, { status: 500 });
+      }
+
+      return NextResponse.json({ data });
     }
 
-    const { data, error } = await query;
+    // For template_id, first get all template_task ids, then fetch widgets
+    const { data: taskRows, error: taskError } = await supabase
+      .from('template_tasks')
+      .select('id')
+      .eq('template_id', templateId!);
+
+    if (taskError) {
+      console.error('[DB template-widgets] Task lookup error:', taskError.message);
+      return NextResponse.json({ error: taskError.message }, { status: 500 });
+    }
+
+    const taskIds = (taskRows ?? []).map((r: { id: string }) => r.id);
+    if (taskIds.length === 0) {
+      return NextResponse.json({ data: [] });
+    }
+
+    const { data, error } = await supabase
+      .from('template_widgets')
+      .select('*')
+      .in('template_task_id', taskIds)
+      .order('order_index', { ascending: true });
 
     if (error) {
       console.error('[DB template-widgets] Error:', error.message);
