@@ -1,0 +1,129 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--amino-gray-0);
+  border-right: 1px solid var(--amino-border-subtle);
+  user-select: none;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  margin: 0 8px 4px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--amino-gray-500);
+  transition: background 0.1s, color 0.1s;
+
+  &:hover {
+    background: var(--amino-gray-100);
+    color: var(--amino-gray-700);
+  }
+}
+
+.navSection {
+  flex: 1;
+  overflow-y: auto;
+  padding: 4px 8px;
+}
+
+.navGroup {
+  margin-bottom: 4px;
+}
+
+.navGroupHeader {
+  padding: 12px 12px 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--amino-gray-500);
+}
+
+.navItemWrapper {
+  cursor: pointer;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--amino-gray-700);
+  transition: background 0.1s;
+
+  &:hover {
+    background: var(--amino-gray-100);
+  }
+}
+
+.navLink {
+  margin-left: auto;
+  font-size: 11px;
+  color: var(--amino-blue-500);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.userFooter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-top: 1px solid var(--amino-border-subtle);
+  cursor: pointer;
+
+  &:hover {
+    background: var(--amino-gray-50);
+  }
+}
+
+.userAvatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--amino-purple-400);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--amino-gray-0);
+  font-size: 12px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.userName {
+  font-size: 13px;
+  color: var(--amino-gray-800);
+  font-weight: 500;
+}
+
+.logoutButton {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: var(--amino-gray-400);
+  cursor: pointer;
+  transition: background 0.1s, color 0.1s;
+
+  &:hover {
+    background: var(--amino-red-50);
+    color: var(--amino-red-600);
+  }
+}

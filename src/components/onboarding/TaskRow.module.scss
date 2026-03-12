@@ -1,0 +1,110 @@
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--amino-border-subtle);
+  transition: background 0.1s;
+
+  &:hover {
+    background: var(--amino-gray-50);
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.rowComplete {
+  opacity: 0.7;
+}
+
+.rowOverdue {
+  background: var(--amino-red-50);
+
+  &:hover {
+    background: var(--amino-red-100);
+  }
+}
+
+.checkbox {
+  flex-shrink: 0;
+  padding-top: 2px;
+  cursor: pointer;
+}
+
+.checkboxEmpty {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--amino-gray-300);
+  transition: border-color 0.15s;
+
+  &:hover {
+    border-color: var(--amino-blue-500);
+  }
+}
+
+.checkboxDone {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--amino-green-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--amino-gray-900);
+}
+
+.titleDone {
+  text-decoration: line-through;
+  color: var(--amino-gray-500);
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--amino-gray-500);
+}
+
+.merchantTag {
+  color: var(--amino-orange-600);
+  font-weight: 500;
+}
+
+.metaOverdue {
+  color: var(--amino-red-600);
+  font-weight: 500;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
