@@ -30,7 +30,7 @@ export function OnboardingHeader() {
         </span>
         {view === 'project-detail' && project && (
           <>
-            <ChevronRightIcon size={12} color="var(--amino-gray-400)" />
+            <ChevronRightIcon size={12} color="gray400" />
             <span className={styles.headerTitle}>
               {project.merchant_name}
             </span>
