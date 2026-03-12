@@ -17,6 +17,31 @@
   font-weight: 600;
   color: var(--amino-gray-900);
   margin: 0;
+  cursor: text;
+  border-radius: 4px;
+  padding: 2px 4px;
+  margin: -2px -4px;
+
+  &:hover {
+    background: var(--amino-gray-50);
+  }
+}
+
+.titleInput {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--amino-gray-900);
+  border: 1px solid var(--amino-blue-400);
+  border-radius: 6px;
+  padding: 4px 8px;
+  outline: none;
+  flex: 1;
+  font-family: inherit;
+  background: var(--amino-gray-0);
+
+  &:focus {
+    box-shadow: 0 0 0 2px var(--amino-blue-100);
+  }
 }
 
 .description {
@@ -24,6 +49,41 @@
   color: var(--amino-gray-600);
   line-height: 1.5;
   margin: 0;
+  cursor: text;
+  border-radius: 4px;
+  padding: 4px 6px;
+  margin: -4px -6px;
+  min-height: 21px;
+
+  &:hover {
+    background: var(--amino-gray-50);
+  }
+}
+
+.descInput {
+  font-size: 14px;
+  color: var(--amino-gray-800);
+  line-height: 1.5;
+  border: 1px solid var(--amino-blue-400);
+  border-radius: 6px;
+  padding: 8px;
+  outline: none;
+  font-family: inherit;
+  resize: vertical;
+  background: var(--amino-gray-0);
+
+  &:focus {
+    box-shadow: 0 0 0 2px var(--amino-blue-100);
+  }
+}
+
+.deleteBtn {
+  margin-left: auto;
+  color: var(--amino-gray-500);
+
+  &:hover {
+    color: var(--amino-red-600);
+  }
 }
 
 .controls {
@@ -51,4 +111,20 @@
   font-size: 14px;
   color: var(--amino-gray-800);
   font-weight: 500;
+}
+
+.dateInput {
+  font-size: 13px;
+  color: var(--amino-gray-800);
+  border: 1px solid var(--amino-gray-300);
+  border-radius: 6px;
+  padding: 6px 8px;
+  font-family: inherit;
+  background: var(--amino-gray-0);
+
+  &:focus {
+    border-color: var(--amino-blue-400);
+    outline: none;
+    box-shadow: 0 0 0 2px var(--amino-blue-100);
+  }
 }

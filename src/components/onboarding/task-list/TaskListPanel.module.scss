@@ -39,7 +39,16 @@
   transition: width 0.3s ease;
 }
 
+.headerOverdue {
+  color: var(--amino-red-600);
+  font-weight: 600;
+}
+
 .sections {
   flex: 1;
   overflow-y: auto;
+}
+
+.addTaskRow {
+  padding: 8px 16px 16px;
 }

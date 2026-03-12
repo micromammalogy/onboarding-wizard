@@ -10,6 +10,7 @@ type ITaskDetailPanelProps = {
   widgets: ITemplateWidget[];
   computedDueDate?: Date | null;
   onUpdate: (taskId: string, updates: ITaskUpdate) => Promise<unknown>;
+  onDelete?: (taskId: string) => Promise<void>;
 };
 
 export function TaskDetailPanel({
@@ -17,6 +18,7 @@ export function TaskDetailPanel({
   widgets,
   computedDueDate,
   onUpdate,
+  onDelete,
 }: ITaskDetailPanelProps) {
   // Filter and sort widgets for this task
   const taskWidgets = widgets
@@ -29,6 +31,7 @@ export function TaskDetailPanel({
         task={task}
         computedDueDate={computedDueDate}
         onUpdate={onUpdate}
+        onDelete={onDelete}
       />
 
       {taskWidgets.length > 0 && (

@@ -1,14 +1,17 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { Select } from '@zonos/amino/components/select/Select';
 import { Input } from '@zonos/amino/components/input/Input';
 import { Badge } from '@zonos/amino/components/badge/Badge';
+import { Button } from '@zonos/amino/components/button/Button';
+import { SettingsIcon } from '@zonos/amino/icons/SettingsIcon';
 import { useProjects } from '@/hooks/useSupabase';
 import { useOnboardingNavStore } from '@/hooks/useOnboardingNavStore';
 import { LoadingState } from '@/components/ui/LoadingState';
 import { ErrorState } from '@/components/ui/ErrorState';
 import { ProgressBar } from '@/components/onboarding/ProgressBar';
+import { OverdueCount } from '@/components/onboarding/OverdueCount';
 import type { IProject, IProjectStatus } from '@/types/database';
 import styles from './ProjectListPage.module.scss';
 
@@ -39,6 +42,63 @@ const STATUS_LABELS: Record<IProjectStatus, string> = {
   canceled: 'Canceled',
 };
 
+// Default columns that are always available
+type IDefaultColumnKey =
+  | 'merchant'
+  | 'platform'
+  | 'ae'
+  | 'ob_rep'
+  | 'start'
+  | 'days'
+  | 'status'
+  | 'progress'
+  | 'overdue';
+
+type IColumnDef = {
+  key: IDefaultColumnKey;
+  label: string;
+  sortField?: keyof IProject;
+};
+
+const DEFAULT_COLUMNS: IColumnDef[] = [
+  { key: 'merchant', label: 'Merchant', sortField: 'merchant_name' },
+  { key: 'platform', label: 'Platform', sortField: 'platform' },
+  { key: 'ae', label: 'AE' },
+  { key: 'ob_rep', label: 'OB Rep' },
+  { key: 'start', label: 'Start', sortField: 'start_date' },
+  { key: 'days', label: 'Days' },
+  { key: 'status', label: 'Status', sortField: 'status' },
+  { key: 'progress', label: 'Progress' },
+  { key: 'overdue', label: 'Overdue' },
+];
+
+const DEFAULT_VISIBLE_KEYS: IDefaultColumnKey[] = [
+  'merchant', 'platform', 'ae', 'ob_rep', 'start', 'days', 'status', 'progress', 'overdue',
+];
+
+const STORAGE_KEY = 'onboarding-column-prefs';
+
+function loadColumnPrefs(): IDefaultColumnKey[] {
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored) {
+      const parsed = JSON.parse(stored);
+      if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+    }
+  } catch {
+    // ignore
+  }
+  return DEFAULT_VISIBLE_KEYS;
+}
+
+function saveColumnPrefs(keys: IDefaultColumnKey[]) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(keys));
+  } catch {
+    // ignore
+  }
+}
+
 function formatDate(dateStr: string | null): string {
   if (!dateStr) return '—';
   return new Date(dateStr).toLocaleDateString('en-US', {
@@ -60,12 +120,49 @@ export function ProjectListPage() {
   const [search, setSearch] = useState('');
   const [sortField, setSortField] = useState<keyof IProject>('created_at');
   const [sortAsc, setSortAsc] = useState(false);
+  const [visibleColumns, setVisibleColumns] = useState<IDefaultColumnKey[]>(DEFAULT_VISIBLE_KEYS);
+  const [pickerOpen, setPickerOpen] = useState(false);
+  const pickerRef = useRef<HTMLDivElement>(null);
+
+  // Load saved prefs on mount
+  useEffect(() => {
+    setVisibleColumns(loadColumnPrefs());
+  }, []);
 
   const { projects, isLoading, error, mutate } = useProjects({
     status: statusFilter || undefined,
   });
 
   const { openProject } = useOnboardingNavStore();
+
+  // Close picker on outside click
+  useEffect(() => {
+    if (!pickerOpen) return;
+    const handleClick = (e: MouseEvent) => {
+      if (pickerRef.current && !pickerRef.current.contains(e.target as Node)) {
+        setPickerOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, [pickerOpen]);
+
+  const toggleColumn = useCallback((key: IDefaultColumnKey) => {
+    setVisibleColumns(prev => {
+      const next = prev.includes(key)
+        ? prev.filter(k => k !== key)
+        : [...prev, key];
+      // Don't allow removing all columns
+      if (next.length === 0) return prev;
+      saveColumnPrefs(next);
+      return next;
+    });
+  }, []);
+
+  const activeColumns = useMemo(
+    () => DEFAULT_COLUMNS.filter(c => visibleColumns.includes(c.key)),
+    [visibleColumns],
+  );
 
   const filtered = projects.filter(p => {
     if (!search) return true;
@@ -99,6 +196,42 @@ export function ProjectListPage() {
   if (isLoading) return <LoadingState message="Loading projects..." />;
   if (error) return <ErrorState message={error.message} onRetry={() => mutate()} />;
 
+  const renderCell = (project: (typeof projects)[number], col: IColumnDef) => {
+    switch (col.key) {
+      case 'merchant':
+        return (
+          <div className={styles.merchantCell}>
+            <span className={styles.merchantName}>{project.merchant_name}</span>
+            <span className={styles.merchantId}>#{project.merchant_id}</span>
+          </div>
+        );
+      case 'platform':
+        return project.platform || '—';
+      case 'ae':
+        return project.ae?.name || '—';
+      case 'ob_rep':
+        return project.ob_rep?.name || '—';
+      case 'start':
+        return formatDate(project.start_date);
+      case 'days': {
+        const days = getDaysInOnboarding(project.start_date);
+        return days != null ? `${days}d` : '—';
+      }
+      case 'status':
+        return (
+          <Badge color={STATUS_COLORS[project.status]}>
+            {STATUS_LABELS[project.status]}
+          </Badge>
+        );
+      case 'progress':
+        return <ProgressBar projectId={project.id} compact />;
+      case 'overdue':
+        return <OverdueCount projectId={project.id} />;
+      default:
+        return '—';
+    }
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.pageHeader}>
@@ -125,84 +258,73 @@ export function ProjectListPage() {
             size="sm"
           />
         </div>
+        <div className={styles.columnPickerWrapper} ref={pickerRef}>
+          <Button
+            size="sm"
+            variant="subtle"
+            icon={<SettingsIcon size={14} />}
+            onClick={() => setPickerOpen(!pickerOpen)}
+          >
+            Columns
+          </Button>
+          {pickerOpen && (
+            <div className={styles.columnPicker}>
+              <div className={styles.pickerTitle}>Show columns</div>
+              {DEFAULT_COLUMNS.map(col => (
+                <label key={col.key} className={styles.pickerItem}>
+                  <input
+                    type="checkbox"
+                    checked={visibleColumns.includes(col.key)}
+                    onChange={() => toggleColumn(col.key)}
+                  />
+                  <span>{col.label}</span>
+                </label>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
 
       <div className={styles.tableWrapper}>
         <table className={styles.table}>
           <thead>
             <tr>
-              <th className={styles.th} onClick={() => handleSort('merchant_name')}>
-                Merchant {sortField === 'merchant_name' && (sortAsc ? '↑' : '↓')}
-              </th>
-              <th className={styles.th} onClick={() => handleSort('platform')}>
-                Platform {sortField === 'platform' && (sortAsc ? '↑' : '↓')}
-              </th>
-              <th className={styles.th}>AE</th>
-              <th className={styles.th}>OB Rep</th>
-              <th className={styles.th} onClick={() => handleSort('start_date')}>
-                Start {sortField === 'start_date' && (sortAsc ? '↑' : '↓')}
-              </th>
-              <th className={styles.th}>Days</th>
-              <th className={styles.th} onClick={() => handleSort('status')}>
-                Status {sortField === 'status' && (sortAsc ? '↑' : '↓')}
-              </th>
-              <th className={styles.th}>Progress</th>
+              {activeColumns.map(col => (
+                <th
+                  key={col.key}
+                  className={styles.th}
+                  onClick={col.sortField ? () => handleSort(col.sortField!) : undefined}
+                  style={col.sortField ? undefined : { cursor: 'default' }}
+                >
+                  {col.label}
+                  {col.sortField && sortField === col.sortField && (sortAsc ? ' ↑' : ' ↓')}
+                </th>
+              ))}
             </tr>
           </thead>
           <tbody>
             {sorted.length === 0 ? (
               <tr>
-                <td colSpan={8} className={styles.emptyCell}>
+                <td colSpan={activeColumns.length} className={styles.emptyCell}>
                   {search || statusFilter
                     ? 'No projects match your filters'
                     : 'No onboarding projects yet'}
                 </td>
               </tr>
             ) : (
-              sorted.map(project => {
-                const days = getDaysInOnboarding(project.start_date);
-                return (
-                  <tr
-                    key={project.id}
-                    className={styles.row}
-                    onClick={() => openProject(project.id)}
-                  >
-                    <td className={styles.td}>
-                      <div className={styles.merchantCell}>
-                        <span className={styles.merchantName}>
-                          {project.merchant_name}
-                        </span>
-                        <span className={styles.merchantId}>
-                          #{project.merchant_id}
-                        </span>
-                      </div>
+              sorted.map(project => (
+                <tr
+                  key={project.id}
+                  className={styles.row}
+                  onClick={() => openProject(project.id)}
+                >
+                  {activeColumns.map(col => (
+                    <td key={col.key} className={styles.td}>
+                      {renderCell(project, col)}
                     </td>
-                    <td className={styles.td}>
-                      {project.platform || '—'}
-                    </td>
-                    <td className={styles.td}>
-                      {project.ae?.name || '—'}
-                    </td>
-                    <td className={styles.td}>
-                      {project.ob_rep?.name || '—'}
-                    </td>
-                    <td className={styles.td}>
-                      {formatDate(project.start_date)}
-                    </td>
-                    <td className={styles.td}>
-                      {days != null ? `${days}d` : '—'}
-                    </td>
-                    <td className={styles.td}>
-                      <Badge color={STATUS_COLORS[project.status]}>
-                        {STATUS_LABELS[project.status]}
-                      </Badge>
-                    </td>
-                    <td className={styles.td}>
-                      <ProgressBar projectId={project.id} compact />
-                    </td>
-                  </tr>
-                );
-              })
+                  ))}
+                </tr>
+              ))
             )}
           </tbody>
         </table>
