@@ -2,9 +2,7 @@
 
 import { useState, useRef, useCallback } from 'react';
 import { Badge } from '@zonos/amino/components/badge/Badge';
-import { Button } from '@zonos/amino/components/button/Button';
 import { Select } from '@zonos/amino/components/select/Select';
-import { TrashCanIcon } from '@zonos/amino/icons/TrashCanIcon';
 import type { ITask, ITaskStatus, ITaskUpdate, ITaskAssigneeType } from '@/types/database';
 import styles from './TaskHeader.module.scss';
 
@@ -12,7 +10,6 @@ type ITaskHeaderProps = {
   task: ITask;
   computedDueDate?: Date | null;
   onUpdate: (taskId: string, updates: ITaskUpdate) => Promise<unknown>;
-  onDelete?: (taskId: string) => Promise<void>;
 };
 
 const STATUS_OPTIONS = [
@@ -52,7 +49,7 @@ function toDateInputValue(date: Date | string | null): string {
   return d.toISOString().split('T')[0];
 }
 
-export function TaskHeader({ task, computedDueDate, onUpdate, onDelete }: ITaskHeaderProps) {
+export function TaskHeader({ task, computedDueDate, onUpdate }: ITaskHeaderProps) {
   const [isUpdating, setIsUpdating] = useState(false);
   const [editingTitle, setEditingTitle] = useState(false);
   const [titleValue, setTitleValue] = useState(task.title);
@@ -141,13 +138,6 @@ export function TaskHeader({ task, computedDueDate, onUpdate, onDelete }: ITaskH
     await onUpdate(task.id, { due_date_fixed: val, due_date_type: 'fixed' });
   };
 
-  const handleDelete = async () => {
-    if (!onDelete) return;
-    const confirmed = window.confirm(`Delete task "${task.title}"?`);
-    if (!confirmed) return;
-    await onDelete(task.id);
-  };
-
   return (
     <div className={styles.header}>
       <div className={styles.titleRow}>
@@ -175,15 +165,6 @@ export function TaskHeader({ task, computedDueDate, onUpdate, onDelete }: ITaskH
         )}
         {task.is_stop_gate && (
           <Badge color="red" size="small">Stop Gate</Badge>
-        )}
-        {onDelete && (
-          <Button
-            size="sm"
-            variant="subtle"
-            icon={<TrashCanIcon size={14} />}
-            onClick={handleDelete}
-            className={styles.deleteBtn}
-          />
         )}
       </div>
 

@@ -77,15 +77,6 @@
   }
 }
 
-.deleteBtn {
-  margin-left: auto;
-  color: var(--amino-gray-500);
-
-  &:hover {
-    color: var(--amino-red-600);
-  }
-}
-
 .controls {
   display: flex;
   align-items: flex-end;

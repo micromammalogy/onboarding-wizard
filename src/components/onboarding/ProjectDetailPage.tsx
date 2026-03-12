@@ -41,7 +41,7 @@ const STATUS_COLORS: Record<IProjectStatus, BadgeColor> = {
 
 export function ProjectDetailPage({ projectId }: IProjectDetailPageProps) {
   const { project, isLoading: projectLoading, error: projectError, mutate: mutateProject } = useProject(projectId);
-  const { tasks, isLoading: tasksLoading, error: tasksError, mutate: mutateTasks, updateTask, createTask, deleteTask } = useTasks(projectId);
+  const { tasks, isLoading: tasksLoading, error: tasksError, mutate: mutateTasks, updateTask, createTask } = useTasks(projectId);
 
   // These hooks gracefully return empty arrays if the tables don't exist yet
   const { fieldValues, isLoading: fvLoading } = useFieldValuesData(projectId);
@@ -191,13 +191,6 @@ export function ProjectDetailPage({ projectId }: IProjectDetailPageProps) {
             widgets={widgets}
             computedDueDate={computedDueDates.get(selectedTask.id) ?? null}
             onUpdate={updateTask}
-            onDelete={async (taskId: string) => {
-              await deleteTask(taskId);
-              // Select next task after deletion
-              const idx = tasks.findIndex(t => t.id === taskId);
-              const next = tasks[idx + 1] ?? tasks[idx - 1] ?? null;
-              selectTask(next?.id ?? null);
-            }}
           />
         ) : (
           <div className={styles.emptyDetail}>
