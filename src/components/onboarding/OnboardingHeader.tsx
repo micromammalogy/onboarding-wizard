@@ -1,9 +1,11 @@
 'use client';
 
+import { useState } from 'react';
 import { Button } from '@zonos/amino/components/button/Button';
 import { ChevronRightIcon } from '@zonos/amino/icons/ChevronRightIcon';
 import { useOnboardingNavStore } from '@/hooks/useOnboardingNavStore';
 import { useProject } from '@/hooks/useSupabase';
+import { CreateProjectDialog } from './CreateProjectDialog';
 import styles from '../../app/onboarding/Layout.module.scss';
 
 export function OnboardingHeader() {
@@ -11,6 +13,7 @@ export function OnboardingHeader() {
   const { project } = useProject(
     view === 'project-detail' ? selectedProjectId : null,
   );
+  const [showCreate, setShowCreate] = useState(false);
 
   return (
     <>
@@ -39,11 +42,19 @@ export function OnboardingHeader() {
       </div>
       <div className={styles.headerRight}>
         {view === 'project-list' && (
-          <Button size="sm" variant="primary">
+          <Button
+            size="sm"
+            variant="primary"
+            onClick={() => setShowCreate(true)}
+          >
             New project
           </Button>
         )}
       </div>
+      <CreateProjectDialog
+        open={showCreate}
+        onClose={() => setShowCreate(false)}
+      />
     </>
   );
 }
