@@ -23,7 +23,9 @@ const STATUS_LABELS: Record<ITaskStatus, string> = {
   skipped: 'Skipped',
 };
 
-const STATUS_COLORS: Record<ITaskStatus, string> = {
+type BadgeColor = 'blue' | 'cyan' | 'gray' | 'green' | 'orange' | 'purple' | 'red';
+
+const STATUS_COLORS: Record<ITaskStatus, BadgeColor> = {
   pending: 'gray',
   in_progress: 'blue',
   merchant_complete: 'orange',
@@ -89,7 +91,7 @@ export function TaskRow({ task, onUpdate, onDelete }: ITaskRowProps) {
       <div className={styles.checkbox} onClick={handleStatusCycle}>
         {isComplete ? (
           <div className={styles.checkboxDone}>
-            <CheckmarkIcon size={12} color="white" />
+            <CheckmarkIcon size={12} color="gray0" />
           </div>
         ) : (
           <div className={styles.checkboxEmpty} />
@@ -102,7 +104,7 @@ export function TaskRow({ task, onUpdate, onDelete }: ITaskRowProps) {
             {task.title}
           </span>
           {task.task_type === 'email_draft' && (
-            <Badge color="purple" size="sm">Email</Badge>
+            <Badge color="purple" size="small">Email</Badge>
           )}
         </div>
 
@@ -127,7 +129,7 @@ export function TaskRow({ task, onUpdate, onDelete }: ITaskRowProps) {
       </div>
 
       <div className={styles.actions}>
-        <Badge color={STATUS_COLORS[task.status]} size="sm">
+        <Badge color={STATUS_COLORS[task.status]} size="small">
           {STATUS_LABELS[task.status]}
         </Badge>
         {isMerchantDone && (

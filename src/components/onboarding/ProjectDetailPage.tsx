@@ -22,7 +22,9 @@ const STATUS_LABELS: Record<IProjectStatus, string> = {
   canceled: 'Canceled',
 };
 
-const STATUS_COLORS: Record<IProjectStatus, string> = {
+type BadgeColor = 'blue' | 'cyan' | 'gray' | 'green' | 'orange' | 'purple' | 'red';
+
+const STATUS_COLORS: Record<IProjectStatus, BadgeColor> = {
   not_started: 'gray',
   in_progress: 'blue',
   on_hold: 'orange',

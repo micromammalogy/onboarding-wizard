@@ -9,7 +9,7 @@ import { useOnboardingNavStore } from '@/hooks/useOnboardingNavStore';
 import { LoadingState } from '@/components/ui/LoadingState';
 import { ErrorState } from '@/components/ui/ErrorState';
 import { ProgressBar } from '@/components/onboarding/ProgressBar';
-import type { IProjectStatus } from '@/types/database';
+import type { IProject, IProjectStatus } from '@/types/database';
 import styles from './ProjectListPage.module.scss';
 
 const STATUS_OPTIONS = [
@@ -21,7 +21,9 @@ const STATUS_OPTIONS = [
   { value: 'canceled', label: 'Canceled' },
 ];
 
-const STATUS_COLORS: Record<IProjectStatus, string> = {
+type BadgeColor = 'blue' | 'cyan' | 'gray' | 'green' | 'orange' | 'purple' | 'red';
+
+const STATUS_COLORS: Record<IProjectStatus, BadgeColor> = {
   not_started: 'gray',
   in_progress: 'blue',
   on_hold: 'orange',
@@ -56,7 +58,7 @@ function getDaysInOnboarding(startDate: string | null): number | null {
 export function ProjectListPage() {
   const [statusFilter, setStatusFilter] = useState('');
   const [search, setSearch] = useState('');
-  const [sortField, setSortField] = useState<string>('created_at');
+  const [sortField, setSortField] = useState<keyof IProject>('created_at');
   const [sortAsc, setSortAsc] = useState(false);
 
   const { projects, isLoading, error, mutate } = useProjects({
@@ -76,8 +78,8 @@ export function ProjectListPage() {
   });
 
   const sorted = [...filtered].sort((a, b) => {
-    const aVal = (a as Record<string, unknown>)[sortField];
-    const bVal = (b as Record<string, unknown>)[sortField];
+    const aVal = a[sortField];
+    const bVal = b[sortField];
     if (aVal == null && bVal == null) return 0;
     if (aVal == null) return 1;
     if (bVal == null) return -1;
@@ -85,7 +87,7 @@ export function ProjectListPage() {
     return sortAsc ? cmp : -cmp;
   });
 
-  const handleSort = (field: string) => {
+  const handleSort = (field: keyof IProject) => {
     if (sortField === field) {
       setSortAsc(!sortAsc);
     } else {
