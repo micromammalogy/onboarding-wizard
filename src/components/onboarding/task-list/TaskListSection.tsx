@@ -21,19 +21,20 @@ export function TaskListSection({
   dueDates,
   onUpdate,
 }: ITaskListSectionProps) {
-  const completedCount = tasks.filter(t => COMPLETE_STATUSES.includes(t.status)).length;
+  const realTasks = tasks.filter(t => t.task_type !== 'section_header');
+  const completedCount = realTasks.filter(t => COMPLETE_STATUSES.includes(t.status)).length;
 
   return (
     <div className={styles.section}>
       <div className={styles.header}>
         <span className={styles.title}>{title}</span>
         <span className={styles.count}>
-          {completedCount}/{tasks.length}
+          {completedCount}/{realTasks.length}
         </span>
       </div>
 
       <div className={styles.tasks}>
-        {tasks.map(task => (
+        {realTasks.map(task => (
           <TaskListItem
             key={task.id}
             task={task}
