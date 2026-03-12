@@ -8,23 +8,9 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  width: 100%;
   padding: 12px 16px;
   background: var(--amino-gray-50);
-  border: none;
   border-bottom: 1px solid var(--amino-border-subtle);
-  cursor: pointer;
-  text-align: left;
-
-  &:hover {
-    background: var(--amino-gray-100);
-  }
-}
-
-.chevron {
-  flex-shrink: 0;
-  color: var(--amino-gray-500);
-  display: flex;
 }
 
 .title {
