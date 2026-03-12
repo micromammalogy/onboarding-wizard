@@ -131,6 +131,40 @@ export function ProjectDetailPage({ projectId }: IProjectDetailPageProps) {
   const projectStartDate = project?.start_date ? new Date(project.start_date) : null;
   const computedDueDates = useTaskDueDates(dueDateRules, projectStartDate);
 
+  // Compute badge data: which template tasks have email widgets, conditional rules, due date rules
+  const taskBadges = useMemo(() => {
+    const emailTaskIds = new Set<string>();
+    const conditionalTaskIds = new Set<string>();
+    const dueDateTaskIds = new Set<string>();
+
+    // Email tasks: template tasks that have send_rich_email widgets
+    for (const w of widgets) {
+      if (w.widget_type === 'send_rich_email') {
+        emailTaskIds.add(w.template_task_id);
+      }
+    }
+
+    // Conditional tasks: tasks targeted by conditional rules
+    for (const rule of rawRules) {
+      if (rule.rule_type === 'conditional') {
+        for (const tid of rule.target_task_ids) {
+          conditionalTaskIds.add(tid);
+        }
+      }
+    }
+
+    // Due date tasks: tasks targeted by due date rules
+    for (const rule of rawRules) {
+      if (rule.rule_type === 'due_date') {
+        for (const tid of rule.target_task_ids) {
+          dueDateTaskIds.add(tid);
+        }
+      }
+    }
+
+    return { emailTaskIds, conditionalTaskIds, dueDateTaskIds };
+  }, [widgets, rawRules]);
+
   const selectedTask = tasks.find(t => t.id === selectedTaskId) ?? null;
 
   // Only block on core data (project + tasks), not the new Phase 2 tables
@@ -181,6 +215,7 @@ export function ProjectDetailPage({ projectId }: IProjectDetailPageProps) {
           selectedTaskId={selectedTaskId}
           dueDates={computedDueDates}
           projectId={projectId}
+          taskBadges={taskBadges}
           onUpdate={updateTask}
           onCreate={createTask}
         />

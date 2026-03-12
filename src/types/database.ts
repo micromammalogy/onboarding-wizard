@@ -181,7 +181,13 @@ export type IWidgetType =
   | 'date'
   | 'file'
   | 'hidden'
-  | 'send_rich_email';
+  | 'send_rich_email'
+  | 'text_content'
+  | 'image'
+  | 'video'
+  | 'embed'
+  | 'cross_link'
+  | 'subtask';
 
 export type IRuleType = 'conditional' | 'due_date' | 'assignment';
 

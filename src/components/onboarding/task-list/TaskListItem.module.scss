@@ -98,6 +98,13 @@
   background: var(--amino-orange-500);
 }
 
+.badgeEmail,
+.badgeConditional,
+.badgeDueDate {
+  font-size: 11px;
+  line-height: 1;
+}
+
 .dueDate {
   font-size: 11px;
   color: var(--amino-gray-500);

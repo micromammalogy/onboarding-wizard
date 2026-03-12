@@ -29,7 +29,7 @@ export function SelectField({ widget, value, onChange }: ISelectFieldProps) {
 
   return (
     <Select
-      label={widget.label ?? ''}
+      label={`${widget.label ?? ''}${widget.is_required ? ' *' : ''}`}
       value={selected}
       options={options}
       onChange={opt => onChange(opt?.value ?? null)}

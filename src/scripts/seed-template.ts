@@ -26,10 +26,21 @@ type IRawWidget = {
     options?: Array<{ id: string; name: string }>;
     format?: string;
     placeholder?: string;
+    url?: string;
+    src?: string;
   };
   content?: string;
   constraints?: Record<string, unknown>;
   deleted?: boolean;
+  url?: string;
+  description?: string;
+  file?: {
+    url?: string;
+    originalName?: string;
+    name?: string;
+  };
+  service?: string;
+  serviceCode?: string;
 };
 
 type IRawTask = {
@@ -226,9 +237,22 @@ function main() {
   }
   lines.push('');
 
-  // Create template widgets
+  // Create template widgets (ALL types, not just form fields)
   lines.push('-- Template Widgets');
   let widgetIndex = 0;
+
+  /** Map PS content widget types to our widget_type enum */
+  function mapContentType(psType: string): string {
+    const mapping: Record<string, string> = {
+      Text: 'text_content',
+      Image: 'image',
+      Video: 'video',
+      Embed: 'embed',
+      CrossLink: 'cross_link',
+      File: 'file',
+    };
+    return mapping[psType] || 'text_content';
+  }
 
   for (let i = 0; i < tasks.length; i++) {
     const task = tasks[i];
@@ -239,39 +263,69 @@ function main() {
       const w = task.widgets[j];
       if (w.deleted) continue;
 
-      // Only create entries for form fields
-      if (w.type !== 'FormField') continue;
-
       const widgetUUID = `c${String(widgetIndex).padStart(7, '0')}-0000-0000-0000-000000000001`;
       widgetIndex++;
 
-      const widgetType = mapFieldType(w.fieldType || 'Text');
-      const key = w.key || null;
-      const label = w.label || null;
-      const isRequired = w.required || false;
+      let widgetType: string;
+      let key: string | null = null;
+      let label: string | null = null;
+      let isRequired = false;
+      let placeholder: string | null = null;
+      let options = '[]';
       const hidden = w.hiddenByDefault || false;
-      const placeholder = w.config?.placeholder || null;
+      const metadata: Record<string, unknown> = {};
 
-      // Extract options from config
-      const items = w.config?.items || w.config?.options || [];
-      const options = items.length > 0
-        ? JSON.stringify(items.map((item: { id?: string; name: string }) => ({ value: item.name, label: item.name })))
-        : '[]';
+      if (w.type === 'FormField') {
+        // Form field widget
+        widgetType = mapFieldType(w.fieldType || 'Text');
+        if (w.config?.format === 'RichText') widgetType = 'richtext';
+        key = w.key || null;
+        label = w.label || null;
+        isRequired = w.required || false;
+        placeholder = w.config?.placeholder || null;
 
-      // Check if it's a richtext field based on config format
-      const actualType = w.config?.format === 'RichText' ? 'richtext' : widgetType;
+        // Extract options from config
+        const items = w.config?.items || w.config?.options || [];
+        if (items.length > 0) {
+          options = JSON.stringify(items.map((item: { id?: string; name: string }) => ({ value: item.name, label: item.name })));
+        }
+      } else {
+        // Content widget (Text, Image, Video, Embed, File, CrossLink)
+        widgetType = mapContentType(w.type);
 
-      lines.push(`INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (`);
+        if (w.type === 'Text' && w.content) {
+          metadata.content = w.content;
+        } else if (w.type === 'Image') {
+          metadata.url = w.file?.url || w.url || '';
+          metadata.alt = w.file?.originalName || w.file?.name || '';
+        } else if (w.type === 'Video') {
+          metadata.url = w.file?.url || w.url || '';
+          metadata.service = w.service || '';
+          metadata.serviceCode = w.serviceCode || '';
+        } else if (w.type === 'Embed') {
+          metadata.url = w.url || '';
+        } else if (w.type === 'File') {
+          metadata.url = w.file?.url || w.url || '';
+          metadata.name = w.file?.originalName || w.file?.name || '';
+        }
+      }
+
+      const metadataJSON = Object.keys(metadata).length > 0
+        ? `'${escapeSQL(JSON.stringify(metadata))}'`
+        : "'{}'";
+
+      lines.push(`INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (`);
       lines.push(`  '${widgetUUID}',`);
       lines.push(`  '${taskUUID}',`);
       lines.push(`  ${key ? `'${escapeSQL(key)}'` : 'NULL'},`);
       lines.push(`  ${label ? `'${escapeSQL(label)}'` : 'NULL'},`);
-      lines.push(`  '${actualType}',`);
+      lines.push(`  '${widgetType}',`);
       lines.push(`  ${j},`);
       lines.push(`  ${isRequired},`);
       lines.push(`  ${hidden},`);
       lines.push(`  '${escapeSQL(options)}',`);
       lines.push(`  ${placeholder ? `'${escapeSQL(placeholder)}'` : 'NULL'},`);
+      lines.push(`  ${metadataJSON},`);
       lines.push(`  '${escapeSQL(w.id)}'`);
       lines.push(`);`);
     }

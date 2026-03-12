@@ -3,6 +3,7 @@
 import { useState, useCallback } from 'react';
 import { CheckmarkIcon } from '@zonos/amino/icons/CheckmarkIcon';
 import type { ITask, ITaskStatus, ITaskUpdate } from '@/types/database';
+import type { ITaskBadges } from './TaskListPanel';
 import { useOnboardingNavStore } from '@/hooks/useOnboardingNavStore';
 import { ConditionalWrapper } from '../ConditionalWrapper';
 import styles from './TaskListItem.module.scss';
@@ -11,6 +12,7 @@ type ITaskListItemProps = {
   task: ITask;
   isSelected: boolean;
   computedDueDate?: Date | null;
+  taskBadges: ITaskBadges;
   onUpdate: (taskId: string, updates: ITaskUpdate) => Promise<unknown>;
 };
 
@@ -25,13 +27,19 @@ function isOverdue(task: ITask, computedDueDate?: Date | null): boolean {
   return dueDate < new Date();
 }
 
-export function TaskListItem({ task, isSelected, computedDueDate, onUpdate }: ITaskListItemProps) {
+export function TaskListItem({ task, isSelected, computedDueDate, taskBadges, onUpdate }: ITaskListItemProps) {
   const [isUpdating, setIsUpdating] = useState(false);
   const selectTask = useOnboardingNavStore(s => s.selectTask);
 
   const isComplete = ['complete', 'ob_verified'].includes(task.status);
   const overdue = isOverdue(task, computedDueDate);
   const dueDate = computedDueDate ?? (task.due_date_fixed ? new Date(task.due_date_fixed) : null);
+
+  // Badge checks using template_task_id
+  const templateId = task.template_task_id ?? '';
+  const hasEmail = taskBadges.emailTaskIds.has(templateId);
+  const isConditional = taskBadges.conditionalTaskIds.has(templateId);
+  const hasDueDate = taskBadges.dueDateTaskIds.has(templateId);
 
   const handleCheckboxClick = useCallback(
     async (e: React.MouseEvent) => {
@@ -41,7 +49,6 @@ export function TaskListItem({ task, isSelected, computedDueDate, onUpdate }: IT
       try {
         let nextStatus: ITaskStatus;
         if (isComplete) {
-          // Bidirectional: uncheck
           nextStatus = 'pending';
         } else {
           nextStatus = task.assignee_type === 'merchant' ? 'merchant_complete' : 'complete';
@@ -89,6 +96,15 @@ export function TaskListItem({ task, isSelected, computedDueDate, onUpdate }: IT
         </div>
 
         <div className={styles.meta}>
+          {hasEmail && (
+            <span className={styles.badgeEmail} title="Email task">✉</span>
+          )}
+          {isConditional && (
+            <span className={styles.badgeConditional} title="Conditional">⚡</span>
+          )}
+          {hasDueDate && (
+            <span className={styles.badgeDueDate} title="Dynamic due date">📅</span>
+          )}
           {task.assignee_type === 'merchant' && (
             <span className={styles.merchantDot} title="Merchant task" />
           )}

@@ -16,7 +16,7 @@ const activeStyle: React.CSSProperties = {
 };
 
 export function OnboardingSidebar() {
-  const { view, backToList } = useOnboardingNavStore();
+  const { view, backToList, openTemplates } = useOnboardingNavStore();
   const { organizationName, logout } = useAuthStore();
 
   const userInitial = (organizationName || '?').charAt(0).toUpperCase();
@@ -44,8 +44,11 @@ export function OnboardingSidebar() {
               Projects
             </div>
           </div>
-          <div className={styles.navItemWrapper}>
-            <div className={styles.navItem}>
+          <div className={styles.navItemWrapper} onClick={openTemplates}>
+            <div
+              className={styles.navItem}
+              style={view === 'template-list' ? activeStyle : undefined}
+            >
               <FileIcon size={16} />
               Templates
             </div>

@@ -1546,8 +1546,36 @@ INSERT INTO template_tasks (id, template_id, title, section, order_index, assign
 );
 
 -- Template Widgets
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
   'c0000000-0000-0000-0000-000000000001',
+  'b0000001-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<h1 style=\"text-align: center;\"><strong>Intake Form</strong></h1>"}',
+  'vW3joe7gICLXRgwNGhpPjg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000001-0000-0000-0000-000000000001',
+  'b0000001-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  1,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<h3>Complete this form to automate all necessary tasks for any integration type.</h3>"}',
+  'hJk7QI7DEIGf7rIK1utL_g'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000002-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Integration_notes',
   'Integration notes',
@@ -1557,10 +1585,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'ur7Temvccqs-2RCWipdBSQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000001-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000003-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Merchant_contact(s)._If_multiple_contacts_are_provided,_identify_main_POC',
   'Merchant contact(s). If multiple contacts are provided, identify main POC',
@@ -1570,10 +1599,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   'Name, role, email',
+  '{}',
   'kqXbzwBacTZ4GByTeBVMIQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000002-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000004-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Average_order_value',
   'Average order value',
@@ -1583,10 +1613,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'khQq_26Lehv1vY_R2TZHXw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000003-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000005-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Average_daily_volume_(int''l_only)',
   'Average daily volume (int''l only)',
@@ -1596,10 +1627,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'lYWF2XeniEWBEtak5upHiw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000004-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000006-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'LCG_status_2',
   'LCG status',
@@ -1609,10 +1641,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"LCG on","label":"LCG on"},{"value":"LCG off","label":"LCG off"}]',
   NULL,
+  '{}',
   'rS9HLGh5_4eR8rVxvUxFvA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000005-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000007-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Select_integration_type',
   'Select integration type',
@@ -1622,10 +1655,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"API","label":"API"},{"value":"Add-on (plugins, modules, extensions, apps)","label":"Add-on (plugins, modules, extensions, apps)"},{"value":"Intuitive Shipping duty and tax app","label":"Intuitive Shipping duty and tax app"},{"value":"Zonos JS (custom checkout)","label":"Zonos JS (custom checkout)"}]',
   NULL,
+  '{}',
   't52KhQOzJiL3rnL2UuRIqA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000006-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000008-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'API_billing_type',
   'API billing type',
@@ -1635,10 +1669,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"API call (volume)","label":"API call (volume)"},{"value":"LCG","label":"LCG"}]',
   NULL,
+  '{}',
   'utf18lhy30kkX7MlhXtOjw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000007-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000009-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Select_platform',
   'Select platform',
@@ -1648,10 +1683,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"BigCommerce","label":"BigCommerce"},{"value":"Cart.com","label":"Cart.com"},{"value":"Custom","label":"Custom"},{"value":"Magento","label":"Magento"},{"value":"MIVA","label":"MIVA"},{"value":"Salesforce","label":"Salesforce"},{"value":"Shopify","label":"Shopify"},{"value":"Wix","label":"Wix"},{"value":"WooCommerce","label":"WooCommerce"},{"value":"X-Cart","label":"X-Cart"}]',
   NULL,
+  '{}',
   'vfdZnh54nFVumHCeR7RNCw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000008-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000010-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Meeting_#1_Date_(automates_due_dates_of_tasks)',
   'Meeting #1 Date (automates due dates of tasks)',
@@ -1661,10 +1697,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   's62O_0aR_Gw0fuo87ZFGnQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000009-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000011-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Onboarding_Notes:',
   'Onboarding Notes:',
@@ -1674,10 +1711,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   'Use this space for extra information, comments, or details',
+  '{}',
   'lbfxQGSxzWbKsqqMVLNM4A'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000010-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000012-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Is_this_a_priority_account_($50k_or_above)?_2',
   'Is this a priority account ($50k or above)?',
@@ -1687,10 +1725,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Yes","label":"Yes"},{"value":"No","label":"No"}]',
   NULL,
+  '{}',
   'iM8oYBODdWIPE1F1qU1MdA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000011-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000013-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Project_Urgency_(needs_automations_for_task_due_dates)',
   'Project Urgency (needs automations for task due dates)',
@@ -1700,10 +1739,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"High (one week or less)","label":"High (one week or less)"},{"value":"Medium (2-3 weeks)","label":"Medium (2-3 weeks)"},{"value":"Low (4+ weeks)","label":"Low (4+ weeks)"}]',
   NULL,
+  '{}',
   'sD1v8C59vnIwdcErj_BE6A'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000012-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000014-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Project_Objectives',
   'Project Objectives',
@@ -1713,10 +1753,53 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   'What are the outcomes you hope to achieve with this project?',
+  '{}',
   'vKmji-A66fwmJ1-4VqdBow'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000013-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000015-0000-0000-0000-000000000001',
+  'b0000001-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  15,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<hr>\n<p></p>"}',
+  'ok_7xEF272X4gEvmBC5PFg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000016-0000-0000-0000-000000000001',
+  'b0000001-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  16,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<h1 style=\"text-align: center;\"><strong>⭐ Platform &amp; eCommerce</strong></h1>"}',
+  'p3yPJecpUo_v6s8NHyxD-g'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000017-0000-0000-0000-000000000001',
+  'b0000001-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  17,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3><span style=\"color: rgb(51, 51, 51);\">Shopify</span></h3>"}',
+  'scf7zYXN0M85-DVgM6ZM6g'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000018-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Shopify_subscription_type?',
   'Shopify subscription type?',
@@ -1726,10 +1809,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Basic","label":"Basic"},{"value":"Grow","label":"Grow"},{"value":"Advanced","label":"Advanced"},{"value":"Plus","label":"Plus"}]',
   NULL,
+  '{}',
   'qu6EM8cm3QXi6JgmigZDuQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000014-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000019-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Currently_quoting_duty_and_tax_through_Shopify_markets?',
   'Currently quoting duty and tax through Shopify markets?',
@@ -1739,10 +1823,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Yes","label":"Yes"},{"value":"No","label":"No"}]',
   NULL,
+  '{}',
   's9NC4fm4BIqlvstA1dVELA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000015-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000020-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Will_the_merchant_require_Zonos_to_operate_in_more_than_one_shipping_profile?',
   'Will the merchant require Zonos to operate in more than one shipping profile?',
@@ -1752,10 +1837,39 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Yes","label":"Yes"},{"value":"No","label":"No"}]',
   NULL,
+  '{}',
   'vmho56LUeUqjCBTSY6ZPmw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000016-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000021-0000-0000-0000-000000000001',
+  'b0000001-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  21,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<hr>\n<p></p>"}',
+  'iBckIZwDcZtVVaQU9VxEPA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000022-0000-0000-0000-000000000001',
+  'b0000001-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  22,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<h3>Staging</h3>"}',
+  'pdxK2Uip2yljMEMBIz9LMQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000023-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Will_a_staging_site_be_used?',
   'Will a staging site be used?',
@@ -1765,10 +1879,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Yes","label":"Yes"},{"value":"No","label":"No"}]',
   NULL,
+  '{}',
   'g6OEQxavICY--zMEk3RKXg'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000017-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000024-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Enter_staging_site_URL',
   'Enter staging site URL',
@@ -1778,10 +1893,39 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'mPbkozcJnrGjYTjlILJBbA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000018-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000025-0000-0000-0000-000000000001',
+  'b0000001-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  25,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<hr>\n<p></p>"}',
+  'tQHfylAyaaX0pxhFXgZDow'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000026-0000-0000-0000-000000000001',
+  'b0000001-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  26,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<h3>Products</h3>"}',
+  'kPI9eROIMn-DGAECqLhNLA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000027-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Is_HS_code_classification_needed?',
   'Is HS code classification needed?',
@@ -1791,10 +1935,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Yes","label":"Yes"},{"value":"No","label":"No"}]',
   NULL,
+  '{}',
   'tqP0FOjDH9Q5pfFGVEhBKQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000019-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000028-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Do_they_sell_subscriptions_and/or_digital_goods?_(needs_automation_for_QA_check)',
   'Do they sell subscriptions and/or digital goods? (needs automation for QA check)',
@@ -1804,10 +1949,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Subscriptions only","label":"Subscriptions only"},{"value":"Digital goods only","label":"Digital goods only"},{"value":"Both subscriptions and digital goods","label":"Both subscriptions and digital goods"},{"value":"Do not sell subscriptions or digital goods","label":"Do not sell subscriptions or digital goods"}]',
   NULL,
+  '{}',
   'tZ5X2kwJRpTrS-eYGUJPTg'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000020-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000029-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'If_subscription''s_are_sold,_provide_the_name_of_app',
   'If subscription''s are sold, provide the name of app',
@@ -1817,10 +1963,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   'Subscription app name',
+  '{}',
   'pCmfVv0OIWys1WNzWahK_w'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000021-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000030-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'VAT-inclusive_pricing',
   'VAT-inclusive pricing',
@@ -1830,10 +1977,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Zonos needs to utilize VAT-inclusive pricing","label":"Zonos needs to utilize VAT-inclusive pricing"},{"value":"Prices will be VAT-exclusive","label":"Prices will be VAT-exclusive"}]',
   NULL,
+  '{}',
   's4uplFNa3t3NNWYBhrVKRQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000022-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000031-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Enter_percentage_of_VAT-inclusive_pricing_here_(cannot_be_dynamic)',
   'Enter percentage of VAT-inclusive pricing here (cannot be dynamic)',
@@ -1843,10 +1991,39 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'sCa7wRQa0WI-MAW_6_FEOQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000023-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000032-0000-0000-0000-000000000001',
+  'b0000001-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  32,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<hr>\n<p></p>"}',
+  'pvHbHa1ZSN5Pqr9BEadBow'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000033-0000-0000-0000-000000000001',
+  'b0000001-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  33,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<h1 style=\"text-align: center;\"><strong>⭐&#xa0;</strong><strong>Shipping (needs automations)</strong></h1>"}',
+  'iRwWBxzCTJ3KWm0NqPNM1A'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000034-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Ship-from_country_(two_letter_ISO)',
   'Ship-from country (two letter ISO)',
@@ -1856,10 +2033,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'jp26pDs8m1iEpTzQsFdG5g'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000024-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000035-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Is_US_sales_tax_collection_needed?',
   'Is US sales tax collection needed?',
@@ -1869,10 +2047,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Yes","label":"Yes"},{"value":"No","label":"No"}]',
   NULL,
+  '{}',
   'pVkka4RdiGH3nLeMSzFMUw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000025-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000036-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'What_countries_and_territories_do_they_want_to_ship_to:',
   'What countries and territories do they want to ship to:',
@@ -1882,10 +2061,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Rest of World","label":"Rest of World"},{"value":"Select Countries","label":"Select Countries"}]',
   NULL,
+  '{}',
   'orbhNoTK9G5rTUjzuU1CTQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000026-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000037-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'If_select,_list_countries_and_territories:',
   'If select, list countries and territories:',
@@ -1895,10 +2075,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'nFAsA9iD6RXJV_klaf9Agw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000027-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000038-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Do_they_ship_B2B?',
   'Do they ship B2B?',
@@ -1908,10 +2089,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Yes","label":"Yes"},{"value":"No","label":"No"}]',
   NULL,
+  '{}',
   'vXQAvkxT__RodJFIpv9AgQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000028-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000039-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'B2B_Countries',
   'B2B Countries',
@@ -1921,10 +2103,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"CA","label":"CA"},{"value":"Other","label":"Other"}]',
   NULL,
+  '{}',
   'vrT-In4Fk-kiWKSzfmBKqg'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000029-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000040-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Co-operator_agreement_into_US_(*only_if_based_outside_US_AND_wants_Zonos_to_calculate_US_sales_tax)',
   'Co-operator agreement into US (*only if based outside US AND wants Zonos to calculate US sales tax)',
@@ -1934,10 +2117,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Yes","label":"Yes"},{"value":"No","label":"No"}]',
   NULL,
+  '{}',
   'vh4nVk9HoPAfL1Y2AJlKtA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000030-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000041-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Desired_carrier(s)?',
   'Desired carrier(s)?',
@@ -1947,10 +2131,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"FedEx","label":"FedEx"},{"value":"UPS","label":"UPS"},{"value":"DHL","label":"DHL"},{"value":"APC","label":"APC"},{"value":"Postal","label":"Postal"},{"value":"Other","label":"Other"}]',
   NULL,
+  '{}',
   'ieFIYHMymh_vojQhfdJMYw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000031-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000042-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'If_other,_provide_carrier_name',
   'If other, provide carrier name',
@@ -1960,10 +2145,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'm1FlBdRntmXrtK9Vm4BMwg'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000032-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000043-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Postal_Operator',
   'Postal Operator',
@@ -1973,10 +2159,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"USPS","label":"USPS"},{"value":"CA Post","label":"CA Post"},{"value":"AU Post","label":"AU Post"}]',
   NULL,
+  '{}',
   'gQNSnA26MmM_qYV75W1LZQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000033-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000044-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Calculate_Shipping_Rates_via:',
   'Calculate Shipping Rates via:',
@@ -1986,10 +2173,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Carrier API (Zonos calls carrier for cost)","label":"Carrier API (Zonos calls carrier for cost)"},{"value":"Rate Sheet","label":"Rate Sheet"},{"value":"Flat Rates in Zonos Dashboard","label":"Flat Rates in Zonos Dashboard"}]',
   NULL,
+  '{}',
   'uJnQpSAfDCiNjsjWLMhDEA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000034-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000045-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Do_you_want_to_rate_shipping_using_the_greater_of_physical_or_dimensional_weight?',
   'Do you want to rate shipping using the greater of physical or dimensional weight?',
@@ -1999,10 +2187,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Physical weight only","label":"Physical weight only"},{"value":"Greater of physical/dimensional weight","label":"Greater of physical/dimensional weight"},{"value":"Using flat rates","label":"Using flat rates"}]',
   NULL,
+  '{}',
   'tkmWL-IcLGEg-ZtoGZtKUQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000035-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000046-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Do_active_SKUs_have_physical_weights?_8',
   'Do active SKUs have physical weights?',
@@ -2012,10 +2201,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"All SKUs have physical weights","label":"All SKUs have physical weights"},{"value":"Some SKUs have physical weights","label":"Some SKUs have physical weights"},{"value":"No SKUs have physical weights","label":"No SKUs have physical weights"}]',
   NULL,
+  '{}',
   'j0Axoo6FVvh6aMAuc2hMjQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000036-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000047-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Do_you_ship_from_your_general_business_address?',
   'Do you ship from your general business address?',
@@ -2025,10 +2215,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Yes","label":"Yes"},{"value":"No","label":"No"}]',
   NULL,
+  '{}',
   'oWzlbnp4m5VAmNftqmFPrA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000037-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000048-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Provide_ship_from_address:',
   'Provide ship from address:',
@@ -2038,10 +2229,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   'Name, Street Address, City, State, Zip',
+  '{}',
   'vuSP1C0ySxpyOgdDNldIZw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000038-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000049-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Do_they_ship_from_multiple_locations?',
   'Do they ship from multiple locations?',
@@ -2051,10 +2243,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Yes","label":"Yes"},{"value":"No","label":"No"}]',
   NULL,
+  '{}',
   'iZvbQRSdskHKqn5Wcl9Mcw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000039-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000050-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Do_they_ship_split_shipments?',
   'Do they ship split shipments?',
@@ -2064,10 +2257,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Yes","label":"Yes"},{"value":"No","label":"No"}]',
   NULL,
+  '{}',
   'mrP_wFMe9NI08fW2GQdEig'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000040-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000051-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Do_they_ship_SKUs_that_ship_in_multiple_boxes',
   'Do they ship SKUs that ship in multiple boxes',
@@ -2077,10 +2271,39 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Yes","label":"Yes"},{"value":"No","label":"No"}]',
   NULL,
+  '{}',
   'tv7ZNlKjjDkGHWIddl5MjA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000041-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000052-0000-0000-0000-000000000001',
+  'b0000001-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  52,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<hr>\n<p></p>"}',
+  'qvYsEgn2Kdlq4so1kyZN1g'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000053-0000-0000-0000-000000000001',
+  'b0000001-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  53,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<h1 style=\"text-align: center;\"><strong>⭐&#xa0;</strong><strong>Zonos product catalog (needs automations)</strong></h1>"}',
+  'p-UVsJcS_r44a9RshARP0A'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000054-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Do_active_SKUs_need_to_be_restricted?',
   'Do active SKUs need to be restricted?',
@@ -2090,10 +2313,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Yes","label":"Yes"},{"value":"No","label":"No"}]',
   NULL,
+  '{}',
   'uERWO1oQtgGYeHms1eNI1Q'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000042-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000055-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'If_yes,_why?',
   'If yes, why?',
@@ -2103,10 +2327,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Hazardous good(s)","label":"Hazardous good(s)"},{"value":"Overseas distributor","label":"Overseas distributor"},{"value":"Prohibited good(s)","label":"Prohibited good(s)"},{"value":"Other","label":"Other"}]',
   NULL,
+  '{}',
   'n3tW5yr-7e8KWwJsCSlPGA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000043-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000056-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Other:',
   'Other:',
@@ -2116,10 +2341,25 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'n5b-ZUXUucBbqEpR_NdEkw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000044-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000057-0000-0000-0000-000000000001',
+  'b0000001-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  57,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://zonos.com/docs/global-ecommerce/shipping-labels/electronic-export-information"}',
+  'sUM6XavWprbQVKEgMspDdw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000058-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Is_EEI_needed?',
   'Is EEI needed?',
@@ -2129,10 +2369,39 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Yes","label":"Yes"},{"value":"No","label":"No"}]',
   NULL,
+  '{}',
   'ppH36cDakvl-butIIKFEDw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000045-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000059-0000-0000-0000-000000000001',
+  'b0000001-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  59,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<hr>\n<p></p>"}',
+  'jw7QdJMJJ_C-8KftHftOvw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000060-0000-0000-0000-000000000001',
+  'b0000001-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  60,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<h1 style=\"text-align: center;\"><strong>⭐&#xa0;</strong><strong>Labels, 3PLs, LCG Certs</strong></h1>"}',
+  'uib18e655HtFn5_RmJZIEw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000061-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Label_software',
   'Label software ',
@@ -2142,10 +2411,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"DesktopShipper","label":"DesktopShipper"},{"value":"EasyPost","label":"EasyPost"},{"value":"ePost","label":"ePost"},{"value":"ShippingEasy","label":"ShippingEasy"},{"value":"ShipEngine","label":"ShipEngine"},{"value":"ShipHero","label":"ShipHero"},{"value":"Shipstation","label":"Shipstation"},{"value":"UPS Worldship","label":"UPS Worldship"},{"value":"Other","label":"Other"}]',
   NULL,
+  '{}',
   'v-nmiRXNmZtm-w8c0RJHJw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000046-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000062-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Enter_name_of_label_software',
   'Enter name of label software',
@@ -2155,10 +2425,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'jQ3jr9yTw_QZCKyCid9F3A'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000047-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000063-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   '3PL',
   '3PL',
@@ -2168,10 +2439,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Not using a 3PL","label":"Not using a 3PL"},{"value":"iDrive","label":"iDrive"},{"value":"Landmark","label":"Landmark"},{"value":"Portless","label":"Portless"},{"value":"ProShip","label":"ProShip"},{"value":"Scale 3PL","label":"Scale 3PL"},{"value":"Shipnetwork/Firstmile","label":"Shipnetwork/Firstmile"}]',
   NULL,
+  '{}',
   'oorKTSUc-loA3T0dohJF2A'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000048-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000064-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Is_an_LCG_cert_needed?',
   'Is an LCG cert needed?',
@@ -2181,10 +2453,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Yes","label":"Yes"},{"value":"No","label":"No"},{"value":"Using Shipment API","label":"Using Shipment API"},{"value":"Using UPS Unlock","label":"Using UPS Unlock"}]',
   NULL,
+  '{}',
   'qxnAzgn5qBd4J5V_JZ9GAg'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000049-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000065-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'LCG_cert_contact',
   'LCG cert contact',
@@ -2194,10 +2467,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   't6Nl-UP6gvrlbVoZWX9CIg'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000050-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000066-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'LCG_cert_contact_email',
   'LCG cert contact email',
@@ -2207,10 +2481,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'lnW65x_M8kH9J4-ANqxF7g'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000051-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000067-0000-0000-0000-000000000001',
   'b0000001-0000-0000-0000-000000000001',
   'Meeting_#1_Call_Recording_and_Password',
   'Meeting #1 Call Recording and Password',
@@ -2220,10 +2495,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'qCcYT_AfDW9BVyisErdKCw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000052-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000068-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   'Salesforce_Account_ID',
   'Salesforce Account ID',
@@ -2233,10 +2509,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'n6SF0nDhiGqp6VMAeAFPOw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000053-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000069-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   'Salesforce_Opportunity_ID',
   'Salesforce Opportunity ID',
@@ -2246,10 +2523,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'vYi73Z3Hluh7sNzJpHhBxg'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000054-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000070-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   'Salesforce_Onboarding_Project_ID',
   'Salesforce Onboarding Project ID',
@@ -2259,10 +2537,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'kbnty3cNMbIbpByzgt9PLw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000055-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000071-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   'Salesforce_AE_ID',
   'Salesforce AE ID',
@@ -2272,10 +2551,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'rifPEExWWRQbNgyxNGlJxg'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000056-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000072-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   'Salesforce_Integration_POC_ID',
   'Salesforce Integration POC ID',
@@ -2285,10 +2565,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'm-YyBNgHp10oq7dc1kxKcg'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000057-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000073-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   'Account_name',
   'Account name',
@@ -2298,10 +2579,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'hJ8QswNUpPejooY43FlCrA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000058-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000074-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   'Zonos_ID',
   'Zonos ID',
@@ -2311,10 +2593,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'mIfO-Rd_eqoSnd8XJeJIWQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000059-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000075-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   'Salesforce_Opportunity_Name',
   'Salesforce Opportunity Name',
@@ -2324,10 +2607,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'mPN3zWYtE3bg4l3mUOpKoQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000060-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000076-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   'Account_URL',
   'Account URL',
@@ -2337,10 +2621,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'gyv1J8MqC8KHjmOPpVxHSA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000061-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000077-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   'Integration_POC_Full_Name',
   'Integration POC Full Name',
@@ -2350,10 +2635,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'oIOHrq4QpgCb5KoUomxCHw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000062-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000078-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   'Integration_POC_First_Name',
   'Integration POC First Name',
@@ -2363,10 +2649,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   't4ouk3VJj8D7DcyXsTVHNQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000063-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000079-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   'Integration_POC_Last_Name',
   'Integration POC Last Name',
@@ -2376,10 +2663,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'tbfc-bjsEVLN9xqk0JpNrQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000064-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000080-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   'Integration_POC_Email_Address',
   'Integration POC Email Address',
@@ -2389,10 +2677,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'tKG30Am6gWv_sWXKhdlBCw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000065-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000081-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   'Estimated_Amount',
   'Estimated Amount',
@@ -2402,10 +2691,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'u6KN9tUZV1AvmWn8GUZIjQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000066-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000082-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   'Estimated_Go-Live_Date',
   'Estimated Go-Live Date',
@@ -2415,10 +2705,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'oy1dUW59aRGhUsCn5dFPTg'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000067-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000083-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   'E-Commerce_Platform_2',
   'E-Commerce Platform',
@@ -2428,10 +2719,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'pExUu_QMIypwK7VD1iNIFg'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000068-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000084-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   'Zonos_AE',
   'Zonos AE',
@@ -2441,10 +2733,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'gYQ-gKKM6KMaxDIPIddD7Q'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000069-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000085-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   'Zonos_AE_Email',
   'Zonos AE Email',
@@ -2454,10 +2747,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'rJ4vcKo550FmBaab2DRC9g'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000070-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000086-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   'Primary_Product',
   'Primary Product',
@@ -2467,10 +2761,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'pnSi7NuxoID7LOTDot9Cqg'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000071-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000087-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   'Setup_Tier',
   'Setup Tier',
@@ -2480,10 +2775,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'lx8xvr5q_mzAYCX3Y4BKMg'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000072-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000088-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   'Integration_Type',
   'Integration Type',
@@ -2493,10 +2789,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'q9wp_K9Qe6mTkGbszWdMsQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000073-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000089-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   'Lead_Source_Detail',
   'Lead Source Detail',
@@ -2506,10 +2803,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'mlY1euczuSUL0JlTKMlF2w'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000074-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000090-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   'Is_the_UPS_forwarding_charge_waived?',
   'Is the UPS forwarding charge waived?',
@@ -2519,10 +2817,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'vTD4q3A50ccH6Kr9P_VPBg'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000075-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000091-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   'Integration_Details',
   'Integration Details',
@@ -2532,10 +2831,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'mlVi-CD16V1Z5VZ7C-RFqQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000076-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000092-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   'Are_they_using_a_3PL?',
   'Are they using a 3PL?',
@@ -2545,10 +2845,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'sw33og-eij09QqSWU8VPnQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000077-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000093-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   '3PL:',
   '3PL:',
@@ -2558,10 +2859,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'vKSoqJhCx6r32T2QSt9DYw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000078-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000094-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   'Label_Software:',
   'Label Software:',
@@ -2571,10 +2873,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'uLe9jZUBV7bmFFKxHcVIWw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000079-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000095-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   'Printing_outside_of_the_Dashboard?',
   'Printing outside of the Dashboard?',
@@ -2584,10 +2887,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'qsew8GlRnec2WV75itBPPA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000080-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000096-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   'Printing_outside_of_the_Dashboard_Notes:',
   'Printing outside of the Dashboard Notes:',
@@ -2597,10 +2901,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   's95DrUs2v7Ek-daLf7NGDw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000081-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000097-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   'Project_Manager_(Full_Name)',
   'Project Manager (Full Name)',
@@ -2610,10 +2915,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'gvPb_Y8EGES1rhbvEV5APA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000082-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000098-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   'Project_Manager_(First_Name)',
   'Project Manager (First Name)',
@@ -2623,10 +2929,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'm1eX2Z2AiEbLB6qnUiZH6w'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000083-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000099-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   'Project_Manager_Email',
   'Project Manager Email',
@@ -2636,10 +2943,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'ihVMr6F5ExSEKqnQOPdFNQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000084-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000100-0000-0000-0000-000000000001',
   'b0000002-0000-0000-0000-000000000001',
   'Project_Manager_Email_Link',
   'Project Manager Email Link',
@@ -2649,10 +2957,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'kwhyDTIPad-z9uJEa05JYw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000085-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000101-0000-0000-0000-000000000001',
   'b0000003-0000-0000-0000-000000000001',
   'Expected_Go_Live_Date',
   'Expected Go Live Date',
@@ -2662,10 +2971,53 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'mLngjohI2b3UF_s4jx5K8A'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000086-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000102-0000-0000-0000-000000000001',
+  'b0000003-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  1,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/7e452a53-5a19-4adb-a4e9-eadc3b9d6c52/umz7Z8WUPYIwg5hIWn1K0w.png","alt":"Screenshot 2024-02-09 at 8.42.46 AM.png"}',
+  'qTkmAuxrQvRYK8tEDFlLUg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000103-0000-0000-0000-000000000001',
+  'b0000003-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  2,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/a4a640c3-d817-41c2-b361-90f1b3fa1755/ukJyxLUZca7-6rZIYGZGNg.gif","alt":"giphy (2).gif"}',
+  'jE1Zor3UML8VEKkR1k5OGQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000104-0000-0000-0000-000000000001',
+  'b0000003-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  3,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<h1 style=\"text-align: center;\"><span style=\"color: #e15951;\"><strong>Please Read:</strong></span></h1> \n<p><strong>Important Note:&#xa0;</strong>If you are changing the status or reason, please incomplete and re-complete the task!!! This ensures that the information is passed into Salesforce</p>"}',
+  'mFFW_MFgKiYZaU8sdqFDGA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000105-0000-0000-0000-000000000001',
   'b0000003-0000-0000-0000-000000000001',
   'Onboarding_Project_Status',
   'Onboarding Project Status',
@@ -2675,10 +3027,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Not Started","label":"Not Started"},{"value":"On Time","label":"On Time"},{"value":"On Hold","label":"On Hold"},{"value":"On Hold-Archived","label":"On Hold-Archived"},{"value":"Late","label":"Late"},{"value":"Canceled","label":"Canceled"}]',
   NULL,
+  '{}',
   'sPwz3jsx7kFkeRJPOwNGZg'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000087-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000106-0000-0000-0000-000000000001',
   'b0000003-0000-0000-0000-000000000001',
   'Status_Reason',
   'Status Reason',
@@ -2688,10 +3041,39 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"No Kickoff Call Scheduled","label":"No Kickoff Call Scheduled"},{"value":"Merchant Not Ready","label":"Merchant Not Ready"},{"value":"Unresponsive","label":"Unresponsive"},{"value":"Development Delayed","label":"Development Delayed"},{"value":"Zonos Product change","label":"Zonos Product change"},{"value":"Product Issue","label":"Product Issue"},{"value":"Store/Personnel Changes","label":"Store/Personnel Changes"}]',
   NULL,
+  '{}',
   'uEFvIgCd8N3ixWwKHKBFFQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000088-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000107-0000-0000-0000-000000000001',
+  'b0000003-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  6,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Selecting ''<strong>Migration canceled; customer retaining existing integration'' </strong>will <strong>not</strong> trigger the Churn workflow.</p>"}',
+  'vseCpu3Q4Y--qv4Vyx1MKA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000108-0000-0000-0000-000000000001',
+  'b0000003-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  7,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h2 style=\"text-align: center;\"><span style=\"color: rgb(225, 89, 81);\">Head of Onboarding must be notified for approval prior to canceling an onboarding project</span></h2>"}',
+  'kycVa8AtOyjmrCPAEtxCrQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000109-0000-0000-0000-000000000001',
   'b0000003-0000-0000-0000-000000000001',
   '_7',
   NULL,
@@ -2701,10 +3083,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Head of onboarding notified and approved","label":"Head of onboarding notified and approved"}]',
   NULL,
+  '{}',
   'szh2HprDZwuT1E7db0lPKQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000089-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000110-0000-0000-0000-000000000001',
   'b0000003-0000-0000-0000-000000000001',
   'Canceled_Reason',
   'Canceled Reason',
@@ -2714,10 +3097,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Carrier Issues","label":"Carrier Issues"},{"value":"Finance","label":"Finance"},{"value":"Merchant Unresponsive","label":"Merchant Unresponsive"},{"value":"Product Issue","label":"Product Issue"},{"value":"Shopify Basic (will not upgrade)","label":"Shopify Basic (will not upgrade)"},{"value":"Store Closed","label":"Store Closed"},{"value":"Went to a competitor","label":"Went to a competitor"},{"value":"Wrong Product","label":"Wrong Product"},{"value":"Migration canceled; customer retaining existing integration.","label":"Migration canceled; customer retaining existing integration."}]',
   NULL,
+  '{}',
   'ihyvUAZAbSzItGcMfsBF2Q'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000090-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000111-0000-0000-0000-000000000001',
   'b0000003-0000-0000-0000-000000000001',
   'Additional_Notes_(add_link_to_any_Linear_task):',
   'Additional Notes (add link to any Linear task):',
@@ -2727,10 +3111,25 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'qh0GW0LudPfUZTradM5Pdw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000091-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000112-0000-0000-0000-000000000001',
+  'b0000003-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  11,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<p>If the project is Done, complete the ''Go Live (Internal)'' task. This marks the project as done and the status will be updated accordingly.</p> \n<p><a href=\"https://myzonos.atlassian.net/wiki/spaces/BA/pages/2249981982/How+to+Complete+a+Workflow+Run\" rel=\"nofollow\" target=\"_blank\">See more here.&#xa0;</a></p>"}',
+  'kTkaPbAVLAiM59gcCb5B6g'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000113-0000-0000-0000-000000000001',
   'b0000005-0000-0000-0000-000000000001',
   '_8',
   NULL,
@@ -2740,10 +3139,39 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Waive Shopify fee","label":"Waive Shopify fee"},{"value":"Add subscription to Stripe","label":"Add subscription to Stripe"},{"value":"Check organization rules","label":"Check organization rules"}]',
   NULL,
+  '{}',
   'jtqCRlPVwQ_RU6zxh19CRw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000092-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000114-0000-0000-0000-000000000001',
+  'b0000006-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<p>Assigned to <a href=\"mailto:Accounting@zonos.com\" rel=\"nofollow\" target=\"_blank\">Accounting@zonos.com</a> post Kickoff Call<br><br></p>"}',
+  'nTr477_MjGV6KSSnUcJO-w'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000115-0000-0000-0000-000000000001',
+  'b0000006-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  1,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<p>E-commerce Platform: {{form.E-Commerce_Platform_2}}</p>"}',
+  'sT2EAgz7Ep2fl4MuxpxJFw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000116-0000-0000-0000-000000000001',
   'b0000006-0000-0000-0000-000000000001',
   '2023_LCG_Pricing',
   '2023 LCG Pricing',
@@ -2753,10 +3181,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Add Subscription","label":"Add Subscription"},{"value":"Check pricing model","label":"Check pricing model"},{"value":"Verify in Shopify that the Subscription charge has been accepted","label":"Verify in Shopify that the Subscription charge has been accepted"}]',
   NULL,
+  '{}',
   'ru1CG9yH3OH58-Z9e5BCUQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000093-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000117-0000-0000-0000-000000000001',
   'b0000006-0000-0000-0000-000000000001',
   'Zonos_Accounting',
   'Zonos Accounting',
@@ -2766,10 +3195,25 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'uoQOwHkd62bPZ9RS4UBMig'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000094-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000118-0000-0000-0000-000000000001',
+  'b0000007-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Merchant has opted out of LCG, and Onboarding has disabled LCG on the Zonos dashboard.</p>"}',
+  'gb8FJ-1aPFo9g_Nxg65Fhg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000119-0000-0000-0000-000000000001',
   'b0000007-0000-0000-0000-000000000001',
   '_6',
   NULL,
@@ -2779,10 +3223,81 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Billing rules fixed","label":"Billing rules fixed"}]',
   NULL,
+  '{}',
   'sGwO79QVBFetnrfPEN9D8A'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000095-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000120-0000-0000-0000-000000000001',
+  'b0000008-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<p>Adding your team to the Zonos dashboard will allow them to view Zonos order data. A user''s access level will depend on the permission type granted to them by the account admin.</p> \n<p></p>"}',
+  'rvyyPfEUh4j8luZ79n9PhQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000121-0000-0000-0000-000000000001',
+  'b0000008-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'video',
+  1,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/nKC-Wup8HKKw_dWgRqpBfA/1v605glj8r.mp4","service":"S3","serviceCode":"1v605glj8r"}',
+  'iLV00TKDIfrNG6Bf9d1EFg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000122-0000-0000-0000-000000000001',
+  'b0000008-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  2,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<p>Steps:</p> \n<ol> \n <li>Go to Dashboard -&gt; Settings -&gt; <a href=\"https://dashboard.zonos.com/settings/dashboard/team\" rel=\"nofollow\" target=\"_blank\">Team</a></li> \n <li>Click&#xa0;Add team member</li> \n <li>Enter your team member’s email and name</li> \n <li>Select the permission level you wish to grant your team member''s account \n  <ol> \n   <li>Optional — Select which department your team member is in</li> \n  </ol> </li> \n <li>Click send invite. An invitation with a link for your team member to set up their Zonos account will be sent to the email address you entered</li> \n</ol>"}',
+  'vTktyd4dCE7VGAHJznVAHg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000123-0000-0000-0000-000000000001',
+  'b0000008-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  3,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"url":"https://zonos.com/docs/account/manage-your-team#types-of-permissions-and-access"}',
+  'gSQ2QnpCm-ETVBjuaRpHRQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000124-0000-0000-0000-000000000001',
+  'b0000009-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<p style=\"text-align: center;\"><strong>Zonos Account Tasks (Admin)</strong></p>"}',
+  'gOfwR_OJQzS-5yfaqeNOCA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000125-0000-0000-0000-000000000001',
   'b0000009-0000-0000-0000-000000000001',
   NULL,
   NULL,
@@ -2792,10 +3307,25 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Zonos account created","label":"Zonos account created"},{"value":"Set to \"Onboarding\"","label":"Set to \"Onboarding\""}]',
   NULL,
+  '{}',
   'vPkHKPTPtWX4DIFpvuRIiA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000096-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000126-0000-0000-0000-000000000001',
+  'b0000009-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  2,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<p style=\"text-align: center;\"><strong>General Settings (settings &gt; general)</strong></p>"}',
+  'vUAfEeykh8OghF-510VOTw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000127-0000-0000-0000-000000000001',
   'b0000009-0000-0000-0000-000000000001',
   '_2',
   NULL,
@@ -2805,10 +3335,25 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Add E-Commerce platform","label":"Add E-Commerce platform"},{"value":"Confirm store address is complete","label":"Confirm store address is complete"},{"value":"Confirm phone number entered in business address","label":"Confirm phone number entered in business address"}]',
   NULL,
+  '{}',
   'sRPtjgheyqGEeCEhxqtGfA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000097-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000128-0000-0000-0000-000000000001',
+  'b0000009-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  4,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<p style=\"text-align: center;\"><strong>Billing</strong> <strong>(settings &gt; billing)</strong></p>"}',
+  'qB9xuU94unXI9Tkh8KNNtg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000129-0000-0000-0000-000000000001',
   'b0000009-0000-0000-0000-000000000001',
   'Payment_method_is_complete?',
   'Payment method is complete?',
@@ -2818,10 +3363,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Yes","label":"Yes"},{"value":"No","label":"No"}]',
   NULL,
+  '{}',
   'i9XEJUnWUeJVKME9tfpLig'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000098-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000130-0000-0000-0000-000000000001',
   'b0000009-0000-0000-0000-000000000001',
   'Billing_details_complete?',
   'Billing details complete?',
@@ -2831,10 +3377,25 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Yes","label":"Yes"},{"value":"No","label":"No"}]',
   NULL,
+  '{}',
   'rYccjvoQsCGShaREW1NGHw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000099-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000131-0000-0000-0000-000000000001',
+  'b0000009-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  7,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<p style=\"text-align: center;\"><strong>Integrations (settings &gt; integrations)</strong></p>"}',
+  'p3tk_w5zn8TiTkz3YutLIw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000132-0000-0000-0000-000000000001',
   'b0000009-0000-0000-0000-000000000001',
   'Do_you_see_the_message_below?',
   'Do you see the message below?',
@@ -2844,10 +3405,25 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Yes","label":"Yes"},{"value":"No","label":"No"}]',
   NULL,
+  '{}',
   'p51Q9_ENdBf4U9RIwuJOyQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000100-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000133-0000-0000-0000-000000000001',
+  'b0000009-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  9,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/qePBCcqUsjAVkiPzhIJINQ/GQL-error---update.jpg","alt":"GQL error - update.jpg"}',
+  'kCk3FUHvMtQv7oKl7hhB-Q'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000134-0000-0000-0000-000000000001',
   'b0000009-0000-0000-0000-000000000001',
   'multi_select_field',
   NULL,
@@ -2857,10 +3433,25 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Went to Lainee to clear","label":"Went to Lainee to clear"}]',
   NULL,
+  '{}',
   'gYwMVW5z9qyhbJ8TIFZE1w'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000101-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000135-0000-0000-0000-000000000001',
+  'b0000009-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  11,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<p style=\"text-align: center;\"><strong>Catalog (settings &gt; catalog)</strong></p>"}',
+  'ri1MoqqVb-DXAHhU3WVODQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000136-0000-0000-0000-000000000001',
   'b0000009-0000-0000-0000-000000000001',
   '_3',
   NULL,
@@ -2870,10 +3461,25 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Default country of origin set (Find most common CoO, or use the CoO of the most popular product)","label":"Default country of origin set (Find most common CoO, or use the CoO of the most popular product)"},{"value":"Default HS code set (Use most popular product and classify on dashboard or ask Robin in Default HS code Slack channel)","label":"Default HS code set (Use most popular product and classify on dashboard or ask Robin in Default HS code Slack channel)"},{"value":"Enable LCG","label":"Enable LCG"}]',
   NULL,
+  '{}',
   'hxbVCnvUFnZMFkPCmb5Iaw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000102-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000137-0000-0000-0000-000000000001',
+  'b0000009-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  13,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<p style=\"text-align: center;\"><strong>Hello (settings &gt; hello settings)</strong></p>"}',
+  'gGDTYEVxXWze4o74N3dMtg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000138-0000-0000-0000-000000000001',
   'b0000009-0000-0000-0000-000000000001',
   '_4',
   NULL,
@@ -2883,10 +3489,25 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Disable currency behavior","label":"Disable currency behavior"}]',
   NULL,
+  '{}',
   'jar5hmKABHxMhSIwBvFK9A'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000103-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000139-0000-0000-0000-000000000001',
+  'b0000009-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  15,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<p style=\"text-align: center;\"><strong>Shopify Task</strong></p>"}',
+  'nyHzV6BAZK3iIUSNI6JJHg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000140-0000-0000-0000-000000000001',
   'b0000009-0000-0000-0000-000000000001',
   '_5',
   NULL,
@@ -2896,10 +3517,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Request Collaborator Access in Shopify","label":"Request Collaborator Access in Shopify"}]',
   NULL,
+  '{}',
   'g34zeqALna7zTp4g2iRMNw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000104-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000141-0000-0000-0000-000000000001',
   'b0000010-0000-0000-0000-000000000001',
   'send_email_46',
   'Send Email',
@@ -2909,10 +3531,25 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'htnQxYgGBVoCnJEOQddKIw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000105-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000142-0000-0000-0000-000000000001',
+  'b0000012-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<p>Schedule a kickoff call with the Merchant to discuss project details.</p>"}',
+  'nB6lkopNPLPZP57eL91KbA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000143-0000-0000-0000-000000000001',
   'b0000012-0000-0000-0000-000000000001',
   'send_email_42',
   NULL,
@@ -2922,10 +3559,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'iDycSe0-BjkOIkHrcwlOrA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000106-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000144-0000-0000-0000-000000000001',
   'b0000012-0000-0000-0000-000000000001',
   'Front_Thread_Link',
   'Front Thread Link',
@@ -2935,10 +3573,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'puAyKp2EhwxbWTvay09D6w'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000107-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000145-0000-0000-0000-000000000001',
   'b0000012-0000-0000-0000-000000000001',
   'Carrier_Account_Link',
   'Carrier Account Link',
@@ -2948,10 +3587,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'lSOo38_CXu3uI6jKmlVNaQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000108-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000146-0000-0000-0000-000000000001',
   'b0000012-0000-0000-0000-000000000001',
   'Zonos_App_Link',
   'Zonos App Link',
@@ -2961,10 +3601,25 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'sCc8qY6tdG2dxFgTosdNMQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000109-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000147-0000-0000-0000-000000000001',
+  'b0000013-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<h3><strong>Merchant Follow Up Email:</strong></h3> \n<p><strong>(Kick-off Call Follow-up)</strong></p>"}',
+  'mxiRzLBnGGjjOLS2mRBJYw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000148-0000-0000-0000-000000000001',
   'b0000013-0000-0000-0000-000000000001',
   'key_qWwkgp0EFlqrcbIB0jRDnw',
   NULL,
@@ -2974,10 +3629,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'qWwkgp0EFlqrcbIB0jRDnw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000110-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000149-0000-0000-0000-000000000001',
   'b0000014-0000-0000-0000-000000000001',
   'Recurring_meeting_set_(daily,_every_other_day,_or_weekly_at_most)',
   'Recurring meeting set (daily, every other day, or weekly at most)',
@@ -2987,10 +3643,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Yes","label":"Yes"},{"value":"No","label":"No"}]',
   NULL,
+  '{}',
   'iO94uqkUXm3dWsl7aq1DDw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000111-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000150-0000-0000-0000-000000000001',
   'b0000014-0000-0000-0000-000000000001',
   'Why_was_a_recurring_meeting_not_scheduled?',
   'Why was a recurring meeting not scheduled?',
@@ -3000,10 +3657,25 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'h2yEpL6YW6wIuUX1zxhD8g'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000112-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000151-0000-0000-0000-000000000001',
+  'b0000015-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3><strong>Merchant Follow Up Email:</strong></h3> \n<p><strong>(Kick-off Call Follow-up)</strong></p>"}',
+  'hJ4dx7efPHR16l8FGH9NgQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000152-0000-0000-0000-000000000001',
   'b0000015-0000-0000-0000-000000000001',
   'key_uplaGLKzT8q7VeSweQ1Ldg',
   NULL,
@@ -3013,10 +3685,25 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'nTM-P4ZCiAwGeyIvvWhJ1w'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000113-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000153-0000-0000-0000-000000000001',
+  'b0000016-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3><strong>Merchant Follow Up Email:</strong></h3> \n<p><strong>(Kick-off Call Follow-up)</strong></p>"}',
+  'l8FR778YYqUkbDItRqRGVg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000154-0000-0000-0000-000000000001',
   'b0000016-0000-0000-0000-000000000001',
   'key_uplaGLKzT8q7VeSweQ1Ldg_copy(b37b8495-e15d-4b2a-9681-19ba1d142064)',
   NULL,
@@ -3026,10 +3713,25 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'ofVmN5boxS182O1cLPdJCQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000114-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000155-0000-0000-0000-000000000001',
+  'b0000017-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3>Process when Zonos is used in multiple shipping profiles</h3>\n<ul>\n<li>Shopify sends an API request for each profile</li>\n<li>Zonos sends a quote for each request</li>\n<li>Shopify combines the quotes for a single amount\n<ul>\n<li>Zonos does not have insight into how Shopify combines these quotes</li>\n</ul>\n</li>\n<li>If order is completed, Zonos recalculates into a single quote&#xa0;\n<ul>\n<li>A variance is impossible to avoid in these scenarios</li>\n<li>Using cartonization with this will also pose issues\n<ul>\n<li>ie - two profiles will produce two API calls with more cartons than the final Zonos quote&#xa0;&#xa0;</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"}',
+  'vAl6q0c65_tZJCQAyZNNQg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000156-0000-0000-0000-000000000001',
   'b0000017-0000-0000-0000-000000000001',
   'Merchant_notified_and_understands_variance',
   'Merchant notified and understands variance',
@@ -3039,10 +3741,81 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Yes","label":"Yes"},{"value":"No","label":"No"}]',
   NULL,
+  '{}',
   'rSu7pQ8QHGJCHJ8E_PtFug'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000115-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000157-0000-0000-0000-000000000001',
+  'b0000017-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  2,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/iHzk9_-EG3Is0iy9qmtPpQ/Jurassic-Park-Ah-GIF.gif","alt":"Jurassic Park Ah GIF.gif"}',
+  'kYkNxFErRLrhrv-z9nJE7A'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000158-0000-0000-0000-000000000001',
+  'b0000020-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{}',
+  'ou8imDwcyEtMfhqr0e1GlA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000159-0000-0000-0000-000000000001',
+  'b0000020-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3><strong>Steps</strong>:</h3>\n<p>It''s quick and easy to install&#xa0;<a href=\"https://www.bigcommerce.com/apps/zonos-checkout\" rel=\"nofollow\" target=\"_blank\">Checkout for BigCommerce</a>.</p>\n<ol>\n<li>Begin by logging in to your BigCommerce store.</li>\n<li>Go to&#xa0;<a href=\"https://www.bigcommerce.com/apps/zonos-checkout\" rel=\"nofollow\" target=\"_blank\">https://www.bigcommerce.com/apps/zonos-checkout/</a>.</li>\n<li>Click on&#xa0;<strong>GET THIS APP</strong>&#xa0;to install.</li>\n</ol>\n<p>*This integration utilizes the public token in the app enablement. Do not use the private, as it is exposed on the frontend.</p>\n<p>Once you''ve installed the app, see below to learn how to configure your settings.&#xa0;</p>"}',
+  'tUDLXuCz-Fy5-fb9Fx9D6Q'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000160-0000-0000-0000-000000000001',
+  'b0000020-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  2,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://zonos.com/docs/global-ecommerce/integration/integrating-checkout/bigcommerce"}',
+  'hjNaVwbQoAtr-FrRRnxHpg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000161-0000-0000-0000-000000000001',
+  'b0000021-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Please provide Zonos with BigCommerce admin access (you can remove access after the onboarding process) by using the following email: <a href=\"mailto:implementation@zonos.com\" rel=\"nofollow\" target=\"_blank\">implementation@zonos.com</a></p>\n<p><br><strong>Steps</strong>: In BigCommerce &gt; Account Settings &gt; Users &gt; Create User Account</p>\n<p><br>Complete this task once done</p>"}',
+  'rIERY4aGCsjo6Rwm44lEAg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000162-0000-0000-0000-000000000001',
   'b0000021-0000-0000-0000-000000000001',
   'select_field',
   'Dropdown',
@@ -3052,10 +3825,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Access granted","label":"Access granted"},{"value":"Access NOT granted","label":"Access NOT granted"}]',
   NULL,
+  '{}',
   'mw9pMS2w4QEt7cJlZYtEyA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000116-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000163-0000-0000-0000-000000000001',
   'b0000021-0000-0000-0000-000000000001',
   'Additional_information',
   'Additional information',
@@ -3065,10 +3839,137 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   's7UhR26pB_SXZ_mbO0RCfQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000117-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000164-0000-0000-0000-000000000001',
+  'b0000023-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3><strong>Steps</strong>:</h3>\n<ol>\n<li>Log in to Cart.com, then go to&#xa0;<strong>Storefront</strong>&#xa0;→&#xa0;<strong>Tools</strong>&#xa0;→&#xa0;<strong>Apps &amp; Addons</strong>&#xa0;→&#xa0;<strong>Zonos</strong>.</li>\n<li>Copy your&#xa0;<strong>Zonos API key</strong>&#xa0;from&#xa0;<a href=\"https://dashboard.zonos.com/settings/dashboard/integrate\" rel=\"nofollow\" target=\"_blank\"><strong>Dashboard</strong></a>&#xa0;and input it as your&#xa0;<strong>API key</strong>.</li>\n<li>Type the&#xa0;<a href=\"https://zonos.com/docs/supply-chain/landed-cost/supported-currencies\" rel=\"nofollow\" target=\"_blank\">three-letter currency code</a>&#xa0;for your base currency.</li>\n<li>In the&#xa0;<strong>Landed cost type</strong>, check the box next to any shipping services that you want to be DDP (duties and taxes collected during the checkout). Unchecked services will still be available in the checkout, but will be DDU (an estimation of duties and taxes will appear in the checkout, but the customer will pay these upon delivery of the order).</li>\n<li>Choose your&#xa0;<strong>Sale type</strong>.</li>\n<li>Toggle&#xa0;<strong>Send order complete updates</strong>&#xa0;to&#xa0;<strong>enabled</strong>. This must be enabled for orders to appear in Dashboard</li>\n</ol>"}',
+  'gRgkJcPEbUUdQr6FYTVI5w'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000165-0000-0000-0000-000000000001',
+  'b0000023-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://zonos.com/docs/global-ecommerce/integrating-landed-cost/cart-app"}',
+  'nxxx2w7ii4tIpd2PHMdGOQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000166-0000-0000-0000-000000000001',
+  'b0000024-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Trigger automation based on: Integration type = Intuitive Shipping</p>\n<p>confirm with Connor</p>"}',
+  'vk4HA1PaQ7u70gv-Au5LEQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000167-0000-0000-0000-000000000001',
+  'b0000025-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3>Step 1:</h3>\n<ul>\n<li>Open Intuitive dashboard</li>\n<li>settings &gt; partner integrations &gt; edit partner settings</li>\n</ul>"}',
+  'nNRFeEGx6a1utkl8RVdECA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000168-0000-0000-0000-000000000001',
+  'b0000025-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/ovrY2wVRvjRGUHLEV1JGzw/add-api-key---1.png","alt":"add api key - 1.png"}',
+  'keCm9h0UhVX37ssh42JDfw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000169-0000-0000-0000-000000000001',
+  'b0000025-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  2,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3>Step 2:</h3>\n<ul>\n<li>Add Zonos API key &gt; save</li>\n</ul>"}',
+  'quVQl0u-RtqRsEeZEexGow'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000170-0000-0000-0000-000000000001',
+  'b0000025-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  3,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/oowh7UTd1aNJIzb87PVEPg/add-api-key---2.png","alt":"add api key - 2.png"}',
+  'h6N5A_j3UHZpuLftXVdHsg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000171-0000-0000-0000-000000000001',
+  'b0000026-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Intuitive Shipping utilizes Scenarios from their app. Zonos must be removed from Shopify Shipping Zones.</p>\n<p>To remove:<br>settings &gt; shipping and delivery &gt; general profile &gt; click on ellipses to the right of Zonos &gt; delete &gt; save</p>"}',
+  'srMeRR4wvBYgrgqEFxFDvQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000172-0000-0000-0000-000000000001',
+  'b0000026-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/uQQgDgSyJO_5hneQ81FPcA/remove-from-shipping-zones.png","alt":"remove from shipping zones.png"}',
+  'jN2ufu_OoR0MnsYC88FJZg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000173-0000-0000-0000-000000000001',
   'b0000026-0000-0000-0000-000000000001',
   'Zonos_has_been_removed_from_all_shipping_zones',
   'Zonos has been removed from all shipping zones',
@@ -3078,10 +3979,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Yes","label":"Yes"},{"value":"No","label":"No"}]',
   NULL,
+  '{}',
   'qhrSSTe-dDstNVVvj3hOZg'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000118-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000174-0000-0000-0000-000000000001',
   'b0000026-0000-0000-0000-000000000001',
   'Why_was_Zonos_not_removed_from_the_shipping_zones?',
   'Why was Zonos not removed from the shipping zones?',
@@ -3091,10 +3993,249 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'uQRV5JSZhWIF8Q_hXX5DjQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000119-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000175-0000-0000-0000-000000000001',
+  'b0000027-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3>Step 1:</h3>\n<ul>\n<li>Open Intuitive dashboard</li>\n<li>shipping &gt; scenarios &gt; select appropriate scenario &gt; applicable rating &gt; scroll to locate Zonos Duty and Tax</li>\n</ul>"}',
+  'nZ6sHsjjJQheZ0EDuO1Fxg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000176-0000-0000-0000-000000000001',
+  'b0000027-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/sUf-4qtAxnZHuiPsRfJAaQ/intuitive-scenarios-1.png","alt":"intuitive scenarios 1.png"}',
+  'iUjcBG_iDJkeP-5juUNOZw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000177-0000-0000-0000-000000000001',
+  'b0000027-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  2,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3>Step 2:</h3>\n<ul>\n<li>After saving, place in test mode</li>\n</ul>"}',
+  'vE3eo_znPWlau-T3lolEzg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000178-0000-0000-0000-000000000001',
+  'b0000027-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  3,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p class=\"style-info\">Test mode allows you to test on live site. The name for testing on an order has to be First name : Intuitive ; remaining can be whatever.</p>"}',
+  'iTsKLtbwqSDkxlaWRFtKVw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000179-0000-0000-0000-000000000001',
+  'b0000027-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  4,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/rqI2U2bMmmkyA3ZlUjpCEg/intuitive-scenarios-2.png","alt":"intuitive scenarios 2.png"}',
+  'lbfsnZQjDz5BPW49SoVHbA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000180-0000-0000-0000-000000000001',
+  'b0000029-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3><strong>Steps</strong>:</h3>\n<ol>\n<li>\n<p>In order to use Checkout with Magento, you need to purchase the extension from the Magento Marketplace, then install it in your terminal with Composer. This approach is more technical than our other plugins due to the way that Magento handles extensions. To install the app:</p>\n<ol>\n<li>Download the&#xa0;<a href=\"https://marketplace.magento.com/zonos-checkout.html\" rel=\"nofollow\" target=\"_blank\">Checkout extension</a>&#xa0;from the Magento Marketplace.</li>\n<li>Download the&#xa0;<a href=\"https://marketplace.magento.com/zonos-hello.html\" rel=\"nofollow\" target=\"_blank\">Hello extension</a>&#xa0;from the Magento Marketplace.</li>\n<li>Open a new terminal and navigate to the root directory of your Magento installation</li>\n</ol>\n</li>\n</ol>"}',
+  'viFNtKIqnYV460gunU9Cow'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000181-0000-0000-0000-000000000001',
+  'b0000029-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://zonos.com/docs/global-ecommerce/integration/integrating-checkout/magento"}',
+  'votxHZLpWNqGqTUwx7BI2A'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000182-0000-0000-0000-000000000001',
+  'b0000030-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3>For the merchant:</h3>\n<ol>\n<li>Go to your&#xa0;<strong>Magento admin</strong>&#xa0;-&gt;&#xa0;<strong>Stores</strong>&#xa0;-&gt;&#xa0;<strong>Configuration</strong>&#xa0;-&gt;&#xa0;<strong>General</strong>.</li>\n<li>In the&#xa0;<strong>Allow countries</strong>&#xa0;section, highlight all countries that you want to ship to, internationally and domestically. If a country is not highlighted here, but is enabled in Zonos, the order will be allowed to complete and will appear in Dashboard, but it will fail to import to Magento.</li>\n<li>Select every country except for the United States in the&#xa0;<strong>Zip/postal code is optional for</strong>&#xa0;section. This reduces errors in completing orders since some countries do not use or require postal codes. Additionally, because Checkout comes with Zonos''&#xa0;<a href=\"https://zonos.com/docs/global-ecommerce/checkout/fraud-protection\" rel=\"nofollow\" target=\"_blank\">fraud protection</a>, you will not incur additional risk for removing this requirement.</li>\n</ol>"}',
+  'l-qqvAG1wji8s0VabHJHfg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000183-0000-0000-0000-000000000001',
+  'b0000030-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3>For onboarding:</h3>\n<p>Full list of countries that do not require zip codes (\"00000\" can be used to generate labels, if necessary)</p>\n<ul>\n<li>Hong Kong</li>\n<li>United Arab Emirates</li>\n<li>Qatar</li>\n<li>Antigua and Barbuda</li>\n<li>Angola</li>\n<li>Djibouti</li>\n<li>Panama</li>\n<li>Saudi Arabia</li>\n<li>Oman</li>\n<li>Bahrain</li>\n<li>Trinidad and Tobago</li>\n<li>Ghana</li>\n<li>Ireland (outside Dublin)<br><br></li>\n</ul>\n<p>Full list of countries where region is not required</p>\n<ul>\n<li>Andorra</li>\n<li>Belgium</li>\n<li>Denmark</li>\n<li>Finland</li>\n<li>Hong Kong</li>\n<li>Iceland</li>\n<li>Ireland</li>\n<li>Japan</li>\n<li>Liechtenstein</li>\n<li>Luxembourg</li>\n<li>Macao</li>\n<li>Monaco</li>\n<li>Netherlands</li>\n<li>New Zealand</li>\n<li>Norway</li>\n<li>San Marino</li>\n<li>Singapore</li>\n<li>Switzerland</li>\n<li>United Kingdom</li>\n<li>Vatican City</li>\n</ul>"}',
+  'plKde7-aaw3fjzLPlWVOIQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000184-0000-0000-0000-000000000001',
+  'b0000032-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3><strong>Steps</strong>:</h3>\n<ol>\n<li><a href=\"https://apps.miva.com/mm5/merchant.mvc?Screen=BASK&amp;Action=ADPR&amp;Quantity=1&amp;Product_Code=ZONOS-MIVA-PLUGIN\" rel=\"nofollow\" target=\"_blank\">Download</a>&#xa0;the module.</li>\n<li>Log in to your&#xa0;<a href=\"https://www.miva.com/mm5/merchant.mvc?Screen=ORDL\" rel=\"nofollow\" target=\"_blank\">Miva Merchant account</a>, then click&#xa0;<strong>Settings</strong>&#xa0;-&gt;&#xa0;<strong>Modules</strong>.</li>\n<li>Search for Zonos, then click&#xa0;<strong>Install</strong> next to the Zonos Integration Module.</li>\n</ol>"}',
+  'mEL2AZHwwlWVh8HoPoRE1g'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000185-0000-0000-0000-000000000001',
+  'b0000032-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://zonos.com/docs/global-ecommerce/integration/integrating-checkout/miva"}',
+  'jvfiMH9qvx44YpSTnAhI8A'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000186-0000-0000-0000-000000000001',
+  'b0000034-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3><strong>Steps</strong>:</h3>\n<ol>\n<li>\n<p>Deploy the cartridge&#xa0;<code>int_zonos_sfra</code>&#xa0;to the sandbox by running the NPM install and uploading it.</p>\n</li>\n<li>\n<p>Add&#xa0;<code>int_zonos_sfra</code>&#xa0;to the left of the cartridge path.</p>\n</li>\n<li>\n<p>Upload/import the&#xa0;<em>System Objection Extensions XML file</em>&#xa0;(<code>20191210-zonos-system-objects.xml</code>).</p>\n</li>\n<li>\n<p>Go to&#xa0;<em>Merchant Tools</em>&#xa0;-&gt;&#xa0;<em>Site Preferences</em>&#xa0;-&gt;&#xa0;<strong><em>Custom Preferences</em></strong>.</p>\n</li>\n<li>\n<p>Click on the&#xa0;<em>Zonos</em>&#xa0;attribute group.</p>\n</li>\n<li>\n<p>Next, enter the appropriate values for your storefront. See examples of&#xa0;<a href=\"https://zonos.com/docs/global-ecommerce/integrating-landed-cost/salesforce#zonos-custom-attributes\" rel=\"nofollow\" target=\"_blank\">custom attribute values</a>&#xa0;as a reference.</p>\n</li>\n<li>\n<p>Go to&#xa0;<strong>Merchant Tools</strong>&#xa0;-&gt;&#xa0;<strong>Ordering</strong>&#xa0;-&gt;&#xa0;<strong>Shipping Methods</strong>&#xa0;to fill in the three Zonos custom attributes below as these are sent to the Zonos API.</p>\n<ul>\n<li><code>Carrier</code></li>\n<li><code>Service Level</code></li>\n<li><code>IsDDP</code></li>\n</ul>\n</li>\n<li>\n<p>Set up SFCC Services, profiles, and credentials for Zonos API calls</p>\n</li>\n</ol>"}',
+  'rw5Xrfwtcped-OcleX9OXA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000187-0000-0000-0000-000000000001',
+  'b0000034-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://zonos.com/docs/global-ecommerce/integrating-landed-cost/salesforce"}',
+  'ljeh5D5IEGdbjXUKWKhPBA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000188-0000-0000-0000-000000000001',
+  'b0000036-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>There are two steps needed to complete the Zonos installation in Shopify. First, the Zonos app will need to be downloaded. Second, the platform subscription will need to be accepted. Follow the steps outlined below. Complete this task once done.&#xa0;</p>"}',
+  'qWhYzvk6YhdoYvzqcldBAA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000189-0000-0000-0000-000000000001',
+  'b0000036-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3><strong>Steps</strong>:</h3>\n<ol>\n<li>Download Zonos app from the&#xa0;<a href=\"https://apps.shopify.com/duty-and-tax-calculator-iglobal-stores?st_source=autocomplete\" rel=\"nofollow\" target=\"_blank\">Shopify app store</a>.</li>\n<li>Click Install</li>\n<li>\n<p>Copy your credentials from your Zonos account (<a href=\"https://dashboard.zonos.com/settings/dashboard/integrate\" rel=\"nofollow\" target=\"_blank\">settings -&gt; integrations</a>)</p>\n<ol>\n<li>Zonos account number</li>\n<li>Rest API key</li>\n<li>Zonos API</li>\n</ol>\n</li>\n<li>In Shopify, paste your Zonos credentials</li>\n<li>Click save</li>\n<li>Select subscription type (reference on Zonos order form)</li>\n<li>Click approve</li>\n<li><strong>Do not enable the Zonos app yet</strong></li>\n</ol>\n<p>Note: If you don''t have a Zonos credential token listed in the Zonos Dashboard, contact your project manager - {{form.Project_Manager_(First_Name)}}</p>"}',
+  'nq3gWHD0KVltsFxi3nNAIA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000190-0000-0000-0000-000000000001',
+  'b0000036-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  2,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>After installing the Zonos Duty and Tax App, please grant <strong>collaborator access</strong> in Shopify to your project manager. <br>Note that requests are usually sent within 24 hours of app installation.</p>"}',
+  'jtm4gXu8XOBq1cDWoWlHrg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000191-0000-0000-0000-000000000001',
+  'b0000037-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>The Zonos Duty and Tax app&#xa0;<strong>requires</strong>&#xa0;the enablement of Shopify''s Carrier Service API to successfully rate a fully landed cost in the checkout. If you are unsure if this feature is enabled please reach out to Shopify support for confirmation.</p>"}',
+  'q_Bqs_WjZD1hmAHTvm9Cgg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000192-0000-0000-0000-000000000001',
   'b0000037-0000-0000-0000-000000000001',
   'Merchant_is_currently_using_Shopify_Basic_and_does_not_have_access_to_Shopify''s_carrier_service_API.',
   'Merchant is currently using Shopify Basic and does not have access to Shopify''s carrier service API.',
@@ -3104,10 +4245,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Merchant has upgraded plan","label":"Merchant has upgraded plan"}]',
   NULL,
+  '{}',
   'kBAG6qv7jQV1-UEeGe1EJQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000120-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000193-0000-0000-0000-000000000001',
   'b0000037-0000-0000-0000-000000000001',
   'Is_Shopify''s_carrier_service_API_enabled?',
   'Is Shopify''s carrier service API enabled?',
@@ -3117,10 +4259,375 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Yes","label":"Yes"},{"value":"No","label":"No"}]',
   NULL,
+  '{}',
   'rnalGd_xqVFnMaWH_WFHBw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000121-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000194-0000-0000-0000-000000000001',
+  'b0000038-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Ensure that Shopify''s taxes and duties settings are updated appropriately. Zonos-enabled ship to countries should show as not collecting in the taxes and duties section.</p> \n<p>Navigate to:</p> \n<ul> \n <li>From the Shopify admin, go to&#xa0;<strong>Settings</strong>&#xa0;&gt;&#xa0;<a href=\"https://admin.shopify.com/settings/taxes\" rel=\"nofollow\" target=\"_blank\"><strong>Taxes and duties</strong></a>.</li> \n</ul>"}',
+  'mTEFu30KG4Uaaf09VTlA3Q'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000195-0000-0000-0000-000000000001',
+  'b0000038-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/313740b0-59ab-4536-95ae-2c826a09c7b4/gUWk9_BgaHKfSZWWcZBOQg.png","alt":"image.png"}',
+  'nMAc-glyIm8LixYd0ktA2g'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000196-0000-0000-0000-000000000001',
+  'b0000039-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Zonos uses the physical weight value set at the product level to calculate the shipping costs of a shipment. To ensure carrier-calculated shipping rates are accurate in the checkout, we recommend adding a physical weight value to all active Shopify SKUs.&#xa0;</p> \n<p>Active SKUs that are missing a physical weight value in the product detail will rate carrier-calcualted shipping rates inaccurately.</p>"}',
+  'rpEUNtZzkv6DuK3XSodHVg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000197-0000-0000-0000-000000000001',
+  'b0000039-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'video',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/sKVImJl--mZHUe50nUVOqw/2sde88wqig.mp4","service":"S3","serviceCode":"2sde88wqig"}',
+  'tQBbyvCm_vmBhOY0oapCmg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000198-0000-0000-0000-000000000001',
+  'b0000039-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  2,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h1>How to Edit and Update Product Weights in Shopify</h1> \n<hr> \n<ol> \n <li>In your Shopify admin, go to Products -&gt; All products.</li> \n <li>Click the title of the product that you want to add weight to.</li> \n <li>Scroll down to the Shipping section. \n  <ol> \n   <li>If the product has variants, you''ll need to click one of the variants in the Variant section to see the Shipping section.</li> \n  </ol> </li> \n <li>Enter the weight under <strong>Weight</strong>.</li> \n <li>Click Save.</li> \n</ol>"}',
+  'qZoo4rD1fJG11EXobllDnw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000199-0000-0000-0000-000000000001',
+  'b0000039-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  3,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/9eb35113-8332-4710-a272-501844733fa2/vki6mjvyeKuwabmmEBJMpQ.PNG","alt":"Capture (1).PNG"}',
+  'goLzmF01PiNYL4vDjnJIrQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000200-0000-0000-0000-000000000001',
+  'b0000040-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>To add the Zonos Duty Tax Plus Features app block to your Checkout, you will need to enable the features in the Zonos app settings and then add the app block to your Checkout.</p>"}',
+  'uJR8vJFmVTDQdBkPITpPyQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000201-0000-0000-0000-000000000001',
+  'b0000040-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/r-03dCv2dx7PY-cqo89E1g/enhanced-duty-and-tax.jpg","alt":"enhanced duty and tax.jpg"}',
+  'kuXRExs15IGPSrFCJWdK2w'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000202-0000-0000-0000-000000000001',
+  'b0000040-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  2,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/n6ksKLhxr-UqVwXVlkxJ4g/customize.jpg","alt":"customize.jpg"}',
+  'olulPSBS_uFZIZHErIJOJg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000203-0000-0000-0000-000000000001',
+  'b0000040-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  3,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/kYZhWVQmFNtdRjNilhVIxA/add-app-block.jpg","alt":"add app block.jpg"}',
+  'i_KS-H3v-Eh2WVgvkyFJLA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000204-0000-0000-0000-000000000001',
+  'b0000040-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  4,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/pY2oQZxXPT-QXEyc_8hLkg/add-app-block-2.jpg","alt":"add app block 2.jpg"}',
+  'vaIk4e3Aqgt7Zk2c9ptI5g'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000205-0000-0000-0000-000000000001',
+  'b0000040-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  5,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/v1AWgH07j3kxKrWG1ZpApA/add-app-block-3.jpg","alt":"add app block 3.jpg"}',
+  'kTYtU24neWczbLJcwOZPsg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000206-0000-0000-0000-000000000001',
+  'b0000041-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3><strong>Add VAT into product price</strong></h3>"}',
+  'meNfDzpX6AQQoVv5p05E7g'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000207-0000-0000-0000-000000000001',
+  'b0000041-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p><strong>Note</strong><em>: Check with the merchant on timing. Completing this step will increase their product price, regardless of whether Zonos is enabled. Zonos developer task also needs to be complete.</em></p>"}',
+  'iqCg2nFLentmvqtxxeVL3A'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000208-0000-0000-0000-000000000001',
+  'b0000041-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  2,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>From the Shopify backend:<br>settings &gt; Markets &gt; select Market &gt; products and pricing &gt; enter price adjustment</p>"}',
+  'nMalkGRnaz19wdqmegNBgQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000209-0000-0000-0000-000000000001',
+  'b0000041-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  3,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/nsuyXxiteNhtsZoBJ7hDcA/VAT-on-Shopify.png","alt":"VAT on Shopify.png"}',
+  'htW8s3U22qIhe85CM0RE5Q'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000210-0000-0000-0000-000000000001',
+  'b0000044-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3>Steps:</h3>\n<ol>\n<li>Your Project Manager will handle the installation for you during the onboarding process. The block cannot be installed on your own. To allow Zonos to install on your behalf, please set up&#xa0;<a href=\"https://zonos.com/docs/global-ecommerce/registration-and-setup/give-zonos-platform-access\" rel=\"nofollow\" target=\"_blank\">admin access</a> for Zonos to makes changes to your Wix site.</li>\n</ol>"}',
+  'ka_X7llSYMKLDzl6mXlE3Q'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000211-0000-0000-0000-000000000001',
+  'b0000044-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://zonos.com/docs/global-ecommerce/integration/integrating-checkout/wix"}',
+  'pZTE3_9pZQ4XyKTbdPdBYg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000212-0000-0000-0000-000000000001',
+  'b0000046-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Zonos Engineers will need access to your WooCommerce backend to successfully install the Zonos Checkout module. Please create an admin account for implementation@zonos.com and provide your Project Manager with the appropriate password and WooCommerce URL.</p>"}',
+  'vMisgCybHLtqqu-Z4JJH3g'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000213-0000-0000-0000-000000000001',
+  'b0000046-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://zonos.com/docs/global-ecommerce/integration/integrating-new-checkout/woocommerce"}',
+  'pqpHov35BJcj3-0pJodPpg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000214-0000-0000-0000-000000000001',
+  'b0000046-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  2,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Please create a WooCommerce store admin user account for <a href=\"mailto:implementation@zonos.com\" rel=\"nofollow\" target=\"_blank\">implementation@zonos.com&#xa0;</a></p>\n<p>Mark this task ''Complete'' once done.&#xa0;</p>"}',
+  'ggKlCcVeGpl8AQJl7bVMCg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000215-0000-0000-0000-000000000001',
+  'b0000048-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>In order to use Checkout with X-Cart, you will need to install both the Checkout and Hello addons from the X-Cart market:</p>\n<ol>\n<li>Log in to your X-Cart store.</li>\n<li>Go to our&#xa0;<a href=\"https://market.x-cart.com/addons/zonos-checkout.html\" rel=\"nofollow\" target=\"_blank\">app store page</a>&#xa0;for Checkout.</li>\n<li>Click&#xa0;<strong>Get this addon for free</strong>.</li>\n<li>Go to our&#xa0;<a href=\"https://market.x-cart.com/addons/zonos-hello.html\" rel=\"nofollow\" target=\"_blank\">app store page</a>&#xa0;for Hello.</li>\n<li>Click&#xa0;<strong>Get this addon for free</strong>.</li>\n</ol>\n<p>Once you have installed both apps, follow our&#xa0;<a href=\"https://zonos.com/docs\" rel=\"nofollow\" target=\"_blank\">X-Cart integration guide</a> for step-by-step instructions on how to set up Checkout.</p>"}',
+  'ofezDILWCBSkAPOuWNFM6Q'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000216-0000-0000-0000-000000000001',
+  'b0000048-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://zonos.com/docs/global-ecommerce/checkout/ecommerce-platforms#get-started-with-checkout"}',
+  'kTu3lJJZWbPyGzxGwiJFzw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000217-0000-0000-0000-000000000001',
+  'b0000050-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3><strong>Steps</strong>:</h3>\n<p>It''s quick and easy to install Zonos JS!</p>\n<ol>\n<li>Install the Zonos JS snippet</li>\n<li>Authenticate the Zonos JS snippet</li>\n<li>Set allowed domains</li>\n</ol>"}',
+  'khKriSqi6AerOGv55I9OfA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000218-0000-0000-0000-000000000001',
+  'b0000050-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://zonos.com/docs/global-ecommerce/integration/integrating-new-checkout/custom-integration"}',
+  'uOOl0S-K5tZcHwDwk_9Csg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000219-0000-0000-0000-000000000001',
+  'b0000052-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3>Checkout Settings (settings &gt; checkout settings)</h3>"}',
+  'rn--o7JRBcdluCMYoqZITw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000220-0000-0000-0000-000000000001',
   'b0000052-0000-0000-0000-000000000001',
   'Zonos_Payments',
   'Zonos Payments',
@@ -3130,10 +4637,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Payment method entered","label":"Payment method entered"},{"value":"Payment method pending","label":"Payment method pending"}]',
   NULL,
+  '{}',
   'iKwMpBcyH2zY3eoR425Ilg'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000122-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000221-0000-0000-0000-000000000001',
   'b0000052-0000-0000-0000-000000000001',
   'Place_order_button',
   'Place order button',
@@ -3143,10 +4651,39 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"CSS selector added and functioning","label":"CSS selector added and functioning"},{"value":"CSS selector added but not functioning","label":"CSS selector added but not functioning"},{"value":"How do I add a CSS selector?","label":"How do I add a CSS selector?"}]',
   NULL,
+  '{}',
   's78m88BOvVFTWqwPIXpN3A'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000123-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000222-0000-0000-0000-000000000001',
+  'b0000052-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  3,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p><strong>Instructions for adding CSS selector - *needs work</strong></p>"}',
+  'mywU8JFIaHyz6clCo7hAAw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000223-0000-0000-0000-000000000001',
+  'b0000052-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  4,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p><strong>Emails (optional) - *needs work</strong></p>"}',
+  'rad_j_q1vWpQhiNu18BMlA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000224-0000-0000-0000-000000000001',
   'b0000052-0000-0000-0000-000000000001',
   'Abandoned_cart_(optional)',
   'Abandoned cart (optional)',
@@ -3156,10 +4693,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Added \"How much time before we send an email\"","label":"Added \"How much time before we send an email\""},{"value":"Added discounted percentage","label":"Added discounted percentage"},{"value":"Added email (sends copy of abandoned cart email)","label":"Added email (sends copy of abandoned cart email)"}]',
   NULL,
+  '{}',
   'ihoo0EWG5ENHwJXoUPpPTA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000124-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000225-0000-0000-0000-000000000001',
   'b0000052-0000-0000-0000-000000000001',
   'Order_notifications_(list_emails_entered_here)',
   'Order notifications (list emails entered here)',
@@ -3169,10 +4707,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'uDSPhMpoo7NhIrKv2d5F-w'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000125-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000226-0000-0000-0000-000000000001',
   'b0000052-0000-0000-0000-000000000001',
   'Order_shipped_(list_emails_entered_here)',
   'Order shipped (list emails entered here)',
@@ -3182,10 +4721,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'pLOnDIbYW-arZdp3nPFHOg'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000126-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000227-0000-0000-0000-000000000001',
   'b0000052-0000-0000-0000-000000000001',
   'Order_cancellation_(list_emails_entered_here)',
   'Order cancellation (list emails entered here)',
@@ -3195,10 +4735,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'g6vuT8gw-7J4JnHmxHVHnw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000127-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000228-0000-0000-0000-000000000001',
   'b0000052-0000-0000-0000-000000000001',
   'URLs_-_Allowed_domains_(need_conditional_logic_to_pull_homepage_URL)',
   'URLs - Allowed domains (need conditional logic to pull homepage URL)',
@@ -3208,10 +4749,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Homepage URL entered","label":"Homepage URL entered"}]',
   NULL,
+  '{}',
   'jSJcWoDlmhtRRepvx4pPEA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000128-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000229-0000-0000-0000-000000000001',
   'b0000052-0000-0000-0000-000000000001',
   'Integration_-_Success_page_type',
   'Integration - Success page type',
@@ -3221,10 +4763,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Show Zonos success page (recommended)","label":"Show Zonos success page (recommended)"},{"value":"Redirect to a success page","label":"Redirect to a success page"},{"value":"Close the checkout modal","label":"Close the checkout modal"}]',
   NULL,
+  '{}',
   'sG-fmunzpRn8s6ZCnUlLZg'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000129-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000230-0000-0000-0000-000000000001',
   'b0000052-0000-0000-0000-000000000001',
   'List_URL_of_redirected_success_page',
   'List URL of redirected success page',
@@ -3234,10 +4777,81 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'okK208mHVdZ5NsHtF3JA8A'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000130-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000231-0000-0000-0000-000000000001',
+  'b0000053-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3>Instructions for creating custom messages</h3>\n<ol>\n<li>From your Zonos dashboard, go to&#xa0;<strong>settings &gt; custom messages</strong> (under checkout)</li>\n<li>Click <strong>Add custom message</strong></li>\n<li>Select page (location of messages appear on the left, unless default, which displays on the right)\n<ol>\n<li>Default - displays on every checkout page</li>\n<li>Customer information</li>\n<li>Shipping</li>\n<li>Payment</li>\n</ol>\n</li>\n<li>Add custom message</li>\n<li>Select country/countries</li>\n<li>Save</li>\n</ol>"}',
+  'n4LaXnRwUq_ZUJkWcMFBhg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000232-0000-0000-0000-000000000001',
+  'b0000053-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3>Possible use-cases<strong><br></strong></h3>\n<ul>\n<li>Display link for domestic checkout with custom messages for domestic customers incorrectly directed to Zonos checkout</li>\n<li>Setting customer expectation</li>\n<li>Explaining return policies</li>\n</ul>\n<p><strong></strong></p>"}',
+  'hO3l0ybZi1QfgK4NVZVHDw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000233-0000-0000-0000-000000000001',
+  'b0000053-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  2,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3 style=\"text-align: start;\">Managing message translations</h3>\n<p style=\"text-align: start;\">When you create a custom message, it will be automatically translated into all supported languages.</p>\n<p style=\"text-align: start;\">Once you have created a custom message, it will go into a translation queue and be translated within a few minutes. The message will be grayed-out in the list until the translation is complete. To view the translated version of the message, hover over the message to reveal the&#xa0;<strong>More options (•••)</strong>&#xa0;menu, then select&#xa0;<strong>View translations</strong>.</p>\n<p style=\"text-align: start;\">If you wish to decline any of the automatic translations, you can click the \"thumbs down\" button next to the translation. This will remove the translation from being displayed as well as providing feedback to our translation system.</p>"}',
+  'uRQ-Zje_eQN7rfwwrG1PFg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000234-0000-0000-0000-000000000001',
+  'b0000053-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  3,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://zonos.com/docs/global-ecommerce/checkout/custom-messages"}',
+  'rzz5M3E5aw-0atg8xG5LMw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000235-0000-0000-0000-000000000001',
+  'b0000054-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3>settings &gt; discounts &gt; new discount</h3>"}',
+  'uNneswbMafddLrWUWSRFHQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000236-0000-0000-0000-000000000001',
   'b0000054-0000-0000-0000-000000000001',
   '_9',
   NULL,
@@ -3247,10 +4861,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Discount code(s) added","label":"Discount code(s) added"},{"value":"Discount code(s) not added","label":"Discount code(s) not added"}]',
   NULL,
+  '{}',
   'uzxQfTiytaRnS77OhSlE2w'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000131-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000237-0000-0000-0000-000000000001',
   'b0000055-0000-0000-0000-000000000001',
   'Theme',
   'Theme',
@@ -3260,10 +4875,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Logo uploaded","label":"Logo uploaded"},{"value":"Brand primary color selected","label":"Brand primary color selected"},{"value":"Accent secondary accent color selected","label":"Accent secondary accent color selected"}]',
   NULL,
+  '{}',
   'pQE-er6C08_kCV-OkI1A1Q'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000132-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000238-0000-0000-0000-000000000001',
   'b0000055-0000-0000-0000-000000000001',
   'Checkout',
   'Checkout',
@@ -3273,10 +4889,25 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Theme selected","label":"Theme selected"},{"value":"Style selected","label":"Style selected"},{"value":"Font selected","label":"Font selected"}]',
   NULL,
+  '{}',
   'u2xWyrqbbCl1IxEZqCtFwA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000133-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000239-0000-0000-0000-000000000001',
+  'b0000056-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3>Display</h3>"}',
+  'mjUSkiVQ4fEBB5qYSaBGig'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000240-0000-0000-0000-000000000001',
   'b0000056-0000-0000-0000-000000000001',
   'Peak_messages',
   'Peak messages',
@@ -3286,10 +4917,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Peak messages on","label":"Peak messages on"},{"value":"Peak messages off","label":"Peak messages off"}]',
   NULL,
+  '{}',
   'jMdMREJpIY5GSozTFoVM9g'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000134-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000241-0000-0000-0000-000000000001',
   'b0000056-0000-0000-0000-000000000001',
   'multi_select_field_3',
   'Subtasks',
@@ -3299,10 +4931,25 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Mobile location set","label":"Mobile location set"},{"value":"Peak message delay set","label":"Peak message delay set"}]',
   NULL,
+  '{}',
   'rjzcP08W6KpuFIy0dDJIqg'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000135-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000242-0000-0000-0000-000000000001',
+  'b0000056-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  3,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3>Behavior</h3>"}',
+  'sclATqUghKRwqFwA_0pGpw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000243-0000-0000-0000-000000000001',
   'b0000056-0000-0000-0000-000000000001',
   'Hello_anchor_element',
   'Hello anchor element',
@@ -3312,10 +4959,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Hello placement is acceptable","label":"Hello placement is acceptable"},{"value":"Hello placement needs to be customized","label":"Hello placement needs to be customized"}]',
   NULL,
+  '{}',
   'mNtaS9TxDTwU7N5SegxJlw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000136-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000244-0000-0000-0000-000000000001',
   'b0000056-0000-0000-0000-000000000001',
   'Enter_CSS_selector_for_customized_Hello_placement',
   'Enter CSS selector for customized Hello placement',
@@ -3325,10 +4973,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'o3GKnyF-iEUukXKKzN5GBQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000137-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000245-0000-0000-0000-000000000001',
   'b0000056-0000-0000-0000-000000000001',
   'Currency_behavior_(only_use_if_Hello_is_needed_to_convert_currency)',
   'Currency behavior (only use if Hello is needed to convert currency)',
@@ -3338,10 +4987,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Toggled on","label":"Toggled on"},{"value":"Toggled off","label":"Toggled off"}]',
   NULL,
+  '{}',
   'lylXxfkP4aFS5hMgLwxH-g'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000138-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000246-0000-0000-0000-000000000001',
   'b0000056-0000-0000-0000-000000000001',
   'Enter_CSS_selector_for_currency_conversion',
   'Enter CSS selector for currency conversion',
@@ -3351,10 +5001,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'oDjvI01o41n7f5hs3AxDIA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000139-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000247-0000-0000-0000-000000000001',
   'b0000056-0000-0000-0000-000000000001',
   'Item_restrictions',
   'Item restrictions',
@@ -3364,10 +5015,207 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Toggled on","label":"Toggled on"},{"value":"Toggled off","label":"Toggled off"}]',
   NULL,
+  '{}',
   'jfysagZeY2tSxrzP9_RNBw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000140-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000248-0000-0000-0000-000000000001',
+  'b0000057-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3><strong>Instructions for creation of Hello custom messages</strong></h3>\n<ol>\n<li>From your Zonos dashboard, go to <strong>settings &gt; custom messages</strong> (under Hello)</li>\n<li>Click <strong>Add custom message</strong></li>\n<li><strong>Select page</strong> (location of messages appear on the left, unless default, which displays on the right)\n<ol>\n<li>Default - displays on every Hello URL location</li>\n<li>Customer information</li>\n<li>Shipping</li>\n<li>Payment</li>\n</ol>\n</li>\n<li><strong>Add custom message</strong></li>\n<li>Select country/countries</li>\n<li><strong>Save</strong></li>\n</ol>"}',
+  'pLwvuFw7VJNEDtyz-kBB6Q'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000249-0000-0000-0000-000000000001',
+  'b0000057-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3>Possible use-cases</h3>\n<ul>\n<li>Restriction notices</li>\n<li>ASR notices</li>\n<li>Policy notifications</li>\n<li>Discount notifications</li>\n</ul>"}',
+  'kmFus4DwmolB8Lh9k9pIcg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000250-0000-0000-0000-000000000001',
+  'b0000057-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  2,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3>Select page requires URLs for the specific pages Hello will display custom messaging</h3>\n<ol>\n<li>From your Zonos dashboard, go to&#xa0;<strong>settings &gt; Hello</strong> settings</li>\n<li>Under the <strong>Page URL patterns</strong> section, add the relevant URLs for each page. Use regex syntax for more advanced matching</li>\n<li>Click <strong>save</strong></li>\n</ol>"}',
+  'txOo7RrDXNdxXrad0I1LWQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000251-0000-0000-0000-000000000001',
+  'b0000059-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://zonos.com/docs/supply-chain/landed-cost/calculate-landed-cost---graphql"}',
+  'r-wMV-Vg-8mq891TWmdAgg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000252-0000-0000-0000-000000000001',
+  'b0000059-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h1>Mexico RFC</h1>"}',
+  'pFKM4XF8xqK8pTruibVN3A'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000253-0000-0000-0000-000000000001',
+  'b0000059-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  2,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>A commercial invoice for Mexico must include the recipient’s RFC (Registro Federal de Contribuyentes) in the <strong>tax ID field</strong>, as it is required for customs clearance.</p>\n<p>Obtain this during the landed cost calculation by utilizing the metadata field in the partyCreateWorkflow.</p>"}',
+  'tIlOS7dGV5xapCoCn_RJHg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000254-0000-0000-0000-000000000001',
+  'b0000060-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://zonos.com/docs/supply-chain/landed-cost/create-orders---graphql"}',
+  'oglw6eQ4RLsehjk_SthD5w'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000255-0000-0000-0000-000000000001',
+  'b0000061-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Merchants have the ability to use a webhook to obtain information regarding order creation (ORDER_CREATED), canceled orders (ORDER_CANCELED), created shipments (SHIPMENT_CREATED), and canceled shipments (SHIPMENT_CANCELED).</p>\n<p>Each has an example payload (what is returned when the event is triggered) below.</p>\n<p>The merchant will need to set up an endpoint (website) and send it to their project manager so a dev can subscribe the endpoint to the specific event(s) the merchant needs.</p>"}',
+  'lhZZXHTlVCd-O3oBt9tPRA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000256-0000-0000-0000-000000000001',
+  'b0000061-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://zonos.com/docs/account/webhooks/event-types"}',
+  'of4Ee53JwI3hu7KuO7BE4Q'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000257-0000-0000-0000-000000000001',
+  'b0000063-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Zonos will use your carrier account to quote your negotiated shipping rates at checkout. The connected account will be able to generate shipping labels from the Zonos dashboard (if applicable). Follow the steps below to successfully connect your account.</p>"}',
+  'uc95DHVbEzzT9FhRNXxF8w'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000258-0000-0000-0000-000000000001',
+  'b0000063-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'video',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/mPNadJYRfSZLRr8CbopIbQ/n70d7kihoq.mp4","service":"S3","serviceCode":"n70d7kihoq"}',
+  'lJCd1sVX659X9KXGcGdJgg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000259-0000-0000-0000-000000000001',
+  'b0000063-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  2,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://zonos.com/docs/global-ecommerce/shipping-labels/carriers/ups-rating"}',
+  'gRkXlrY_T6ah0ObXO8ZCig'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000260-0000-0000-0000-000000000001',
+  'b0000063-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  3,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ask.vtechnologies.com/kb/ups-oauth-account-setup/#troubleshooting-shipper-id-not-approved-for-negotiated-rates"}',
+  'kyruoIlNnyuZvktCkzNLyw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000261-0000-0000-0000-000000000001',
+  'b0000063-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  4,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p><em><strong>Optional</strong></em>: Import your UPS carrer agreement: Zonos wants to ensure that we are quoting the appropriate UPS surcharges at checkout.</p>"}',
+  'k-nYRfpalqMf572FzWtEdA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000262-0000-0000-0000-000000000001',
   'b0000063-0000-0000-0000-000000000001',
   'Upload_UPS_Carrier_Agreement',
   'Upload UPS Carrier Agreement',
@@ -3377,10 +5225,95 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'uQJCaJzD7BE4B2VfdeRMFw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000141-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000263-0000-0000-0000-000000000001',
+  'b0000064-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<h3><strong>1. Dashboard connection</strong></h3>"}',
+  'sU5xc9j6FNaMzkRONq1MQQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000264-0000-0000-0000-000000000001',
+  'b0000064-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Zonos will use your carrier account to quote your negotiated shipping rates at checkout. The connected account will be able to generate shipping labels from the Zonos dashboard (if applicable). Follow the steps below to successfully connect your account.</p>"}',
+  'kMnlU6MMEop8Dn_kFyxM3w'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000265-0000-0000-0000-000000000001',
+  'b0000064-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'video',
+  2,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/g3Dh6OprciPQ7AXnvuNIFQ/ni0b4sw5pr.mp4","service":"S3","serviceCode":"ni0b4sw5pr"}',
+  'kBUhuy3p0Rf0afcY--JFog'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000266-0000-0000-0000-000000000001',
+  'b0000064-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  3,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://zonos.com/docs/shipping/carriers/fedex/rating#connect-your-fedex-credentials-to-zonos"}',
+  'iKJm1E6fCyRVKM8-FEJBfg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000267-0000-0000-0000-000000000001',
+  'b0000064-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  4,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Please add your digital signature and company letterhead/logo (required for FedEx).&#xa0;</p>\n<p><a href=\"https://dashboard.zonos.com/settings/shipping/shipping-rates/carrier/FedEx\" rel=\"nofollow\" target=\"_blank\">https://dashboard.zonos.com/settings/shipping/shipping-rates/carrier/FedEx</a></p>\n<p>Go to dashboard.zonos.com &gt; Settings &gt; Labels &gt; Upload</p>\n<p>*You must check the box that reads, \"Add image to FedEx account\" for the FedEx CI to show the image. Otherwise, it will only show on the Zonos CI.</p>"}',
+  'qxZ04cfVgP-0TjwQQhdKQg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000268-0000-0000-0000-000000000001',
+  'b0000064-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  5,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<h3><strong>2. FedEx Required Form</strong></h3>"}',
+  'tS_Pl-602W3MZh6xLGtJHQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000269-0000-0000-0000-000000000001',
   'b0000064-0000-0000-0000-000000000001',
   'Steps',
   'Steps',
@@ -3390,10 +5323,39 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Provided document below to merchant ","label":"Provided document below to merchant "},{"value":"Merchant completed form and emailed to dcreschke@fedex.com","label":"Merchant completed form and emailed to dcreschke@fedex.com"}]',
   NULL,
+  '{}',
   'vhxiYGda6tKv3v4BonpOLA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000142-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000270-0000-0000-0000-000000000001',
+  'b0000064-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'file',
+  7,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/3/rE7ilzn7Ei9OwgkfOCFAvg/lQ-F2Q6XYe-kNHOdlHBHNw/E-Comm-Casual-Client-Profile-May-28-2025.pdf","name":"E-Comm Casual Client Profile May 28 2025.pdf"}',
+  'ij4YV3a0fY4wM7YddLdAFA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000271-0000-0000-0000-000000000001',
+  'b0000064-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  8,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<h3><strong>3. FedEx Documents uploaded to Zonos Dashboard (settings &gt; labels)</strong></h3>"}',
+  'qaSOcBgwGt5QtEzsHbBI7A'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000272-0000-0000-0000-000000000001',
   'b0000064-0000-0000-0000-000000000001',
   'FedEx_Documents_uploaded_to_Zonos_Dashboard_(settings_>_labels)',
   'FedEx Documents uploaded to Zonos Dashboard (settings > labels)',
@@ -3403,10 +5365,151 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Company Letterhead/Logo: Uploaded with \"Add image to FedEx account\" selected","label":"Company Letterhead/Logo: Uploaded with \"Add image to FedEx account\" selected"},{"value":"Digital Signature: Uploaded with \"Add image to FedEx account\" selected","label":"Digital Signature: Uploaded with \"Add image to FedEx account\" selected"}]',
   NULL,
+  '{}',
   's_kJF3KxU2q17lrWqWhOHg'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000143-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000273-0000-0000-0000-000000000001',
+  'b0000064-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  10,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/rBmZRuRW8cp-ISJZRYpLXA/upload.png","alt":"upload.png"}',
+  'pShZKRrr5DK-GdmQk6BMLg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000274-0000-0000-0000-000000000001',
+  'b0000064-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  11,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/jyn-fXv1DO5jVUagmqpHqg/letterhead-and-signature-dashboard.jpg","alt":"letterhead and signature dashboard.jpg"}',
+  'uCEENXZDgmzW-pg7Y8tCEg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000275-0000-0000-0000-000000000001',
+  'b0000065-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Zonos will use your carrier account to quote your negotiated shipping rates at checkout. The connected account will be able to generate shipping labels from the Zonos dashboard (if applicable). Follow the steps below to successfully connect your account.</p>"}',
+  'vHoCbWQ9OuEO-ztb6Q9Kkw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000276-0000-0000-0000-000000000001',
+  'b0000065-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'video',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/uNaNF2334uPSRoUJPxlL_g/59kd24eg10.mp4","service":"S3","serviceCode":"59kd24eg10"}',
+  'rZVugGL2Yh3rvh6NGnNJdA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000277-0000-0000-0000-000000000001',
+  'b0000065-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  2,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://zonos.com/docs/global-ecommerce/shipping-labels/carriers/dhl-express-rating"}',
+  'q7QTn7nd4_OFL9Bphk9Psg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000278-0000-0000-0000-000000000001',
+  'b0000065-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  3,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Steps:</p> \n<ol> \n <li>Log in to Dashboard</li> \n <li>Go to&#xa0;Settings&#xa0;on the left sidebar</li> \n <li>Select&#xa0;Shipping rates</li> \n <li>Click&#xa0;Connect carrier account</li> \n <li>Select&#xa0;DHL</li> \n <li>Enter the production API credentials you received in your DHL API registration email as follows: \n  <ul> \n   <li>Site ID</li> \n   <li>Production Password</li> \n  </ul> </li> \n <li>Enter your Payment account number</li> \n <li>Optional—Select your payment country.&#xa0; Recommended if your Ship From country in the Zonos dashboard differs from your Ship From country in your DHL account settings.</li> \n <li>Click save&#xa0;to finish</li> \n</ol>"}',
+  'tuSzHr8gvZBKK-czur5CBw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000279-0000-0000-0000-000000000001',
+  'b0000066-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Zonos will use your carrier account to quote your negotiated shipping rates at checkout. The connected account will be able to generate shipping labels from the Zonos dashboard (if applicable). Follow the steps below to successfully connect your account.</p>"}',
+  'tXLA_HxqbFnLIn50VtpFPg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000280-0000-0000-0000-000000000001',
+  'b0000066-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'video',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/mT4CGSHDICzR4KvQnbpPPA/jkgbgh0zjx.mp4","service":"S3","serviceCode":"jkgbgh0zjx"}',
+  'pBPeR-Xb8lbHFX-KInhMKg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000281-0000-0000-0000-000000000001',
+  'b0000066-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  2,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://zonos.com/docs/shipping/carriers/apc/rating#connect-your-apc-credentials-to-zonos"}',
+  'utREbX4oNdWZzyB33Z9AUw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000282-0000-0000-0000-000000000001',
+  'b0000067-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Zonos has an agreement in place with APC to allow shippers with an active APC account to bill Zonos for duty and tax. Please complete this task 3 days before going live.&#xa0;</p> \n<p>Once this task is complete, an email will be sent to Jane@zonos.com with all relevant info.</p> \n<p>Steps:</p> \n<ol> \n <li>Acquire shipper''s APC account number</li> \n <li>Confirm shipper''s Zonos go-live date</li> \n</ol>"}',
+  'haFXjbV4DlSAAOFXyudHwg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000283-0000-0000-0000-000000000001',
   'b0000067-0000-0000-0000-000000000001',
   'Name_of_Shipper:_(If_different_than_seller)_(3PL,_etc.)',
   'Name of Shipper: (If different than seller) (3PL, etc.)',
@@ -3416,10 +5519,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'nYue76K_juoUNVneSxRPKQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000144-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000284-0000-0000-0000-000000000001',
   'b0000067-0000-0000-0000-000000000001',
   'Shipping_Platform_2',
   'Shipping Platform',
@@ -3429,10 +5533,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Zonos","label":"Zonos"},{"value":"Other","label":"Other"}]',
   NULL,
+  '{}',
   'kVvOqFon4D2OPN_MaOhNPQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000145-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000285-0000-0000-0000-000000000001',
   'b0000067-0000-0000-0000-000000000001',
   'Shipping_Platform_Other:',
   'Shipping Platform Other:',
@@ -3442,10 +5547,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'iwYozp_9VChKZlRi8lBDfg'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000146-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000286-0000-0000-0000-000000000001',
   'b0000067-0000-0000-0000-000000000001',
   'Are_all_orders_going_to_be_LCG?',
   'Are all orders going to be LCG?',
@@ -3455,10 +5561,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Yes","label":"Yes"},{"value":"No","label":"No"}]',
   NULL,
+  '{}',
   's_cq1LGxyAJvZa-TiKxNuw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000147-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000287-0000-0000-0000-000000000001',
   'b0000067-0000-0000-0000-000000000001',
   'Who_will_APC_bill_duty_&_tax?',
   'Who will APC bill duty & tax?',
@@ -3468,10 +5575,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Zonos","label":"Zonos"},{"value":"Customer","label":"Customer"}]',
   NULL,
+  '{}',
   'uQGvqknslTZLJEwiYDlC3w'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000148-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000288-0000-0000-0000-000000000001',
   'b0000067-0000-0000-0000-000000000001',
   'Will_Zonos_pay_all_D&T_assessed_or_only_orders_indicated_as_LCG?_**We_send_''pre-alert''_data_to_APC,_to_tag_only_orders_that_are_Zonos_LCG._Everything_else_is_billed_to_the_merchant_by_APC_directly.**',
   'Will Zonos pay all D&T assessed or only orders indicated as LCG? **We send ''pre-alert'' data to APC, to tag only orders that are Zonos LCG. Everything else is billed to the merchant by APC directly.**',
@@ -3481,10 +5589,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"All D&T","label":"All D&T"},{"value":"Only LCG Orders","label":"Only LCG Orders"}]',
   NULL,
+  '{}',
   'qNNcMJgHQ4-Y9WbFgQtCGg'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000149-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000289-0000-0000-0000-000000000001',
   'b0000067-0000-0000-0000-000000000001',
   'Merchant_APC_Account#:',
   'Merchant APC Account#:',
@@ -3494,10 +5603,25 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'ih7CATxiPjl2cTRM2gBCpA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000150-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000290-0000-0000-0000-000000000001',
+  'b0000068-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Zonos will use your carrier account to quote your negotiated shipping rates at checkout. The connected account will be able to generate shipping labels from the Zonos dashboard (if applicable). Follow the steps below to successfully connect your account.</p>"}',
+  'mv-W83emCSSetyBkeAtC-g'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000291-0000-0000-0000-000000000001',
   'b0000068-0000-0000-0000-000000000001',
   'Select_Postal_Carrier',
   'Select Postal Carrier',
@@ -3507,10 +5631,67 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"USPS","label":"USPS"},{"value":"Royal Mail","label":"Royal Mail"},{"value":"AusPost","label":"AusPost"}]',
   NULL,
+  '{}',
   'pJADplXUHMJZNEpOMY9BrA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000151-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000292-0000-0000-0000-000000000001',
+  'b0000068-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'video',
+  2,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/tpU83Em5o_0RM2pLLlRF1A/maoa31zya4.mp4","service":"S3","serviceCode":"maoa31zya4"}',
+  'l00gbFvBZ_t63yZp1GFGCw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000293-0000-0000-0000-000000000001',
+  'b0000068-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  3,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://zonos.com/docs/global-ecommerce/landed-cost/postal-ddp"}',
+  'vUEJ4--oAOKZM-0KMelAAw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000294-0000-0000-0000-000000000001',
+  'b0000069-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<p>Activate the countries you would like to ship to and manage the carrier service levels you will use to do so.&#xa0;</p>"}',
+  'gGMG3q5gcrWdg5IrNxFMLg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000295-0000-0000-0000-000000000001',
+  'b0000069-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'video',
+  1,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/mJixJgjtZEnkUSHvcbZB4w/b2y5ynsxw3.mp4","service":"S3","serviceCode":"b2y5ynsxw3"}',
+  'h2LWjHW7GmG1vY9RTz1Hvw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000296-0000-0000-0000-000000000001',
   'b0000069-0000-0000-0000-000000000001',
   'Required',
   'Required',
@@ -3520,10 +5701,81 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Connect Carrier Account (settings > rates)","label":"Connect Carrier Account (settings > rates)"},{"value":"Create warehouse (settings > locations > new fulfillment center)","label":"Create warehouse (settings > locations > new fulfillment center)"},{"value":"Create a shipping zone (settings > locations > new zone","label":"Create a shipping zone (settings > locations > new zone"},{"value":"Add countries to your zone","label":"Add countries to your zone"},{"value":"Add service levels to your zone","label":"Add service levels to your zone"}]',
   NULL,
+  '{}',
   'itH06keiqgfXwWrnmD1FBA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000152-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000297-0000-0000-0000-000000000001',
+  'b0000069-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  3,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"url":"https://zonos.com/docs/shipping/rating/get-started-with-shipping-zones#create-a-shipping-zone"}',
+  'kLY8Rv2MsR47eO6_hWBNHQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000298-0000-0000-0000-000000000001',
+  'b0000069-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  4,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"url":""}',
+  'rOqrPJtbMYYNkUqKxG1JIA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000299-0000-0000-0000-000000000001',
+  'b0000070-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>To accurately rate a SKU that ships in multiple boxes, complete the attached template.&#xa0;</p> \n<p><br><strong>In the ''MasterSpreadsheet tab''</strong>, please include all product SKUs from your Shopify Catalog.</p> \n<p><br><strong>In ''Child Packages'' tab</strong>, Please only include product SKUs that ship in multiple boxes. Please list the SKU and the corresponding box(s)</p> \n<p>For example: </p> \n<p>SKU1 ships in two boxes, list SKU1 twice and the corresponding Box Name and shipping Box Dimensions.&#xa0; </p> \n<p>SKU2 ships in three boxes. List SKU2 twice and the corresponding Box Name and shipping Box Dimensions.&#xa0;</p>"}',
+  'pjY3aBQchb4Sr1wx9NVIsw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000300-0000-0000-0000-000000000001',
+  'b0000070-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'file',
+  1,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/92ab02e4-abda-4a92-9cca-02a8266aae69/pxeWN6oI6iRcHxVbpyJMNg.csv","name":"MultiBox Catalog Template - MasterSpreadsheet.csv"}',
+  't8gwxriuYfVPlTY3lyRF5A'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000301-0000-0000-0000-000000000001',
+  'b0000070-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'file',
+  2,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/1e52a658-bf90-4a7d-889c-c0643714fd43/tZ911O3bw--cSP1ri6FH6g.csv","name":"MultiBox Catalog Template - Child Packages.csv"}',
+  'hxR_sSb7w0D4ytxL1BxO_g'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000302-0000-0000-0000-000000000001',
   'b0000070-0000-0000-0000-000000000001',
   'Upload_Multi-Box_Template',
   'Upload Multi-Box Template',
@@ -3533,10 +5785,95 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'nC6oY_w_XaAnN4P0h8hGtw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000153-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000303-0000-0000-0000-000000000001',
+  'b0000071-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Enable all countries and territories in shipping settings in Shopify and Zonos Dashboard</p> \n<p></p>"}',
+  'l0a4wdya1C-LWaZyZRBIXA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000304-0000-0000-0000-000000000001',
+  'b0000072-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Enable select countries and territories in shipping settings in Shopify and Zonos Dashboard</p>\n<p>settings &gt; locations &gt; shipping zones</p>\n<p><br>{{form.If_select,_list_countries_and_territories:}}</p>"}',
+  'rVR6OITXKHTcQFEbCLFMzw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000305-0000-0000-0000-000000000001',
+  'b0000073-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Create a new warehouse location if the ship from differs from the address listed in the <a href=\"https://dashboard.zonos.com/settings/dashboard/company\" rel=\"nofollow\" target=\"_blank\">Zonos general settings</a>.&#xa0;</p>\n<p>settings &gt; locations &gt; new fulfillment center</p>\n<p><strong>Required detail</strong>:</p>\n<ul>\n<li><strong>Name</strong></li>\n<li><strong>Country</strong></li>\n<li><strong>Street address</strong></li>\n<li><strong>City, State, Zip code</strong></li>\n<li><strong>Phone#</strong></li>\n<li><strong>Email</strong></li>\n</ul>"}',
+  'hgztgKgvan55tuGEnxxDbQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000306-0000-0000-0000-000000000001',
+  'b0000073-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  1,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<p>Ship from location:<br>{{form.Provide_ship_from_address:}}</p>"}',
+  'vBOh4k-tdD-1CrSO795MPw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000307-0000-0000-0000-000000000001',
+  'b0000073-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'video',
+  2,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"","service":"","serviceCode":""}',
+  'uPVnM8-34Zz_TliVc6BJRw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000308-0000-0000-0000-000000000001',
+  'b0000074-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>In order to connect your shipping rates to the Zonos Dashboard please upload a CSV or XML file below.</p>"}',
+  'psjTPB3OIe5LMkAHW9RCPA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000309-0000-0000-0000-000000000001',
   'b0000074-0000-0000-0000-000000000001',
   'Rate_Sheet_(CSV_or_XML)',
   'Rate Sheet (CSV or XML)',
@@ -3546,10 +5883,81 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'v8MSdbMQI7ddz-uyQINLJA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000154-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000310-0000-0000-0000-000000000001',
+  'b0000074-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  2,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/c888246c-4186-4642-b447-05dc58fd63ab/ljaKQDdSS1LQDT6bxctCzQ.png","alt":"image.png"}',
+  'sUw9z1VguVwYAnh-zlhLrw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000311-0000-0000-0000-000000000001',
+  'b0000074-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  3,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>For Zonos to successfully upload your rate sheet to the Zonos Dashboard a few requirements need to be met:</p> \n<ul> \n <li> <p>File in CSV or XML format (no PDFs)</p> </li> \n <li> <p>Oftentimes there will be multiple tabs on a file sent over. Please specify which tabs to use/upload</p> </li> \n <li> <p>Ship-to countries</p> </li> \n <li> <p>Zones if needed (only applicable if your rates are set up by zone/groups of countries)</p> </li> \n <li> <p>Currency converted to USD</p> </li> \n <li> <p>Weights and units in either LB, KG, or OZ</p> </li> \n <li> <p>Confirm the name of the rates you would like displayed to your end-customers</p> </li> \n</ul>"}',
+  'r4sHQwlupiipSzs12rlCDw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000312-0000-0000-0000-000000000001',
+  'b0000074-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  4,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://zonos.com/docs/global-ecommerce/rating/rate-sheets"}',
+  'ovzBH1lfx4fmz7WQNrZDlg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000313-0000-0000-0000-000000000001',
+  'b0000075-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'video',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/pDsOsy3GMNByIm6iIhxEaQ/lo31wdff09.mp4","service":"S3","serviceCode":"lo31wdff09"}',
+  't88HFP8RWM-MkKZwfrNG5w'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000314-0000-0000-0000-000000000001',
+  'b0000075-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>settings &gt; rates &gt; select carrier &gt; select service level &gt; select \"manage rates\" dropdown &gt; create flat rate &gt; create parameters for flat rate &gt; save</p>"}',
+  'lg2TENCNPQp_LQT9Q8JA0g'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000315-0000-0000-0000-000000000001',
   'b0000076-0000-0000-0000-000000000001',
   'Cartonization_added?',
   'Cartonization added?',
@@ -3559,10 +5967,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Yes","label":"Yes"},{"value":"No","label":"No"}]',
   NULL,
+  '{}',
   'r9L2yQo_auaJVfzYrCVBPg'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000155-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000316-0000-0000-0000-000000000001',
   'b0000076-0000-0000-0000-000000000001',
   'Cartonization_details',
   'Cartonization details',
@@ -3572,10 +5981,25 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'hkv0__s_zX1JoXE3u19KVg'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000156-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000317-0000-0000-0000-000000000001',
+  'b0000076-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  2,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p><strong>Note about cartonization</strong>: If shipping rates are returning unusually high, try changing the weight and length units to pounds and inches.</p>\n<p>Current bug is causing grams and centimeters to be sent as pounds and inches. Delete once resolved. - 12/2/24</p>"}',
+  'kK-HNDM9nDm8WX7Vgn1JGw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000318-0000-0000-0000-000000000001',
   'b0000076-0000-0000-0000-000000000001',
   'Upload_Cartonization_Template',
   'Upload Cartonization Template',
@@ -3585,10 +6009,81 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'hgvjAZGqYlmOnlou1qBEDg'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000157-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000319-0000-0000-0000-000000000001',
+  'b0000076-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'file',
+  4,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/8a3a425f-ec95-4d28-a34d-e8e69a04c029/qsAI6b3TXMHoVR0riD9N9A.csv","name":"Cartonization Template - Sheet1 3.csv"}',
+  'kweBjgMrLUiJNJiQOQZBbA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000320-0000-0000-0000-000000000001',
+  'b0000076-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  5,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h2><strong>Cartonization</strong></h2> \n<p>Add your shipping boxes to&#xa0;<strong>Dashboard</strong>&#xa0;-&gt;&#xa0;<strong>Settings</strong>&#xa0;-&gt;&#xa0;<strong>Cartonization</strong>. Add your box dimensions, weight, and units of measure. Optionally, name your box. If you don''t, we''ll name it based on its characteristics.</p> \n<p><em>Optional</em>—Assign a&#xa0;<strong>Default box</strong>&#xa0;by selecting a box and checking the&#xa0;<strong>Make default box size</strong>&#xa0;box. Default boxes are used as a fallback when no box size is applied to the order.</p>"}',
+  'kMFTOORjrANwmdKpXQJFVw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000321-0000-0000-0000-000000000001',
+  'b0000076-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  6,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://zonos.com/docs/global-ecommerce/rating/cartonization-get-started"}',
+  'q9aD7IO8lDJU9SnTJ8lBYg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000322-0000-0000-0000-000000000001',
+  'b0000078-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>The Zonos catalog can be used to manage dimensional weight rating, country-level product restrictions, and customs information (HS code and Country of Origin). If you would like Zonos to manage those aspects of your catalog, fill out the attached file and upload below.</p> \n<h3><strong>Template examples:</strong></h3> \n<ul> \n <li><strong>Add Dimensional Weight: </strong>column A, column H, I, J</li> \n <li><strong>Add HS code(s)</strong>: column A, column O</li> \n <li><strong>Add Country of Origin</strong>: column A, column N</li> \n <li><strong>Add Country Restrictions(s)</strong>: column A, column M (<a href=\"https://zonos.com/docs/country-guides/country-iso-codes\" rel=\"nofollow\" target=\"_blank\">2 digit ISO country code required</a>)</li> \n</ul>"}',
+  'raVG_JV-_VuGspESGBVE2w'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000323-0000-0000-0000-000000000001',
+  'b0000078-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'file',
+  1,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/b2902e48-83ef-4729-a51d-87aeb9c7362e/lVOkDCq8ViNBrSg5iABEXg.csv","name":"zonos-catalog-template.csv"}',
+  'iu3wEhHsRcbUUIC0rcJDxg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000324-0000-0000-0000-000000000001',
   'b0000078-0000-0000-0000-000000000001',
   'Upload_Zonos_Template',
   'Upload Zonos Template',
@@ -3598,10 +6093,67 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'uvYWy5nyfFe0eqFB7sdGlw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000158-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000325-0000-0000-0000-000000000001',
+  'b0000078-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  3,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://zonos.com/docs/catalog/products/get-started-with-products"}',
+  'hVyJx64NZy9U8Ul5jA9NIg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000326-0000-0000-0000-000000000001',
+  'b0000079-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'video',
+  0,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/uCAXPK8p-mrGSTZ3yXdJxg/t8jx24lppf.mp4","service":"S3","serviceCode":"t8jx24lppf"}',
+  'jyWuWZYVzJfMyK4-AJdI0w'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000327-0000-0000-0000-000000000001',
+  'b0000079-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Dimensional weight is determined by the carrier based on the length, width, and height of your packages.</p> \n<p>If your dimensional weight is larger than your order''s weight, then your customer is charged for the dimensional weight of their shipment.&#xa0;</p> \n<p>Uploading product dimensions to your Zonos catalog will ensure that shipping is quoted accurately at the checkout.</p> \n<p>Required details:</p> \n<ul> \n <li><strong>Column A</strong>: SKU#</li> \n <li> <p><strong>Column G</strong>: Dimensional unit (ounces, pounds, grams, and kilograms)</p> </li> \n <li><strong>Column H</strong>: Length</li> \n <li><strong>Column I</strong>: Width</li> \n <li><strong>Column J</strong>: Height</li> \n</ul>"}',
+  'lsYgJ6Vg-1KKv_WeI7FIMw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000328-0000-0000-0000-000000000001',
+  'b0000079-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'file',
+  2,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/8c780e4a-bd12-4544-814b-782de7c8cd21/mXWMxeHdM2EgTG0GVlhNpA.csv","name":"zonos-catalog-template.csv"}',
+  'kSeBT1j6AU1gbXKsJ99N5w'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000329-0000-0000-0000-000000000001',
   'b0000079-0000-0000-0000-000000000001',
   'Upload_Zonos_Catalog_Template',
   'Upload Zonos Catalog Template',
@@ -3611,10 +6163,39 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'pEZXpzC89UaOTPnd4sxFAw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000159-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000330-0000-0000-0000-000000000001',
+  'b0000080-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Included in your yearly platform subscription are 10,000 product classifications. Bulk classification is a good way to obtain the 6-digit HS code for a large portion of your product catalog quickly.&#xa0;</p> \n<p>To ensure accurate classification, it is recommended to provide as many fields as possible.</p> \n<ul> \n <li>The only required field to request a bulk classification is ''description''.</li> \n <li>The template must be uploaded with the&#xa0;<em>exact</em>&#xa0;header columns; if a header is deleted, the upload will fail.</li> \n</ul>"}',
+  'jZvIxBgun-71BZYG0V9DVg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000331-0000-0000-0000-000000000001',
+  'b0000080-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'file',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/920f291f-8686-4f4e-b2c9-4743455fd26a/mjPj004aVdVhmyKbP-5Dyg.csv","name":"BulkClassifyTemplate-v4 40.csv"}',
+  'gc5MS4p3HPIqNOkzmfBGCg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000332-0000-0000-0000-000000000001',
   'b0000080-0000-0000-0000-000000000001',
   'Upload_Template',
   'Upload Template',
@@ -3624,10 +6205,1061 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'pDlsTduSehNbpA_KENdF7A'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000160-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000333-0000-0000-0000-000000000001',
+  'b0000080-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  3,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://zonos.com/docs/catalog/classify/classifying-goods/bulk-classify"}',
+  'q1bBpo-O8uYWvT0CPpZMdg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000334-0000-0000-0000-000000000001',
+  'b0000082-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<h3>Create task for dev team to add two rules</h3>"}',
+  'gj_zbyH-OX3UOSqgqo9DKw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000335-0000-0000-0000-000000000001',
+  'b0000082-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  1,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<p class=\"style-info\"><strong>Store Fee Rule</strong></p>"}',
+  'izI3TkJ3kFJ7YJyTSQdHWA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000336-0000-0000-0000-000000000001',
+  'b0000082-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  2,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<p>Please add a store fee rule to offset tax due to merchant having tax-inclusive pricing on their product. (removes tax from customer-facing calculations)</p>\n<p class=\"style-info\"><strong>DGS Rule</strong></p>"}',
+  'oVK_AZmxR9CTV9bs6yFJog'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000337-0000-0000-0000-000000000001',
+  'b0000082-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  3,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<p>Please add a rule to DGS to reduce amount by X to account for tax-inclusive pricing.&#xa0;<br>(changes amount used for calculation, but still allows Zonos to calculate LCG fee)</p>"}',
+  'r0jUGSPWQ7f9qLze7yhCmg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000338-0000-0000-0000-000000000001',
+  'b0000082-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  4,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<p>Example: If VAT is 20%, then :amount: = :amount: * 0.80</p>"}',
+  'pcX3RQ9TWFTWHHv4nvJLkQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000339-0000-0000-0000-000000000001',
+  'b0000082-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  5,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"url":"https://myzonos.atlassian.net/wiki/spaces/~627ebd65694943006f36b072/pages/2335539303/Groomie+VAT+Inclusive+LCG+Solution+on+Shopify"}',
+  'sBx8v9r7PvAtJQOslhxCJg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000340-0000-0000-0000-000000000001',
+  'b0000083-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Send Chanel Barnes a DM in Slack:</p>"}',
+  'kv4HoK-jY9h-U0jkCJ9JQg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000341-0000-0000-0000-000000000001',
+  'b0000083-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>{{form.Account_name|fallback:''Account name''}} - {{form.Zonos_ID|fallback:''Zonos ID''}} will be using the Zonos co-operator agreement for calculating sales tax in the US. Please let me know when ready.</p>"}',
+  'mmhkK_XWhNi5-tpJJT9DSg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000342-0000-0000-0000-000000000001',
+  'b0000084-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p class=\"style-info\" style=\"text-align: center;\"><strong>Enabling US sales tax requires two API calls</strong></p>\n<ol>\n<li style=\"text-align: left;\">Query for billingCompanyId</li>\n<li style=\"text-align: left;\">Mutation to update merchant of record</li>\n</ol>\n<p></p>"}',
+  'kEAvk-Hl8AgfRhuCc5lM0g'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000343-0000-0000-0000-000000000001',
+  'b0000084-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3>Query for billingCompanyId</h3>\n<ul>\n<li>Open explore.zonos.com</li>\n<li>Change store to your merchant''s Zonos account</li>\n<li>Copy their organizationId from the top of the screen\n<ul>\n<li>Top center of explore shows merchant name, merchant ID, and organizationId</li>\n</ul>\n</li>\n<li>Add organizationId to query below and run to obtain the billingCompanyId</li>\n</ul>"}',
+  'llk6DW63ldQ9fGRGvxJJBg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000344-0000-0000-0000-000000000001',
+  'b0000084-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  2,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p><span style=\"color: rgb(0, 125, 182);\">{</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; billingCompanyByOrganizationId(</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; &#xa0; organizationId: \"<span style=\"color: rgb(225, 89, 81);\">organizationId</span>\"</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; ) {</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; &#xa0; companyId</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; &#xa0; name</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; &#xa0; accounts {</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; &#xa0; &#xa0; id</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; &#xa0; &#xa0; type</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; &#xa0; }</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; &#xa0; country</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; &#xa0; email</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; &#xa0; id</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; &#xa0; name</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; &#xa0; createdAt</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; &#xa0; createdBy</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; &#xa0; id</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; &#xa0; organizations {</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; &#xa0; &#xa0; id</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; &#xa0; &#xa0; name</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; &#xa0; }</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; }</span><br><span style=\"color: rgb(0, 125, 182);\">}</span></p>"}',
+  'gp-CqyR58hE2e-o5rtlAtQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000345-0000-0000-0000-000000000001',
+  'b0000084-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  3,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<hr>\n<p></p>"}',
+  'qHeZ5mQpFoVGu-YQwGZEBQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000346-0000-0000-0000-000000000001',
+  'b0000084-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  4,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3>Mutation to update merchant of record</h3>\n<ul>\n<li>Update mutation below with billingCompanyId obtained in the query above, countryCode (where they''re based), and set ZONOS as the merchantOfRecord (both fields)</li>\n<li>Run mutation</li>\n</ul>"}',
+  'tzruI_Hk7R51yfUOnSVPbQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000347-0000-0000-0000-000000000001',
+  'b0000084-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  5,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p><span style=\"color: rgb(0, 125, 182);\">mutation MoRUpdate {</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; billingCompanyUpdate(</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; &#xa0; input: {</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; &#xa0; &#xa0; id: \"<span style=\"color: rgb(225, 89, 81);\">billingCompanyId</span>\"</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; &#xa0; &#xa0; merchantOfRecordOverrides: {</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; &#xa0; &#xa0; &#xa0; countryCode: <span style=\"color: rgb(225, 89, 81);\">US</span></span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; &#xa0; &#xa0; &#xa0; merchantOfRecord: <span style=\"color: rgb(225, 89, 81);\">ZONOS</span></span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; &#xa0; &#xa0; }</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; &#xa0; &#xa0; merchantOfRecord: <span style=\"color: rgb(225, 89, 81);\">ZONOS</span></span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; &#xa0; }</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; ) {</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; &#xa0; merchantOfRecordOverrides {</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; &#xa0; &#xa0; countryCode</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; &#xa0; &#xa0; merchantOfRecord</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; &#xa0; }</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; &#xa0; merchantOfRecord</span><br><span style=\"color: rgb(0, 125, 182);\">&#xa0; }</span><br><span style=\"color: rgb(0, 125, 182);\">}</span></p>"}',
+  'mmGvWgJMr5kL9nEeK6NHjA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000348-0000-0000-0000-000000000001',
+  'b0000085-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'video',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"","service":"","serviceCode":""}',
+  'hRKj7cU5BCM6x9eA4kNGVQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000349-0000-0000-0000-000000000001',
+  'b0000085-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://zonos.com/docs/guides/country-guides/canada/canada-carm"}',
+  'jq3udB3EnZ_Kwx2oz_xAGQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000350-0000-0000-0000-000000000001',
+  'b0000088-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>In DesktopShipper, third-party billing can be used for individual orders during the shipping process (manual process) or applied automatically when triggered under specified conditions (automated process). The steps outlined below will walk through setting up the manual and/or automated third-party billing process.</p>\n<p>Please note that Zonos will provide a carrier account number to bill duty and tax only.&#xa0;</p>\n<ul>\n<li><a href=\"https://info.desktopshipper.com/knowledge/how-third-party-billing-is-used-in-desktopshipper\" rel=\"nofollow\" target=\"_blank\">Link to DesktopShipper''s support documentation</a></li>\n</ul>\n<p class=\"style-warning\"><em>Remember, the goal is to bill shipping to the merchant''s carrier account number and duty/tax (if applicable) to Zonos''s carrier account number for the same shipment</em></p>"}',
+  'uirjiurH-5hraTOUTZ5Bxw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000351-0000-0000-0000-000000000001',
+  'b0000088-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/3/rE7ilzn7Ei9OwgkfOCFAvg/kYj9haHTjpipXsMU6PhKFQ/desktop1.png","alt":"desktop1.png"}',
+  'i09MTKMPZud2J-U96_RHvQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000352-0000-0000-0000-000000000001',
+  'b0000088-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  2,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<hr>\n<p></p>"}',
+  'hrvP8ikKMiKBwPxlarlL2A'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000353-0000-0000-0000-000000000001',
+  'b0000088-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  3,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3><strong>Manual third-party billing:</strong></h3>"}',
+  'gK0I4fUzoKEDOj7PDGFBHA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000354-0000-0000-0000-000000000001',
+  'b0000088-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  4,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/3/rE7ilzn7Ei9OwgkfOCFAvg/od3IXWWQ5J9Z36WmO45NnQ/3-1.PNG","alt":"3-1.PNG"}',
+  'rWJC1PcB6fuKeTfrUvJLEQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000355-0000-0000-0000-000000000001',
+  'b0000088-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  5,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/3/rE7ilzn7Ei9OwgkfOCFAvg/kR7TJjue-tPnFDbI8HBPww/3-2.PNG","alt":"3-2.PNG"}',
+  'lRLi1cqxHa7mqZ1AITtFuw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000356-0000-0000-0000-000000000001',
+  'b0000088-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  6,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/3/rE7ilzn7Ei9OwgkfOCFAvg/iVxOTJvU9bms_t-1awdJeg/3-3.PNG","alt":"3-3.PNG"}',
+  'hvCvNMZcJFFQ-PFcWspHMA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000357-0000-0000-0000-000000000001',
+  'b0000088-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  7,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/3/rE7ilzn7Ei9OwgkfOCFAvg/qkUfup7t7RmZWlac1atDzg/3-4.PNG","alt":"3-4.PNG"}',
+  'hZxXikCiCsy3E0W2MFZNQA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000358-0000-0000-0000-000000000001',
+  'b0000088-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  8,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3><strong>Automatic third-party billing:</strong></h3>"}',
+  'hk3App2OEiaCDnvdb3RFoQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000359-0000-0000-0000-000000000001',
+  'b0000088-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  9,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/3/rE7ilzn7Ei9OwgkfOCFAvg/tHAeJkE0wrGDnzPhnQlJmQ/bill1.PNG","alt":"bill1.PNG"}',
+  'tZRE9sW0xW7Lvw5-v4RBjQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000360-0000-0000-0000-000000000001',
+  'b0000088-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  10,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/3/rE7ilzn7Ei9OwgkfOCFAvg/jw6hU2tTVkt0fo9L-idJMQ/bill2.PNG","alt":"bill2.PNG"}',
+  'gKcXZyttmoUourRDYBNJew'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000361-0000-0000-0000-000000000001',
+  'b0000088-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  11,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/3/rE7ilzn7Ei9OwgkfOCFAvg/v41w8__YdiZ8RCT4kLtITA/bill3.PNG","alt":"bill3.PNG"}',
+  'umEsOouscs5acLxWLFBIPw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000362-0000-0000-0000-000000000001',
+  'b0000088-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  12,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/3/rE7ilzn7Ei9OwgkfOCFAvg/qEupXwOOSuJcmZ3E1plEQw/bill4.PNG","alt":"bill4.PNG"}',
+  'pAoUQRqfxi-EoUD9IeVOvA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000363-0000-0000-0000-000000000001',
+  'b0000088-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  13,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/3/rE7ilzn7Ei9OwgkfOCFAvg/htiQWdOu31ewADLkxO1L0g/bill5.PNG","alt":"bill5.PNG"}',
+  'mLGK4MXRxzuYeLu9-qxFSA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000364-0000-0000-0000-000000000001',
+  'b0000088-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  14,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/3/rE7ilzn7Ei9OwgkfOCFAvg/jcM-JRgkZmS50YZ3aUhHcg/bill6.PNG","alt":"bill6.PNG"}',
+  'ssC8IKijOyHSrQrPeTFPDQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000365-0000-0000-0000-000000000001',
+  'b0000088-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  15,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/3/rE7ilzn7Ei9OwgkfOCFAvg/si3OC5reyPkgnKmWKIpB3g/bill7.PNG","alt":"bill7.PNG"}',
+  'u3tFEWNuYR_vgh0LiGVLbw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000366-0000-0000-0000-000000000001',
+  'b0000089-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Add Zonos tax IDs to low-value shipments destined for the United Kingdom, European Union, and Norway. DesktopShipper settings support adding the below tax IDs using the \"tax value mappings\" UI.</p>\n<ul>\n<li><a href=\"https://info.desktopshipper.com/knowledge/ioss-and-desktopshipper\" rel=\"nofollow\" target=\"_blank\">Link to DesktopShipper''s support documentation</a></li>\n</ul>"}',
+  'lYJBBrcvUtu_tmXdJv1J2A'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000367-0000-0000-0000-000000000001',
+  'b0000089-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<hr>\n<p></p>"}',
+  'gqJCjhgTyZlwEnayypNAZg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000368-0000-0000-0000-000000000001',
+  'b0000089-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  2,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3><strong>Zonos Tax IDs:</strong></h3>\n<p class=\"style-info\"><strong>United Kingdom:<br>Tax Value:</strong> GB370241527<br><strong>Tax Group:</strong> GBVAT<br><strong>Tax Value Type:</strong> VAT<br><strong>Issuer Country:</strong> United Kingdom</p>\n<p class=\"style-info\"><strong>European Union:</strong><br><strong>Tax Value: </strong>IM3720000960<br><strong>Tax Group:</strong> EuropeanUnion<br><strong>Tax Value Type: </strong>IOSS<br><strong>Issuer Country: </strong>Ireland<br><em><a href=\"https://european-union.europa.eu/principles-countries-history/country-profiles_en\" rel=\"nofollow\" target=\"_blank\">List of EU countries and territories</a></em></p>\n<p class=\"style-info\"><strong>Norway:</strong> <br><strong>Tax Value:</strong> 2036495<br><strong>Tax Group:</strong> Norway<br><strong>Tax Value Type:</strong> VAT<br><strong>Issuer Country:</strong> Norway</p>"}',
+  'gd8fb5gPzVwRjlmDs25HeA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000369-0000-0000-0000-000000000001',
+  'b0000089-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  3,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<hr>\n<p></p>"}',
+  'laT0tavr65TcmN6CpuVN9g'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000370-0000-0000-0000-000000000001',
+  'b0000089-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  4,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/3/rE7ilzn7Ei9OwgkfOCFAvg/iBhX-fmx6WsVOpKJx3pObg/desktopshipper.png","alt":"desktopshipper.png"}',
+  'jY7Y8FDmBDe5vh9ePVdAvQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000371-0000-0000-0000-000000000001',
+  'b0000089-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  5,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/3/rE7ilzn7Ei9OwgkfOCFAvg/sIpMC1a29erHtqaU4NFNYw/override.PNG","alt":"override.PNG"}',
+  'uA_OHcDg6KyvQU-bSvBIEA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000372-0000-0000-0000-000000000001',
+  'b0000090-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Owner: Taylor Smith</p>"}',
+  'qAAcUCxVYXPzuEJXIclGpg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000373-0000-0000-0000-000000000001',
+  'b0000091-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>EasyPost allows for duty and tax to be billed third-party for international shipments. The below reference from EasyPost will guide you through adding this functionality to the API call.</p>\n<ul>\n<li><a href=\"https://support.easypost.com/hc/en-us/articles/4405008652429-How-do-I-set-up-my-shipment-to-have-a-third-party-account-billed-for-duties-and-taxes-on-international-shipments-\" rel=\"nofollow\" target=\"_blank\">Link to EasyPost Support Documentation</a></li>\n</ul>"}',
+  'tRhsj8N2m8crKVUPevVBHA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000374-0000-0000-0000-000000000001',
+  'b0000091-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<hr>\n<p class=\"style-info\"><strong>Important values</strong>:</p>\n<ul>\n<li>\n<p class=\"style-info\"><strong>TYPE</strong>:&#xa0;THIRD_PARTY</p>\n</li>\n<li>\n<p class=\"style-info\"><strong>ACCOUNT</strong>: Zonos will provide<strong><br></strong></p>\n</li>\n<li>\n<p class=\"style-info\"><strong>COUNTRY</strong>: US</p>\n</li>\n<li>\n<p class=\"style-info\"><strong>POSTAL_CODE</strong>: 84770</p>\n</li>\n</ul>"}',
+  'imCdvVh0JcAjLb7Rgt1O3Q'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000375-0000-0000-0000-000000000001',
+  'b0000091-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  2,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<hr>\n<p></p>"}',
+  'gTmWrDOTnF3D_z9bDQZGYA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000376-0000-0000-0000-000000000001',
+  'b0000091-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  3,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{}',
+  'jxPGcSxwV_opNq2A0HBF8w'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000377-0000-0000-0000-000000000001',
+  'b0000091-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  4,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p><strong>JSON Example:</strong></p>\n<p><code>options: {</code><br><code>&#xa0; payment: {</code><br><code>&#xa0; &#xa0; type: \"THIRD_PARTY\",</code><br><code>&#xa0; &#xa0; account: \"ZonosWillProvide\",</code><br><code>&#xa0; &#xa0; country: \"US\",</code><br><code>&#xa0; &#xa0; postal_code: \"84123\" </code><br><code>&#xa0; }</code><br><code>&#xa0; duty_payment_account: \"ZonosWillProvide\",</code><br><code>&#xa0; incoterm: \"DDP\" </code><br><code>}</code></p>\n<p class=\"style-warning\"><em>Remember, the goal is to bill shipping to the merchant''s carrier account number and duty/tax (if applicable) to Zonos''s carrier account number for the same shipment.</em></p>"}',
+  'v4e0Kj75zb0gZo9LLttAlg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000378-0000-0000-0000-000000000001',
+  'b0000091-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  5,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<hr>\n<p></p>"}',
+  'raqHCIGZEqhda7zV58FDhA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000379-0000-0000-0000-000000000001',
+  'b0000091-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  6,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/3/rE7ilzn7Ei9OwgkfOCFAvg/pl2TPWZjAp1mmGd634RCdA/easypost2.png","alt":"easypost2.png"}',
+  'lqb8Lfy4iJFgiCiLWGxEUg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000380-0000-0000-0000-000000000001',
+  'b0000092-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Add Zonos tax IDs to low-value shipments destined for the United Kingdom, European Union, and Norway. Add EasyPost''s tax identifier object to the API call and pass this detail to the carrier and commercial invoice.</p>\n<ul>\n<li><a href=\"https://www.easypost.com/docs/api#taxidentifier-object\" rel=\"nofollow\" target=\"_blank\">Link to EasyPost''s support documentation</a></li>\n</ul>"}',
+  'jTybyqaZZZoVMomA15hMWw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000381-0000-0000-0000-000000000001',
+  'b0000092-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<hr>\n<p></p>"}',
+  'r-3g-71shiI5DRvPGONLpQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000382-0000-0000-0000-000000000001',
+  'b0000092-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  2,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3><strong>Zonos Tax IDs:</strong></h3>\n<ul>\n<li>\n<p class=\"style-info\"><strong>United Kingdom:</strong> GB370241527</p>\n</li>\n<li>\n<p class=\"style-info\"><strong>European Union:</strong> IM3720000960&#xa0;</p>\n</li>\n<li>\n<p class=\"style-info\"><strong>Norway:</strong> 2036495</p>\n</li>\n</ul>"}',
+  'vQCKP2y1nnwopnm0mL1IwQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000383-0000-0000-0000-000000000001',
+  'b0000092-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  3,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<hr>\n<p></p>"}',
+  'jL7oBqjETuI5huC-toBHng'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000384-0000-0000-0000-000000000001',
+  'b0000092-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  4,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3><strong>Important values:</strong></h3>\n<ul>\n<li>\n<p class=\"style-info\">Entity is always SENDER</p>\n</li>\n<li>\n<p class=\"style-info\">Issuing country for European Union countries is always IE (Ireland)<br><br><a href=\"https://european-union.europa.eu/principles-countries-history/country-profiles_en\" rel=\"nofollow\" target=\"_blank\"><em><strong>List of European Union countries and territories</strong></em></a></p>\n</li>\n</ul>"}',
+  'jdlnlbZM1wNEL5DRWuNP3A'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000385-0000-0000-0000-000000000001',
+  'b0000092-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  5,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<hr>\n<p></p>"}',
+  'iLcIYBALMVn9J1fY5C1NHg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000386-0000-0000-0000-000000000001',
+  'b0000092-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  6,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p><strong>Tax identifier object examples:</strong></p>\n<p>If destination = United Kingdom:</p>\n<p><code>\"tax_identifiers\": [</code><br><code>{</code><br><code>\"entity\": \"SENDER\",</code><br><code>\"tax_id\": \"GB370241527\",</code><br><code>\"tax_id_type\": \"VAT\",</code><br><code>\"issuing_country\": \"GB\"</code><br><code>}]</code></p>\n<p>If destination = any European Union country:</p>\n<p><code>\"tax_identifiers\": [</code><br><code>{</code><br><code>\"entity\": \"SENDER\",</code><br><code>\"tax_id\": \"IM3720000960\",</code><br><code>\"tax_id_type\": \"IOSS\",</code><br><code>\"issuing_country\": \"IE\"</code><br><code>}]</code></p>\n<p>If destination = Norway:</p>\n<p><code>\"tax_identifiers\": [</code><br><code>{</code><br><code>\"entity\": \"SENDER\",</code><br><code>\"tax_id\": \"2036495\",</code><br><code>\"tax_id_type\": \"VOEC\",</code><br><code>\"issuing_country\": \"NO\"</code><br><code>}]</code></p>"}',
+  'vu4c6tXIonn_vEMpCuhC5A'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000387-0000-0000-0000-000000000001',
+  'b0000092-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  7,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/3/rE7ilzn7Ei9OwgkfOCFAvg/vulHKiVjx9MFwDDOuNxI6A/easypost.png","alt":"easypost.png"}',
+  'kM-aeSyPiJahZm5nyTFImg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000388-0000-0000-0000-000000000001',
+  'b0000093-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Owner: Taylor Smith</p>\n<p><a href=\"https://myzonos.atlassian.net/wiki/spaces/BD/pages/1992131578/ePost+LCG\" rel=\"nofollow\" target=\"_blank\">https://myzonos.atlassian.net/wiki/spaces/BD/pages/1992131578/ePost+LCG</a></p>\n<p><a href=\"https://myzonos.atlassian.net/wiki/spaces/BD/pages/1987936458/DPI+ePost+-+Account+setup\" rel=\"nofollow\" target=\"_blank\">https://myzonos.atlassian.net/wiki/spaces/BD/pages/1987936458/DPI+ePost+-+Account+setup</a></p>\n<p></p>"}',
+  'oJj9D0nvVDxwpMVypUtGmw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000389-0000-0000-0000-000000000001',
+  'b0000095-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<ol>\n<li>\n<p>Shipping rules need to be added to shipping software for UK, IOSS, etc. see the link <a href=\"https://myzonos.atlassian.net/wiki/spaces/BD/pages/1987936458/DPI+ePost+-+Account+setup\" title=\"https://myzonos.atlassian.net/wiki/spaces/BD/pages/1987936458/DPI+ePost+-+Account+setup\" rel=\"nofollow\" target=\"_blank\">here</a> for Shipstation.</p>\n</li>\n</ol>"}',
+  'iJIDXKoCbYGIbWxHgg5NBQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000390-0000-0000-0000-000000000001',
+  'b0000095-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://myzonos.atlassian.net/wiki/spaces/BD/pages/1987936458/DPI+ePost+-+Account+setup"}',
+  'o-aF6_2ULckkaJDOvcNJgQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000391-0000-0000-0000-000000000001',
+  'b0000096-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Owner: Taylor Smith</p>\n<p><a href=\"https://myzonos.atlassian.net/wiki/spaces/BD/pages/1905656075/Shipping+Easy+-+3rd+party+billing+settings\" rel=\"nofollow\" target=\"_blank\">https://myzonos.atlassian.net/wiki/spaces/BD/pages/1905656075/Shipping+Easy+-+3rd+party+billing+settings</a></p>"}',
+  'jkmiov2fqgyOIHFXnMdKlw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000392-0000-0000-0000-000000000001',
+  'b0000097-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Add Zonos provided carrier account number to ShippingEasy \"default duties payor\" settings. This will ensure that the carrier will invoice Zonos directly for duty and tax charges.</p>\n<h3><strong>In ShippingEasy:</strong></h3>\n<p><strong>Step 1: </strong>Add Zonos third-party account number</p>\n<ol>\n<li>Click \"carrier funds\" from the left-side navigation</li>\n<li>Scroll down to the section for your UPS, FedEx, or DHL Express account. Click the link that says \"manage third-party accounts.\"</li>\n<li>Click \"add new\"</li>\n<li>Fill in the account information:\n<ol>\n<li><strong>Name:</strong> Zonos Duty and Tax</li>\n<li><strong>Account number:</strong> Zonos will provide</li>\n<li><strong>Postal code:</strong> 84770</li>\n</ol>\n</li>\n<li>Click \"add account\"</li>\n</ol>\n<p class=\"style-warning\"><a href=\"https://support.shippingeasy.com/hc/en-us/articles/4406993008027-Third-Party-Billing-for-Shipments\" rel=\"nofollow\" target=\"_blank\">ShippingEasy support documentation</a> (scroll to \"save third-party accounts before shipping)</p>"}',
+  'mzvas6sgHVw50S-4SIpE4Q'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000393-0000-0000-0000-000000000001',
+  'b0000097-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p><strong>Step 2:</strong></p>\n<ol>\n<li>Click \"carrier funds\" in the sidebar of the app.</li>\n<li>Locate the carrier account you wish to update. Then, click the Manage Account link associated to the account.</li>\n<li>Click the Default Duties Payor drop-down and select \"third party.\" Then, click the Update button.</li>\n</ol>\n<p class=\"style-warning\"><a href=\"https://support.shippingeasy.com/hc/en-us/articles/4407011458971-Manage-Duties-Payor-Preference-How-To\" rel=\"nofollow\" target=\"_blank\">ShippingEasy support documentation</a></p>"}',
+  'npdzcZJRBDBJVfXKzQBDlg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000394-0000-0000-0000-000000000001',
+  'b0000097-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  2,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p><strong>Example: </strong></p>\n<p>ShippingEasy order details page with default duties payor configured. You will see the shipping charges billed to your carrier account (sender) and duty charges billed to Zonos (third-party).</p>"}',
+  'gPtdio8cm85VJ4AZ0RNESw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000395-0000-0000-0000-000000000001',
+  'b0000097-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  3,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/3/rE7ilzn7Ei9OwgkfOCFAvg/kj2i4ZGAAPkPICMYvMNGXg/tormund.PNG","alt":"tormund.PNG"}',
+  'npTPUI5pwSqi7OkjfnRJqA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000396-0000-0000-0000-000000000001',
+  'b0000098-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Add Zonos tax IDs to ShippingEasy international shipment settings. This information should automatically apply to shipments destined for the United Kingdom, European Union, and Norway.</p>\n<ul>\n<li><a href=\"https://support.shippingeasy.com/hc/en-us/articles/4407006547739#UUID-d39383cc-0b69-db83-dfe2-dcb82700572e\" rel=\"nofollow\" target=\"_blank\">ShippingEasy support documentation</a> (scroll to \"add TIN to International Settings)<hr></li>\n</ul>"}',
+  'tXFEZYFSZVl75bedCd1ALg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000397-0000-0000-0000-000000000001',
+  'b0000098-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3><strong>In ShippingEasy:</strong></h3>\n<ol>\n<li>Click \"settings\"</li>\n<li>Shipment Settings\n<ol>\n<li>Click \"international shipments\"</li>\n</ol>\n</li>\n<li>Tax Identification Numbers\n<ol>\n<li>Click \"add new\"</li>\n</ol>\n</li>\n<li>Enter the tax ID information displayed below</li>\n<li>Click \"save\"</li>\n</ol>"}',
+  'it7-WELP8BUVvlRqlj5A3g'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000398-0000-0000-0000-000000000001',
+  'b0000098-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  2,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<hr>\n<p></p>"}',
+  'hv8LnE7CExvr1ZRC0YhK0Q'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000399-0000-0000-0000-000000000001',
+  'b0000098-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  3,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3><strong>Zonos Tax IDs:</strong></h3>\n<p class=\"style-info\"><strong>United Kingdom:</strong><br><strong>Tax ID Type:</strong> VAT<br><strong>Issuing Authority:</strong> UK<br><strong>Number:</strong> GB370241527<br><strong>Nickname:</strong> Zonos HMRC</p>\n<p class=\"style-info\"><strong>European Union:</strong><br><strong>Tax ID Type:</strong> IOSS<br><strong>Issuing Authority:</strong> IE<br><strong>Number:</strong> IM3720000960<br><strong>Nickname:</strong> Zonos IOSS<br><a href=\"https://european-union.europa.eu/principles-countries-history/country-profiles_en\" rel=\"nofollow\" target=\"_blank\" title=\"EU countries and territories\">List of EU countries and territories</a></p>\n<p class=\"style-info\"><strong>Norway:</strong><br><strong>Tax ID Type:</strong> VOEC<br><strong>Issuing Authority:</strong> NO<br><strong>Number:</strong> 2036495<br><strong>Nickname:</strong> Zonos VOEC</p>"}',
+  'uYueAfxuuFNmFKz8lD9CDw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000400-0000-0000-0000-000000000001',
+  'b0000098-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  4,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/3/rE7ilzn7Ei9OwgkfOCFAvg/nYQfv51M-9FqWjWPBchBdg/tax-id-numbers.png","alt":"tax id numbers.png"}',
+  'vJmz_EU90npypR3PN8xJ2g'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000401-0000-0000-0000-000000000001',
+  'b0000100-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>ShipEngine allows users to bill the duties and taxes to a third party with carriers(<strong>UPS and FedEx only</strong>) that support this feature. For billing duties and taxes to a third party you will want to use this advance option.</p>\n<p><a href=\"https://www.shipengine.com/docs/shipping/bill-to-third-party/#\" rel=\"nofollow\" target=\"_blank\">Link to ShipEngines Support Documentation</a></p>\n<p><a href=\"https://www.shipengine.com/docs/shipping/bill-to-third-party/#example-request\" rel=\"nofollow\" target=\"_blank\">Example Request</a></p>\n<pre>“advanced_options”: {<br> “bill_duties_to_override”: {<br>   “account_number”: “ZonosWillProvide”<br>   “postal_code”: “84770”<br>   “country_code”: “US”<br>  }<br>}</pre>"}',
+  'tVA5-BoUr-vQVCSBuRBHmw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000402-0000-0000-0000-000000000001',
+  'b0000100-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/3/rE7ilzn7Ei9OwgkfOCFAvg/rLTHe3vqmrGdOquDaLlP2A/shipengine.png","alt":"shipengine.png"}',
+  'lwlQAY8eZyKJllqMUvBAzg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000403-0000-0000-0000-000000000001',
+  'b0000101-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>ShipEngine enables you to include tax IDs in your shipments, in line with the latest international shipping regulations. Be aware that the ''tax_identifiers'' array is located within the ''shipments'' object. This should be considered when generating both shipments and labels.</p>\n<p><a href=\"https://www.shipengine.com/docs/shipping/international/#the-tax-identifiers-object\" rel=\"nofollow\" target=\"_blank\">Link to ShipEngines Support Documentation</a></p>"}',
+  'ipMrWjWrx90yZ2ggIA5EQA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000404-0000-0000-0000-000000000001',
+  'b0000101-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3><strong>Tax Identifiers Object</strong></h3>\n<p>Property:</p>\n<ul>\n<li>taxable_entity_type: shipper</li>\n<li>identifier_type:\n<ul>\n<li>United Kingdom: vat</li>\n<li>All European Union countries and territories: ioss\n<ul>\n<li><a href=\"https://european-union.europa.eu/principles-countries-history/country-profiles_en\" rel=\"nofollow\" target=\"_blank\" title=\"EU countries and territories\">List of EU countries and territories</a></li>\n</ul>\n</li>\n<li>Norway: voec</li>\n</ul>\n</li>\n<li>value: Zonos provided tax id</li>\n<li>issuing_authority: two digit ISO country code\n<ul>\n<li>GB</li>\n<li>IE</li>\n<li>NO</li>\n</ul>\n</li>\n</ul>\n<p><a href=\"https://www.shipengine.com/docs/shipping/international/#api-example\" rel=\"nofollow\" target=\"_blank\">API Example</a></p>\n<h3><strong>Zonos Tax IDs:</strong></h3>\n<ul>\n<li>\n<p class=\"style-info\"><strong>United Kingdom: GB370241527</strong></p>\n</li>\n<li>\n<p class=\"style-info\"><strong>European Union: IM3720000960</strong></p>\n</li>\n<li>\n<p class=\"style-info\"><strong>Norway: 2036495</strong></p>\n</li>\n</ul>"}',
+  'o_GlJvtr_INfRPPCjvBCuQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000405-0000-0000-0000-000000000001',
+  'b0000101-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  2,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/3/rE7ilzn7Ei9OwgkfOCFAvg/l0dOsUnv2iLSK4ss7YNIlg/shipengine2.png","alt":"shipengine2.png"}',
+  'jR7gUGidt7QrTGWHaNlOWg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000406-0000-0000-0000-000000000001',
+  'b0000102-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Owner: Barrett Curry</p>\n<p><a href=\"https://myzonos.atlassian.net/wiki/spaces/COARS/pages/2201354269/ShipHero+LCG+Certification\" rel=\"nofollow\" target=\"_blank\">https://myzonos.atlassian.net/wiki/spaces/COARS/pages/2201354269/ShipHero+LCG+Certification</a></p>\n<p>Need: Precise steps in Shiphero with screenshots</p>"}',
+  'qamvgwAHW6-aHKSvXPBLMw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000407-0000-0000-0000-000000000001',
+  'b0000104-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<ol>\n<li>Complete the&#xa0;<strong>UPS Unlock Request</strong>&#xa0;Slack workflow in the&#xa0;<a href=\"https://zonos.slack.com/archives/C092QKN5V5W\" rel=\"nofollow\" target=\"_blank\">#ups-unlock-request</a>&#xa0;Slack channel.\n<ul>\n<li>Zonos UPS team will send request to UPS to add SSC code 217</li>\n<li>Code activation typically takes 24-48 hours</li>\n</ul>\n</li>\n<li>Once confirmed, Zonos UPS team will notify you via&#xa0;<a href=\"https://zonos.slack.com/archives/C092QKN5V5W\" rel=\"nofollow\" target=\"_blank\">Slack</a>, at which point you can inform the merchant they can proceed with step 2: Enable UPS Unlock in Dashboard.</li>\n</ol>"}',
+  'kWTleuxQ5Acqw60WsX5NLg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000408-0000-0000-0000-000000000001',
   'b0000104-0000-0000-0000-000000000001',
   'Link_to_Slack_thread',
   'Link to Slack thread',
@@ -3637,10 +7269,207 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'tmU-6AAZU04453cTufNP0g'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000161-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000409-0000-0000-0000-000000000001',
+  'b0000105-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3 style=\"text-align: start;\">Adding&#xa0;<code>zx</code>&#xa0;upstream</h3>\n<p style=\"text-align: start;\">If you can add the&#xa0;<code>zx</code>&#xa0;prefix upstream (before orders reach ShipStation), you only need to configure your Label Messages to display the&#xa0;<code>zx</code>&#xa0;order number:</p>\n<h4 style=\"text-align: start;\">Label Messages configuration</h4>\n<ol>\n<li><strong>Access Label Messages settings</strong>: Navigate to&#xa0;<strong>Settings</strong>&#xa0;→&#xa0;<strong>Printing</strong>&#xa0;→&#xa0;<strong>Printing Setup,</strong>&#xa0;then click&#xa0;<strong>Document Options</strong>&#xa0;for Label</li>\n<li><strong>Configure Label Messages</strong>: In the Label Messages section, you can define up to 3 custom messages that will appear as reference numbers on UPS labels. Label Messages only accept preset values like \"Custom Field 1\", \"Order #\", etc.</li>\n<li><strong>Set your Messages to use Custom Fields</strong>: Set Message #1 to&#xa0;<code>[Order #]</code>. If you already have a #1, add a #2 or #3</li>\n<li><strong>Save Settings</strong>&#xa0;to apply your configuration Once complete, ShipStation wil automatically put your order number on your label, which includes your configured&#xa0;<code>zx</code>&#xa0;prefix.</li>\n</ol>\n<h3 style=\"text-align: start;\">Adding&#xa0;<code>zx</code>&#xa0;in ShipStation:</h3>\n<p style=\"text-align: start;\">If you can''t add the&#xa0;<code>zx</code>&#xa0;prefix upstream (before orders reach ShipStation), you''ll need to configure your Label Messages and Automation Rules to display the&#xa0;<code>zx</code>&#xa0;order number:</p>\n<h4 style=\"text-align: start;\">Step 1: Label Messages configuration</h4>\n<p style=\"text-align: start;\">First, configure your Label Messages to use Custom Fields that will be populated by automation rules:</p>\n<ol>\n<li><strong>Access Label Messages settings</strong>: Navigate to&#xa0;<strong>Settings</strong>&#xa0;→&#xa0;<strong>Printing</strong>&#xa0;→&#xa0;<strong>Printing Setup,</strong>&#xa0;then click&#xa0;<strong>Document Options</strong>&#xa0;for Label</li>\n<li><strong>Configure Label Messages</strong>: In the Label Messages section, you can define up to 3 custom messages that will appear as reference numbers on UPS labels. Label Messages only accept preset values like \"Custom Field 1\", \"Custom Field 2\", etc.</li>\n<li><strong>Set your Messages to use Custom Fields</strong>: Set Message #1 to&#xa0;<code>[Custom Field #1]</code>. If you already have a #1, add a #2 or #3</li>\n<li><strong>Save Settings</strong>&#xa0;to apply your configuration</li>\n</ol>"}',
+  'hrzYIfuCKO2McHWGJAVDAw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000410-0000-0000-0000-000000000001',
+  'b0000106-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h4 style=\"text-align: start;\">Automation Rules configuration</h4>\n<p style=\"text-align: start;\">After setting up your new Label Message, you''ll need an automation rule to populate your Custom Fields with the&#xa0;<code>zx</code>&#xa0;prefix and order data. Navigate to&#xa0;<strong>Settings</strong>&#xa0;→&#xa0;<strong>Automation</strong>&#xa0;→&#xa0;<strong>Automation Rules</strong>&#xa0;then click&#xa0;<strong>Create a Rule</strong>.&#xa0;<strong>Rule for Zonos UPS orders:</strong></p>\n<ol>\n<li>Name: \"Zonos UPS Unlock\"</li>\n<li>Ensure&#xa0;<strong>Active Rule</strong>&#xa0;is toggled on</li>\n<li>Select&#xa0;<strong>Orders match these specific criteria</strong></li>\n<li>Set criteria: \"International Order\" = \"True\" AND \"Carrier\" + \"Includes\" + \"UPS\"</li>\n<li>Set actions:\n<ul>\n<li><strong>Action Type</strong>: Select \"Set Custom Field 1...\" (or 2 or 3 depending on your Label Messages)</li>\n<li><strong>Custom Field 1</strong>&#xa0;(or 2 or 3):&#xa0;<code>zx[order #]</code>&#xa0;(this combines the zx prefix with the order number)</li>\n</ul>\n</li>\n<li>Click&#xa0;<strong>Save Rule</strong>&#xa0;Once complete, ShipStation will automatically populate your Custom Field with the zx prefix and order number for international UPS orders, which will appear on your UPS labels.&#xa0;<strong>Important</strong>: The Label Message configuration in ShipStation is a global change that impacts all carriers. The automation rules approach allows UPS Unlock to work seamlessly for Zonos orders while maintaining your preferred Label Messages for other shipments.</li>\n</ol>"}',
+  'mw779InBmKrts22GoiJMNA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000411-0000-0000-0000-000000000001',
+  'b0000107-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<ol>\n<li>From the Zonos dashboard\n<ol>\n<li>settings &gt; manage rates &gt; UPS &gt; enable UPS Unlock</li>\n</ol>\n</li>\n</ol>"}',
+  'mk2m1gM9VOBSWsWFuEVLYQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000412-0000-0000-0000-000000000001',
+  'b0000107-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/3/rE7ilzn7Ei9OwgkfOCFAvg/qQq-OrBxLxA_6UBdBTdBHg/ups-unlock.png","alt":"ups unlock.png"}',
+  'kMBw7MaVgXjE5GlYPbVPiA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000413-0000-0000-0000-000000000001',
+  'b0000109-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>UPS Worldship allows users to bill duty and tax to a third-party UPS account number. The goal is to bill transportation costs to the shippers UPS account and to bill duty/tax charges to Zono''s UPS account.</p>"}',
+  'sqhQqjkXH6ovytFszqRCVQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000414-0000-0000-0000-000000000001',
+  'b0000109-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/3/rE7ilzn7Ei9OwgkfOCFAvg/kR-C0BrqXUom0r7pchFHzA/worldship.PNG","alt":"worldship.PNG"}',
+  'ltUSS-m6t-FqufSxe0VKLg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000415-0000-0000-0000-000000000001',
+  'b0000110-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Owner: Nicholas McBride</p>\n<p><a href=\"https://myzonos.atlassian.net/wiki/spaces/BD/pages/2579824688/iDrive+Logistics\" rel=\"nofollow\" target=\"_blank\">https://myzonos.atlassian.net/wiki/spaces/BD/pages/2579824688/iDrive+Logistics</a></p>"}',
+  'rCyix7gixSTBUcDLN-VJmQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000416-0000-0000-0000-000000000001',
+  'b0000111-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<ul>\n<li>\n<p>Landmark already has Zonos tax IDs.</p>\n</li>\n<li>\n<p>No 3rd party billing needed. Landmark bills Zonos for duties and taxes.</p>\n</li>\n<li>\n<p>Aaron is the POC for this partnership. Reach out to him with any questions.</p>\n</li>\n<li>\n<p>Jim Zierse is the POC for sales.</p>\n</li>\n</ul>\n<p style=\"text-align: start;\">&#xa0;</p>\n<ol>\n<li>\n<p>Add a 3.95% disbursement fee calculated from the duty and tax amount.</p>\n</li>\n<li>\n<p>Contact Ryan Drouillard (<a href=\"mailto:rdrouillard@landmarkglobal.com\" title=\"mailto:rdrouillard@landmarkglobal.com\" rel=\"nofollow\" target=\"_blank\">rdrouillard@landmarkglobal.com</a>) and cc Valerie Carroll (<a href=\"mailto:vcarroll@landmarkglobal.com\" title=\"mailto:vcarroll@landmarkglobal.com\" rel=\"nofollow\" target=\"_blank\">vcarroll@landmarkglobal.com</a>) to inform them that your merchant will be enrolled in LCG via Landmark. He will ensure that the tax IDs are passed on shipments.</p>\n</li>\n<li>\n<p>Zonos will receive duty/tax bills from Landmark.</p>\n</li>\n</ol>"}',
+  'pDMcu5mVA42Wu0ws_uVNwQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000417-0000-0000-0000-000000000001',
+  'b0000112-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Owner: Matthew Matheson</p>\n<ol>\n<li>\n<p>Set up shipping zone for UK and EU countries</p>\n</li>\n<li>\n<p>Upload ratesheet provided by Portless</p>\n</li>\n<li>\n<p>Work with Brad to set up DAP_Forced as the landed cost method. This will allow us to calculate the tax for low value shipments in the EU and UK but then have us estimate for standard shipments.</p>\n</li>\n<li>\n<p>Ensure that TAX Ids are pulling through on commercial invoice for merchant.</p>\n</li>\n<li>\n<p>HS Codes? On the Fly / Add them to Shopify</p>\n</li>\n</ol>"}',
+  'jST-YgHwhdJ-DK-93bZG8A'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000418-0000-0000-0000-000000000001',
+  'b0000113-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Owner: Barrett Curry</p>\n<p style=\"text-align: start;\">ProShip can programmatically add a Zonos account and tax ID for third party billing with major carriers.</p>\n<p style=\"text-align: start;\">Below is example code that Complemar used to get LCG certified labels and CI’s. This is not a one-size fits all solution. The “if” statements that trigger the “then” statements below will differ based on the particular merchant.</p>\n<p style=\"text-align: start;\">The below code can be used as a guide, but is not intended as a plug-and-play directive for the merchant/3PL’s ProShip admin.</p>\n<p style=\"text-align: start;\">Bolded are the areas that are likely to change based on the merchant.</p>\n<p style=\"text-align: start;\">&#xa0;</p>\n<p style=\"text-align: start;\">&#xa0;</p>\n<p style=\"text-align: start;\">ProShip Code</p>\n<p style=\"text-align: start;\">&#xa0;</p>\n<p style=\"text-align: start;\"><strong>If Shipment.E(\"/SHIPMENT/COMMON/CCN/CCN_JOB_NUMBER\") = \"81180\" and&#xa0; (trim(Shipment.E(\"/SHIPMENT/COMMON/CCN/CCN_SERVICE_LEVEL\")) = \"UPS Worldwide Expedited DDP\" or trim(Shipment.E(\"/SHIPMENT/COMMON/CCN/CCN_SERVICE_LEVEL\")) = \"UPS Worldwide Express Saver DDP\")then</strong></p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/CI_METHOD\") = \"1\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/DUTIES_TERMS\") = \"THIRD_PARTY\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/DUTIES_ACCOUNT\") = \"<strong>442262</strong>\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/CONSIGNEE_ACCOUNT\") = \"<strong>442262</strong>\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/TPBILL_COMPANY\") = \"Sold To\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/TPBILL_ADDRESS1\") = \"Swag-Bill Duty &amp; Taxes to <strong>442262</strong>\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/TPBILL_ADDRESS2\") = \"975S. Tech Ridge Dr.\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/TPBILL_COUNTRY\") = \"US\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/TPBILL_POSTALCODE\") = \"84770\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/TPBILL_CITY\") = \"St. George\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/TPBILL_STATE\") = \"UT\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/TPBILL_ACCOUNT\") = \"<strong>442262</strong>\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/EXPORT_REASON\") = \"Permanent\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; S.E(\"/SHIPMENT/PACKAGE/MISC_REFERENCE_3\") = \"BILLING: P/P TPR <strong>442262</strong>\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/INTL_TERMS\") = \"DDP\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; End If</p>\n<p style=\"text-align: start;\">&#xa0;</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;<strong> If Shipment.E(\"/SHIPMENT/COMMON/CCN/CCN_JOB_NUMBER\") = \"81180\" and&#xa0; (trim(Shipment.E(\"/SHIPMENT/COMMON/CCN/CCN_SERVICE_LEVEL\")) = \"UPS Worldwide Expedited EU LV DDU\" or trim(Shipment.E(\"/SHIPMENT/COMMON/CCN/CCN_SERVICE_LEVEL\")) = \"UPS Worldwide Express Saver EU LV DDU\")then</strong></p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/CI_METHOD\") = \"1\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/USE_EXPORTER_FLAG\") = \"True\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/EXPORTER_EIN\") = \"IM3720000960\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/EXPORTER_EIN_TYPE\") = \"IOSS\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/EXPORTER_COMPANY\") = \"<a href=\"http://swag.com/\" title=\"http://swag.com/\" rel=\"nofollow\" target=\"_blank\"><u>Swag.com</u></a>\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/EXPORTER_ADDRESS1\") = \".\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/EXPORTER_CONTACT\") = \"EXPORTER_IOSS: IM3720000960\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/EXPORTER_CITY\") = \".\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/EXPORTER_STATE\") = \".\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/EXPORTER_POSTALCODE\") = \".\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/EXPORTER_COUNTRY\") = \".\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/EXPORTER_PHONE\") = \".\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/EXPORT_REASON\") = \"Permanent\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/INTL_TERMS\") = \"DDU\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; End If&#xa0;&#xa0;&#xa0;</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;<strong> If Shipment.E(\"/SHIPMENT/COMMON/CCN/CCN_JOB_NUMBER\") = \"81180\" and&#xa0; (trim(Shipment.E(\"/SHIPMENT/COMMON/CCN/CCN_SERVICE_LEVEL\")) = \"UPS Worldwide Expedited UK LV DDU\" or trim(Shipment.E(\"/SHIPMENT/COMMON/CCN/CCN_SERVICE_LEVEL\")) = \"UPS Worldwide Express Saver UK LV DDU\")then</strong></p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/CI_METHOD\") = \"1\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/USE_EXPORTER_FLAG\") = \"True\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/EXPORTER_EIN\") = \"GB370241527\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/EXPORTER_EIN_TYPE\") =\"UK VAT ID\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/EXPORTER_COMPANY\") = \"<a href=\"http://swag.com/\" title=\"http://swag.com/\" rel=\"nofollow\" target=\"_blank\"><u>Swag.com</u></a>\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/EXPORTER_ADDRESS1\") = \".\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/EXPORTER_CONTACT\") = \"EXPORTER_VAT_ID: GB370241527\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/EXPORTER_CITY\") = \".\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/EXPORTER_STATE\") = \".\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/EXPORTER_POSTALCODE\") = \".\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/EXPORTER_COUNTRY\") = \".\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/EXPORTER_PHONE\") = \".\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/EXPORT_REASON\") = \"Permanent\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Shipment.E(\"/SHIPMENT/COMMON/INTL_TERMS\") = \"DDU\"</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;</p>\n<p style=\"text-align: start;\">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; End If&#xa0;&#xa0;&#xa0;</p>"}',
+  'l-fNNunQQGEK3b2vcZ5OSg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000419-0000-0000-0000-000000000001',
+  'b0000114-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Owner: Kermit McKinney, Barrett Curry</p>"}',
+  'tGsYFAFuEPyvn2mJqupLSA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000420-0000-0000-0000-000000000001',
+  'b0000114-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://myzonos.atlassian.net/wiki/spaces/COARS/pages/2603974663/Scale+3PL+Onboarding+Info"}',
+  'oFK9rGkeFqrz9z6ji5FNoQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000421-0000-0000-0000-000000000001',
+  'b0000115-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p>Owner: Kermit McKinney</p>\n<p>https://myzonos.atlassian.net/wiki/spaces/COARS/pages/2476081199/ShipNetwork+Firstmile+LCG+and+Rate+Sheets+for+Onboarding</p>"}',
+  'p22vy83G9oqU6ByYLmRJOA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000422-0000-0000-0000-000000000001',
+  'b0000117-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p class=\"style-danger\">The UPS Unlock doc contains all relevant information for implementing the solution on any label software, or via API call to UPS. Provide details about the Unlock setup below.</p>"}',
+  'jBGpvKZmQzdZ8Nm41llJYA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000423-0000-0000-0000-000000000001',
   'b0000117-0000-0000-0000-000000000001',
   'UPS_Unlock_setup_details',
   'UPS Unlock setup details',
@@ -3650,10 +7479,53 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'pQMiYBsosPV1TUuOGLNKxw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000162-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000424-0000-0000-0000-000000000001',
+  'b0000117-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  2,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://zonos.com/docs/global-ecommerce/shipping-labels/carriers/ups-unlock"}',
+  'n_lvykcg28Agr1odV5NOhg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000425-0000-0000-0000-000000000001',
+  'b0000118-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'embed',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://zonos.com/docs/supply-chain/landed-cost/integrate-label-api"}',
+  'hgLAfkHkixIDfjr-ihNITQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000426-0000-0000-0000-000000000001',
+  'b0000120-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<h1 style=\"text-align: center;\"><strong>QA Checklist</strong></h1>"}',
+  'm6qxC76lmTR8xVkg-SNAOw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000427-0000-0000-0000-000000000001',
   'b0000120-0000-0000-0000-000000000001',
   'QA_Start_Date',
   'QA Start Date',
@@ -3663,10 +7535,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'lN7ScIovxuq-2fTZ4iFL8g'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000163-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000428-0000-0000-0000-000000000001',
   'b0000120-0000-0000-0000-000000000001',
   'Testing_URL',
   'Testing URL',
@@ -3676,10 +7549,81 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'py500l8R2R_BfhumrJFGNA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000164-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000429-0000-0000-0000-000000000001',
+  'b0000120-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  3,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<hr>\n<p></p>"}',
+  'gK2pAHL9sKN2I9fvugZB8Q'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000430-0000-0000-0000-000000000001',
+  'b0000120-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  4,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<h1>Shipping rate and label troubleshooting</h1>"}',
+  'qGzf0x48qr57qcvdCNtOew'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000431-0000-0000-0000-000000000001',
+  'b0000120-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'file',
+  5,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/h1vcfu4FIV1B3YInDmBCPw/Testing-Carriers-Rates-and-Labels-May-25-2022.pdf","name":"Testing Carriers Rates and Labels May 25 2022.pdf"}',
+  'hwZuq8vtQccqrZ2uDolDHQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000432-0000-0000-0000-000000000001',
+  'b0000120-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  6,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<hr>\n<p></p>"}',
+  'ih6FTlCMZ9OAZMyPGkxJxQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000433-0000-0000-0000-000000000001',
+  'b0000120-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  7,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h1>Checkout</h1>"}',
+  'hnh5DVv5yw0rZPIVOXNEJg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000434-0000-0000-0000-000000000001',
   'b0000120-0000-0000-0000-000000000001',
   'Is_Checkout_2.0_opening_in_an_iframe?',
   'Is Checkout 2.0 opening in an iframe?',
@@ -3689,10 +7633,95 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Yes","label":"Yes"},{"value":"No","label":"No"}]',
   NULL,
+  '{}',
   'q4AZ1gZ7U-Fs-8SXDBBFdw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000165-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000435-0000-0000-0000-000000000001',
+  'b0000120-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  9,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3>Enabling test mode with iframe</h3>"}',
+  'szIIP62Nz3xnvqala_hDWg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000436-0000-0000-0000-000000000001',
+  'b0000120-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  10,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<ol>\n<li>Inspect the site</li>\n<li>Find the iframe URL, right click, edit attribute</li>\n<li>Insert ?zonosTestMode=1 onto the end of the URL</li>\n<li>Use test card information below</li>\n</ol>\n<ul>\n<li>\n<p><strong>Card number</strong></p>\n<p>4242 4242 4242 4242<br>exp: any future date<br>code: 123</p>\n</li>\n<li>\n<p><a href=\"https://docs.stripe.com/testing\" rel=\"nofollow\" target=\"_blank\">https://docs.stripe.com/testing</a></p>\n</li>\n</ul>"}',
+  'kU38sJOo2ONO21GveY9LNw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000437-0000-0000-0000-000000000001',
+  'b0000120-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'image',
+  11,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"url":"https://ps-attachments.s3.amazonaws.com/3/rE7ilzn7Ei9OwgkfOCFAvg/qExgrAKL0ssuWAbGDNtBVA/iframe.jpg","alt":"iframe.jpg"}',
+  'l3AQnafZy4BHWDshhylHIw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000438-0000-0000-0000-000000000001',
+  'b0000120-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  12,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3><span style=\"background-color: rgb(255, 255, 255); color: rgb(30, 43, 54);\">Enabling test mode with no iframe</span></h3>\n<ol>\n<li>Append URL with ?zonosTestMode=1</li>\n<li>Use test card information</li>\n</ol>\n<ul>\n<li>\n<p><strong>Card number</strong></p>\n<p>4242 4242 4242 4242<br>exp: any future date<br>code: 123</p>\n</li>\n<li>\n<p><a href=\"https://docs.stripe.com/testing\" rel=\"nofollow\" target=\"_blank\">https://docs.stripe.com/testing</a></p>\n</li>\n</ul>"}',
+  'oSjd_b1RuJAk4lwmg2xFzg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000439-0000-0000-0000-000000000001',
+  'b0000120-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  13,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<hr>\n<p></p>"}',
+  'ii-UAQod1s6VtHBAZfpJmg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000440-0000-0000-0000-000000000001',
+  'b0000120-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  14,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<h1>Run quotes to the following countries</h1>"}',
+  'ofBsQ0fOOhYQKfzJXnJCSA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000441-0000-0000-0000-000000000001',
   'b0000120-0000-0000-0000-000000000001',
   'Australia_2',
   'Australia',
@@ -3702,10 +7731,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Tax/VAT calculations displaying","label":"Tax/VAT calculations displaying"},{"value":"Duty calculations displaying","label":"Duty calculations displaying"}]',
   NULL,
+  '{}',
   'vDvv-xA_ei9RE4kBkIFChg'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000166-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000442-0000-0000-0000-000000000001',
   'b0000120-0000-0000-0000-000000000001',
   'Canada_2',
   'Canada',
@@ -3715,10 +7745,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Tax/VAT calculations displaying","label":"Tax/VAT calculations displaying"},{"value":"Duty calculations displaying","label":"Duty calculations displaying"}]',
   NULL,
+  '{}',
   'nFmKA_qCs5m9AX3rSUlBzQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000167-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000443-0000-0000-0000-000000000001',
   'b0000120-0000-0000-0000-000000000001',
   'EU_member_state_2',
   'EU member state',
@@ -3728,10 +7759,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Tax/VAT calculations displaying","label":"Tax/VAT calculations displaying"},{"value":"Duty calculations displaying","label":"Duty calculations displaying"}]',
   NULL,
+  '{}',
   'miq4udEQ79Dol2RUbXNL0Q'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000168-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000444-0000-0000-0000-000000000001',
   'b0000120-0000-0000-0000-000000000001',
   'New_Zealand',
   'New Zealand',
@@ -3741,10 +7773,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Tax/VAT calculations displaying","label":"Tax/VAT calculations displaying"},{"value":"Duty calculations displaying","label":"Duty calculations displaying"}]',
   NULL,
+  '{}',
   'nUZzDHHlQWYTw6AjynVLDw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000169-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000445-0000-0000-0000-000000000001',
   'b0000120-0000-0000-0000-000000000001',
   'Norway',
   'Norway',
@@ -3754,10 +7787,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Tax/VAT calculations displaying","label":"Tax/VAT calculations displaying"},{"value":"Duty calculations displaying","label":"Duty calculations displaying"}]',
   NULL,
+  '{}',
   'hZHwXBFmFf3zouN3Vk1ERQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000170-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000446-0000-0000-0000-000000000001',
   'b0000120-0000-0000-0000-000000000001',
   'United_States',
   'United States',
@@ -3767,10 +7801,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Tax/VAT calculations displaying","label":"Tax/VAT calculations displaying"},{"value":"Duty calculations displaying","label":"Duty calculations displaying"}]',
   NULL,
+  '{}',
   'mK0MMTBRu8YHtB4cEAxCGA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000171-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000447-0000-0000-0000-000000000001',
   'b0000120-0000-0000-0000-000000000001',
   'LCG_fee_displaying?',
   'LCG fee displaying?',
@@ -3780,10 +7815,95 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Yes","label":"Yes"},{"value":"No","label":"No"}]',
   NULL,
+  '{}',
   'kFd4KZwZkNDUJwyWc5RKzg'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000172-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000448-0000-0000-0000-000000000001',
+  'b0000120-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  22,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p class=\"style-info\">Run the query below to check if LCG fees are enabled</p>"}',
+  'kezcbN6gxhCyn-KBsIdEGQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000449-0000-0000-0000-000000000001',
+  'b0000120-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  23,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p><code>query lcgDiscountFees{</code><br><code>&#xa0; landedCostSettings {</code><br><code>&#xa0; &#xa0; organization</code><br><code>&#xa0; &#xa0; landedCostGuarantee</code><br><code>&#xa0; &#xa0; disableDiscountedFee</code><br><code>&#xa0; &#xa0; createdAt</code><br><code>&#xa0; &#xa0; createdBy</code><br><code>&#xa0; &#xa0; defaultCountryOfOrigin</code><br><code>&#xa0; &#xa0; defaultCustomsDescription</code><br><code>&#xa0; &#xa0; defaultHarmonizedCode</code><br><code>&#xa0; &#xa0; minimumHsCodeLength</code><br><code>&#xa0; &#xa0; mode</code><br><code>&#xa0; }</code><br><code>}</code></p>"}',
+  'jlHTAXS4STOHng-JHPpL4A'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000450-0000-0000-0000-000000000001',
+  'b0000120-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  24,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p class=\"style-info\">Run the mutation below to enable LCG fees</p>"}',
+  'pv2B4hX8I46XyBT71DVETQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000451-0000-0000-0000-000000000001',
+  'b0000120-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  25,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<p><code>mutation enableLcgDiscountFess {</code></p>\n<p><code>&#xa0;&#xa0;updateLandedCostSettings(input: {disableDiscountedFee: false}) {</code></p>\n<p><code>&#xa0;&#xa0;&#xa0;&#xa0;id</code></p>\n<p><code>&#xa0;&#xa0;}</code></p>\n<p><code>}</code></p>"}',
+  'uaGQG5R36OsGncZI3VdJKg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000452-0000-0000-0000-000000000001',
+  'b0000120-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  26,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<hr>\n<p></p>"}',
+  'piF9W2loN30x9LY9LTZEBw'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000453-0000-0000-0000-000000000001',
+  'b0000120-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  27,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<h1>Test orders</h1>"}',
+  'sH58uC7VNFDcy8P6l3NAFA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000454-0000-0000-0000-000000000001',
   'b0000120-0000-0000-0000-000000000001',
   'Successfully_placed_a_test_order_for_label_training_and/or_order_complete_validation',
   'Successfully placed a test order for label training and/or order complete validation',
@@ -3793,10 +7913,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Yes","label":"Yes"},{"value":"No","label":"No"}]',
   NULL,
+  '{}',
   'jCZrPgZ5Xx5BQbAYnY1Etw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000173-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000455-0000-0000-0000-000000000001',
   'b0000120-0000-0000-0000-000000000001',
   'Why_was_there_no_test_order_or_label_training_needed?',
   'Why was there no test order or label training needed?',
@@ -3806,10 +7927,39 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'hzd7gytm6zi3Jo0e-5xPZA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000174-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000456-0000-0000-0000-000000000001',
+  'b0000120-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  30,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<hr>\n<p></p>"}',
+  'iN-OTpCTDQw_MMDjylVHpg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000457-0000-0000-0000-000000000001',
+  'b0000120-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  31,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<h1>Shipping, restrictions, classification</h1>"}',
+  'sl7dGzCr3V7aKZyItuFEJg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000458-0000-0000-0000-000000000001',
   'b0000120-0000-0000-0000-000000000001',
   'Quick_checklist',
   'Quick checklist',
@@ -3819,10 +7969,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Verify enabled service level(s) show at checkout","label":"Verify enabled service level(s) show at checkout"},{"value":"Verify shipment rate (i.e. weight, dimensions, cartonization)","label":"Verify shipment rate (i.e. weight, dimensions, cartonization)"},{"value":"Verify carrier fees are displaying","label":"Verify carrier fees are displaying"},{"value":"Verify countries enabled in Zonos dashboard match the countries enabled in platform","label":"Verify countries enabled in Zonos dashboard match the countries enabled in platform"},{"value":"Verify restrictions","label":"Verify restrictions"},{"value":"Verify that classify on the fly is appropriately classifying the merchant''s products","label":"Verify that classify on the fly is appropriately classifying the merchant''s products"}]',
   NULL,
+  '{}',
   'nNdUTMCrPn7IwHTGQxBOSQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000175-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000459-0000-0000-0000-000000000001',
   'b0000120-0000-0000-0000-000000000001',
   'Were_buffers_needed?',
   'Were buffers needed?',
@@ -3832,10 +7983,39 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Yes","label":"Yes"},{"value":"No","label":"No"}]',
   NULL,
+  '{}',
   'gOFuFBc1XQGUBsqb18dIFA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000176-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000460-0000-0000-0000-000000000001',
+  'b0000120-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  34,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<hr>\n<p></p>"}',
+  'pwyoOAJSYc6GqMIaXTZB5g'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000461-0000-0000-0000-000000000001',
+  'b0000120-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  35,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<h1>Customizations</h1>"}',
+  'kFfeFHusXMLyFlR2Xz5HtQ'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000462-0000-0000-0000-000000000001',
   'b0000120-0000-0000-0000-000000000001',
   'Were_there_customizations_(backend_rules,_special_setups,_etc)?',
   'Were there customizations (backend rules, special setups, etc)?',
@@ -3845,10 +8025,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Yes","label":"Yes"},{"value":"No","label":"No"}]',
   NULL,
+  '{}',
   'veqGMcVPhOYBMKnhVGVPbA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000177-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000463-0000-0000-0000-000000000001',
   'b0000120-0000-0000-0000-000000000001',
   'Customization_notes_(for_Support)',
   'Customization notes (for Support)',
@@ -3858,10 +8039,25 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'lZxDxFGoCkUg4yz3I7tDWQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000178-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000464-0000-0000-0000-000000000001',
+  'b0000120-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  38,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<hr>\n<p></p>"}',
+  'iUrPLTMirJxAvipRinNDwg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000465-0000-0000-0000-000000000001',
   'b0000120-0000-0000-0000-000000000001',
   'QA_Result',
   'QA Result',
@@ -3871,10 +8067,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Pass","label":"Pass"},{"value":"Needs Review","label":"Needs Review"}]',
   NULL,
+  '{}',
   'pFDiwcMUWGZKyYwER4lD-g'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000179-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000466-0000-0000-0000-000000000001',
   'b0000120-0000-0000-0000-000000000001',
   'Needs_Review_(Why?)',
   'Needs Review (Why?)',
@@ -3884,10 +8081,39 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'uMRyjP0shGtXDGyc_gxHvw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000180-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000467-0000-0000-0000-000000000001',
+  'b0000121-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3><strong>Validation</strong></h3>"}',
+  'hH45U9x-Sk8giz9JgANDgA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000468-0000-0000-0000-000000000001',
+  'b0000121-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  1,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3><strong>Configure the shipping label platform for LCG</strong></h3>"}',
+  'uiiBznKjLiSZEbA5KmZNMA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000469-0000-0000-0000-000000000001',
   'b0000121-0000-0000-0000-000000000001',
   'The_below_will_be_dependent_on_the_platform:',
   'The below will be dependent on the platform:',
@@ -3897,10 +8123,25 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Adjust native settings, or","label":"Adjust native settings, or"},{"value":"Modify the \"Create Shipment API\" call","label":"Modify the \"Create Shipment API\" call"}]',
   NULL,
+  '{}',
   'gfZfbNKQVlcZzcCCym5MaA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000181-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000470-0000-0000-0000-000000000001',
+  'b0000121-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  3,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3><strong>Create test shipping labels</strong></h3>"}',
+  'nouZWsFo07kFkSo_trxEDg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000471-0000-0000-0000-000000000001',
   'b0000121-0000-0000-0000-000000000001',
   'Confirm_the_following:',
   'Confirm the following:',
@@ -3910,10 +8151,25 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Zonos is billed for duty & tax","label":"Zonos is billed for duty & tax"},{"value":"Merchant is billed for transportation","label":"Merchant is billed for transportation"},{"value":"Labels made in production/sandbox environment also are working in production","label":"Labels made in production/sandbox environment also are working in production"},{"value":"The sender shows the merchants name and address on label and CI","label":"The sender shows the merchants name and address on label and CI"}]',
   NULL,
+  '{}',
   'umqulEMXs7skxGnqJq1HWQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000182-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000472-0000-0000-0000-000000000001',
+  'b0000121-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  5,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3><strong>VAT ID Logic</strong></h3>"}',
+  'hw5GOBn3z2OAb7tVR1FI_A'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000473-0000-0000-0000-000000000001',
   'b0000121-0000-0000-0000-000000000001',
   'Test_the_following_Destinations_for_correct_VAT_and_correct_placement_on_CI',
   'Test the following Destinations for correct VAT and correct placement on CI',
@@ -3923,10 +8179,25 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"UK","label":"UK"},{"value":"Any EU country","label":"Any EU country"},{"value":"Norway","label":"Norway"},{"value":"Canada","label":"Canada"},{"value":"Australia","label":"Australia"}]',
   NULL,
+  '{}',
   'mtc0prFfmkfufSRWCuVCvw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000183-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000474-0000-0000-0000-000000000001',
+  'b0000121-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  7,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3><strong>Create test commercial invoices</strong></h3>"}',
+  'lccluPHk8iAlXu9_O-1Iow'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000475-0000-0000-0000-000000000001',
   'b0000121-0000-0000-0000-000000000001',
   'Confirm_the_following:_2',
   'Confirm the following:',
@@ -3936,10 +8207,25 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Zonos tax IDs display on the actual commercial invoice","label":"Zonos tax IDs display on the actual commercial invoice"},{"value":"Correct totals are being passed to the commercial invoice (ex: make sure the the landed cost total is not placed in the shipping or product amount unless in Shopify)","label":"Correct totals are being passed to the commercial invoice (ex: make sure the the landed cost total is not placed in the shipping or product amount unless in Shopify)"},{"value":"Alternative: Obtain shipment API request(s)","label":"Alternative: Obtain shipment API request(s)"}]',
   NULL,
+  '{}',
   'gojvpEP_KaeXnLZq__JCuA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000184-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000476-0000-0000-0000-000000000001',
+  'b0000121-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  9,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3><strong>Billing Setup</strong></h3>"}',
+  'mxflHDM7tIpj_XQTHaJDjg'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000477-0000-0000-0000-000000000001',
   'b0000121-0000-0000-0000-000000000001',
   'The_following_will_be_handled_by_the_accounting_team_(only_if_Zonos_is_being_billed_for_duties_and_taxes_by_merchant/fulfillment):',
   'The following will be handled by the accounting team (only if Zonos is being billed for duties and taxes by merchant/fulfillment):',
@@ -3949,10 +8235,25 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Demmy will set up the payment process","label":"Demmy will set up the payment process"},{"value":"Katrina will ensure we get a new table in the database created to ingest new 3PL/partner invoices","label":"Katrina will ensure we get a new table in the database created to ingest new 3PL/partner invoices"}]',
   NULL,
+  '{}',
   'vRO27ETnPCE5uwgx1q5Beg'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000185-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000478-0000-0000-0000-000000000001',
+  'b0000121-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  11,
+  false,
+  true,
+  '[]',
+  NULL,
+  '{"content":"<h3><strong>Zonos Dashboard</strong></h3>"}',
+  'gQwa98ouow0dct_nSkFANA'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000479-0000-0000-0000-000000000001',
   'b0000121-0000-0000-0000-000000000001',
   'Configure_the_following_in_the_Zonos_Dashboard:',
   'Configure the following in the Zonos Dashboard:',
@@ -3962,10 +8263,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Settings > Customs > Check “certified to print labels outside of Dashboard” > Save","label":"Settings > Customs > Check “certified to print labels outside of Dashboard” > Save"},{"value":"Confirm tracking number imports to the Zonos order details in Zonos Dashboard","label":"Confirm tracking number imports to the Zonos order details in Zonos Dashboard"}]',
   NULL,
+  '{}',
   'jzaW-TwKcKty7IykYttNZA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000186-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000480-0000-0000-0000-000000000001',
   'b0000122-0000-0000-0000-000000000001',
   'send_email_44',
   NULL,
@@ -3975,10 +8277,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'iSVD5NILT-4kjzbuksJBmw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000187-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000481-0000-0000-0000-000000000001',
   'b0000122-0000-0000-0000-000000000001',
   'Priority_Support_Deadline',
   'Priority Support Deadline',
@@ -3988,10 +8291,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'ukUFNQiMXEpxv5WuCeVE6A'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000188-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000482-0000-0000-0000-000000000001',
   'b0000122-0000-0000-0000-000000000001',
   'Go-live_email_link',
   'Go-live email link',
@@ -4001,10 +8305,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[]',
   NULL,
+  '{}',
   'nT5eVbBwK1d615aYnRFC7A'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000189-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000483-0000-0000-0000-000000000001',
   'b0000124-0000-0000-0000-000000000001',
   'send_email_41',
   NULL,
@@ -4014,10 +8319,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'hMAkRnmbSwlwg3xu8VNN5g'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000190-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000484-0000-0000-0000-000000000001',
   'b0000125-0000-0000-0000-000000000001',
   'send_email_45',
   NULL,
@@ -4027,10 +8333,25 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   'nIee1wDE0j9nBFv0tbVAKw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000191-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000485-0000-0000-0000-000000000001',
+  'b0000126-0000-0000-0000-000000000001',
+  NULL,
+  NULL,
+  'text_content',
+  0,
+  false,
+  false,
+  '[]',
+  NULL,
+  '{"content":"<p>This Task completes the Onboarding Project Internally.&#xa0;</p> \n<p>Completing this task will send a CSAT through Delighted to the Merchant.&#xa0;</p> \n<p>The project will remain \"open\" in Process.St until the remaining tasks are completed.&#xa0;</p>"}',
+  'mvbjxcLNZetDZJhjJGpGug'
+);
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000486-0000-0000-0000-000000000001',
   'b0000126-0000-0000-0000-000000000001',
   'Zonos_Dashboard_Final_Checklist',
   'Zonos Dashboard Final Checklist',
@@ -4040,10 +8361,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Account status changed to \"Account active\"","label":"Account status changed to \"Account active\""},{"value":"Canceled all test orders","label":"Canceled all test orders"}]',
   NULL,
+  '{}',
   'hOUyHayWZJnnNSgwDNNAkg'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000192-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000487-0000-0000-0000-000000000001',
   'b0000126-0000-0000-0000-000000000001',
   'Is_merchant_certified_to_print_labels_outside_the_Dashboard?',
   'Is merchant certified to print labels outside the Dashboard?',
@@ -4053,10 +8375,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Yes - I have checked \"Certified to print labels outside of Dashboard\" on the merchant''s dashboard","label":"Yes - I have checked \"Certified to print labels outside of Dashboard\" on the merchant''s dashboard"},{"value":"No - Nothing further needed","label":"No - Nothing further needed"}]',
   NULL,
+  '{}',
   'nGKSfpsmmfXHoZfD4c5KTw'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000193-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000488-0000-0000-0000-000000000001',
   'b0000126-0000-0000-0000-000000000001',
   'LCG_status',
   'LCG status',
@@ -4066,10 +8389,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Merchant is on LCG (guaranteed duties and taxes)","label":"Merchant is on LCG (guaranteed duties and taxes)"},{"value":"Merchant is NOT on LCG (no guarantee for duties and taxes)","label":"Merchant is NOT on LCG (no guarantee for duties and taxes)"}]',
   NULL,
+  '{}',
   'pmO1y-6lWpRQ4BW8x7BPbA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000194-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000489-0000-0000-0000-000000000001',
   'b0000126-0000-0000-0000-000000000001',
   'Merchant_is_NOT_on_LCG',
   'Merchant is NOT on LCG',
@@ -4079,10 +8403,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Turned off LCG on Zonos dashboard","label":"Turned off LCG on Zonos dashboard"}]',
   NULL,
+  '{}',
   'kZtVbFE6KpQVSB_pv-JPXA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000195-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000490-0000-0000-0000-000000000001',
   'b0000126-0000-0000-0000-000000000001',
   'Is_the_merchant_live?',
   'Is the merchant live?',
@@ -4092,10 +8417,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Yes","label":"Yes"}]',
   NULL,
+  '{}',
   'm2IN0bFghMpZBj8mlYBOyQ'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000196-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000491-0000-0000-0000-000000000001',
   'b0000126-0000-0000-0000-000000000001',
   'Were_there_any_significant_delays_to_project_(longer_than_1-2_weeks)?_2',
   'Were there any significant delays to project (longer than 1-2 weeks)?',
@@ -4105,10 +8431,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   false,
   '[{"value":"Yes","label":"Yes"},{"value":"No","label":"No"}]',
   NULL,
+  '{}',
   'mVefvcq2NQPyzBB_KT5IyA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000197-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000492-0000-0000-0000-000000000001',
   'b0000126-0000-0000-0000-000000000001',
   'Select_delay_type_(all_that_apply)',
   'Select delay type (all that apply)',
@@ -4118,10 +8445,11 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[{"value":"Platform","label":"Platform"},{"value":"Carrier connection, rates, or labels","label":"Carrier connection, rates, or labels"},{"value":"Zonos product (bugs, custom rules, lack of features)","label":"Zonos product (bugs, custom rules, lack of features)"},{"value":"Billing","label":"Billing"},{"value":"Merchant non-responsive","label":"Merchant non-responsive"},{"value":"LCG Certification","label":"LCG Certification"}]',
   NULL,
+  '{}',
   'ucQdqi5UvWHMcsHETapIFA'
 );
-INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, ps_group_id) VALUES (
-  'c0000198-0000-0000-0000-000000000001',
+INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, order_index, is_required, hidden_by_default, options, placeholder, metadata, ps_group_id) VALUES (
+  'c0000493-0000-0000-0000-000000000001',
   'b0000126-0000-0000-0000-000000000001',
   'Provide_details_about_the_delay',
   'Provide details about the delay',
@@ -4131,6 +8459,7 @@ INSERT INTO template_widgets (id, template_task_id, key, label, widget_type, ord
   true,
   '[]',
   NULL,
+  '{}',
   's0teSHy5Qmj6pSetRMJHlw'
 );
 

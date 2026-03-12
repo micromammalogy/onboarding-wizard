@@ -48,7 +48,11 @@ export function MultiSelectField({ widget, value, onChange }: IMultiSelectFieldP
 
   return (
     <div className={styles.container}>
-      {widget.label && <label className={styles.label}>{widget.label}</label>}
+      {widget.label && (
+        <label className={styles.label}>
+          {widget.label}{widget.is_required && <span style={{ color: 'var(--amino-red-600)' }}> *</span>}
+        </label>
+      )}
       <div className={styles.optionList}>
         {options.map(opt => (
           <label key={opt.value} className={styles.option}>

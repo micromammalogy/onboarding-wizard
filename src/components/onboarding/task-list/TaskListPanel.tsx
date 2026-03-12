@@ -8,11 +8,18 @@ import type { ITask, ITaskUpdate } from '@/types/database';
 import { TaskListSection } from './TaskListSection';
 import styles from './TaskListPanel.module.scss';
 
+export type ITaskBadges = {
+  emailTaskIds: Set<string>;
+  conditionalTaskIds: Set<string>;
+  dueDateTaskIds: Set<string>;
+};
+
 type ITaskListPanelProps = {
   tasks: ITask[];
   selectedTaskId: string | null;
   dueDates: Map<string, Date>;
   projectId: string;
+  taskBadges: ITaskBadges;
   onUpdate: (taskId: string, updates: ITaskUpdate) => Promise<unknown>;
   onCreate: (task: Omit<ITask, 'id' | 'created_at' | 'updated_at'>) => Promise<ITask>;
 };
@@ -25,6 +32,7 @@ export function TaskListPanel({
   selectedTaskId,
   dueDates,
   projectId,
+  taskBadges,
   onUpdate,
   onCreate,
 }: ITaskListPanelProps) {
@@ -119,6 +127,7 @@ export function TaskListPanel({
             tasks={sectionTasks}
             selectedTaskId={selectedTaskId}
             dueDates={dueDates}
+            taskBadges={taskBadges}
             onUpdate={onUpdate}
           />
         ))}

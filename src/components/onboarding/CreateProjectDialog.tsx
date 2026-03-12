@@ -18,6 +18,13 @@ const PLATFORM_OPTIONS = [
   { value: 'BigCommerce', label: 'BigCommerce' },
   { value: 'WooCommerce', label: 'WooCommerce' },
   { value: 'Magento', label: 'Magento' },
+  { value: 'Cart.com', label: 'Cart.com' },
+  { value: 'MIVA', label: 'MIVA' },
+  { value: 'Salesforce', label: 'Salesforce' },
+  { value: 'Wix', label: 'Wix' },
+  { value: 'X-Cart', label: 'X-Cart' },
+  { value: 'Zonos JS', label: 'Zonos JS (Custom Checkout)' },
+  { value: 'Intuitive Shipping', label: 'Intuitive Shipping' },
   { value: 'Custom', label: 'Custom' },
 ];
 

@@ -1,6 +1,7 @@
 'use client';
 
 import type { ITask, ITaskUpdate } from '@/types/database';
+import type { ITaskBadges } from './TaskListPanel';
 import { TaskListItem } from './TaskListItem';
 import styles from './TaskListSection.module.scss';
 
@@ -9,6 +10,7 @@ type ITaskListSectionProps = {
   tasks: ITask[];
   selectedTaskId: string | null;
   dueDates: Map<string, Date>;
+  taskBadges: ITaskBadges;
   onUpdate: (taskId: string, updates: ITaskUpdate) => Promise<unknown>;
 };
 
@@ -19,6 +21,7 @@ export function TaskListSection({
   tasks,
   selectedTaskId,
   dueDates,
+  taskBadges,
   onUpdate,
 }: ITaskListSectionProps) {
   const realTasks = tasks.filter(t => t.task_type !== 'section_header');
@@ -40,6 +43,7 @@ export function TaskListSection({
             task={task}
             isSelected={task.id === selectedTaskId}
             computedDueDate={dueDates.get(task.id) ?? null}
+            taskBadges={taskBadges}
             onUpdate={onUpdate}
           />
         ))}

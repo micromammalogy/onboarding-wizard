@@ -10,6 +10,10 @@ import { MultiChoiceField } from './MultiChoiceField';
 import { DateField } from './DateField';
 import { FileField } from './FileField';
 import { SendEmailField } from './SendEmailField';
+import { TextContentWidget } from './TextContentWidget';
+import { ImageWidget } from './ImageWidget';
+import { VideoWidget } from './VideoWidget';
+import { EmbedWidget } from './EmbedWidget';
 import { ConditionalWrapper } from '../ConditionalWrapper';
 
 type IFormFieldRendererProps = {
@@ -17,11 +21,41 @@ type IFormFieldRendererProps = {
   taskId: string;
 };
 
+const CONTENT_TYPES = new Set(['text_content', 'image', 'video', 'embed', 'cross_link']);
+
 export function FormFieldRenderer({ widget, taskId }: IFormFieldRendererProps) {
   const getValue = useFieldValues(s => s.getValue);
   const setValue = useFieldValues(s => s.setValue);
 
-  // Skip non-form widgets (text blocks, images, embeds, videos)
+  // Content widgets (no key, no form value)
+  if (CONTENT_TYPES.has(widget.widget_type)) {
+    let content: React.ReactNode;
+    switch (widget.widget_type) {
+      case 'text_content':
+        content = <TextContentWidget widget={widget} />;
+        break;
+      case 'image':
+        content = <ImageWidget widget={widget} />;
+        break;
+      case 'video':
+        content = <VideoWidget widget={widget} />;
+        break;
+      case 'embed':
+      case 'cross_link':
+        content = <EmbedWidget widget={widget} />;
+        break;
+      default:
+        return null;
+    }
+
+    return (
+      <ConditionalWrapper id={widget.ps_group_id ?? widget.id}>
+        {content}
+      </ConditionalWrapper>
+    );
+  }
+
+  // Form field widgets (require a key)
   if (!widget.key) return null;
 
   const value = getValue(widget.key);
