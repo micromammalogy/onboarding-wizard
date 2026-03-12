@@ -5,6 +5,9 @@ import type {
   IUser,
   IProjectUpdate,
   ITaskUpdate,
+  ITaskFieldValue,
+  ITemplateWidget,
+  ITemplateRule,
 } from '@/types/database';
 
 // --- Fetcher ---
@@ -142,6 +145,66 @@ export function useTasks(projectId: string | null) {
     createTask,
     deleteTask,
   };
+}
+
+// --- Field Values ---
+
+export function useFieldValuesData(projectId: string | null) {
+  const url = projectId ? `/api/db/field-values?project_id=${projectId}` : null;
+
+  const { data, error, isLoading, mutate } = useSWR<ITaskFieldValue[]>(
+    url,
+    () => dbFetcher<ITaskFieldValue[]>(url!),
+    { revalidateOnFocus: false },
+  );
+
+  return { fieldValues: data ?? [], error, isLoading, mutate };
+}
+
+// --- Template Widgets ---
+
+export function useTemplateWidgets(templateTaskId: string | null) {
+  const url = templateTaskId
+    ? `/api/db/template-widgets?template_task_id=${templateTaskId}`
+    : null;
+
+  const { data, error, isLoading } = useSWR<ITemplateWidget[]>(
+    url,
+    () => dbFetcher<ITemplateWidget[]>(url!),
+    { revalidateOnFocus: false },
+  );
+
+  return { widgets: data ?? [], error, isLoading };
+}
+
+export function useAllTemplateWidgets(templateId: string | null) {
+  const url = templateId
+    ? `/api/db/template-widgets?template_id=${templateId}`
+    : null;
+
+  const { data, error, isLoading } = useSWR<ITemplateWidget[]>(
+    url,
+    () => dbFetcher<ITemplateWidget[]>(url!),
+    { revalidateOnFocus: false },
+  );
+
+  return { widgets: data ?? [], error, isLoading };
+}
+
+// --- Template Rules ---
+
+export function useTemplateRules(templateId: string | null) {
+  const url = templateId
+    ? `/api/db/template-rules?template_id=${templateId}`
+    : null;
+
+  const { data, error, isLoading } = useSWR<ITemplateRule[]>(
+    url,
+    () => dbFetcher<ITemplateRule[]>(url!),
+    { revalidateOnFocus: false },
+  );
+
+  return { rules: data ?? [], error, isLoading };
 }
 
 // --- Users ---

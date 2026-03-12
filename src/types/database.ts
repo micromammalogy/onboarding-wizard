@@ -77,6 +77,8 @@ export interface ITemplateTask {
   task_type: string;
   metadata: Record<string, unknown>;
   hidden_by_default: boolean;
+  is_stop_gate: boolean;
+  ps_group_id: string | null;
   created_at: string;
 }
 
@@ -115,6 +117,8 @@ export interface ITask {
   status: ITaskStatus;
   task_type: string;
   metadata: Record<string, unknown>;
+  is_stop_gate: boolean;
+  is_visible: boolean;
   completed_at: string | null;
   verified_at: string | null;
   verified_by: string | null;
@@ -162,3 +166,104 @@ export type ITaskUpdate = Partial<Omit<ITask, 'id' | 'created_at' | 'updated_at'
 export type ITemplateCreate = Omit<ITemplate, 'id' | 'created_at' | 'updated_at'>;
 
 export type ITemplateTaskCreate = Omit<ITemplateTask, 'id' | 'created_at'>;
+
+// --- Stage 2 Refinement: Widgets, Rules, Field Values ---
+
+export type IWidgetType =
+  | 'text'
+  | 'textarea'
+  | 'richtext'
+  | 'email'
+  | 'url'
+  | 'select'
+  | 'multi_select'
+  | 'multi_choice'
+  | 'date'
+  | 'file'
+  | 'hidden'
+  | 'send_rich_email';
+
+export type IRuleType = 'conditional' | 'due_date' | 'assignment';
+
+export type IRuleAction = 'show' | 'hide';
+
+export type IRuleTargetType = 'task' | 'widget';
+
+export type IConditionOperator = 'is' | 'is_not' | 'contains' | 'has_no_value';
+
+export type IDueDateSource = 'checklist_start' | 'form_field';
+
+export type IDueDateOffsetUnit = 'days' | 'hours' | 'weeks';
+
+export interface ITemplateWidget {
+  id: string;
+  template_task_id: string;
+  key: string | null;
+  label: string | null;
+  widget_type: IWidgetType;
+  order_index: number;
+  is_required: boolean;
+  hidden_by_default: boolean;
+  options: unknown[];
+  placeholder: string | null;
+  metadata: Record<string, unknown>;
+  ps_group_id: string | null;
+  created_at: string;
+}
+
+export interface ICondition {
+  widget_key: string;
+  operator: IConditionOperator;
+  value: string | null;
+}
+
+export interface ICompoundConditions {
+  logic: 'and' | 'or';
+  conditions: Array<{
+    logic: 'and' | 'or';
+    conditions: ICondition[];
+  }>;
+}
+
+export interface ITemplateRule {
+  id: string;
+  template_id: string;
+  rule_type: IRuleType;
+  trigger_widget_key: string | null;
+  trigger_task_id: string | null;
+  condition_operator: IConditionOperator | null;
+  condition_value: unknown;
+  action: IRuleAction | null;
+  target_type: IRuleTargetType | null;
+  target_task_ids: string[];
+  target_widget_ids: string[];
+  compound_conditions: ICompoundConditions | null;
+  due_date_source: IDueDateSource | null;
+  due_date_source_widget_key: string | null;
+  due_date_offset_value: number | null;
+  due_date_offset_unit: IDueDateOffsetUnit | null;
+  due_date_direction: 'before' | 'after' | null;
+  due_date_workdays_only: boolean;
+  assignment_source_widget_key: string | null;
+  ps_rule_id: string | null;
+  metadata: Record<string, unknown>;
+  created_at: string;
+}
+
+export interface ITaskFieldValue {
+  id: string;
+  task_id: string;
+  project_id: string;
+  widget_key: string;
+  value_text: string | null;
+  value_date: string | null;
+  value_json: unknown;
+  value_select: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
+export type ITemplateWidgetCreate = Omit<ITemplateWidget, 'id' | 'created_at'>;
+export type ITemplateRuleCreate = Omit<ITemplateRule, 'id' | 'created_at'>;
+export type ITaskFieldValueCreate = Omit<ITaskFieldValue, 'id' | 'created_at' | 'updated_at'>;
+export type ITaskFieldValueUpdate = Partial<Pick<ITaskFieldValue, 'value_text' | 'value_date' | 'value_json' | 'value_select'>>;

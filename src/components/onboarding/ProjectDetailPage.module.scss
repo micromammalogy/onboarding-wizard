@@ -1,127 +1,49 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  height: calc(100vh - 64px);
+  overflow: hidden;
 }
 
-.projectHeader {
+.headerBar {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--amino-border-subtle);
+  background: var(--amino-gray-0);
+  flex-shrink: 0;
 }
 
 .headerInfo {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.titleRow {
-  display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .title {
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 600;
   color: var(--amino-gray-900);
   margin: 0;
 }
 
 .meta {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.metaItem {
   font-size: 13px;
   color: var(--amino-gray-500);
 }
 
-.infoGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-}
-
-.infoCard {
+.splitPane {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 16px;
-  background: var(--amino-gray-0);
-  border: 1px solid var(--amino-border-subtle);
-  border-radius: 10px;
-}
-
-.infoLabel {
-  font-size: 12px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--amino-gray-500);
-}
-
-.infoValue {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--amino-gray-900);
-}
-
-.progressSection {
-  padding: 20px;
-  background: var(--amino-gray-0);
-  border: 1px solid var(--amino-border-subtle);
-  border-radius: 10px;
-}
-
-.taskSections {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.section {
-  background: var(--amino-gray-0);
-  border: 1px solid var(--amino-border-subtle);
-  border-radius: 10px;
+  flex: 1;
   overflow: hidden;
 }
 
-.sectionHeader {
+.emptyDetail {
+  flex: 1;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 14px 16px;
-  background: var(--amino-gray-50);
-  border-bottom: 1px solid var(--amino-border-subtle);
-}
-
-.sectionTitle {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--amino-gray-800);
-  margin: 0;
-}
-
-.sectionCount {
-  font-size: 12px;
-  color: var(--amino-gray-500);
-  font-weight: 500;
-}
-
-.taskList {
-  // TaskRow components render here
-}
-
-.emptyTasks {
-  text-align: center;
-  padding: 48px 16px;
+  justify-content: center;
   color: var(--amino-gray-500);
   font-size: 14px;
-  background: var(--amino-gray-0);
-  border: 1px solid var(--amino-border-subtle);
-  border-radius: 10px;
 }

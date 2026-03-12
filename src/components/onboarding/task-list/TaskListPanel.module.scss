@@ -1,0 +1,45 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  min-width: 320px;
+  border-right: 1px solid var(--amino-border-subtle);
+  background: var(--amino-gray-0);
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid var(--amino-border-subtle);
+}
+
+.headerTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--amino-gray-800);
+}
+
+.headerCount {
+  font-size: 12px;
+  color: var(--amino-gray-500);
+  font-weight: 500;
+}
+
+.progressBar {
+  height: 3px;
+  background: var(--amino-gray-200);
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--amino-green-500);
+  transition: width 0.3s ease;
+}
+
+.sections {
+  flex: 1;
+  overflow-y: auto;
+}

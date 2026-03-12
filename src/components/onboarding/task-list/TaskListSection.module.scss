@@ -1,0 +1,46 @@
+.section {
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--amino-border-subtle);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--amino-gray-50);
+  border: none;
+  border-bottom: 1px solid var(--amino-border-subtle);
+  cursor: pointer;
+  text-align: left;
+
+  &:hover {
+    background: var(--amino-gray-100);
+  }
+}
+
+.chevron {
+  flex-shrink: 0;
+  color: var(--amino-gray-500);
+  display: flex;
+}
+
+.title {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--amino-gray-700);
+}
+
+.count {
+  flex-shrink: 0;
+  font-size: 11px;
+  color: var(--amino-gray-500);
+  font-weight: 500;
+}
+
+.tasks {
+  // TaskListItem components render here
+}

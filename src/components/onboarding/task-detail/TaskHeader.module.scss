@@ -1,0 +1,54 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--amino-border-subtle);
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--amino-gray-900);
+  margin: 0;
+}
+
+.description {
+  font-size: 14px;
+  color: var(--amino-gray-600);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.controls {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.controlItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.controlLabel {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--amino-gray-500);
+}
+
+.controlValue {
+  font-size: 14px;
+  color: var(--amino-gray-800);
+  font-weight: 500;
+}

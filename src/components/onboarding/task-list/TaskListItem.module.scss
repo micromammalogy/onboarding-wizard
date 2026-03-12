@@ -1,0 +1,110 @@
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background 0.1s;
+  border-left: 3px solid transparent;
+
+  &:hover {
+    background: var(--amino-gray-50);
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--amino-border-subtle);
+  }
+}
+
+.itemSelected {
+  background: var(--amino-blue-50);
+  border-left-color: var(--amino-blue-500);
+
+  &:hover {
+    background: var(--amino-blue-50);
+  }
+}
+
+.itemComplete {
+  opacity: 0.7;
+}
+
+.itemOverdue {
+  background: var(--amino-red-50);
+
+  &:hover {
+    background: var(--amino-red-100);
+  }
+}
+
+.checkbox {
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.checkboxEmpty {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--amino-gray-300);
+  transition: border-color 0.15s;
+
+  &:hover {
+    border-color: var(--amino-blue-500);
+  }
+}
+
+.checkboxDone {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--amino-green-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--amino-gray-800);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.titleDone {
+  text-decoration: line-through;
+  color: var(--amino-gray-500);
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.merchantDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--amino-orange-500);
+}
+
+.dueDate {
+  font-size: 11px;
+  color: var(--amino-gray-500);
+  white-space: nowrap;
+}
+
+.dueDateOverdue {
+  color: var(--amino-red-600);
+  font-weight: 500;
+}

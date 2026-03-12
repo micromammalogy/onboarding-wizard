@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--amino-gray-700);
+}
+
+.chipList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--amino-gray-300);
+  background: var(--amino-gray-0);
+  color: var(--amino-gray-700);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+
+  &:hover {
+    border-color: var(--amino-blue-400);
+    color: var(--amino-blue-600);
+  }
+}
+
+.chipSelected {
+  background: var(--amino-blue-50);
+  border-color: var(--amino-blue-500);
+  color: var(--amino-blue-700);
+  font-weight: 500;
+}
