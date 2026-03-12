@@ -155,10 +155,10 @@ export function useFieldValuesData(projectId: string | null) {
   const { data, error, isLoading, mutate } = useSWR<ITaskFieldValue[]>(
     url,
     () => dbFetcher<ITaskFieldValue[]>(url!),
-    { revalidateOnFocus: false },
+    { revalidateOnFocus: false, shouldRetryOnError: false },
   );
 
-  return { fieldValues: data ?? [], error, isLoading, mutate };
+  return { fieldValues: data ?? [], error, isLoading: !error && isLoading, mutate };
 }
 
 // --- Template Widgets ---
@@ -171,10 +171,10 @@ export function useTemplateWidgets(templateTaskId: string | null) {
   const { data, error, isLoading } = useSWR<ITemplateWidget[]>(
     url,
     () => dbFetcher<ITemplateWidget[]>(url!),
-    { revalidateOnFocus: false },
+    { revalidateOnFocus: false, shouldRetryOnError: false },
   );
 
-  return { widgets: data ?? [], error, isLoading };
+  return { widgets: data ?? [], error, isLoading: !error && isLoading };
 }
 
 export function useAllTemplateWidgets(templateId: string | null) {
@@ -185,10 +185,10 @@ export function useAllTemplateWidgets(templateId: string | null) {
   const { data, error, isLoading } = useSWR<ITemplateWidget[]>(
     url,
     () => dbFetcher<ITemplateWidget[]>(url!),
-    { revalidateOnFocus: false },
+    { revalidateOnFocus: false, shouldRetryOnError: false },
   );
 
-  return { widgets: data ?? [], error, isLoading };
+  return { widgets: data ?? [], error, isLoading: !error && isLoading };
 }
 
 // --- Template Rules ---
@@ -201,10 +201,10 @@ export function useTemplateRules(templateId: string | null) {
   const { data, error, isLoading } = useSWR<ITemplateRule[]>(
     url,
     () => dbFetcher<ITemplateRule[]>(url!),
-    { revalidateOnFocus: false },
+    { revalidateOnFocus: false, shouldRetryOnError: false },
   );
 
-  return { rules: data ?? [], error, isLoading };
+  return { rules: data ?? [], error, isLoading: !error && isLoading };
 }
 
 // --- Users ---

@@ -13,7 +13,7 @@ import { ErrorState } from '@/components/ui/ErrorState';
 import { TaskListPanel } from '@/components/onboarding/task-list/TaskListPanel';
 import { TaskDetailPanel } from '@/components/onboarding/task-detail/TaskDetailPanel';
 import { toResolvedConditionalRule, toResolvedDueDateRule } from '@/lib/rules/types';
-import type { IProjectStatus, ITemplateRule } from '@/types/database';
+import type { IProjectStatus } from '@/types/database';
 import type { IResolvedConditionalRule, IResolvedDueDateRule, IHiddenByDefaultMap } from '@/lib/rules/types';
 import styles from './ProjectDetailPage.module.scss';
 
@@ -42,8 +42,10 @@ const STATUS_COLORS: Record<IProjectStatus, BadgeColor> = {
 export function ProjectDetailPage({ projectId }: IProjectDetailPageProps) {
   const { project, isLoading: projectLoading, error: projectError, mutate: mutateProject } = useProject(projectId);
   const { tasks, isLoading: tasksLoading, error: tasksError, mutate: mutateTasks, updateTask } = useTasks(projectId);
+
+  // These hooks gracefully return empty arrays if the tables don't exist yet
   const { fieldValues, isLoading: fvLoading } = useFieldValuesData(projectId);
-  const { widgets, isLoading: widgetsLoading } = useAllTemplateWidgets(project?.template_id ?? null);
+  const { widgets } = useAllTemplateWidgets(project?.template_id ?? null);
   const { rules: rawRules, isLoading: rulesLoading } = useTemplateRules(project?.template_id ?? null);
 
   const selectedTaskId = useOnboardingNavStore(s => s.selectedTaskId);
@@ -90,8 +92,9 @@ export function ProjectDetailPage({ projectId }: IProjectDetailPageProps) {
     }
     for (const t of tasks) {
       if (t.template_task_id) {
-        const templateTask = tasks.find(tt => tt.template_task_id === t.template_task_id);
-        if (templateTask && !templateTask.is_visible) {
+        // is_visible may not exist on older rows
+        const visible = 'is_visible' in t ? t.is_visible : true;
+        if (!visible) {
           map.set(t.template_task_id, true);
         }
       }
@@ -99,9 +102,9 @@ export function ProjectDetailPage({ projectId }: IProjectDetailPageProps) {
     return map;
   }, [widgets, tasks]);
 
-  // Initialize field values store when data loads
+  // Initialize field values store when data loads (non-blocking)
   useEffect(() => {
-    if (!fvLoading && !rulesLoading && fieldValues.length >= 0 && projectId) {
+    if (!fvLoading && !rulesLoading && projectId) {
       initFieldValues({
         projectId,
         fieldValues,
@@ -116,7 +119,8 @@ export function ProjectDetailPage({ projectId }: IProjectDetailPageProps) {
   // Auto-select first task when tasks load
   useEffect(() => {
     if (!selectedTaskId && tasks.length > 0) {
-      const firstVisible = tasks.find(t => t.is_visible);
+      // is_visible may not exist on older rows — default to true
+      const firstVisible = tasks.find(t => ('is_visible' in t ? t.is_visible : true));
       if (firstVisible) {
         selectTask(firstVisible.id);
       }
@@ -129,9 +133,8 @@ export function ProjectDetailPage({ projectId }: IProjectDetailPageProps) {
 
   const selectedTask = tasks.find(t => t.id === selectedTaskId) ?? null;
 
-  const isLoading = projectLoading || tasksLoading || fvLoading || widgetsLoading || rulesLoading;
-
-  if (isLoading) {
+  // Only block on core data (project + tasks), not the new Phase 2 tables
+  if (projectLoading || tasksLoading) {
     return <LoadingState message="Loading project..." />;
   }
 

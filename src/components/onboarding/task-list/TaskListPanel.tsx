@@ -23,7 +23,7 @@ export function TaskListPanel({
   const sections = useMemo(() => {
     const grouped = new Map<string, ITask[]>();
     for (const task of tasks) {
-      if (!task.is_visible) continue;
+      if (!('is_visible' in task ? task.is_visible : true)) continue;
       const section = task.section || 'Uncategorized';
       const existing = grouped.get(section) || [];
       existing.push(task);
