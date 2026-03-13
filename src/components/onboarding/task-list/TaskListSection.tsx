@@ -2,6 +2,7 @@
 
 import type { ITask, ITaskUpdate } from '@/types/database';
 import type { ITaskBadges } from './TaskListPanel';
+import { useFieldValues } from '@/hooks/useFieldValues';
 import { TaskListItem } from './TaskListItem';
 import styles from './TaskListSection.module.scss';
 
@@ -24,15 +25,20 @@ export function TaskListSection({
   taskBadges,
   onUpdate,
 }: ITaskListSectionProps) {
+  const isVisible = useFieldValues(s => s.isVisible);
   const realTasks = tasks.filter(t => t.task_type !== 'section_header');
-  const completedCount = realTasks.filter(t => COMPLETE_STATUSES.includes(t.status)).length;
+  const visibleTasks = realTasks.filter(t => isVisible(t.template_task_id ?? t.id));
+  const completedCount = visibleTasks.filter(t => COMPLETE_STATUSES.includes(t.status)).length;
+
+  // Hide entire section if all tasks are hidden
+  if (visibleTasks.length === 0) return null;
 
   return (
     <div className={styles.section}>
       <div className={styles.header}>
         <span className={styles.title}>{title}</span>
         <span className={styles.count}>
-          {completedCount}/{realTasks.length}
+          {completedCount}/{visibleTasks.length}
         </span>
       </div>
 

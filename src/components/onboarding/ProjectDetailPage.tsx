@@ -54,6 +54,7 @@ export function ProjectDetailPage({ projectId }: IProjectDetailPageProps) {
 
   const initFieldValues = useFieldValues(s => s.init);
   const resetFieldValues = useFieldValues(s => s.reset);
+  const isVisible = useFieldValues(s => s.isVisible);
 
   // Resolve rules
   const { conditionalRules, dueDateRules } = useMemo(() => {
@@ -119,13 +120,12 @@ export function ProjectDetailPage({ projectId }: IProjectDetailPageProps) {
   // Auto-select first task when tasks load
   useEffect(() => {
     if (!selectedTaskId && tasks.length > 0) {
-      // is_visible may not exist on older rows — default to true
-      const firstVisible = tasks.find(t => ('is_visible' in t ? t.is_visible : true));
+      const firstVisible = tasks.find(t => isVisible(t.template_task_id ?? t.id));
       if (firstVisible) {
         selectTask(firstVisible.id);
       }
     }
-  }, [tasks, selectedTaskId, selectTask]);
+  }, [tasks, selectedTaskId, selectTask, isVisible]);
 
   // Compute due dates (returns Map<templateTaskId, Date>)
   const projectStartDate = project?.start_date ? new Date(project.start_date) : null;

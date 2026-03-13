@@ -4,6 +4,7 @@ import { useMemo, useCallback } from 'react';
 import { Button } from '@zonos/amino/components/button/Button';
 import { PlusIcon } from '@zonos/amino/icons/PlusIcon';
 import { useOnboardingNavStore } from '@/hooks/useOnboardingNavStore';
+import { useFieldValues } from '@/hooks/useFieldValues';
 import type { ITask, ITaskUpdate } from '@/types/database';
 import { TaskListSection } from './TaskListSection';
 import styles from './TaskListPanel.module.scss';
@@ -37,11 +38,14 @@ export function TaskListPanel({
   onCreate,
 }: ITaskListPanelProps) {
   const selectTask = useOnboardingNavStore(s => s.selectTask);
+  const isVisible = useFieldValues(s => s.isVisible);
 
   const sections = useMemo(() => {
     const grouped = new Map<string, ITask[]>();
     for (const task of tasks) {
-      if (!('is_visible' in task ? task.is_visible : true)) continue;
+      // Don't filter by is_visible here — ConditionalWrapper in TaskListItem
+      // handles visibility via the rules engine. Filtering here would prevent
+      // hidden-by-default tasks from ever being shown when rules trigger.
       const section = task.section || 'Uncategorized';
       const existing = grouped.get(section) || [];
       existing.push(task);
@@ -50,22 +54,23 @@ export function TaskListPanel({
     return Array.from(grouped.entries());
   }, [tasks]);
 
-  const totalCompleted = tasks.filter(t =>
-    t.is_visible && COMPLETE_STATUSES.includes(t.status),
-  ).length;
-  const totalVisible = tasks.filter(t => t.is_visible).length;
+  const totalCompleted = tasks.filter(t => {
+    const vid = t.template_task_id ?? t.id;
+    return isVisible(vid) && COMPLETE_STATUSES.includes(t.status);
+  }).length;
+  const totalVisible = tasks.filter(t => isVisible(t.template_task_id ?? t.id)).length;
   const pct = totalVisible > 0 ? Math.round((totalCompleted / totalVisible) * 100) : 0;
 
   const overdueCount = useMemo(() => {
     const now = new Date();
     return tasks.filter(t => {
-      if (!t.is_visible) return false;
+      if (!isVisible(t.template_task_id ?? t.id)) return false;
       if (NON_OVERDUE_STATUSES.includes(t.status)) return false;
       const dueDate = dueDates.get(t.id) ?? (t.due_date_fixed ? new Date(t.due_date_fixed) : null);
       if (!dueDate) return false;
       return dueDate < now;
     }).length;
-  }, [tasks, dueDates]);
+  }, [tasks, dueDates, isVisible]);
 
   const handleCreate = useCallback(async () => {
     // Get the last section name and max order_index

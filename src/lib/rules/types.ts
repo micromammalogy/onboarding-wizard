@@ -71,12 +71,23 @@ export function toResolvedConditionalRule(
 
   if (conditions.length === 0) return null;
 
+  // Widget targets are stored in metadata.targetWidgetGroupIds (PS group IDs)
+  // because the seed script couldn't map them to UUIDs at generation time.
+  // These PS group IDs match widget.ps_group_id used by ConditionalWrapper.
+  const metadataWidgetIds =
+    (rule.metadata as Record<string, unknown>)?.targetWidgetGroupIds;
+  const widgetIds: string[] = rule.target_widget_ids.length > 0
+    ? rule.target_widget_ids
+    : Array.isArray(metadataWidgetIds)
+      ? (metadataWidgetIds as string[])
+      : [];
+
   return {
     id: rule.id,
     action: rule.action,
     conditions,
     targetTaskIds: rule.target_task_ids,
-    targetWidgetIds: rule.target_widget_ids,
+    targetWidgetIds: widgetIds,
   };
 }
 
