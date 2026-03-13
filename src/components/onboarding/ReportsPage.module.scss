@@ -1,0 +1,273 @@
+.container {
+  padding: 0 8px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--amino-gray-900);
+}
+
+.viewTabs {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--amino-gray-200);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.viewTab {
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+  background: white;
+  color: var(--amino-gray-600);
+  cursor: pointer;
+  transition: all 0.15s;
+
+  &:not(:last-child) {
+    border-right: 1px solid var(--amino-gray-200);
+  }
+
+  &:hover {
+    background: var(--amino-gray-50);
+  }
+}
+
+.viewTabActive {
+  background: var(--amino-blue-50);
+  color: var(--amino-blue-700);
+  font-weight: 600;
+}
+
+// Saved Views
+.savedViews {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.savedViewChip {
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid var(--amino-gray-200);
+  border-radius: 999px;
+  background: white;
+  color: var(--amino-gray-600);
+  cursor: pointer;
+  transition: all 0.15s;
+
+  &:hover {
+    border-color: var(--amino-blue-300);
+    color: var(--amino-blue-600);
+  }
+}
+
+.savedViewChipActive {
+  background: var(--amino-blue-50);
+  border-color: var(--amino-blue-300);
+  color: var(--amino-blue-700);
+  font-weight: 600;
+}
+
+// Filters
+.filters {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.searchWrapper {
+  flex: 1;
+  max-width: 360px;
+}
+
+.filterActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.resultCount {
+  font-size: 13px;
+  color: var(--amino-gray-500);
+  white-space: nowrap;
+}
+
+// Table
+.tableWrapper {
+  border: 1px solid var(--amino-gray-200);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+
+  th {
+    background: var(--amino-gray-50);
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--amino-gray-500);
+    white-space: nowrap;
+    user-select: none;
+  }
+
+  td {
+    padding: 10px 12px;
+    border-top: 1px solid var(--amino-gray-100);
+    color: var(--amino-gray-700);
+  }
+}
+
+.sortable {
+  cursor: pointer;
+
+  &:hover {
+    color: var(--amino-gray-700);
+  }
+}
+
+.row {
+  cursor: pointer;
+  transition: background 0.1s;
+
+  &:hover td {
+    background: var(--amino-gray-50);
+  }
+}
+
+.nameCell {
+  font-weight: 500;
+  color: var(--amino-gray-900);
+}
+
+.idCell {
+  font-family: monospace;
+  font-size: 12px;
+  color: var(--amino-gray-400);
+}
+
+.emptyRow {
+  text-align: center;
+  color: var(--amino-gray-400);
+  padding: 40px 12px !important;
+  font-style: italic;
+}
+
+// Analytics
+.analyticsView {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+
+.kpiCard {
+  background: white;
+  border: 1px solid var(--amino-gray-200);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.kpiValue {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--amino-gray-900);
+}
+
+.kpiUnit {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--amino-gray-400);
+}
+
+.kpiLabel {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--amino-gray-500);
+  margin-top: 4px;
+}
+
+.kpiGreen .kpiValue { color: var(--amino-green-600); }
+.kpiBlue .kpiValue { color: var(--amino-blue-600); }
+.kpiOrange .kpiValue { color: var(--amino-orange-600); }
+.kpiRed .kpiValue { color: var(--amino-red-600); }
+
+.chartSection {
+  background: white;
+  border: 1px solid var(--amino-gray-200);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.chartTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--amino-gray-800);
+  margin-bottom: 16px;
+}
+
+.statusBars {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.statusBarRow {
+  display: grid;
+  grid-template-columns: 120px 1fr 40px;
+  align-items: center;
+  gap: 12px;
+}
+
+.statusBarLabel {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--amino-gray-600);
+  text-align: right;
+}
+
+.statusBarTrack {
+  height: 24px;
+  background: var(--amino-gray-100);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.statusBarFill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+  min-width: 2px;
+}
+
+.statusBarCount {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--amino-gray-700);
+}

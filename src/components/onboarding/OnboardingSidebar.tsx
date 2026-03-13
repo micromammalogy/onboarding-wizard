@@ -2,6 +2,7 @@
 
 import { DashboardIcon } from '@zonos/amino/icons/DashboardIcon';
 import { BagIcon } from '@zonos/amino/icons/BagIcon';
+import { ChartIcon } from '@zonos/amino/icons/ChartIcon';
 import { FileIcon } from '@zonos/amino/icons/FileIcon';
 import { ChevronLeftIcon } from '@zonos/amino/icons/ChevronLeftIcon';
 import { LogoutIcon } from '@zonos/amino/icons/LogoutIcon';
@@ -16,7 +17,7 @@ const activeStyle: React.CSSProperties = {
 };
 
 export function OnboardingSidebar() {
-  const { view, backToList, openTemplates } = useOnboardingNavStore();
+  const { view, backToList, openTemplates, openReports } = useOnboardingNavStore();
   const { organizationName, logout } = useAuthStore();
 
   const userInitial = (organizationName || '?').charAt(0).toUpperCase();
@@ -51,6 +52,15 @@ export function OnboardingSidebar() {
             >
               <FileIcon size={16} />
               Templates
+            </div>
+          </div>
+          <div className={styles.navItemWrapper} onClick={openReports}>
+            <div
+              className={styles.navItem}
+              style={view === 'reports' ? activeStyle : undefined}
+            >
+              <ChartIcon size={16} />
+              Reports
             </div>
           </div>
         </div>
