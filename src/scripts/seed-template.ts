@@ -359,7 +359,7 @@ function main() {
       conditions: rule.operand.data.conditions.map(orGroup => ({
         logic: 'and' as const,
         conditions: orGroup.conditions.map(c => ({
-          widget_key: widgetGroupToKey.get(c.formFieldWidgetGroupId) || c.formFieldWidgetGroupId,
+          widget_key: widgetGroupToKey.get(c.formFieldWidgetGroupId) || widgetHeaderGroupToKey.get(c.formFieldWidgetGroupId) || c.formFieldWidgetGroupId,
           operator: mapOperator(c.operator),
           value: c.operandValue?.value ?? null,
         })),

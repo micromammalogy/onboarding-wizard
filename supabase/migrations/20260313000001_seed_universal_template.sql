@@ -8471,7 +8471,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   '{}'::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"qhV675n854ix6wD1qUBJ4g","operator":"is","value":"Subscriptions only"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Do_they_sell_subscriptions_and/or_digital_goods?_(needs_automation_for_QA_check)","operator":"is","value":"Subscriptions only"}]}]}',
   'mrYZBxMNrb_dOWcMx6lGBQ',
   '{"targetWidgetGroupIds":["qlrN811ynpVYWcCeg0pNdw"]}'
 );
@@ -8482,7 +8482,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   '{}'::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"lqGgp9gB_HhjMJcH2JRApA","operator":"is","value":"Select Countries"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"What_countries_and_territories_do_they_want_to_ship_to:","operator":"is","value":"Select Countries"}]}]}',
   'sdE_mi2E0AinRBaZiRNBTA',
   '{"targetWidgetGroupIds":["vRoyl41td7PBeZnsivpIRQ"]}'
 );
@@ -8493,7 +8493,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   '{}'::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"rDW47DN85ME-l0oubq9CxA","operator":"contains","value":"Other"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Desired_carrier(s)?","operator":"contains","value":"Other"}]}]}',
   'l8U-dmj0ZH9lxTu1A7pJFg',
   '{"targetWidgetGroupIds":["l1QRHxhMJsD_H_ndQn9KNw"]}'
 );
@@ -8504,7 +8504,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   '{}'::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"lWhHMV8cvXgscudeqcNBEA","operator":"is","value":"Canceled"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Onboarding_Project_Status","operator":"is","value":"Canceled"}]}]}',
   'oDNW6NKRAVVWl-RkA7xCLw',
   '{"targetWidgetGroupIds":["o5tleNuPZtoNa3USmRtKzg","iSdJWzNkNsJhfZKrHK1OLQ","u1kwgfJ-jDV7uT8S0AxMFw","t2KflLGfBvCIG-3EZBNP2A"]}'
 );
@@ -8515,7 +8515,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   '{}'::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"lWhHMV8cvXgscudeqcNBEA","operator":"is","value":"Late"}]},{"logic":"and","conditions":[{"widget_key":"lWhHMV8cvXgscudeqcNBEA","operator":"is","value":"On Hold"}]},{"logic":"and","conditions":[{"widget_key":"lWhHMV8cvXgscudeqcNBEA","operator":"is","value":"Not Started"}]},{"logic":"and","conditions":[{"widget_key":"lWhHMV8cvXgscudeqcNBEA","operator":"is","value":"On Hold-Archived"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Onboarding_Project_Status","operator":"is","value":"Late"}]},{"logic":"and","conditions":[{"widget_key":"Onboarding_Project_Status","operator":"is","value":"On Hold"}]},{"logic":"and","conditions":[{"widget_key":"Onboarding_Project_Status","operator":"is","value":"Not Started"}]},{"logic":"and","conditions":[{"widget_key":"Onboarding_Project_Status","operator":"is","value":"On Hold-Archived"}]}]}',
   'kNg9NR7hAlOaKhFfwKJEUw',
   '{"targetWidgetGroupIds":["uZlNa3EOZUypoSQvIShIjA"]}'
 );
@@ -8526,7 +8526,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   '{}'::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"sDwzFqj1YpOMFCCFnp9HBg","operator":"is","value":"Yes"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Do_active_SKUs_need_to_be_restricted?","operator":"is","value":"Yes"}]}]}',
   'lBNyKmuYTnhQF2LSgJ9Fig',
   '{"targetWidgetGroupIds":["lXIaKxSiXH22DxRPWBFEEQ"]}'
 );
@@ -8537,7 +8537,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   '{}'::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"lXIaKxSiXH22DxRPWBFEEQ","operator":"is","value":"Other"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"If_yes,_why?","operator":"is","value":"Other"}]}]}',
   'q784yWLUmkkKHz1B-2pKWA',
   '{"targetWidgetGroupIds":["s3icofuCxRwQjttsXnFKsA"]}'
 );
@@ -8548,7 +8548,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   '{}'::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"rJ0Qo95gXIaY0VYDi3NONw","operator":"is","value":"No"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Do_you_ship_from_your_general_business_address?","operator":"is","value":"No"}]}]}',
   'iWl6utizrTyex6Ba_kxPxw',
   '{"targetWidgetGroupIds":["sgG0TupWVfrjj7pyKv5CiA"]}'
 );
@@ -8559,7 +8559,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   '{}'::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"m9F5XP_Vf0wz3TC3NPlMLQ","operator":"is","value":"Yes"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Do_you_see_the_message_below?","operator":"is","value":"Yes"}]}]}',
   'vv-jSl3uIykRXwY1Mg1CLg',
   '{"targetWidgetGroupIds":["rZrCzGvkoVaVyZn8v1hJZA"]}'
 );
@@ -8570,7 +8570,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   '{}'::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"msDbs9ZuCPX47AtwgAZJiA","operator":"is","value":"Yes"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Do_they_ship_B2B?","operator":"is","value":"Yes"}]}]}',
   'hsHb3FP16g2R1MXZpJRJ_A',
   '{"targetWidgetGroupIds":["l3gN45zspX7TH-0e3jNCsQ"]}'
 );
@@ -8581,7 +8581,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   '{}'::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"mnwk90fxWTbUocrcRfNHIg","operator":"is","value":"No"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Recurring_meeting_set_(daily,_every_other_day,_or_weekly_at_most)","operator":"is","value":"No"}]}]}',
   'mBqZP_QJ2dt_vn07e_lE7g',
   '{"targetWidgetGroupIds":["hjHs9s_AYdCCMTD5ZmFJEA"]}'
 );
@@ -8592,7 +8592,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000010-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"sUlhzoN-UKdFtYSpETtEsw","operator":"is","value":"No"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Payment_method_is_complete?","operator":"is","value":"No"}]}]}',
   'qLiZnYsrzDKFUk51w11D1A',
   '{"targetWidgetGroupIds":["iU74HgdDTTiK1rNE7X9Bxg"]}'
 );
@@ -8603,7 +8603,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000015-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"s4sMnkic2axFQKkog_xKOA","operator":"is","value":"Yes"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Is_EEI_needed?","operator":"is","value":"Yes"}]}]}',
   'o942CM-exSZweSepLmhOWQ',
   '{"targetWidgetGroupIds":["l2tml4WNFG3iHi7127FD1Q","sdpidvVrgqYKEwYmB_9E6A"]}'
 );
@@ -8614,7 +8614,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   '{}'::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"icZrjByx0nET6MRwNiVJJQ","operator":"is","value":"US"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Ship-from_country_(two_letter_ISO)","operator":"is","value":"US"}]}]}',
   'kFuPUbdQrY7MkrEs-BVLZw',
   '{"targetWidgetGroupIds":["pqN-yHIE47Hc0VWSPBRORQ","s4sMnkic2axFQKkog_xKOA"]}'
 );
@@ -8625,7 +8625,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000016-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"icZrjByx0nET6MRwNiVJJQ","operator":"contains","value":"AT, BE, BG, HR, CY, CZ, DK, EE, FI, FR, DE, GR, HU, IE, IT, LV, LT, LU, MT, NL, PL, PT, RO, SK, SI, ES, SE, UK"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Ship-from_country_(two_letter_ISO)","operator":"contains","value":"AT, BE, BG, HR, CY, CZ, DK, EE, FI, FR, DE, GR, HU, IE, IT, LV, LT, LU, MT, NL, PL, PT, RO, SK, SI, ES, SE, UK"}]}]}',
   'i2YUFL7_FTZZS5s8UvNDCg',
   '{"targetWidgetGroupIds":["p3P4DHQ0Rg1gTjPJWPpPEg","pZ77qXIv1U8EdzkSjfZJ9Q"]}'
 );
@@ -8636,7 +8636,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000068-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"rDW47DN85ME-l0oubq9CxA","operator":"contains","value":"Postal"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Desired_carrier(s)?","operator":"contains","value":"Postal"}]}]}',
   'ugSqBa8A54fPCyTW3OJK0g',
   '{"targetWidgetGroupIds":["rzMR-vxEaijMZzAT3MlKKw","gmJzS3tuUvYE9A1QR2RPig","jIbbdix5ar92i9BBpjtPRg","oMV2h22p2SzlcffPdjpHFw","lPpqazI9Md0P9CpVrhdD-g"]}'
 );
@@ -8647,7 +8647,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000019-0000-0000-0000-000000000001','b0000020-0000-0000-0000-000000000001','b0000021-0000-0000-0000-000000000001','b0000051-0000-0000-0000-000000000001','b0000052-0000-0000-0000-000000000001','b0000053-0000-0000-0000-000000000001','b0000054-0000-0000-0000-000000000001','b0000055-0000-0000-0000-000000000001','b0000056-0000-0000-0000-000000000001','b0000057-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"uWUjiWOCmYMEibaeSrxKzg","operator":"is","value":"BigCommerce"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Select_platform","operator":"is","value":"BigCommerce"}]}]}',
   'nVOpTZlb740DrB5i_mpFLQ',
   '{"targetWidgetGroupIds":["gJvaWxeH9k6x-_H4TppKkA","vhisJPJlbXTNtU18n1VKrw","u0c9sE6AZN9AM1bsK8hPlQ","hfpxxMzkTSJW_bPZ09pFoA","lgUbhGpQ-hH4HS53dHtDZA","q8_7PopJiqe4GPcXxHtLVg","j2EWHi6AzBXIHUKuyBBGVQ","vzY-sg2AEu--zGT_8wJBnQ","l2GqyUI43RZiBvwQpYBMiA","nKrLzCHDfmnPYyH7ysJD0w","lhC6zxEyokscRUrIkwZB8w","mD9M1EPUNAD6ve3oGM9NGg","smcLgIHRm_9tdL_kwsBMUg","tp3NFCPwzcgRS9vX7ptIBQ","jlwAZ5_P8GMVd3WqPCtOow","kBPSQCCkHPIl_qrZdL9Jjg","m5EH-TGPn5nN2GqJF9BPrw","gamg4tnwD8b-RdtWi9hNfA","hMU1ujXmXSaAWBdsV-dKMw","onP_V4MjziTr4mJmqStDtA","vrUbCWwXjyk9_4a8C6pH9w","vBjCoFvWvky1ZADcRRBDyA","tjqBvUxxEhtlaA4Z1AdJLQ","sSm1VTQouV8-BzB6h39J0Q","u8i1UUE9RvEioxJ1vX5BnQ","ujJjll5jjlxCgThQAylMag","sj8QlWOlb_xUGUtpFwtKPw","hhSnsrOJVxwi5NnGloxPBA","g4t-AK8MgIOWegsPbc1E5w","tVRLwqf73nHsOfjfX-BMfQ","sm25SrZKusbD3qOx9GFLBQ","jQCmAfnkgqhEFtZKlPpGZg","p0nWc1-R55SfNczntkxBgw","gsG62rfEt_zDwENmBMJC5Q","swDhfXbywtmJNYhc6rZBfA","jK2hudJH_TUl10zlSkNO1w","nExV6V4Xn3zMyXlww6hBiw","mMq3OmC4d17XtXfumkND7g","vtIsRsiCBn0hfcwpkRxIdQ","hyH-BuUxwzgFZSUZw1tIKA","nzZqodnYQE0tDPbQb3RHFA","kMBawd1f4tCa5NhJXetFeg","tBg4yHkwz5UX46b9oT9EPw","mwuhFstM1607aW0ijexGcw","slALV2Cdd3xGzDU_tJRPdw"]}'
 );
@@ -8658,7 +8658,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000022-0000-0000-0000-000000000001','b0000023-0000-0000-0000-000000000001','b0000051-0000-0000-0000-000000000001','b0000052-0000-0000-0000-000000000001','b0000053-0000-0000-0000-000000000001','b0000054-0000-0000-0000-000000000001','b0000055-0000-0000-0000-000000000001','b0000056-0000-0000-0000-000000000001','b0000057-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"uWUjiWOCmYMEibaeSrxKzg","operator":"is","value":"Cart.com"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Select_platform","operator":"is","value":"Cart.com"}]}]}',
   'nRYt-uExxOvBoG7uJ65Fyw',
   '{"targetWidgetGroupIds":["hTj-PyLyqpy-1YG1oCND8w","ipKYSh630YX4OXndUQlDrg","j2EWHi6AzBXIHUKuyBBGVQ","vzY-sg2AEu--zGT_8wJBnQ","l2GqyUI43RZiBvwQpYBMiA","nKrLzCHDfmnPYyH7ysJD0w","lhC6zxEyokscRUrIkwZB8w","mD9M1EPUNAD6ve3oGM9NGg","smcLgIHRm_9tdL_kwsBMUg","tp3NFCPwzcgRS9vX7ptIBQ","jlwAZ5_P8GMVd3WqPCtOow","kBPSQCCkHPIl_qrZdL9Jjg","m5EH-TGPn5nN2GqJF9BPrw","gamg4tnwD8b-RdtWi9hNfA","hMU1ujXmXSaAWBdsV-dKMw","onP_V4MjziTr4mJmqStDtA","vrUbCWwXjyk9_4a8C6pH9w","vBjCoFvWvky1ZADcRRBDyA","tjqBvUxxEhtlaA4Z1AdJLQ","sSm1VTQouV8-BzB6h39J0Q","u8i1UUE9RvEioxJ1vX5BnQ","ujJjll5jjlxCgThQAylMag","sj8QlWOlb_xUGUtpFwtKPw","hhSnsrOJVxwi5NnGloxPBA","g4t-AK8MgIOWegsPbc1E5w","tVRLwqf73nHsOfjfX-BMfQ","sm25SrZKusbD3qOx9GFLBQ","jQCmAfnkgqhEFtZKlPpGZg","p0nWc1-R55SfNczntkxBgw","gsG62rfEt_zDwENmBMJC5Q","swDhfXbywtmJNYhc6rZBfA","jK2hudJH_TUl10zlSkNO1w","nExV6V4Xn3zMyXlww6hBiw","mMq3OmC4d17XtXfumkND7g","vtIsRsiCBn0hfcwpkRxIdQ","hyH-BuUxwzgFZSUZw1tIKA","nzZqodnYQE0tDPbQb3RHFA","kMBawd1f4tCa5NhJXetFeg","tBg4yHkwz5UX46b9oT9EPw","mwuhFstM1607aW0ijexGcw","slALV2Cdd3xGzDU_tJRPdw"]}'
 );
@@ -8669,7 +8669,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000028-0000-0000-0000-000000000001','b0000029-0000-0000-0000-000000000001','b0000030-0000-0000-0000-000000000001','b0000051-0000-0000-0000-000000000001','b0000052-0000-0000-0000-000000000001','b0000053-0000-0000-0000-000000000001','b0000054-0000-0000-0000-000000000001','b0000055-0000-0000-0000-000000000001','b0000056-0000-0000-0000-000000000001','b0000057-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"uWUjiWOCmYMEibaeSrxKzg","operator":"is","value":"Magento"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Select_platform","operator":"is","value":"Magento"}]}]}',
   'oZoWiwjd11mDJtBvPotI4Q',
   '{"targetWidgetGroupIds":["sdGiPZrZqlfbtqpJlRJBWw","ivjcOkjCQJi9hjTDAsBOWw","u2wm-ODrzb-5cMpx_ipCjw","tSgJq565l0FKqz1-Dl5DfQ","j2EWHi6AzBXIHUKuyBBGVQ","vzY-sg2AEu--zGT_8wJBnQ","l2GqyUI43RZiBvwQpYBMiA","nKrLzCHDfmnPYyH7ysJD0w","lhC6zxEyokscRUrIkwZB8w","mD9M1EPUNAD6ve3oGM9NGg","smcLgIHRm_9tdL_kwsBMUg","tp3NFCPwzcgRS9vX7ptIBQ","jlwAZ5_P8GMVd3WqPCtOow","kBPSQCCkHPIl_qrZdL9Jjg","m5EH-TGPn5nN2GqJF9BPrw","gamg4tnwD8b-RdtWi9hNfA","hMU1ujXmXSaAWBdsV-dKMw","onP_V4MjziTr4mJmqStDtA","vrUbCWwXjyk9_4a8C6pH9w","vBjCoFvWvky1ZADcRRBDyA","tjqBvUxxEhtlaA4Z1AdJLQ","sSm1VTQouV8-BzB6h39J0Q","u8i1UUE9RvEioxJ1vX5BnQ","ujJjll5jjlxCgThQAylMag","sj8QlWOlb_xUGUtpFwtKPw","hhSnsrOJVxwi5NnGloxPBA","g4t-AK8MgIOWegsPbc1E5w","tVRLwqf73nHsOfjfX-BMfQ","sm25SrZKusbD3qOx9GFLBQ","jQCmAfnkgqhEFtZKlPpGZg","p0nWc1-R55SfNczntkxBgw","gsG62rfEt_zDwENmBMJC5Q","swDhfXbywtmJNYhc6rZBfA","jK2hudJH_TUl10zlSkNO1w","nExV6V4Xn3zMyXlww6hBiw","mMq3OmC4d17XtXfumkND7g","vtIsRsiCBn0hfcwpkRxIdQ","hyH-BuUxwzgFZSUZw1tIKA","nzZqodnYQE0tDPbQb3RHFA","kMBawd1f4tCa5NhJXetFeg","tBg4yHkwz5UX46b9oT9EPw","mwuhFstM1607aW0ijexGcw","slALV2Cdd3xGzDU_tJRPdw"]}'
 );
@@ -8680,7 +8680,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000031-0000-0000-0000-000000000001','b0000032-0000-0000-0000-000000000001','b0000051-0000-0000-0000-000000000001','b0000052-0000-0000-0000-000000000001','b0000053-0000-0000-0000-000000000001','b0000054-0000-0000-0000-000000000001','b0000055-0000-0000-0000-000000000001','b0000056-0000-0000-0000-000000000001','b0000057-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"uWUjiWOCmYMEibaeSrxKzg","operator":"is","value":"MIVA"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Select_platform","operator":"is","value":"MIVA"}]}]}',
   'hibMqkDIVKtkO_S3jOxMPw',
   '{"targetWidgetGroupIds":["vyhse7stOfHQ9E-qlT5E5A","mBfAmpBi1vWrMLnIMEdHwQ","j2EWHi6AzBXIHUKuyBBGVQ","vzY-sg2AEu--zGT_8wJBnQ","l2GqyUI43RZiBvwQpYBMiA","nKrLzCHDfmnPYyH7ysJD0w","lhC6zxEyokscRUrIkwZB8w","mD9M1EPUNAD6ve3oGM9NGg","smcLgIHRm_9tdL_kwsBMUg","tp3NFCPwzcgRS9vX7ptIBQ","jlwAZ5_P8GMVd3WqPCtOow","kBPSQCCkHPIl_qrZdL9Jjg","m5EH-TGPn5nN2GqJF9BPrw","gamg4tnwD8b-RdtWi9hNfA","hMU1ujXmXSaAWBdsV-dKMw","onP_V4MjziTr4mJmqStDtA","vrUbCWwXjyk9_4a8C6pH9w","vBjCoFvWvky1ZADcRRBDyA","tjqBvUxxEhtlaA4Z1AdJLQ","sSm1VTQouV8-BzB6h39J0Q","u8i1UUE9RvEioxJ1vX5BnQ","ujJjll5jjlxCgThQAylMag","sj8QlWOlb_xUGUtpFwtKPw","hhSnsrOJVxwi5NnGloxPBA","g4t-AK8MgIOWegsPbc1E5w","tVRLwqf73nHsOfjfX-BMfQ","sm25SrZKusbD3qOx9GFLBQ","jQCmAfnkgqhEFtZKlPpGZg","p0nWc1-R55SfNczntkxBgw","gsG62rfEt_zDwENmBMJC5Q","swDhfXbywtmJNYhc6rZBfA","jK2hudJH_TUl10zlSkNO1w","nExV6V4Xn3zMyXlww6hBiw","mMq3OmC4d17XtXfumkND7g","vtIsRsiCBn0hfcwpkRxIdQ","hyH-BuUxwzgFZSUZw1tIKA","nzZqodnYQE0tDPbQb3RHFA","kMBawd1f4tCa5NhJXetFeg","tBg4yHkwz5UX46b9oT9EPw","mwuhFstM1607aW0ijexGcw","slALV2Cdd3xGzDU_tJRPdw"]}'
 );
@@ -8691,7 +8691,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000033-0000-0000-0000-000000000001','b0000034-0000-0000-0000-000000000001','b0000051-0000-0000-0000-000000000001','b0000052-0000-0000-0000-000000000001','b0000053-0000-0000-0000-000000000001','b0000054-0000-0000-0000-000000000001','b0000055-0000-0000-0000-000000000001','b0000056-0000-0000-0000-000000000001','b0000057-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"uWUjiWOCmYMEibaeSrxKzg","operator":"is","value":"Salesforce"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Select_platform","operator":"is","value":"Salesforce"}]}]}',
   'gs5ckuckFc-tl7cXgc5Cfg',
   '{"targetWidgetGroupIds":["mvFqnNmRshWuFQMCXI9BKg","lsoE_v1akgp1dSGxTedFQA","j2EWHi6AzBXIHUKuyBBGVQ","vzY-sg2AEu--zGT_8wJBnQ","l2GqyUI43RZiBvwQpYBMiA","nKrLzCHDfmnPYyH7ysJD0w","lhC6zxEyokscRUrIkwZB8w","mD9M1EPUNAD6ve3oGM9NGg","smcLgIHRm_9tdL_kwsBMUg","tp3NFCPwzcgRS9vX7ptIBQ","jlwAZ5_P8GMVd3WqPCtOow","kBPSQCCkHPIl_qrZdL9Jjg","m5EH-TGPn5nN2GqJF9BPrw","gamg4tnwD8b-RdtWi9hNfA","hMU1ujXmXSaAWBdsV-dKMw","onP_V4MjziTr4mJmqStDtA","vrUbCWwXjyk9_4a8C6pH9w","vBjCoFvWvky1ZADcRRBDyA","tjqBvUxxEhtlaA4Z1AdJLQ","sSm1VTQouV8-BzB6h39J0Q","u8i1UUE9RvEioxJ1vX5BnQ","ujJjll5jjlxCgThQAylMag","sj8QlWOlb_xUGUtpFwtKPw","hhSnsrOJVxwi5NnGloxPBA","g4t-AK8MgIOWegsPbc1E5w","tVRLwqf73nHsOfjfX-BMfQ","sm25SrZKusbD3qOx9GFLBQ","jQCmAfnkgqhEFtZKlPpGZg","p0nWc1-R55SfNczntkxBgw","gsG62rfEt_zDwENmBMJC5Q","swDhfXbywtmJNYhc6rZBfA","jK2hudJH_TUl10zlSkNO1w","nExV6V4Xn3zMyXlww6hBiw","mMq3OmC4d17XtXfumkND7g","vtIsRsiCBn0hfcwpkRxIdQ","hyH-BuUxwzgFZSUZw1tIKA","nzZqodnYQE0tDPbQb3RHFA","kMBawd1f4tCa5NhJXetFeg","tBg4yHkwz5UX46b9oT9EPw","mwuhFstM1607aW0ijexGcw","slALV2Cdd3xGzDU_tJRPdw"]}'
 );
@@ -8702,7 +8702,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000035-0000-0000-0000-000000000001','b0000036-0000-0000-0000-000000000001','b0000051-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"uWUjiWOCmYMEibaeSrxKzg","operator":"is","value":"Shopify"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Select_platform","operator":"is","value":"Shopify"}]}]}',
   'u9Qm70Datt5RGIk2-HhEpA',
   '{"targetWidgetGroupIds":["kHQuEUkgyetEjFMpThBPlg","pUpJOdDqICu4PASszkRHmQ","smBIumJzfBGzxTzBS49H0w","so2hEH-BN9TjJV9Jr35P3w","v0etSOPMXZ6SZwmTvVdNIw","mtSWJZstRxF36ya5Bh5HWA","kSSxtmSyYRezzClxIHtNbQ"]}'
 );
@@ -8713,7 +8713,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000043-0000-0000-0000-000000000001','b0000044-0000-0000-0000-000000000001','b0000051-0000-0000-0000-000000000001','b0000052-0000-0000-0000-000000000001','b0000053-0000-0000-0000-000000000001','b0000054-0000-0000-0000-000000000001','b0000055-0000-0000-0000-000000000001','b0000056-0000-0000-0000-000000000001','b0000057-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"uWUjiWOCmYMEibaeSrxKzg","operator":"is","value":"Wix"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Select_platform","operator":"is","value":"Wix"}]}]}',
   'qjJsP1S78FCKtFcziShCOw',
   '{"targetWidgetGroupIds":["hjnIEUqDuZU4Ee-dZ-FH0A","tn4XvlT-J4ZOvLoOj9NC-g","j2EWHi6AzBXIHUKuyBBGVQ","vzY-sg2AEu--zGT_8wJBnQ","l2GqyUI43RZiBvwQpYBMiA","nKrLzCHDfmnPYyH7ysJD0w","lhC6zxEyokscRUrIkwZB8w","mD9M1EPUNAD6ve3oGM9NGg","smcLgIHRm_9tdL_kwsBMUg","tp3NFCPwzcgRS9vX7ptIBQ","jlwAZ5_P8GMVd3WqPCtOow","kBPSQCCkHPIl_qrZdL9Jjg","m5EH-TGPn5nN2GqJF9BPrw","gamg4tnwD8b-RdtWi9hNfA","hMU1ujXmXSaAWBdsV-dKMw","onP_V4MjziTr4mJmqStDtA","vrUbCWwXjyk9_4a8C6pH9w","vBjCoFvWvky1ZADcRRBDyA","tjqBvUxxEhtlaA4Z1AdJLQ","sSm1VTQouV8-BzB6h39J0Q","u8i1UUE9RvEioxJ1vX5BnQ","ujJjll5jjlxCgThQAylMag","sj8QlWOlb_xUGUtpFwtKPw","hhSnsrOJVxwi5NnGloxPBA","g4t-AK8MgIOWegsPbc1E5w","tVRLwqf73nHsOfjfX-BMfQ","sm25SrZKusbD3qOx9GFLBQ","jQCmAfnkgqhEFtZKlPpGZg","p0nWc1-R55SfNczntkxBgw","gsG62rfEt_zDwENmBMJC5Q","swDhfXbywtmJNYhc6rZBfA","jK2hudJH_TUl10zlSkNO1w","nExV6V4Xn3zMyXlww6hBiw","mMq3OmC4d17XtXfumkND7g","vtIsRsiCBn0hfcwpkRxIdQ","hyH-BuUxwzgFZSUZw1tIKA","nzZqodnYQE0tDPbQb3RHFA","kMBawd1f4tCa5NhJXetFeg","tBg4yHkwz5UX46b9oT9EPw","mwuhFstM1607aW0ijexGcw","slALV2Cdd3xGzDU_tJRPdw"]}'
 );
@@ -8724,7 +8724,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000045-0000-0000-0000-000000000001','b0000046-0000-0000-0000-000000000001','b0000051-0000-0000-0000-000000000001','b0000052-0000-0000-0000-000000000001','b0000053-0000-0000-0000-000000000001','b0000054-0000-0000-0000-000000000001','b0000055-0000-0000-0000-000000000001','b0000056-0000-0000-0000-000000000001','b0000057-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"uWUjiWOCmYMEibaeSrxKzg","operator":"is","value":"WooCommerce"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Select_platform","operator":"is","value":"WooCommerce"}]}]}',
   'jeSCaIG3Qy0x7RgMmFdKuA',
   '{"targetWidgetGroupIds":["lpVULSpqAIvOJDd-A3RMMg","kmxaL4itfzOKPvpSjr1NOA","lZlNSBSP8nrd7A5rVzhKxg","j2EWHi6AzBXIHUKuyBBGVQ","vzY-sg2AEu--zGT_8wJBnQ","l2GqyUI43RZiBvwQpYBMiA","nKrLzCHDfmnPYyH7ysJD0w","lhC6zxEyokscRUrIkwZB8w","mD9M1EPUNAD6ve3oGM9NGg","smcLgIHRm_9tdL_kwsBMUg","tp3NFCPwzcgRS9vX7ptIBQ","jlwAZ5_P8GMVd3WqPCtOow","kBPSQCCkHPIl_qrZdL9Jjg","m5EH-TGPn5nN2GqJF9BPrw","gamg4tnwD8b-RdtWi9hNfA","hMU1ujXmXSaAWBdsV-dKMw","onP_V4MjziTr4mJmqStDtA","vrUbCWwXjyk9_4a8C6pH9w","vBjCoFvWvky1ZADcRRBDyA","tjqBvUxxEhtlaA4Z1AdJLQ","sSm1VTQouV8-BzB6h39J0Q","u8i1UUE9RvEioxJ1vX5BnQ","ujJjll5jjlxCgThQAylMag","sj8QlWOlb_xUGUtpFwtKPw","hhSnsrOJVxwi5NnGloxPBA","g4t-AK8MgIOWegsPbc1E5w","tVRLwqf73nHsOfjfX-BMfQ","sm25SrZKusbD3qOx9GFLBQ","jQCmAfnkgqhEFtZKlPpGZg","p0nWc1-R55SfNczntkxBgw","gsG62rfEt_zDwENmBMJC5Q","swDhfXbywtmJNYhc6rZBfA","jK2hudJH_TUl10zlSkNO1w","nExV6V4Xn3zMyXlww6hBiw","mMq3OmC4d17XtXfumkND7g","vtIsRsiCBn0hfcwpkRxIdQ","hyH-BuUxwzgFZSUZw1tIKA","nzZqodnYQE0tDPbQb3RHFA","kMBawd1f4tCa5NhJXetFeg","tBg4yHkwz5UX46b9oT9EPw","mwuhFstM1607aW0ijexGcw","slALV2Cdd3xGzDU_tJRPdw"]}'
 );
@@ -8735,7 +8735,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000047-0000-0000-0000-000000000001','b0000048-0000-0000-0000-000000000001','b0000051-0000-0000-0000-000000000001','b0000052-0000-0000-0000-000000000001','b0000053-0000-0000-0000-000000000001','b0000054-0000-0000-0000-000000000001','b0000055-0000-0000-0000-000000000001','b0000056-0000-0000-0000-000000000001','b0000057-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"uWUjiWOCmYMEibaeSrxKzg","operator":"is","value":"X-Cart"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Select_platform","operator":"is","value":"X-Cart"}]}]}',
   'q8FjRcAwdMMkm-ULGXNDvA',
   '{"targetWidgetGroupIds":["hlOWZFGsNfMdVmNivmZO4g","sqMUOo_qK-Erv7UmFZVLyg","j2EWHi6AzBXIHUKuyBBGVQ","vzY-sg2AEu--zGT_8wJBnQ","l2GqyUI43RZiBvwQpYBMiA","nKrLzCHDfmnPYyH7ysJD0w","lhC6zxEyokscRUrIkwZB8w","mD9M1EPUNAD6ve3oGM9NGg","smcLgIHRm_9tdL_kwsBMUg","tp3NFCPwzcgRS9vX7ptIBQ","jlwAZ5_P8GMVd3WqPCtOow","kBPSQCCkHPIl_qrZdL9Jjg","m5EH-TGPn5nN2GqJF9BPrw","gamg4tnwD8b-RdtWi9hNfA","hMU1ujXmXSaAWBdsV-dKMw","onP_V4MjziTr4mJmqStDtA","vrUbCWwXjyk9_4a8C6pH9w","vBjCoFvWvky1ZADcRRBDyA","tjqBvUxxEhtlaA4Z1AdJLQ","sSm1VTQouV8-BzB6h39J0Q","u8i1UUE9RvEioxJ1vX5BnQ","ujJjll5jjlxCgThQAylMag","sj8QlWOlb_xUGUtpFwtKPw","hhSnsrOJVxwi5NnGloxPBA","g4t-AK8MgIOWegsPbc1E5w","tVRLwqf73nHsOfjfX-BMfQ","sm25SrZKusbD3qOx9GFLBQ","jQCmAfnkgqhEFtZKlPpGZg","p0nWc1-R55SfNczntkxBgw","gsG62rfEt_zDwENmBMJC5Q","swDhfXbywtmJNYhc6rZBfA","jK2hudJH_TUl10zlSkNO1w","nExV6V4Xn3zMyXlww6hBiw","mMq3OmC4d17XtXfumkND7g","vtIsRsiCBn0hfcwpkRxIdQ","hyH-BuUxwzgFZSUZw1tIKA","nzZqodnYQE0tDPbQb3RHFA","kMBawd1f4tCa5NhJXetFeg","tBg4yHkwz5UX46b9oT9EPw","mwuhFstM1607aW0ijexGcw","slALV2Cdd3xGzDU_tJRPdw"]}'
 );
@@ -8746,7 +8746,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   '{}'::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"hyH-BuUxwzgFZSUZw1tIKA","operator":"is","value":"Yes"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Is_Checkout_2.0_opening_in_an_iframe?","operator":"is","value":"Yes"}]}]}',
   'sDlBgpIa_7aEDvbPpGxLUA',
   '{"targetWidgetGroupIds":["nzZqodnYQE0tDPbQb3RHFA","kMBawd1f4tCa5NhJXetFeg","tBg4yHkwz5UX46b9oT9EPw"]}'
 );
@@ -8757,7 +8757,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   '{}'::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"hyH-BuUxwzgFZSUZw1tIKA","operator":"is","value":"No"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Is_Checkout_2.0_opening_in_an_iframe?","operator":"is","value":"No"}]}]}',
   'rozsco8maQU-rz3Y6-9CsA',
   '{"targetWidgetGroupIds":["mwuhFstM1607aW0ijexGcw"]}'
 );
@@ -8768,7 +8768,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000058-0000-0000-0000-000000000001','b0000059-0000-0000-0000-000000000001','b0000060-0000-0000-0000-000000000001','b0000061-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"mljYG6Vb4EVwPa2iUWtLJQ","operator":"is","value":"API"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Select_integration_type","operator":"is","value":"API"}]}]}',
   'm068oLyCB3UWqxaDjddECA',
   '{"targetWidgetGroupIds":["uq4inIj46f_GmE71wb1K6g","sNYMHnA1-VCQqQAJI8tBIA","s5wfjXGCDx31VuoSp8dFmA","sgiWb6fM9hVXzfdcLRdJuw","tO-3_5FdCaTwKEz1-rRC_Q","tnwA4QwCSFlV8ViUGPFJUw"]}'
 );
@@ -8779,7 +8779,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000024-0000-0000-0000-000000000001','b0000025-0000-0000-0000-000000000001','b0000026-0000-0000-0000-000000000001','b0000027-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"mljYG6Vb4EVwPa2iUWtLJQ","operator":"is","value":"Intuitive Shipping duty and tax app"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Select_integration_type","operator":"is","value":"Intuitive Shipping duty and tax app"}]}]}',
   'hos9C37RAe8xvj6driNNxQ',
   '{"targetWidgetGroupIds":["i90RD7_6zE1X2mVY2VBPzA","i4_-rHxKS7chBxDDwyBDLQ","gFmxl0vCSS8HDUXfkWtPzw","n0WFO7l8ZxMSABNfLAdGfQ","judqCwmRMalseNhCUjFAAw","jvxkNltk8LQ2d1bWloZLIw","mecxWCVHgposL_ctmR9DiQ","thorFq72N4qCc9e8i81PDg","hsKcfjKe14qcd_NSmhBMjw","lyxx3RIs0cpI8PskOCtGGw","gzsmfYEVTrNpgVKeGMxIKw","hODY6EkcFdBwlwhw7gVLZA","hwmJfTW5i42-Ekx5zGBIUQ","oiWoSf-oAMb963i8XSBDcg"]}'
 );
@@ -8790,7 +8790,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000049-0000-0000-0000-000000000001','b0000050-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"mljYG6Vb4EVwPa2iUWtLJQ","operator":"is","value":"Zonos JS (custom checkout)"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Select_integration_type","operator":"is","value":"Zonos JS (custom checkout)"}]}]}',
   'jQAZ4sGoxqFddTxx8WJOfQ',
   '{"targetWidgetGroupIds":["toZe2Jy18ILffpsf1CJHzg","pt6SLb8kBzykRaSla5lN8w"]}'
 );
@@ -8801,7 +8801,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000014-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"hi3K8xTC3viAuSRd_RlCCA","operator":"is","value":"Yes"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Is_this_a_priority_account_($50k_or_above)?_2","operator":"is","value":"Yes"}]}]}',
   'tIT1jiiTNRKGxSEijsNCDA',
   '{"targetWidgetGroupIds":["mnwk90fxWTbUocrcRfNHIg","hjHs9s_AYdCCMTD5ZmFJEA"]}'
 );
@@ -8812,7 +8812,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   '{}'::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"oskhYqskfNvezipe8ENIFg","operator":"is","value":"Yes"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Will_a_staging_site_be_used?","operator":"is","value":"Yes"}]}]}',
   'n-9HI8zSawN8_9EiEX1Oew',
   '{"targetWidgetGroupIds":["tkltGavFNlNsSVqAXkJLQg"]}'
 );
@@ -8823,7 +8823,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000038-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"smBIumJzfBGzxTzBS49H0w","operator":"is","value":"Yes"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Currently_quoting_duty_and_tax_through_Shopify_markets?","operator":"is","value":"Yes"}]}]}',
   'k3l7trDOi0-bZbBOluRLZQ',
   '{"targetWidgetGroupIds":["uhwsSPNqvIEN8QUb1ipOnw","l-ef563aXfB0voIZISdMYQ"]}'
 );
@@ -8834,7 +8834,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000121-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"vX_RggQmIAjrE7xb52ZGdA","operator":"is","value":"Yes"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Is_an_LCG_cert_needed?","operator":"is","value":"Yes"}]}]}',
   'u5WdQ4kHCfa6TiCAdYVDiA',
   '{"targetWidgetGroupIds":["qXn8IDXUMZDjoQvySsdHEA","i9-r7mbBONcHF8C11zdOJA","j9XT7WlJanTFeYzLMJtPQQ","iMYibuF-gL_lWpYrCD9JOg","uTv-reMhUfEfGccnioxL8Q","mKHQf4DMUQJ6o2kWvVpPpQ","rDxfYyd5npSjmeaLGFVNUg","nZ4MQQM_0wr9U7KoITlJoQ","jobGPH-8Q01OzLyvQ7ZKZA","hkNYrAmcsmkesBz8aLlO8A","twhVfGTkJLKYP38lITpCrw","liM3aNLUZTk-iPDMOsNLJw","rQghWpplquojeiPfEopGBw","kInR6kuLxfStAl5kjPxGvw","u97dcvKQyTBZspVEmEVD5Q"]}'
 );
@@ -8845,7 +8845,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000118-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"vX_RggQmIAjrE7xb52ZGdA","operator":"is","value":"Using Shipment API"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Is_an_LCG_cert_needed?","operator":"is","value":"Using Shipment API"}]}]}',
   'uAlhzJM6a5T9_ZaYO_JO8g',
   '{"targetWidgetGroupIds":["n-rK_YAZO22j9bADu9hOLg"]}'
 );
@@ -8856,7 +8856,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000117-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"vX_RggQmIAjrE7xb52ZGdA","operator":"is","value":"Using UPS Unlock"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Is_an_LCG_cert_needed?","operator":"is","value":"Using UPS Unlock"}]}]}',
   'm_iWpvQosdsZraJI5QRBlA',
   '{"targetWidgetGroupIds":["qZCisCyqTq2CdsdHNa5CTg","oOV9G2wWHEl44oIWtepLyw","kemKJlXE7iqgjYOUP4pDMg"]}'
 );
@@ -8867,7 +8867,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000041-0000-0000-0000-000000000001','b0000042-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"nuMgc1r2PED9fAmf4RBMDQ","operator":"is","value":"Zonos needs to utilize VAT-inclusive pricing"},{"widget_key":"uWUjiWOCmYMEibaeSrxKzg","operator":"is","value":"Shopify"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"VAT-inclusive_pricing","operator":"is","value":"Zonos needs to utilize VAT-inclusive pricing"},{"widget_key":"Select_platform","operator":"is","value":"Shopify"}]}]}',
   'jbQ349zNAmfUOcj2QnJEFw',
   '{"targetWidgetGroupIds":["iU-IIp-mvweE3lbbIBhGZw","iwXE78WonJcEYcn-ewBNeg","kQnL3NXbCYdVNSOW2nJDog","nz1u4ywJGqo4AVlW99RPKg"]}'
 );
@@ -8878,7 +8878,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000087-0000-0000-0000-000000000001','b0000088-0000-0000-0000-000000000001','b0000089-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"rQyL36tCDPX8bymOgctEew","operator":"is","value":"DesktopShipper"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Label_software","operator":"is","value":"DesktopShipper"}]}]}',
   'mHU2E9rgemKXz2EXTotDHQ',
   '{"targetWidgetGroupIds":["pvXZkMGqZ5kaWOvvdBVOpg","nXim1-rWgqWmbYmWsddJRw","hoBR94I99TlpXauW0AhGEw","nnnDeBj_NDXVhNRBn_xGVg","pJMQe22zVJI8kWoyfKhHyg","jGHMmKk-LgaXtLRIzDBCSw","oQ7xPTG2Q2h9Ze3par9JDA","nsbF7v9ZO25vduImAH1MgQ","lTzKkQr7r3d4gWyu-MtMFA","mb-L0holKtWvQz_CCJNKww","o3l-5iGRoR2RW9Fb_hpK7Q","rJMzBocJZ5G9EqiuUU1Baw","oepdDFb18UO7CiBlAgxH8g","u6METOs-_509krwjMnRIpQ","v309fRXi6yNVgUjNpqRAoQ","jK90TbydM2fSddZ5fCJNWw","gi15IDWrW1axeTnHm1xGiw","rqq8vXOZT06mjYCUd_pCww","rrXnLXbDxyubHiBwwwlAQw","nJjQNkOwPLNpxmRyK4VLuQ","iKvoqbR-M1wWxDZAYA1PDA","pxjf0T6DgLWjtHW54lNJlw"]}'
 );
@@ -8889,7 +8889,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000090-0000-0000-0000-000000000001','b0000091-0000-0000-0000-000000000001','b0000092-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"rQyL36tCDPX8bymOgctEew","operator":"is","value":"EasyPost"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Label_software","operator":"is","value":"EasyPost"}]}]}',
   'vBBLuiam_G8IeEiVQJVMSQ',
   '{"targetWidgetGroupIds":["h91KE4QHQY1juN-qzipABA","vitKvryUKKC7c7Bh3LVACg","mAPLtKWJGhvZbvu6JP9HxA","tusGbEfV1Rgo6j342RJLKA","jM1jriSgwP3UpOUp2WZPbg","mVG_qyV1k4j8Hw_HysdKqQ","qQjvEcwsumK6r9CzXWxAgw","iZE_X9VqCXCPaZYzxeVFsQ","vp9B_kyt6cd8JO5-CAhOxg","qcAZ8ZAwcot8LbfeWFZB-g","oLsaqhI-LEBaQK_gcuhP4w","jShAGtGAxxhEuXdS5P5IMA","gzL8YRcQfahGNn5dCstK0g","gNTHfW6KaBC3fp-xj3dJcQ","naOaaC3268gxHoOCVeFPCg","opPcxq3iuTPdTXbowTBP0A"]}'
 );
@@ -8900,7 +8900,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000093-0000-0000-0000-000000000001','b0000094-0000-0000-0000-000000000001','b0000095-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"rQyL36tCDPX8bymOgctEew","operator":"is","value":"ePost"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Label_software","operator":"is","value":"ePost"}]}]}',
   'oU7XVlqpnck_d7nd-DRI2Q',
   '{"targetWidgetGroupIds":["q5v0DVoPJem4TfXsf4VEGw","jGwEBwheOmbSiLlh1f9GHw","oQ4d15LF4bIory6-Bz9Fmw"]}'
 );
@@ -8911,7 +8911,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000096-0000-0000-0000-000000000001','b0000097-0000-0000-0000-000000000001','b0000098-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"rQyL36tCDPX8bymOgctEew","operator":"is","value":"ShippingEasy"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Label_software","operator":"is","value":"ShippingEasy"}]}]}',
   'jNdVJGS7r1BZW7zFmbZMJQ',
   '{"targetWidgetGroupIds":["jUm6KqtxyDdC9AeQbWBJzg","lVwBTMk3YhWMpRiMcNlPjQ","m0NR5xGqpSiOsOaMiahIKA","oMrmKr_TEmAbQ21J6aVECQ","nknvZuszSX-I35zSMCVDzg","q5KcioC6vnor9ZLpRdNFrA","qDu7y4sCM2ngd5A4n5dHkw","q8wbJ9ea0Cx6Sm7F4RlJmg","savrDertEJoqFVvoIXRHsg","no-B8ORHcHskOQrMliVJig"]}'
 );
@@ -8922,7 +8922,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000099-0000-0000-0000-000000000001','b0000100-0000-0000-0000-000000000001','b0000101-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"rQyL36tCDPX8bymOgctEew","operator":"is","value":"ShipEngine"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Label_software","operator":"is","value":"ShipEngine"}]}]}',
   'jkxgcrK92OSLBzmSBEBK4g',
   '{"targetWidgetGroupIds":["uys2dWIQscIE05GgbvlGZQ","pllKQxz3cJmqduQL2YZOpg","rboHIF3F7KlhA6IBUN5JyA","ofyyNjT5t4V75ty5EDdP8w","qy9t7q3H5PR72-7UNBJI2g"]}'
 );
@@ -8933,7 +8933,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000102-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"rQyL36tCDPX8bymOgctEew","operator":"is","value":"ShipHero"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Label_software","operator":"is","value":"ShipHero"}]}]}',
   'vSIq8a0hppPAN7LQ3mtIKA',
   '{"targetWidgetGroupIds":["vJnrvS5Ifkv-eepeb3RBLg"]}'
 );
@@ -8944,7 +8944,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000103-0000-0000-0000-000000000001','b0000104-0000-0000-0000-000000000001','b0000105-0000-0000-0000-000000000001','b0000106-0000-0000-0000-000000000001','b0000107-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"rQyL36tCDPX8bymOgctEew","operator":"is","value":"Shipstation"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Label_software","operator":"is","value":"Shipstation"}]}]}',
   'rOFEqWPnzG3VDm7ox-ZOxg',
   '{"targetWidgetGroupIds":["meY1MfotqQjyfovw3UNAEA","ltW9nyA4FgrUBxIS38NE6g","q8xPVlKcgIuGOa3tsppPjw","sguQytw6N8LkEdpO-vNCww","hnGhMs8QCmw_QCn27NVKxw","lVhueNAw_ZJuemU451lJvA"]}'
 );
@@ -8955,7 +8955,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000108-0000-0000-0000-000000000001','b0000109-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"rQyL36tCDPX8bymOgctEew","operator":"is","value":"UPS Worldship"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Label_software","operator":"is","value":"UPS Worldship"}]}]}',
   'lLxR5qFK73_95PcentlAyg',
   '{"targetWidgetGroupIds":["iVsORUpYPL2aaT2MdiZK4g","kPv51IHfJYWE2ktT9UpIWw"]}'
 );
@@ -8966,7 +8966,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   '{}'::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"rQyL36tCDPX8bymOgctEew","operator":"is","value":"Other"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Label_software","operator":"is","value":"Other"}]}]}',
   'kQq76ij1VudtuapvYVdNwg',
   '{"targetWidgetGroupIds":["jvEoLXxJKQ8O4DlhgAJMvA"]}'
 );
@@ -8977,7 +8977,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000110-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"v-G2oQb2s32y2Axfyv1PtQ","operator":"is","value":"iDrive"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"3PL","operator":"is","value":"iDrive"}]}]}',
   'pHFOQ8xeCJjPE68CYFZOag',
   '{"targetWidgetGroupIds":["pD25VhTbkpcQuxHc_oBCRg"]}'
 );
@@ -8988,7 +8988,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000111-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"v-G2oQb2s32y2Axfyv1PtQ","operator":"is","value":"Landmark"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"3PL","operator":"is","value":"Landmark"}]}]}',
   'ixtEOwSwdXmVTTn0gn5NyQ',
   '{"targetWidgetGroupIds":["k8pJkxTZ9lLft5gKPPpC9A"]}'
 );
@@ -8999,7 +8999,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000112-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"v-G2oQb2s32y2Axfyv1PtQ","operator":"is","value":"Portless"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"3PL","operator":"is","value":"Portless"}]}]}',
   'nhPwvDMJl026BXzPQa5Mgw',
   '{"targetWidgetGroupIds":["ncwGudNfLE0KwSvkXT5GhA"]}'
 );
@@ -9010,7 +9010,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000113-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"v-G2oQb2s32y2Axfyv1PtQ","operator":"is","value":"ProShip"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"3PL","operator":"is","value":"ProShip"}]}]}',
   'h-LsFcrkqqDRFvA8JmNODg',
   '{"targetWidgetGroupIds":["lEbL4V1lvDR02cEGAdpMLw"]}'
 );
@@ -9021,7 +9021,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000114-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"v-G2oQb2s32y2Axfyv1PtQ","operator":"is","value":"Scale 3PL"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"3PL","operator":"is","value":"Scale 3PL"}]}]}',
   'idiXpp5ltTh-yI_yAmhMJw',
   '{"targetWidgetGroupIds":["tpky-xRCY03fkc34pdRGNg","qt6bZDAjoAqw8b3AlEJJjg"]}'
 );
@@ -9032,7 +9032,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000115-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"v-G2oQb2s32y2Axfyv1PtQ","operator":"is","value":"Shipnetwork/Firstmile"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"3PL","operator":"is","value":"Shipnetwork/Firstmile"}]}]}',
   'pkoYslu7jiHkBhhS2yxA8w',
   '{"targetWidgetGroupIds":["mSLAOqeBHqAT7wlzhyVEVA"]}'
 );
@@ -9043,7 +9043,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000064-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"rDW47DN85ME-l0oubq9CxA","operator":"contains","value":"FedEx"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Desired_carrier(s)?","operator":"contains","value":"FedEx"}]}]}',
   'iKpnN1YBA33Zmw-2hmdHhg',
   '{"targetWidgetGroupIds":["hPmjW3VjbUkccJcwxJtPMg","ncH4JTiiybmsyibRJG1N2A","lEe1dYZ306vBuYPQ7flKNw","t1LaPBPpa34vb_5NClpHqQ","s2ZSnbox17hpk-16_8dD-A","qNeTPMbFSCGWAA4Yn9xK_A","i8SbS_uVk19wpSq0175E7Q"]}'
 );
@@ -9054,7 +9054,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000063-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"rDW47DN85ME-l0oubq9CxA","operator":"contains","value":"UPS"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Desired_carrier(s)?","operator":"contains","value":"UPS"}]}]}',
   'hE5eNgRjRYvtuWq592BKsg',
   '{"targetWidgetGroupIds":["k0M_aCbN-HiXNvvrb6FDNA","jlBAYg7JmWi33mS0u69Pfw","gmA4JD8c7U1a4kFFGx9PsQ","hBCOIaSMVTK9bZQUzBFDKQ","iYOeraCthccVPRnonpNKSg","mmwr3n6AczArStvWV4ZNCw"]}'
 );
@@ -9065,7 +9065,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000065-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"rDW47DN85ME-l0oubq9CxA","operator":"contains","value":"DHL"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Desired_carrier(s)?","operator":"contains","value":"DHL"}]}]}',
   'sG5ybXS3F_kPj_080qVGZg',
   '{"targetWidgetGroupIds":["gerBkISijHdiQ3lPy-hJQg","mZXX_hcpWeQ5zlbRb6BGQw","uB8tMcF8kkv9oqGHhdJIiw","hmNQ6_Rk6wrA9M-xOj5F4Q"]}'
 );
@@ -9076,7 +9076,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000066-0000-0000-0000-000000000001','b0000067-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"rDW47DN85ME-l0oubq9CxA","operator":"is","value":"APC"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Desired_carrier(s)?","operator":"is","value":"APC"}]}]}',
   'smoNM-jbcjOp7QTNf41Hog',
   '{"targetWidgetGroupIds":["qRP5maccg2Julwd0ck9KQg","gEvklozMa82GdXbuoylBow","gc5RDRu3uJgrD5DW6VJBkg","gGGSL5slJi_rX2RHTgdFbQ","tJrpRtWUcKlsnnNGlydL8g","phxJ_cPkoOGeqpAOrJFFZw","h75Yw0eSFJuKz0O3Ao5KCg","iwtYSEiXMkeqyB5VKbpPzQ","g-IK7Ra4h6MiRzuOgzpNog","jC7EibPVvzF8RWxS4SFGyQ","qJXkRda_HXuSQOq3dyVHiA"]}'
 );
@@ -9087,7 +9087,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'hide',
   ARRAY['b0000018-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"mljYG6Vb4EVwPa2iUWtLJQ","operator":"has_no_value","value":null}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Select_integration_type","operator":"has_no_value","value":null}]}]}',
   'tmuizkucqcfvICtlaxVM1A',
   '{"targetWidgetGroupIds":[]}'
 );
@@ -9098,7 +9098,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000071-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"lqGgp9gB_HhjMJcH2JRApA","operator":"is","value":"Rest of World"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"What_countries_and_territories_do_they_want_to_ship_to:","operator":"is","value":"Rest of World"}]}]}',
   'mvgbQPqk41RUn1aBoTtMcQ',
   '{"targetWidgetGroupIds":["uZNPPE8z305r1TUTOTxDPw"]}'
 );
@@ -9109,7 +9109,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   '{}'::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"mljYG6Vb4EVwPa2iUWtLJQ","operator":"is","value":"API"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Select_integration_type","operator":"is","value":"API"}]}]}',
   'rnCAnid27aw-0pXbysNDDA',
   '{"targetWidgetGroupIds":["vfSHmgcp5W68eEToithGHQ"]}'
 );
@@ -9120,7 +9120,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'hide',
   ARRAY['b0000060-0000-0000-0000-000000000001','b0000061-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"vfSHmgcp5W68eEToithGHQ","operator":"is","value":"API call (volume)"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"API_billing_type","operator":"is","value":"API call (volume)"}]}]}',
   'idi-e_pU5XTlpgODGcNMsw',
   '{"targetWidgetGroupIds":["sgiWb6fM9hVXzfdcLRdJuw","tO-3_5FdCaTwKEz1-rRC_Q","tnwA4QwCSFlV8ViUGPFJUw"]}'
 );
@@ -9131,7 +9131,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   '{}'::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"q4PjnQVTeIB3vTrdUD5BXA","operator":"is","value":"LCG on"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"LCG_status_2","operator":"is","value":"LCG on"}]}]}',
   'oMRxhXA42ON-jMNpyUlIsA',
   '{"targetWidgetGroupIds":["iWOucH0JFAkw5e91KwlJZA"]}'
 );
@@ -9142,7 +9142,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000074-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"o3Mgjn6QTfb29TDN_LpIfA","operator":"contains","value":"Rate Sheet"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Calculate_Shipping_Rates_via:","operator":"contains","value":"Rate Sheet"}]}]}',
   'qR93NUBLjycxMvcv48dP9Q',
   '{"targetWidgetGroupIds":["sEoKsd9bW9gg2cxW_CRF1g","mNPoR94Qcu4RMnlFUnhPpA","nUJGgX5C2n8in--urhZBVQ","jr7s7dxmzGB1Ts5tqTFNYQ","sPQ6yWoUcnAVto09ffdBOA"]}'
 );
@@ -9153,7 +9153,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000075-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"o3Mgjn6QTfb29TDN_LpIfA","operator":"contains","value":"Flat Rates in Zonos Dashboard"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Calculate_Shipping_Rates_via:","operator":"contains","value":"Flat Rates in Zonos Dashboard"}]}]}',
   'o9THVblXT2owvczdPuFG_g',
   '{"targetWidgetGroupIds":["u0iiGQEOW8tc4iYjQchGGw","vjqCrHTzPNYrgsAWVZBMQw"]}'
 );
@@ -9164,7 +9164,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000076-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"ubepH0pkp70rGFlu6bdFpA","operator":"is","value":"Greater of physical/dimensional weight"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Do_you_want_to_rate_shipping_using_the_greater_of_physical_or_dimensional_weight?","operator":"is","value":"Greater of physical/dimensional weight"}]}]}',
   'o95JEt0RGjiWdcjnzXpMOQ',
   '{"targetWidgetGroupIds":["lVkzKouDIHn0rrG6D9ZMrA","s6ADRyAtj25ghN4kEpFFjQ","qhPDTGBEjWkHXbYNpuVOnw","sQs_ocw-mjWBxFv4-5hC2Q","sx7UoVOTHUhS23jgdhNMHw"]}'
 );
@@ -9175,7 +9175,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   '{}'::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"qhV675n854ix6wD1qUBJ4g","operator":"is","value":"Both subscriptions and digital goods"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Do_they_sell_subscriptions_and/or_digital_goods?_(needs_automation_for_QA_check)","operator":"is","value":"Both subscriptions and digital goods"}]}]}',
   'oCnUL4d7zbI1CHOCGNtIpg',
   '{"targetWidgetGroupIds":["qlrN811ynpVYWcCeg0pNdw"]}'
 );
@@ -9186,7 +9186,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'hide',
   '{}'::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"qhV675n854ix6wD1qUBJ4g","operator":"is","value":"Digital goods only"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Do_they_sell_subscriptions_and/or_digital_goods?_(needs_automation_for_QA_check)","operator":"is","value":"Digital goods only"}]}]}',
   'nUi5fKVwK680aj1OW2VOYA',
   '{"targetWidgetGroupIds":["qlrN811ynpVYWcCeg0pNdw"]}'
 );
@@ -9197,7 +9197,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'hide',
   '{}'::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"qhV675n854ix6wD1qUBJ4g","operator":"is","value":"Do not sell subscriptions or digital goods"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Do_they_sell_subscriptions_and/or_digital_goods?_(needs_automation_for_QA_check)","operator":"is","value":"Do not sell subscriptions or digital goods"}]}]}',
   'l46_p6U1EXLMR2vbFQxKLQ',
   '{"targetWidgetGroupIds":["qlrN811ynpVYWcCeg0pNdw"]}'
 );
@@ -9208,7 +9208,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'hide',
   '{}'::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"qhV675n854ix6wD1qUBJ4g","operator":"has_no_value","value":null}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Do_they_sell_subscriptions_and/or_digital_goods?_(needs_automation_for_QA_check)","operator":"has_no_value","value":null}]}]}',
   'tZQz16ukTQ8ynkW9v5JP0w',
   '{"targetWidgetGroupIds":["qlrN811ynpVYWcCeg0pNdw"]}'
 );
@@ -9219,7 +9219,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   '{}'::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"iWOucH0JFAkw5e91KwlJZA","operator":"is","value":"No"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"LCG_fee_displaying?","operator":"is","value":"No"}]}]}',
   'nqn9-BBnhF3f5rmqHoBAmw',
   '{"targetWidgetGroupIds":["kg7zK928YMpu_huErKdGpg","uJr6zIfnzi29dmrt4QdGag","uVAtMrgKth2xknS3am9AfQ","rfi2alI_q65k4s_hlGBEdQ"]}'
 );
@@ -9230,7 +9230,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   '{}'::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"ubepH0pkp70rGFlu6bdFpA","operator":"is","value":"Physical weight only"}]},{"logic":"and","conditions":[{"widget_key":"ubepH0pkp70rGFlu6bdFpA","operator":"is","value":"Greater of physical/dimensional weight"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Do_you_want_to_rate_shipping_using_the_greater_of_physical_or_dimensional_weight?","operator":"is","value":"Physical weight only"}]},{"logic":"and","conditions":[{"widget_key":"Do_you_want_to_rate_shipping_using_the_greater_of_physical_or_dimensional_weight?","operator":"is","value":"Greater of physical/dimensional weight"}]}]}',
   'pIQYDeFytZ0EKq2q7NlN2A',
   '{"targetWidgetGroupIds":["nEfE_TjA8yeSXkO3JMZKlA"]}'
 );
@@ -9241,7 +9241,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000039-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"nEfE_TjA8yeSXkO3JMZKlA","operator":"is_not","value":"All SKUs have physical weights"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Do_active_SKUs_have_physical_weights?_8","operator":"is_not","value":"All SKUs have physical weights"}]}]}',
   'vyFoNTvWMVqkgJMRG8hJKg',
   '{"targetWidgetGroupIds":["qFTGhvla1YKIp_DxLEVPVQ","q1cR5POmGvXD79ZA4iJOSw","kqV8_ylMJw3a1hfLv09JQg","r3psNZahttW_U9qnGUFFFQ"]}'
 );
@@ -9252,7 +9252,7 @@ INSERT INTO template_rules (id, template_id, rule_type, action, target_task_ids,
   'show',
   ARRAY['b0000040-0000-0000-0000-000000000001']::uuid[],
   '{}'::uuid[],
-  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"pUpJOdDqICu4PASszkRHmQ","operator":"is","value":"Plus"}]}]}',
+  '{"logic":"or","conditions":[{"logic":"and","conditions":[{"widget_key":"Shopify_subscription_type?","operator":"is","value":"Plus"}]}]}',
   'nydhNJM7110zWnS-LGtJQQ',
   '{"targetWidgetGroupIds":["sl3LZJuYMm6cxqGm8yhLpg","qPy2EZ6fpySrsInSCzpK2g","huncaGh_N75eq8rHQRBNAA","i2IHDmGBHRU9t5bWkiZBrQ","v1XojWuByh-8xpyZsgpIPQ","rOaY9R_SRUjHvNFQcbJLRQ"]}'
 );
