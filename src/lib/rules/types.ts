@@ -40,10 +40,15 @@ export interface IResolvedDueDateRule {
 /** Widget hidden_by_default map: widgetId -> boolean */
 export type IHiddenByDefaultMap = Map<string, boolean>;
 
-/** Converts a raw template rule to a resolved conditional rule */
+/** Converts a raw template rule to a resolved conditional rule.
+ * @param psGroupIdToKey maps PS group IDs → widget keys so condition
+ *   widget references (stored as PS group IDs) resolve to the actual
+ *   keys used in the field values map.
+ */
 export function toResolvedConditionalRule(
   rule: ITemplateRule,
   widgetKeyToId: Map<string, string>,
+  psGroupIdToKey: Map<string, string>,
 ): IResolvedConditionalRule | null {
   if (rule.rule_type !== 'conditional' || !rule.action) return null;
 
@@ -52,14 +57,15 @@ export function toResolvedConditionalRule(
   if (rule.compound_conditions) {
     conditions = rule.compound_conditions.conditions.map(group =>
       group.conditions.map(c => ({
-        widgetKey: c.widget_key,
+        // Condition widget_key is a PS group ID — translate to actual widget key
+        widgetKey: psGroupIdToKey.get(c.widget_key) ?? c.widget_key,
         operator: c.operator,
         value: c.value,
       })),
     );
   } else if (rule.trigger_widget_key && rule.condition_operator) {
     conditions = [[{
-      widgetKey: rule.trigger_widget_key,
+      widgetKey: psGroupIdToKey.get(rule.trigger_widget_key) ?? rule.trigger_widget_key,
       operator: rule.condition_operator,
       value: typeof rule.condition_value === 'string'
         ? rule.condition_value

@@ -58,10 +58,13 @@ export function ProjectDetailPage({ projectId }: IProjectDetailPageProps) {
 
   // Resolve rules
   const { conditionalRules, dueDateRules } = useMemo(() => {
+    // Build both directions: key → ps_group_id AND ps_group_id → key
     const widgetKeyToId = new Map<string, string>();
+    const psGroupIdToKey = new Map<string, string>();
     for (const w of widgets) {
       if (w.key && w.ps_group_id) {
         widgetKeyToId.set(w.key, w.ps_group_id);
+        psGroupIdToKey.set(w.ps_group_id, w.key);
       }
     }
 
@@ -72,7 +75,7 @@ export function ProjectDetailPage({ projectId }: IProjectDetailPageProps) {
 
     for (const rule of rawRules) {
       if (rule.rule_type === 'conditional') {
-        const resolved = toResolvedConditionalRule(rule, widgetKeyToId);
+        const resolved = toResolvedConditionalRule(rule, widgetKeyToId, psGroupIdToKey);
         if (resolved) conditional.push(resolved);
       } else if (rule.rule_type === 'due_date') {
         const resolved = toResolvedDueDateRule(rule, taskIdMap);
