@@ -21,9 +21,15 @@ function evaluateCondition(
       return value === condition.value;
     case 'is_not':
       return value !== condition.value;
-    case 'contains':
+    case 'contains': {
       if (value == null || condition.value == null) return false;
-      return value.toLowerCase().includes(condition.value.toLowerCase());
+      // Multi-choice values are stored as comma-separated: "FedEx, UPS"
+      // Check both directions: field value list contains condition, OR condition list contains field value
+      const fieldParts = value.split(',').map(v => v.trim().toLowerCase());
+      const condParts = condition.value.split(',').map(v => v.trim().toLowerCase());
+      return fieldParts.some(fp => condParts.includes(fp)) ||
+             condParts.some(cp => fieldParts.includes(cp));
+    }
     case 'has_no_value':
       return value == null || value === '';
     default:
