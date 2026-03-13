@@ -1,0 +1,218 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  height: 100%;
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--amino-gray-200);
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: none;
+  background: none;
+  color: var(--amino-gray-600);
+  font-size: 13px;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--amino-blue-600);
+  }
+}
+
+.topBarActions {
+  display: flex;
+  gap: 8px;
+}
+
+.templateHeader {
+  padding: 16px 0;
+}
+
+.templateName {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--amino-gray-900);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--amino-blue-700);
+  }
+}
+
+.nameEdit {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid var(--amino-gray-200);
+  margin-bottom: 16px;
+}
+
+.tab {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  background: none;
+  color: var(--amino-gray-500);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.15s;
+
+  &:hover {
+    color: var(--amino-gray-700);
+  }
+}
+
+.tabActive {
+  color: var(--amino-blue-700);
+  border-bottom-color: var(--amino-blue-600);
+  font-weight: 600;
+}
+
+.editorLayout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 0;
+  flex: 1;
+  min-height: 0;
+}
+
+.taskSidebar {
+  border-right: 1px solid var(--amino-gray-200);
+  overflow-y: auto;
+  padding-right: 12px;
+}
+
+.sidebarSection {
+  margin-bottom: 16px;
+}
+
+.sidebarSectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--amino-gray-500);
+}
+
+.addButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--amino-gray-300);
+  border-radius: 4px;
+  background: white;
+  color: var(--amino-gray-500);
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--amino-blue-400);
+    color: var(--amino-blue-600);
+  }
+}
+
+.sidebarTask {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.1s;
+
+  &:hover {
+    background: var(--amino-gray-50);
+  }
+}
+
+.sidebarTaskActive {
+  background: var(--amino-blue-50);
+  color: var(--amino-blue-700);
+}
+
+.sidebarTaskTitle {
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+  min-width: 0;
+}
+
+.sidebarTaskActions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  opacity: 0;
+  transition: opacity 0.1s;
+
+  .sidebarTask:hover & {
+    opacity: 1;
+  }
+}
+
+.hiddenDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--amino-gray-400);
+}
+
+.moveButton,
+.deleteButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border: none;
+  border-radius: 3px;
+  background: none;
+  color: var(--amino-gray-400);
+  cursor: pointer;
+
+  &:hover {
+    background: var(--amino-gray-200);
+    color: var(--amino-gray-700);
+  }
+}
+
+.deleteButton:hover {
+  color: var(--amino-red-500);
+}
+
+.editorPanel {
+  padding-left: 24px;
+  overflow-y: auto;
+}
+
+.emptyEditor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: var(--amino-gray-400);
+  font-size: 14px;
+}

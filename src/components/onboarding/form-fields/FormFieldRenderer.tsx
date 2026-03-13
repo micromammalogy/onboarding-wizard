@@ -8,6 +8,7 @@ import { SelectField } from './SelectField';
 import { MultiSelectField } from './MultiSelectField';
 import { MultiChoiceField } from './MultiChoiceField';
 import { DateField } from './DateField';
+import { RichTextField } from './RichTextField';
 import { FileField } from './FileField';
 import { SendEmailField } from './SendEmailField';
 import { TextContentWidget } from './TextContentWidget';
@@ -72,8 +73,10 @@ export function FormFieldRenderer({ widget, taskId }: IFormFieldRendererProps) {
       field = <TextField {...fieldProps} />;
       break;
     case 'textarea':
-    case 'richtext':
       field = <TextareaField {...fieldProps} />;
+      break;
+    case 'richtext':
+      field = <RichTextField {...fieldProps} />;
       break;
     case 'select':
       field = <SelectField {...fieldProps} />;

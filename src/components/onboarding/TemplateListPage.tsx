@@ -3,9 +3,11 @@
 import { useState, useMemo } from 'react';
 import useSWR from 'swr';
 import { Badge } from '@zonos/amino/components/badge/Badge';
+import { Button } from '@zonos/amino/components/button/Button';
 import type { ITemplate, ITemplateTask, ITemplateWidget, ITemplateRule } from '@/types/database';
 import { LoadingState } from '@/components/ui/LoadingState';
 import { ErrorState } from '@/components/ui/ErrorState';
+import { TemplateEditorPage } from './template-editor/TemplateEditorPage';
 import styles from './TemplateListPage.module.scss';
 
 type ITemplateWithTasks = ITemplate & {
@@ -172,9 +174,21 @@ export function TemplateListPage() {
   );
 
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [editingId, setEditingId] = useState<string | null>(null);
 
   if (isLoading) return <LoadingState message="Loading templates..." />;
   if (error) return <ErrorState message={error.message} onRetry={() => mutate()} />;
+
+  if (editingId) {
+    return (
+      <div className={styles.container}>
+        <TemplateEditorPage
+          templateId={editingId}
+          onBack={() => setEditingId(null)}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className={styles.container}>
@@ -194,9 +208,18 @@ export function TemplateListPage() {
           >
             <div className={styles.cardHeader}>
               <span className={styles.cardTitle}>{t.name}</span>
-              <Badge color={t.is_active ? 'green' : 'gray'}>
-                {t.is_active ? 'Active' : 'Inactive'}
-              </Badge>
+              <div className={styles.cardActions}>
+                <Button
+                  size="sm"
+                  variant="subtle"
+                  onClick={e => { e.stopPropagation(); setEditingId(t.id); }}
+                >
+                  Edit
+                </Button>
+                <Badge color={t.is_active ? 'green' : 'gray'}>
+                  {t.is_active ? 'Active' : 'Inactive'}
+                </Badge>
+              </div>
             </div>
             {t.description && (
               <p className={styles.cardDesc}>{t.description}</p>
