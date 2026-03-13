@@ -96,6 +96,9 @@ export function TaskListItem({ task, isSelected, computedDueDate, taskBadges, on
         </div>
 
         <div className={styles.meta}>
+          {task.is_stop_gate && !isComplete && (
+            <span className={styles.badgeStopGate} title="Stop gate — blocks progress">⛔</span>
+          )}
           {hasEmail && (
             <span className={styles.badgeEmail} title="Email task">✉</span>
           )}

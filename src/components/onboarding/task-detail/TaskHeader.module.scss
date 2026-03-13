@@ -77,6 +77,39 @@
   }
 }
 
+.stopGateBanner {
+  display: flex;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--amino-red-50);
+  border: 1px solid var(--amino-red-200);
+  border-radius: 8px;
+  align-items: flex-start;
+}
+
+.stopGateIcon {
+  font-size: 18px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.stopGateContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 13px;
+  color: var(--amino-red-700);
+
+  strong {
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  span {
+    color: var(--amino-red-600);
+  }
+}
+
 .controls {
   display: flex;
   align-items: flex-end;

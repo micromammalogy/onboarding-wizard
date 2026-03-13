@@ -41,8 +41,13 @@ export async function PUT(
   try {
     const { id } = await params;
     const supabase = getSupabaseServer();
-    const body: Partial<{ name: string; description: string; is_active: boolean }> =
-      await request.json();
+    const body: Partial<{
+      name: string;
+      description: string;
+      is_active: boolean;
+      cover_image_url: string | null;
+      trigger_config: Record<string, unknown>;
+    }> = await request.json();
 
     const { data, error } = await supabase
       .from('templates')

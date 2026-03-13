@@ -206,6 +206,42 @@
   align-items: center;
 }
 
+.permissionsSection {
+  padding: 12px 16px;
+  background: var(--amino-gray-50);
+  border-radius: 8px;
+}
+
+.permissionsGrid {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.automationsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.automationCard {
+  padding: 8px 12px;
+  border: 1px solid var(--amino-gray-200);
+  border-radius: 8px;
+}
+
+.automationHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.automationAction {
+  flex: 1;
+  font-size: 13px;
+  color: var(--amino-gray-600);
+}
+
 .emptyWidgets {
   padding: 20px;
   text-align: center;

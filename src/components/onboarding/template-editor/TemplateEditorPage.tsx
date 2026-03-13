@@ -11,7 +11,7 @@ import { PlusIcon } from '@zonos/amino/icons/PlusIcon';
 import { RemoveCircleIcon } from '@zonos/amino/icons/RemoveCircleIcon';
 import { ArrowUpIcon } from '@zonos/amino/icons/ArrowUpIcon';
 import { ArrowDownIcon } from '@zonos/amino/icons/ArrowDownIcon';
-import type { ITemplate, ITemplateTask, ITemplateWidget, ITemplateRule } from '@/types/database';
+import type { ITemplate, ITemplateTask, ITemplateWidget, ITemplateRule, ITriggerType } from '@/types/database';
 import { LoadingState } from '@/components/ui/LoadingState';
 import { ErrorState } from '@/components/ui/ErrorState';
 import { TaskEditor } from './TaskEditor';
@@ -50,7 +50,7 @@ export function TemplateEditorPage({ templateId, onBack }: ITemplateEditorPagePr
   );
 
   const [selectedTaskId, setSelectedTaskId] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<'tasks' | 'rules' | 'due-dates'>('tasks');
+  const [activeTab, setActiveTab] = useState<'tasks' | 'rules' | 'due-dates' | 'triggers'>('tasks');
   const [editingName, setEditingName] = useState(false);
   const [nameValue, setNameValue] = useState('');
 
@@ -269,6 +269,40 @@ export function TemplateEditorPage({ templateId, onBack }: ITemplateEditorPagePr
         )}
       </div>
 
+      {/* Cover image */}
+      <div className={styles.coverImageSection}>
+        {template.cover_image_url ? (
+          <div className={styles.coverImagePreview}>
+            <img src={template.cover_image_url} alt="Cover" className={styles.coverImage} />
+            <Button
+              size="sm"
+              variant="subtle"
+              onClick={async () => {
+                await fetch(`/api/db/templates/${templateId}`, {
+                  method: 'PUT',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ cover_image_url: null }),
+                });
+                mutateTemplate();
+              }}
+            >
+              Remove cover
+            </Button>
+          </div>
+        ) : (
+          <CoverImageUpload
+            onUpload={async (url) => {
+              await fetch(`/api/db/templates/${templateId}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ cover_image_url: url }),
+              });
+              mutateTemplate();
+            }}
+          />
+        )}
+      </div>
+
       {/* Tabs */}
       <div className={styles.tabs}>
         <button
@@ -288,6 +322,12 @@ export function TemplateEditorPage({ templateId, onBack }: ITemplateEditorPagePr
           onClick={() => setActiveTab('due-dates')}
         >
           Due Dates ({dueDateRules.length})
+        </button>
+        <button
+          className={`${styles.tab} ${activeTab === 'triggers' ? styles.tabActive : ''}`}
+          onClick={() => setActiveTab('triggers')}
+        >
+          Triggers
         </button>
       </div>
 
@@ -385,6 +425,119 @@ export function TemplateEditorPage({ templateId, onBack }: ITemplateEditorPagePr
           allTasks={template.template_tasks}
           allWidgets={widgets ?? []}
         />
+      )}
+
+      {activeTab === 'triggers' && (
+        <TriggersPanel
+          triggerConfig={template.trigger_config ?? { type: 'manual' }}
+          onUpdate={async (config) => {
+            await fetch(`/api/db/templates/${templateId}`, {
+              method: 'PUT',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ trigger_config: config }),
+            });
+            mutateTemplate();
+          }}
+        />
+      )}
+    </div>
+  );
+}
+
+function CoverImageUpload({ onUpload }: { onUpload: (url: string) => Promise<void> }) {
+  const [uploading, setUploading] = useState(false);
+
+  const handleFile = async (file: File) => {
+    setUploading(true);
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('projectId', 'templates');
+    const res = await fetch('/api/db/files', { method: 'POST', body: formData });
+    const json = await res.json();
+    if (json.data?.url) {
+      await onUpload(json.data.url);
+    }
+    setUploading(false);
+  };
+
+  return (
+    <label className={styles.coverUploadButton}>
+      <input
+        type="file"
+        accept="image/*"
+        className={styles.hiddenInput}
+        onChange={e => {
+          const file = e.target.files?.[0];
+          if (file) handleFile(file);
+        }}
+      />
+      {uploading ? 'Uploading...' : 'Add cover image'}
+    </label>
+  );
+}
+
+const TRIGGER_TYPE_OPTIONS = [
+  { value: 'manual', label: 'Manual — Start projects by hand' },
+  { value: 'salesforce', label: 'Salesforce — Triggered by opportunity stage change' },
+  { value: 'api', label: 'API — Triggered by external webhook' },
+  { value: 'scheduled', label: 'Scheduled — Runs on a cron schedule' },
+];
+
+function TriggersPanel({
+  triggerConfig,
+  onUpdate,
+}: {
+  triggerConfig: { type: string; source?: string | null; schedule?: string | null };
+  onUpdate: (config: Record<string, unknown>) => Promise<void>;
+}) {
+  return (
+    <div className={styles.triggersPanel}>
+      <h3 className={styles.triggersPanelTitle}>Workflow Triggers</h3>
+      <p className={styles.triggersPanelDesc}>
+        Configure what starts a new project from this template.
+      </p>
+
+      <div className={styles.triggerOptions}>
+        {TRIGGER_TYPE_OPTIONS.map(opt => {
+          const isActive = triggerConfig.type === opt.value;
+          return (
+            <div
+              key={opt.value}
+              className={`${styles.triggerOption} ${isActive ? styles.triggerOptionActive : ''}`}
+              onClick={() => onUpdate({ type: opt.value })}
+            >
+              <div className={styles.triggerRadio}>
+                <div className={`${styles.radioCircle} ${isActive ? styles.radioActive : ''}`} />
+              </div>
+              <span>{opt.label}</span>
+            </div>
+          );
+        })}
+      </div>
+
+      {triggerConfig.type === 'salesforce' && (
+        <div className={styles.triggerConfigSection}>
+          <Badge color="orange" size="small">Coming soon</Badge>
+          <p className={styles.triggerConfigNote}>
+            Salesforce integration will auto-create projects when an opportunity reaches a configured stage.
+          </p>
+        </div>
+      )}
+      {triggerConfig.type === 'api' && (
+        <div className={styles.triggerConfigSection}>
+          <Badge color="blue" size="small">Available</Badge>
+          <p className={styles.triggerConfigNote}>
+            Send a POST to <code>/api/webhooks/create-project</code> with template_id and merchant details to auto-create projects.
+          </p>
+        </div>
+      )}
+      {triggerConfig.type === 'scheduled' && (
+        <div className={styles.triggerConfigSection}>
+          <Badge color="purple" size="small">Coming soon</Badge>
+          <p className={styles.triggerConfigNote}>
+            Scheduled triggers will run on a cron schedule to batch-create projects.
+          </p>
+        </div>
       )}
     </div>
   );

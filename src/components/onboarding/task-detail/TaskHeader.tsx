@@ -191,6 +191,16 @@ export function TaskHeader({ task, computedDueDate, onUpdate }: ITaskHeaderProps
         </p>
       )}
 
+      {task.is_stop_gate && task.status !== 'complete' && task.status !== 'ob_verified' && (
+        <div className={styles.stopGateBanner}>
+          <div className={styles.stopGateIcon}>&#9888;</div>
+          <div className={styles.stopGateContent}>
+            <strong>Stop Gate</strong>
+            <span>This task must be completed before the workflow can proceed. All subsequent tasks are blocked until this is marked complete.</span>
+          </div>
+        </div>
+      )}
+
       <div className={styles.controls}>
         <div className={styles.controlItem}>
           <span className={styles.controlLabel}>Status</span>

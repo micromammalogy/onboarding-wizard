@@ -7,7 +7,7 @@ import { Button } from '@zonos/amino/components/button/Button';
 import { Badge } from '@zonos/amino/components/badge/Badge';
 import { PlusIcon } from '@zonos/amino/icons/PlusIcon';
 import { RemoveCircleIcon } from '@zonos/amino/icons/RemoveCircleIcon';
-import type { ITemplateTask, ITemplateWidget, ITemplateRule } from '@/types/database';
+import type { ITemplateTask, ITemplateWidget, ITemplateRule, ITaskPermissionRole, IAutomationProvider, ITaskAutomation } from '@/types/database';
 import styles from './TaskEditor.module.scss';
 
 type ITaskEditorProps = {
@@ -156,6 +156,65 @@ export function TaskEditor({
           ))}
         </div>
       )}
+
+      {/* Permissions */}
+      <div className={styles.permissionsSection}>
+        <h4 className={styles.sectionLabel}>Visibility Permissions</h4>
+        <div className={styles.permissionsGrid}>
+          {(['ob', 'merchant', 'admin', 'ae'] as ITaskPermissionRole[]).map(role => {
+            const visibleTo = task.permissions?.visible_to ?? ['ob', 'merchant', 'admin', 'ae'];
+            const checked = visibleTo.includes(role);
+            return (
+              <label key={role} className={styles.checkboxLabel}>
+                <input
+                  type="checkbox"
+                  checked={checked}
+                  onChange={() => {
+                    const next = checked
+                      ? visibleTo.filter(r => r !== role)
+                      : [...visibleTo, role];
+                    onTaskUpdate(task.id, {
+                      permissions: { ...task.permissions, visible_to: next },
+                    });
+                  }}
+                />
+                {role === 'ob' ? 'OB Rep' : role === 'ae' ? 'AE' : role.charAt(0).toUpperCase() + role.slice(1)}
+              </label>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Automations */}
+      <div className={styles.automationsSection}>
+        <h4 className={styles.sectionLabel}>Automations</h4>
+        {(task.automations ?? []).map((auto, idx) => (
+          <div key={idx} className={styles.automationCard}>
+            <div className={styles.automationHeader}>
+              <Badge color={auto.enabled ? 'green' : 'gray'} size="small">
+                {auto.provider}
+              </Badge>
+              <span className={styles.automationAction}>{auto.action}</span>
+              <button
+                className={styles.deleteWidgetButton}
+                onClick={() => {
+                  const next = [...(task.automations ?? [])];
+                  next.splice(idx, 1);
+                  onTaskUpdate(task.id, { automations: next });
+                }}
+              >
+                <RemoveCircleIcon size={12} />
+              </button>
+            </div>
+          </div>
+        ))}
+        <AutomationAdder
+          onAdd={(auto) => {
+            const next = [...(task.automations ?? []), auto];
+            onTaskUpdate(task.id, { automations: next });
+          }}
+        />
+      </div>
 
       {/* Widgets / Fields */}
       <div className={styles.widgetsSection}>
@@ -317,6 +376,81 @@ function WidgetRow({
           </div>
         </div>
       )}
+    </div>
+  );
+}
+
+const AUTOMATION_PROVIDERS: { value: IAutomationProvider; label: string }[] = [
+  { value: 'docusign', label: 'DocuSign' },
+  { value: 'jira', label: 'Jira' },
+  { value: 'salesforce', label: 'Salesforce' },
+  { value: 'slack', label: 'Slack' },
+  { value: 'google_sheets', label: 'Google Sheets' },
+];
+
+const AUTOMATION_ACTIONS: Record<IAutomationProvider, string[]> = {
+  docusign: ['Send envelope', 'Request signature'],
+  jira: ['Create issue', 'Update issue', 'Transition issue'],
+  salesforce: ['Update opportunity', 'Create task', 'Log activity'],
+  slack: ['Send message', 'Create channel', 'Send notification'],
+  google_sheets: ['Add row', 'Update row', 'Create sheet'],
+};
+
+function AutomationAdder({ onAdd }: { onAdd: (auto: ITaskAutomation) => void }) {
+  const [adding, setAdding] = useState(false);
+  const [provider, setProvider] = useState<IAutomationProvider | null>(null);
+  const [action, setAction] = useState('');
+
+  if (!adding) {
+    return (
+      <Button
+        size="sm"
+        variant="subtle"
+        icon={<PlusIcon size={12} />}
+        onClick={() => setAdding(true)}
+      >
+        Add automation
+      </Button>
+    );
+  }
+
+  const actionOptions = provider ? AUTOMATION_ACTIONS[provider].map(a => ({ value: a, label: a })) : [];
+
+  return (
+    <div className={styles.addWidgetRow}>
+      <Select
+        value={AUTOMATION_PROVIDERS.find(p => p.value === provider) ?? null}
+        options={AUTOMATION_PROVIDERS}
+        onChange={opt => { setProvider(opt ? String(opt.value) as IAutomationProvider : null); setAction(''); }}
+        placeholder="Provider..."
+        size="sm"
+      />
+      {provider && (
+        <Select
+          value={actionOptions.find(a => a.value === action) ?? null}
+          options={actionOptions}
+          onChange={opt => setAction(String(opt?.value ?? ''))}
+          placeholder="Action..."
+          size="sm"
+        />
+      )}
+      <Button
+        size="sm"
+        disabled={!provider || !action}
+        onClick={() => {
+          if (provider && action) {
+            onAdd({ provider, action, config: {}, enabled: false });
+            setAdding(false);
+            setProvider(null);
+            setAction('');
+          }
+        }}
+      >
+        Add
+      </Button>
+      <Button size="sm" variant="subtle" onClick={() => { setAdding(false); setProvider(null); setAction(''); }}>
+        Cancel
+      </Button>
     </div>
   );
 }

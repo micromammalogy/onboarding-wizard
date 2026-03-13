@@ -54,14 +54,41 @@ export interface IUser {
   updated_at: string;
 }
 
+export type ITriggerType = 'manual' | 'salesforce' | 'api' | 'scheduled';
+
+export interface ITriggerConfig {
+  type: ITriggerType;
+  source?: string | null;
+  schedule?: string | null;
+  metadata?: Record<string, unknown>;
+}
+
 export interface ITemplate {
   id: string;
   name: string;
   description: string | null;
   created_by: string | null;
   is_active: boolean;
+  cover_image_url: string | null;
+  trigger_config: ITriggerConfig;
   created_at: string;
   updated_at: string;
+}
+
+export type ITaskPermissionRole = 'ob' | 'merchant' | 'admin' | 'ae';
+
+export interface ITaskPermissions {
+  visible_to?: ITaskPermissionRole[];
+  editable_by?: ITaskPermissionRole[];
+}
+
+export type IAutomationProvider = 'docusign' | 'jira' | 'salesforce' | 'slack' | 'google_sheets';
+
+export interface ITaskAutomation {
+  provider: IAutomationProvider;
+  action: string;
+  config: Record<string, unknown>;
+  enabled: boolean;
 }
 
 export interface ITemplateTask {
@@ -78,6 +105,8 @@ export interface ITemplateTask {
   metadata: Record<string, unknown>;
   hidden_by_default: boolean;
   is_stop_gate: boolean;
+  permissions: ITaskPermissions;
+  automations: ITaskAutomation[];
   ps_group_id: string | null;
   created_at: string;
 }
