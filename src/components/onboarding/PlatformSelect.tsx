@@ -78,8 +78,10 @@ export const PlatformSelect = () => {
                   boxShadow: isSelected ? '0 0 0 1px #2563eb' : 'none',
                 }}
               >
-                {hasLogo && (
+                {hasLogo ? (
                   <PlatformLogo platform={platform.value} size={28} />
+                ) : (
+                  <div style={{ width: 28, height: 28, flexShrink: 0 }} />
                 )}
                 <span
                   style={{
