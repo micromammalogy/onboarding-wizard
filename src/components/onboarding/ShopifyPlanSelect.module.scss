@@ -1,0 +1,133 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--amino-gray-50, #f9fafb);
+  font-family: var(--amino-font-sans, 'Inter', sans-serif);
+  padding: 32px;
+}
+
+.container {
+  width: 100%;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.logoRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.shopifyLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #95bf47;
+}
+
+.zonosLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #000000;
+  color: white;
+}
+
+.connector {
+  width: 24px;
+  height: 2px;
+  background: var(--amino-gray-300, #d1d5db);
+  border-radius: 1px;
+}
+
+.planGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.planCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px;
+  background: white;
+  border: 2px solid var(--amino-gray-200, #e5e7eb);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  text-align: left;
+
+  &:hover {
+    border-color: var(--amino-blue-300, #93c5fd);
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);
+  }
+
+  &.selected {
+    border-color: var(--amino-blue-600, #2563eb);
+    background: var(--amino-blue-50, #eff6ff);
+    box-shadow: 0 0 0 1px var(--amino-blue-600, #2563eb);
+  }
+}
+
+.planName {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--amino-gray-900, #111827);
+}
+
+.planDescription {
+  font-size: 13px;
+  color: var(--amino-gray-500, #6b7280);
+  line-height: 1.4;
+}
+
+.checkIcon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #000000;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.warningBanner {
+  padding: 14px 16px;
+  background: var(--amino-red-50, #fef2f2);
+  border: 1px solid var(--amino-red-200, #fecaca);
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--amino-red-700, #b91c1c);
+  line-height: 1.5;
+  text-align: center;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+}

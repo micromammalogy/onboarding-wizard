@@ -10,7 +10,7 @@ const ORGANIZATIONS_QUERY = `
           id
           name
           status
-          references { companyId, storeId }
+          references { companyId storeId }
         }
       }
     }

@@ -88,7 +88,6 @@ export const EcommercePlatformPage = () => {
         style={{
           padding: 24,
           background: 'white',
-          borderRadius: 8,
           border: '1px solid var(--amino-gray-200)',
           display: 'flex',
           flexDirection: 'column',

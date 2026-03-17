@@ -32,10 +32,7 @@ export const useAuthStore = create<IAuthState>()(
       setCredentialToken: (token: string) => set({ credentialToken: token }),
 
       setOrganization: ({ organizationId, organizationName }) =>
-        set({
-          organizationId,
-          organizationName,
-        }),
+        set({ organizationId, organizationName }),
 
       setMerchantToken: (token: string) => set({ merchantToken: token }),
 

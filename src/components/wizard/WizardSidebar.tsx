@@ -3,6 +3,7 @@
 import { LogoutIcon } from '@zonos/amino/icons/LogoutIcon';
 import { useNavStore } from '@/hooks/useNavStore';
 import { useAuthStore } from '@/hooks/useAuthStore';
+import { useOnboardingStore } from '@/hooks/useOnboardingStore';
 import { OrgSwitcher } from './OrgSwitcher';
 import styles from './WizardSidebar.module.scss';
 

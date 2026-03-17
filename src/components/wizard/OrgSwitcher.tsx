@@ -45,6 +45,17 @@ export const OrgSwitcher = () => {
   }, [isOpen]);
 
   useEffect(() => {
+    const handleKeydown = (e: KeyboardEvent) => {
+      if (e.altKey && e.key === 's') {
+        e.preventDefault();
+        setIsOpen(prev => !prev);
+      }
+    };
+    document.addEventListener('keydown', handleKeydown);
+    return () => document.removeEventListener('keydown', handleKeydown);
+  }, []);
+
+  useEffect(() => {
     if (isOpen) {
       setTimeout(() => inputRef.current?.focus(), 50);
     }
