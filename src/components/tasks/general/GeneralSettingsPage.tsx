@@ -23,6 +23,7 @@ import {
   type ILandedCostSettingsData,
 } from '@/graphql/queries/landedCostSettings';
 import { UPDATE_LANDED_COST_SETTINGS } from '@/graphql/mutations/landedCostSettings';
+import { useOnboardingStore } from '@/hooks/useOnboardingStore';
 import { LoadingState } from '@/components/ui/LoadingState';
 import { ErrorState } from '@/components/ui/ErrorState';
 
@@ -110,7 +111,16 @@ const saveRow: React.CSSProperties = {
 
 // --- Component ---
 
+const SHOPIFY_PLAN_LABELS: Record<string, string> = {
+  basic: 'Basic',
+  grow: 'Grow',
+  advanced: 'Advanced',
+  plus: 'Plus',
+};
+
 export const GeneralSettingsPage = () => {
+  const { ecommercePlatform, shopifyPlan } = useOnboardingStore();
+
   // === Data fetching ===
   const {
     data: orgData,
@@ -360,6 +370,17 @@ export const GeneralSettingsPage = () => {
           }}
           options={PLATFORM_OPTIONS}
         />
+
+        {ecommercePlatform === 'shopify' && shopifyPlan && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+            <span style={{ fontSize: 12, fontWeight: 500, color: 'var(--amino-gray-500)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              Shopify Plan
+            </span>
+            <span style={{ fontSize: 14, fontWeight: 500, color: 'var(--amino-gray-900)' }}>
+              {SHOPIFY_PLAN_LABELS[shopifyPlan] ?? shopifyPlan}
+            </span>
+          </div>
+        )}
 
         {bdError && <p style={feedbackError}>{bdError}</p>}
         {bdSuccess && <p style={feedbackSuccess}>Business details saved.</p>}
