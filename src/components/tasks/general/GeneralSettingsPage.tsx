@@ -23,7 +23,7 @@ import {
   type ILandedCostSettingsData,
 } from '@/graphql/queries/landedCostSettings';
 import { UPDATE_LANDED_COST_SETTINGS } from '@/graphql/mutations/landedCostSettings';
-import { useOnboardingStore } from '@/hooks/useOnboardingStore';
+import { useOnboardingStore, type IShopifyPlan } from '@/hooks/useOnboardingStore';
 import { LoadingState } from '@/components/ui/LoadingState';
 import { ErrorState } from '@/components/ui/ErrorState';
 
@@ -119,7 +119,7 @@ const SHOPIFY_PLAN_OPTIONS = [
 ];
 
 export const GeneralSettingsPage = () => {
-  const { ecommercePlatform, shopifyPlan, setEditingPlan } = useOnboardingStore();
+  const { ecommercePlatform, shopifyPlan, setShopifyPlan } = useOnboardingStore();
 
   // === Data fetching ===
   const {
@@ -174,6 +174,7 @@ export const GeneralSettingsPage = () => {
   const [businessName, setBusinessName] = useState('');
   const [websiteUrl, setWebsiteUrl] = useState('');
   const [platform, setPlatform] = useState('');
+  const [localShopifyPlan, setLocalShopifyPlan] = useState<IShopifyPlan | ''>(shopifyPlan ?? '');
   const [bdSubmitting, setBdSubmitting] = useState(false);
   const [bdError, setBdError] = useState('');
   const [bdSuccess, setBdSuccess] = useState(false);
@@ -232,7 +233,8 @@ export const GeneralSettingsPage = () => {
   const bdDirty =
     businessName.trim() !== (org?.name || '') ||
     websiteUrl.trim() !== (store?.url || '') ||
-    platform !== (store?.platform || '');
+    platform !== (store?.platform || '') ||
+    localShopifyPlan !== (shopifyPlan ?? '');
 
   const curDirty = currency !== (lc?.defaultNativeCurrency || '');
 
@@ -256,6 +258,9 @@ export const GeneralSettingsPage = () => {
       });
       mutateOrg();
       mutateStore();
+      if (ecommercePlatform === 'shopify' && localShopifyPlan && localShopifyPlan !== shopifyPlan) {
+        setShopifyPlan(localShopifyPlan);
+      }
       setBdSuccess(true);
       setTimeout(() => setBdSuccess(false), 3000);
     } catch (err) {
@@ -374,8 +379,10 @@ export const GeneralSettingsPage = () => {
         {ecommercePlatform === 'shopify' && shopifyPlan && (
           <Select
             label="Shopify Plan"
-            value={SHOPIFY_PLAN_OPTIONS.find(o => o.value === shopifyPlan) || null}
-            onChange={() => setEditingPlan(true)}
+            value={SHOPIFY_PLAN_OPTIONS.find(o => o.value === localShopifyPlan) || null}
+            onChange={option => {
+              if (option) { setLocalShopifyPlan(option.value as IShopifyPlan); setBdSuccess(false); }
+            }}
             options={SHOPIFY_PLAN_OPTIONS}
           />
         )}
