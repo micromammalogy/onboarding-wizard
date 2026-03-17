@@ -119,7 +119,7 @@ const SHOPIFY_PLAN_OPTIONS = [
 ];
 
 export const GeneralSettingsPage = () => {
-  const { ecommercePlatform, shopifyPlan, setShopifyPlan } = useOnboardingStore();
+  const { ecommercePlatform, shopifyPlan, carrierApiAcknowledged, setShopifyPlan } = useOnboardingStore();
 
   // === Data fetching ===
   const {
@@ -377,14 +377,37 @@ export const GeneralSettingsPage = () => {
         />
 
         {ecommercePlatform === 'shopify' && shopifyPlan && (
-          <Select
-            label="Shopify Plan"
-            value={SHOPIFY_PLAN_OPTIONS.find(o => o.value === localShopifyPlan) || null}
-            onChange={option => {
-              if (option) { setLocalShopifyPlan(option.value as IShopifyPlan); setBdSuccess(false); }
-            }}
-            options={SHOPIFY_PLAN_OPTIONS}
-          />
+          <>
+            <Select
+              label="Shopify Plan"
+              value={SHOPIFY_PLAN_OPTIONS.find(o => o.value === localShopifyPlan) || null}
+              onChange={option => {
+                if (option) { setLocalShopifyPlan(option.value as IShopifyPlan); setBdSuccess(false); }
+              }}
+              options={SHOPIFY_PLAN_OPTIONS}
+            />
+            {shopifyPlan === 'grow' && (
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 8,
+                padding: '10px 14px',
+                borderRadius: 8,
+                background: carrierApiAcknowledged ? 'var(--amino-green-50, #f0fdf4)' : 'var(--amino-yellow-50, #fefce8)',
+                border: `1px solid ${carrierApiAcknowledged ? 'var(--amino-green-200, #bbf7d0)' : 'var(--amino-yellow-200, #fef08a)'}`,
+              }}>
+                <span style={{ fontSize: 15 }}>{carrierApiAcknowledged ? '✓' : '!'}</span>
+                <span style={{
+                  fontSize: 13,
+                  color: carrierApiAcknowledged ? 'var(--amino-green-700, #15803d)' : 'var(--amino-yellow-700, #a16207)',
+                }}>
+                  {carrierApiAcknowledged
+                    ? 'Carrier Calculated Shipping is confirmed and enabled for this account.'
+                    : 'Carrier Calculated Shipping has not been confirmed yet.'}
+                </span>
+              </div>
+            )}
+          </>
         )}
 
         {bdError && <p style={feedbackError}>{bdError}</p>}
