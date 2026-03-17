@@ -111,15 +111,15 @@ const saveRow: React.CSSProperties = {
 
 // --- Component ---
 
-const SHOPIFY_PLAN_LABELS: Record<string, string> = {
-  basic: 'Basic',
-  grow: 'Grow',
-  advanced: 'Advanced',
-  plus: 'Plus',
-};
+const SHOPIFY_PLAN_OPTIONS = [
+  { value: 'basic', label: 'Basic' },
+  { value: 'grow', label: 'Grow' },
+  { value: 'advanced', label: 'Advanced' },
+  { value: 'plus', label: 'Plus' },
+];
 
 export const GeneralSettingsPage = () => {
-  const { ecommercePlatform, shopifyPlan } = useOnboardingStore();
+  const { ecommercePlatform, shopifyPlan, setEditingPlan } = useOnboardingStore();
 
   // === Data fetching ===
   const {
@@ -372,14 +372,12 @@ export const GeneralSettingsPage = () => {
         />
 
         {ecommercePlatform === 'shopify' && shopifyPlan && (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-            <span style={{ fontSize: 12, fontWeight: 500, color: 'var(--amino-gray-500)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              Shopify Plan
-            </span>
-            <span style={{ fontSize: 14, fontWeight: 500, color: 'var(--amino-gray-900)' }}>
-              {SHOPIFY_PLAN_LABELS[shopifyPlan] ?? shopifyPlan}
-            </span>
-          </div>
+          <Select
+            label="Shopify Plan"
+            value={SHOPIFY_PLAN_OPTIONS.find(o => o.value === shopifyPlan) || null}
+            onChange={() => setEditingPlan(true)}
+            options={SHOPIFY_PLAN_OPTIONS}
+          />
         )}
 
         {bdError && <p style={feedbackError}>{bdError}</p>}
