@@ -16,15 +16,16 @@ type IPlatformOption = {
 };
 
 const PLATFORM_OPTIONS: IPlatformOption[] = [
-  { label: 'Shopify', value: 'shopify' },
-  { label: 'Etsy', value: 'etsy' },
   { label: 'BigCommerce', value: 'bigcommerce' },
+  { label: 'Cart.com', value: 'cart' },
+  { label: 'Custom', value: 'custom' },
   { label: 'Magento', value: 'magento' },
+  { label: 'MIVA', value: 'miva' },
+  { label: 'Salesforce', value: 'salesforce' },
+  { label: 'Shopify', value: 'shopify' },
+  { label: 'Wix', value: 'wix' },
   { label: 'WooCommerce', value: 'woocommerce' },
-  { label: 'Volusion', value: 'volusion' },
-  { label: 'Miva', value: 'miva' },
-  { label: 'Zonos', value: 'zonos' },
-  { label: 'Other', value: 'other' },
+  { label: 'X-Cart', value: 'xcart' },
 ];
 
 export const PlatformSelect = () => {
@@ -58,7 +59,6 @@ export const PlatformSelect = () => {
         >
           {PLATFORM_OPTIONS.map(platform => {
             const isSelected = selected === platform.value;
-            const hasLogo = platform.value !== 'other';
             return (
               <button
                 key={platform.value}
@@ -78,11 +78,7 @@ export const PlatformSelect = () => {
                   boxShadow: isSelected ? '0 0 0 1px #2563eb' : 'none',
                 }}
               >
-                {hasLogo ? (
-                  <PlatformLogo platform={platform.value} size={28} />
-                ) : (
-                  <div style={{ width: 28, height: 28, flexShrink: 0 }} />
-                )}
+                <PlatformLogo platform={platform.value} size={28} />
                 <span
                   style={{
                     fontSize: 14,

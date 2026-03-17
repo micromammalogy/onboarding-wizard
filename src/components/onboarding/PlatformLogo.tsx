@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { ZonosLogoIcon } from '@zonos/amino/icons/custom/logo/ZonosLogoIcon';
 import type { IEcommercePlatform } from '@/hooks/useOnboardingStore';
 
 type IProps = {
@@ -14,43 +13,26 @@ type IInitialConfig = {
 };
 
 const INITIALS: Partial<Record<IEcommercePlatform, IInitialConfig>> = {
+  cart: { letter: 'C', bg: '#0055a5', color: '#fff' },
+  custom: { letter: 'C', bg: '#6b7280', color: '#fff' },
   magento: { letter: 'M', bg: '#EE0000', color: '#fff' },
-  volusion: { letter: 'V', bg: '#005596', color: '#fff' },
   miva: { letter: 'M', bg: '#f59e0b', color: '#fff' },
+  salesforce: { letter: 'S', bg: '#00a1e0', color: '#fff' },
+  wix: { letter: 'W', bg: '#000', color: '#fff' },
+  xcart: { letter: 'X', bg: '#e85d04', color: '#fff' },
 };
 
 const SVG_ICONS: Partial<Record<IEcommercePlatform, string>> = {
   shopify: '/shopify-icon.svg',
-  etsy: '/etsy-icon.svg',
   bigcommerce: '/bigcommerce-icon.svg',
   woocommerce: '/woocommerce-icon.svg',
 };
 
 export const PlatformLogo = ({ platform, size = 28 }: IProps) => {
-  if (platform === 'zonos') {
-    return (
-      <div
-        style={{
-          width: size,
-          height: size,
-          borderRadius: 6,
-          background: '#000',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          flexShrink: 0,
-        }}
-      >
-        <ZonosLogoIcon size={Math.round(size * 0.75)} />
-      </div>
-    );
-  }
-
   const svgSrc = SVG_ICONS[platform];
   if (svgSrc) {
     const bgColors: Partial<Record<IEcommercePlatform, string>> = {
       shopify: '#95bf47',
-      etsy: '#fff',
       bigcommerce: '#fff',
       woocommerce: '#fff',
     };

@@ -2,15 +2,16 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
 type IEcommercePlatform =
-  | 'shopify'
-  | 'etsy'
   | 'bigcommerce'
+  | 'cart'
+  | 'custom'
   | 'magento'
-  | 'woocommerce'
-  | 'volusion'
   | 'miva'
-  | 'zonos'
-  | 'other';
+  | 'salesforce'
+  | 'shopify'
+  | 'wix'
+  | 'woocommerce'
+  | 'xcart';
 
 type IShopifyPlan = 'basic' | 'grow' | 'advanced' | 'plus';
 
