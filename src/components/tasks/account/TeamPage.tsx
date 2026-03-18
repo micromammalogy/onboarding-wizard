@@ -34,6 +34,41 @@ const STATUS_STYLES: Record<string, { bg: string; color: string; label: string }
   INVITATION_PENDING: { bg: 'var(--amino-yellow-50)', color: 'var(--amino-yellow-700)', label: 'Pending' },
 };
 
+const sectionCard: React.CSSProperties = {
+  padding: 24,
+  background: 'white',
+  borderRadius: 8,
+  border: '1px solid var(--amino-gray-200)',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: 20,
+};
+
+const incompleteCard: React.CSSProperties = {
+  ...sectionCard,
+  border: '2px solid var(--amino-orange-400, #fb923c)',
+  boxShadow: '0 0 0 3px rgba(251, 146, 60, 0.12)',
+};
+
+const IncompleteNotice = ({ text }: { text: string }) => (
+  <span style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: 4,
+    fontSize: 11,
+    fontWeight: 600,
+    color: '#c2410c',
+    background: '#fff7ed',
+    border: '1px solid #fed7aa',
+    borderRadius: 10,
+    padding: '2px 8px',
+    marginLeft: 8,
+    verticalAlign: 'middle',
+  }}>
+    ⚠ {text}
+  </span>
+);
+
 export const TeamPage = () => {
   const [showInvite, setShowInvite] = useState(false);
   const [inviteEmail, setInviteEmail] = useState('');
@@ -145,6 +180,8 @@ export const TeamPage = () => {
   if (isLoading) return <LoadingState />;
   if (error) return <ErrorState message={error.message || String(error)} />;
 
+  const noTeamMembers = users.length <= 1;
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 24, maxWidth: 720 }}>
       <Text type="title">Team</Text>
@@ -155,19 +192,12 @@ export const TeamPage = () => {
         description="Invite colleagues to your Zonos account. Assign Admin for full access (including settings) or Member for access to orders only. There is no limit to the number of users you can add."
       />
 
-      <div
-        style={{
-          padding: 24,
-          background: 'white',
-          borderRadius: 8,
-          border: '1px solid var(--amino-gray-200)',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 20,
-        }}
-      >
+      <div style={noTeamMembers ? incompleteCard : sectionCard}>
         <div>
-          <p style={{ fontSize: 18, fontWeight: 600, margin: 0 }}>Team members</p>
+          <p style={{ fontSize: 18, fontWeight: 600, margin: 0 }}>
+            Team members
+            {noTeamMembers && <IncompleteNotice text="No team members added" />}
+          </p>
           <p style={{ fontSize: 13, color: 'var(--amino-gray-500)', margin: '4px 0 0' }}>
             Manage who has access to this store.
           </p>
