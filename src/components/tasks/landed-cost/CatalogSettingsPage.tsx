@@ -27,6 +27,31 @@ const sectionCard: React.CSSProperties = {
   gap: 24,
 };
 
+const incompleteCard: React.CSSProperties = {
+  ...sectionCard,
+  border: '2px solid var(--amino-orange-400, #fb923c)',
+  boxShadow: '0 0 0 3px rgba(251, 146, 60, 0.12)',
+};
+
+const IncompleteNotice = ({ text }: { text: string }) => (
+  <span style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: 4,
+    fontSize: 11,
+    fontWeight: 600,
+    color: '#c2410c',
+    background: '#fff7ed',
+    border: '1px solid #fed7aa',
+    borderRadius: 10,
+    padding: '2px 8px',
+    marginLeft: 8,
+    verticalAlign: 'middle',
+  }}>
+    ⚠ {text}
+  </span>
+);
+
 const sectionTitle: React.CSSProperties = {
   fontSize: 16,
   fontWeight: 600,
@@ -142,6 +167,9 @@ export const CatalogSettingsPage = () => {
   if (isLoading) return <LoadingState />;
   if (error) return <ErrorState message={error.message || String(error)} />;
 
+  const missingCountryOfOrigin = !form.defaultCountryOfOrigin;
+  const missingHsCode = !form.defaultHsCode.trim();
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 32, maxWidth: 720 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -164,8 +192,11 @@ export const CatalogSettingsPage = () => {
       {submitError && <p style={{ margin: 0, fontSize: 13, color: 'var(--amino-red-600)' }}>{submitError}</p>}
       {success && <p style={{ margin: 0, fontSize: 13, color: 'var(--amino-green-600)' }}>Catalog settings saved.</p>}
 
-      <div style={sectionCard}>
-        <p style={sectionTitle}>Catalog</p>
+      <div style={missingCountryOfOrigin ? incompleteCard : sectionCard}>
+        <p style={sectionTitle}>
+          Catalog
+          {missingCountryOfOrigin && <IncompleteNotice text="Country of origin not set" />}
+        </p>
 
         <div>
           <p style={{ margin: 0, fontSize: 14, fontWeight: 500 }}>Fallback country of origin</p>
@@ -183,8 +214,11 @@ export const CatalogSettingsPage = () => {
         </div>
       </div>
 
-      <div style={sectionCard}>
-        <p style={sectionTitle}>Customs</p>
+      <div style={missingHsCode ? incompleteCard : sectionCard}>
+        <p style={sectionTitle}>
+          Customs
+          {missingHsCode && <IncompleteNotice text="HS code not set" />}
+        </p>
 
         <div>
           <p style={{ margin: 0, fontSize: 14, fontWeight: 500 }}>Fallback HS code</p>

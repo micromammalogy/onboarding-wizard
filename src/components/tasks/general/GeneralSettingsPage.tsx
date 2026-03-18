@@ -80,6 +80,12 @@ const sectionCard: React.CSSProperties = {
   gap: 20,
 };
 
+const incompleteCard: React.CSSProperties = {
+  ...sectionCard,
+  border: '2px solid var(--amino-orange-400, #fb923c)',
+  boxShadow: '0 0 0 3px rgba(251, 146, 60, 0.12)',
+};
+
 const sectionTitle: React.CSSProperties = {
   fontSize: 18,
   fontWeight: 600,
@@ -92,6 +98,25 @@ const sectionDesc: React.CSSProperties = {
   fontSize: 13,
   color: 'var(--amino-gray-500)',
 };
+
+const IncompleteNotice = ({ text }: { text: string }) => (
+  <span style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: 4,
+    fontSize: 11,
+    fontWeight: 600,
+    color: '#c2410c',
+    background: '#fff7ed',
+    border: '1px solid #fed7aa',
+    borderRadius: 10,
+    padding: '2px 8px',
+    marginLeft: 8,
+    verticalAlign: 'middle',
+  }}>
+    ⚠ {text}
+  </span>
+);
 
 const feedbackSuccess: React.CSSProperties = {
   margin: 0,
@@ -340,6 +365,11 @@ export const GeneralSettingsPage = () => {
   const firstError = orgError || storeError || lcError;
   if (firstError) return <ErrorState message={firstError.message || String(firstError)} />;
 
+  // === Incomplete detection (after data loads) ===
+  const missingWebsiteUrl = !websiteUrl.trim();
+  const missingAddress = !line1.trim() || !locality.trim();
+  const missingCurrency = !currency;
+
   // === Render ===
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 32, maxWidth: 720 }}>
@@ -352,9 +382,12 @@ export const GeneralSettingsPage = () => {
       />
 
       {/* ===== Business Details ===== */}
-      <div style={sectionCard}>
+      <div style={missingWebsiteUrl ? incompleteCard : sectionCard}>
         <div>
-          <p style={sectionTitle}>Business Details</p>
+          <p style={sectionTitle}>
+            Business Details
+            {missingWebsiteUrl && <IncompleteNotice text="Website URL missing" />}
+          </p>
           <p style={sectionDesc}>
             Core business information for this merchant.
           </p>
@@ -433,9 +466,12 @@ export const GeneralSettingsPage = () => {
       </div>
 
       {/* ===== Default Native Currency ===== */}
-      <div style={sectionCard}>
+      <div style={missingCurrency ? incompleteCard : sectionCard}>
         <div>
-          <p style={sectionTitle}>Default native currency</p>
+          <p style={sectionTitle}>
+            Default native currency
+            {missingCurrency && <IncompleteNotice text="Currency not set" />}
+          </p>
           <p style={sectionDesc}>
             Set the default currency for landed cost calculations and USD conversion.
           </p>
@@ -468,9 +504,12 @@ export const GeneralSettingsPage = () => {
       </div>
 
       {/* ===== Business Address ===== */}
-      <div style={sectionCard}>
+      <div style={missingAddress ? incompleteCard : sectionCard}>
         <div>
-          <p style={sectionTitle}>Business address</p>
+          <p style={sectionTitle}>
+            Business address
+            {missingAddress && <IncompleteNotice text="Address incomplete" />}
+          </p>
           <p style={sectionDesc}>
             Physical business address. Used for shipping origin and compliance.
           </p>

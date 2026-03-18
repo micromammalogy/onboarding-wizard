@@ -45,6 +45,31 @@ const sectionCard: React.CSSProperties = {
   gap: 20,
 };
 
+const incompleteCard: React.CSSProperties = {
+  ...sectionCard,
+  border: '2px solid var(--amino-orange-400, #fb923c)',
+  boxShadow: '0 0 0 3px rgba(251, 146, 60, 0.12)',
+};
+
+const IncompleteNotice = ({ text }: { text: string }) => (
+  <span style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: 4,
+    fontSize: 11,
+    fontWeight: 600,
+    color: '#c2410c',
+    background: '#fff7ed',
+    border: '1px solid #fed7aa',
+    borderRadius: 10,
+    padding: '2px 8px',
+    marginLeft: 8,
+    verticalAlign: 'middle',
+  }}>
+    ⚠ {text}
+  </span>
+);
+
 export const BillingPage = () => {
   const { organizationId } = useAuthStore();
 
@@ -161,6 +186,8 @@ export const BillingPage = () => {
   const firstError = accountError || companyError;
   if (firstError) return <ErrorState message={firstError.message || String(firstError)} />;
 
+  const missingBillingDetails = !companyName.trim() || !email.trim() || !line1.trim();
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 32, maxWidth: 720 }}>
       <Text type="title">Billing</Text>
@@ -228,9 +255,12 @@ export const BillingPage = () => {
       )}
 
       {/* Billing details form */}
-      <div style={sectionCard}>
+      <div style={missingBillingDetails ? incompleteCard : sectionCard}>
         <div>
-          <p style={{ fontSize: 18, fontWeight: 600, margin: 0 }}>Billing details</p>
+          <p style={{ fontSize: 18, fontWeight: 600, margin: 0 }}>
+            Billing details
+            {missingBillingDetails && <IncompleteNotice text="Details incomplete" />}
+          </p>
           <p style={{ fontSize: 13, color: 'var(--amino-gray-500)', margin: '4px 0 0' }}>
             Company billing contact information and address.
           </p>
