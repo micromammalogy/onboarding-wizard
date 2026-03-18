@@ -1,9 +1,10 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { LogoutIcon } from '@zonos/amino/icons/LogoutIcon';
+import { ChevronLeftIcon } from '@zonos/amino/icons/ChevronLeftIcon';
 import { useNavStore } from '@/hooks/useNavStore';
 import { useAuthStore } from '@/hooks/useAuthStore';
-import { useOnboardingStore } from '@/hooks/useOnboardingStore';
 import { OrgSwitcher } from './OrgSwitcher';
 import styles from './WizardSidebar.module.scss';
 
@@ -70,12 +71,21 @@ const activeStyle: React.CSSProperties = {
 export const WizardSidebar = () => {
   const { activePage, setActivePage } = useNavStore();
   const { organizationName, logout } = useAuthStore();
+  const router = useRouter();
 
   const userInitial = (organizationName || '?').charAt(0).toUpperCase();
 
   return (
     <div className={styles.sidebar}>
       <OrgSwitcher />
+
+      <button
+        className={styles.backToHome}
+        onClick={() => router.push('/onboarding')}
+      >
+        <ChevronLeftIcon size={16} />
+        Onboarding projects
+      </button>
 
       <nav className={styles.navSection}>
         {NAV_GROUPS.map(group => (
