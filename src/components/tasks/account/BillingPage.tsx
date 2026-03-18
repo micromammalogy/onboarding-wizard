@@ -18,6 +18,7 @@ import {
   BILLING_ACCOUNT_UPDATE,
   BILLING_COMPANY_UPDATE,
 } from '@/graphql/mutations/billing';
+import { TaskGuidanceBanner } from '@/components/wizard/TaskGuidanceBanner';
 import { LoadingState } from '@/components/ui/LoadingState';
 import { ErrorState } from '@/components/ui/ErrorState';
 
@@ -164,6 +165,12 @@ export const BillingPage = () => {
     <div style={{ display: 'flex', flexDirection: 'column', gap: 32, maxWidth: 720 }}>
       <Text type="title">Billing</Text>
 
+      <TaskGuidanceBanner
+        taskId="billing"
+        title="Complete your billing details"
+        description="Fill out your billing contact information and address below. Payment methods and full account connections must be managed directly in the Zonos Dashboard."
+      />
+
       {/* Info banner */}
       <div
         style={{
@@ -176,8 +183,15 @@ export const BillingPage = () => {
         }}
       >
         Payment methods and account connections can only be managed from the{' '}
-        <strong>Zonos Dashboard</strong> for security reasons. You can update billing
-        contact information and address below.
+        <a
+          href="https://dashboard.zonos.com/settings/dashboard/billing"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: 'inherit', fontWeight: 600 }}
+        >
+          Zonos Dashboard
+        </a>{' '}
+        for security reasons. You can update billing contact information and address below.
       </div>
 
       {/* Account standing */}

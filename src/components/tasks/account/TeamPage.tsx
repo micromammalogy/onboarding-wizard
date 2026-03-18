@@ -19,6 +19,7 @@ import {
   REACTIVATE_USER,
   USER_ARCHIVE,
 } from '@/graphql/mutations/team';
+import { TaskGuidanceBanner } from '@/components/wizard/TaskGuidanceBanner';
 import { LoadingState } from '@/components/ui/LoadingState';
 import { ErrorState } from '@/components/ui/ErrorState';
 
@@ -147,6 +148,12 @@ export const TeamPage = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 24, maxWidth: 720 }}>
       <Text type="title">Team</Text>
+
+      <TaskGuidanceBanner
+        taskId="team"
+        title="Add your team members"
+        description="Invite colleagues to your Zonos account. Assign Admin for full access (including settings) or Member for access to orders only. There is no limit to the number of users you can add."
+      />
 
       <div
         style={{

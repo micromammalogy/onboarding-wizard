@@ -1,0 +1,98 @@
+.banner {
+  border-radius: 8px;
+  border: 1px solid;
+  padding: 16px 20px;
+  transition: background 0.2s, border-color 0.2s;
+
+  &.active {
+    background: var(--amino-blue-50, #eff6ff);
+    border-color: var(--amino-blue-200, #bfdbfe);
+  }
+
+  &.done {
+    background: var(--amino-green-50, #f0fdf4);
+    border-color: var(--amino-green-200, #bbf7d0);
+  }
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stepLabel {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  .active & {
+    color: var(--amino-blue-500, #3b82f6);
+  }
+
+  .done & {
+    color: var(--amino-green-600, #16a34a);
+  }
+}
+
+.title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--amino-gray-900);
+}
+
+.description {
+  margin: 0;
+  font-size: 13px;
+
+  .active & {
+    color: var(--amino-blue-700, #1d4ed8);
+  }
+
+  .done & {
+    color: var(--amino-green-700, #15803d);
+  }
+}
+
+.markButton {
+  flex-shrink: 0;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+  border: 1.5px solid;
+
+  &:not(.markButtonDone) {
+    background: var(--amino-blue-600, #2563eb);
+    border-color: var(--amino-blue-600, #2563eb);
+    color: white;
+
+    &:hover {
+      background: var(--amino-blue-700, #1d4ed8);
+      border-color: var(--amino-blue-700, #1d4ed8);
+    }
+  }
+
+  &.markButtonDone {
+    background: white;
+    border-color: var(--amino-green-300, #86efac);
+    color: var(--amino-green-700, #15803d);
+
+    &:hover {
+      background: var(--amino-green-100, #dcfce7);
+    }
+  }
+}

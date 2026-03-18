@@ -13,6 +13,7 @@ import {
   type ILandedCostSettingsData,
 } from '@/graphql/queries/landedCostSettings';
 import { UPDATE_LANDED_COST_SETTINGS } from '@/graphql/mutations/landedCostSettings';
+import { TaskGuidanceBanner } from '@/components/wizard/TaskGuidanceBanner';
 import { LoadingState } from '@/components/ui/LoadingState';
 import { ErrorState } from '@/components/ui/ErrorState';
 
@@ -153,6 +154,12 @@ export const CatalogSettingsPage = () => {
       <p style={{ margin: 0, fontSize: 14, color: 'var(--amino-gray-500)' }}>
         Configure how Zonos and Customs should reference your product catalog.
       </p>
+
+      <TaskGuidanceBanner
+        taskId="catalog"
+        title="Confirm your catalog defaults"
+        description="Set your fallback country of origin (where your products are manufactured) and fallback HS code (used for customs classification when no product-level code is provided)."
+      />
 
       {submitError && <p style={{ margin: 0, fontSize: 13, color: 'var(--amino-red-600)' }}>{submitError}</p>}
       {success && <p style={{ margin: 0, fontSize: 13, color: 'var(--amino-green-600)' }}>Catalog settings saved.</p>}

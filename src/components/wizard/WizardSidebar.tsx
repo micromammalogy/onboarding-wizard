@@ -6,6 +6,7 @@ import { ChevronLeftIcon } from '@zonos/amino/icons/ChevronLeftIcon';
 import { useNavStore } from '@/hooks/useNavStore';
 import { useAuthStore } from '@/hooks/useAuthStore';
 import { OrgSwitcher } from './OrgSwitcher';
+import { OnboardingTaskBar } from './OnboardingTaskBar';
 import styles from './WizardSidebar.module.scss';
 
 type INavGroup = {
@@ -108,6 +109,8 @@ export const WizardSidebar = () => {
           </div>
         ))}
       </nav>
+
+      <OnboardingTaskBar />
 
       {/* User footer */}
       <div className={styles.userFooter}>

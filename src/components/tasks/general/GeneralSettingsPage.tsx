@@ -24,6 +24,7 @@ import {
 } from '@/graphql/queries/landedCostSettings';
 import { UPDATE_LANDED_COST_SETTINGS } from '@/graphql/mutations/landedCostSettings';
 import { useOnboardingStore, type IShopifyPlan } from '@/hooks/useOnboardingStore';
+import { TaskGuidanceBanner } from '@/components/wizard/TaskGuidanceBanner';
 import { LoadingState } from '@/components/ui/LoadingState';
 import { ErrorState } from '@/components/ui/ErrorState';
 
@@ -343,6 +344,12 @@ export const GeneralSettingsPage = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 32, maxWidth: 720 }}>
       <Text type="title">General</Text>
+
+      <TaskGuidanceBanner
+        taskId="general"
+        title="Fill out your account details"
+        description="Enter your business name, website URL, and business address. This information helps Zonos configure your integration and is used for shipping origin and compliance."
+      />
 
       {/* ===== Business Details ===== */}
       <div style={sectionCard}>
