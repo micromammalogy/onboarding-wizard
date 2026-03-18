@@ -368,7 +368,6 @@ export const GeneralSettingsPage = () => {
   // === Incomplete detection (after data loads) ===
   const missingWebsiteUrl = !websiteUrl.trim();
   const missingAddress = !line1.trim() || !locality.trim();
-  const missingCurrency = !currency;
 
   // === Render ===
   return (
@@ -466,11 +465,10 @@ export const GeneralSettingsPage = () => {
       </div>
 
       {/* ===== Default Native Currency ===== */}
-      <div style={missingCurrency ? incompleteCard : sectionCard}>
+      <div style={sectionCard}>
         <div>
           <p style={sectionTitle}>
             Default native currency
-            {missingCurrency && <IncompleteNotice text="Currency not set" />}
           </p>
           <p style={sectionDesc}>
             Set the default currency for landed cost calculations and USD conversion.
