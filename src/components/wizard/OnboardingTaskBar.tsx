@@ -57,6 +57,13 @@ export const OnboardingTaskBar = () => {
       markIncomplete(id);
     } else {
       markComplete(id);
+      // Navigate to the next incomplete task's page
+      const currentIndex = TASK_ORDER.indexOf(id);
+      const nextId = TASK_ORDER.slice(currentIndex + 1).find(t => !completedTasks[t]);
+      if (nextId) {
+        const nextTask = ONBOARDING_TASKS.find(t => t.id === nextId);
+        if (nextTask?.page) setActivePage(nextTask.page);
+      }
     }
   };
 
