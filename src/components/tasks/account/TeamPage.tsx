@@ -180,7 +180,7 @@ export const TeamPage = () => {
   if (isLoading) return <LoadingState />;
   if (error) return <ErrorState message={error.message || String(error)} />;
 
-  const noTeamMembers = users.length <= 1;
+  const noTeamMembers = users.length === 0;
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 24, maxWidth: 720 }}>
