@@ -17,8 +17,7 @@ import styles from './OnboardingTaskBar.module.scss';
 
 export const OnboardingTaskBar = () => {
   const [expanded, setExpanded] = useState(true);
-  const [hidden, setHidden] = useState(false);
-  const { completedTasks, markComplete, markIncomplete } = useTaskStore();
+  const { completedTasks, markComplete, markIncomplete, onboardingDismissed, dismissOnboarding } = useTaskStore();
   const { setActivePage } = useNavStore();
   const { ecommercePlatform } = useOnboardingStore();
   const prevCompletedCount = useRef(0);
@@ -34,17 +33,16 @@ export const OnboardingTaskBar = () => {
   const total = ONBOARDING_TASKS.length;
   const allDone = completedCount === total;
 
-  // Fire confetti and hide task bar when all tasks become complete
+  // Fire confetti and permanently dismiss task bar when all tasks become complete
   useEffect(() => {
-    if (allDone && prevCompletedCount.current < total) {
+    if (allDone && prevCompletedCount.current < total && !onboardingDismissed) {
       fireCompletionConfetti();
-      // Hide the task bar after the confetti finishes
-      setTimeout(() => setHidden(true), 4500);
+      setTimeout(() => dismissOnboarding(), 4500);
     }
     prevCompletedCount.current = completedCount;
-  }, [allDone, completedCount, total]);
+  }, [allDone, completedCount, total, onboardingDismissed, dismissOnboarding]);
 
-  if (hidden) return null;
+  if (onboardingDismissed) return null;
 
   // Find the next incomplete task (for "Next step" flag)
   const nextTaskId = TASK_ORDER.find(id => !completedTasks[id]);

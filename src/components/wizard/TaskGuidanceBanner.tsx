@@ -10,8 +10,10 @@ type IProps = {
 };
 
 export const TaskGuidanceBanner = ({ taskId, title, description }: IProps) => {
-  const { completedTasks, markComplete, markIncomplete } = useTaskStore();
+  const { completedTasks, markComplete, markIncomplete, onboardingDismissed } = useTaskStore();
   const done = !!completedTasks[taskId];
+
+  if (onboardingDismissed) return null;
 
   return (
     <div className={`${styles.banner} ${done ? styles.done : styles.active}`}>
