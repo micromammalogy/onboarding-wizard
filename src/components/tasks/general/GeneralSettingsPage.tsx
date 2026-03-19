@@ -415,7 +415,7 @@ export const GeneralSettingsPage = () => {
           options={PLATFORM_OPTIONS}
         />
 
-        {ecommercePlatform === 'shopify' && shopifyPlan && (
+        {platform === 'shopify' && shopifyPlan && (
           <>
             <Select
               label="Shopify Plan"
