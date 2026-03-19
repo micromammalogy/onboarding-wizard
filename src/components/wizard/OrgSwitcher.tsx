@@ -15,7 +15,7 @@ type IOrganization = {
 };
 
 export const OrgSwitcher = () => {
-  const { organizationId, organizationName, setOrganization, setMerchantToken, setAuthenticated } = useAuthStore();
+  const { organizationId, organizationName, credentialToken, setOrganization, setMerchantToken, setAuthCredential, setAuthenticated } = useAuthStore();
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState('');
   const [results, setResults] = useState<IOrganization[]>([]);
@@ -132,6 +132,22 @@ export const OrgSwitcher = () => {
       setSearch('');
       setResults([]);
       setHighlightedIndex(-1);
+
+      // Refresh org-scoped auth credential so auth-schema queries (Team, etc.) use the new org
+      fetch('/api/auth/login-external', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          organizationId: org.id,
+          credentialToken,
+          storeId: org.references?.storeId,
+        }),
+      })
+        .then(r => r.json())
+        .then(authData => {
+          if (authData.credential) setAuthCredential(authData.credential);
+        })
+        .catch(() => {});
     } catch {
       setSwitchError('Failed to switch. Please try again.');
     } finally {
