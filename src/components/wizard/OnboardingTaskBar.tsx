@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ChevronUpIcon } from '@zonos/amino/icons/ChevronUpIcon';
 import { ChevronDownIcon } from '@zonos/amino/icons/ChevronDownIcon';
 import { CheckmarkIcon } from '@zonos/amino/icons/CheckmarkIcon';
@@ -12,13 +12,16 @@ import {
   TASK_ORDER,
   type ITaskId,
 } from '@/hooks/useTaskStore';
+import { fireCompletionConfetti } from '@/lib/confetti';
 import styles from './OnboardingTaskBar.module.scss';
 
 export const OnboardingTaskBar = () => {
   const [expanded, setExpanded] = useState(true);
+  const [hidden, setHidden] = useState(false);
   const { completedTasks, markComplete, markIncomplete } = useTaskStore();
   const { setActivePage } = useNavStore();
   const { ecommercePlatform } = useOnboardingStore();
+  const prevCompletedCount = useRef(0);
 
   // Auto-mark platform task complete once a platform has been selected
   useEffect(() => {
@@ -29,6 +32,19 @@ export const OnboardingTaskBar = () => {
 
   const completedCount = Object.values(completedTasks).filter(Boolean).length;
   const total = ONBOARDING_TASKS.length;
+  const allDone = completedCount === total;
+
+  // Fire confetti and hide task bar when all tasks become complete
+  useEffect(() => {
+    if (allDone && prevCompletedCount.current < total) {
+      fireCompletionConfetti();
+      // Hide the task bar after the confetti finishes
+      setTimeout(() => setHidden(true), 4500);
+    }
+    prevCompletedCount.current = completedCount;
+  }, [allDone, completedCount, total]);
+
+  if (hidden) return null;
 
   // Find the next incomplete task (for "Next step" flag)
   const nextTaskId = TASK_ORDER.find(id => !completedTasks[id]);
