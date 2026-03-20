@@ -222,11 +222,6 @@ export function TemplateEditorPage({ templateId, onBack }: ITemplateEditorPagePr
     mutateRules();
   }, [mutateRules]);
 
-  if (tLoading) return <LoadingState message="Loading template..." />;
-  if (!template) return <ErrorState message="Template not found" />;
-
-  const totalTasks = template.template_tasks.filter(t => t.task_type !== 'section_header').length;
-
   const handleFocusBarNameChange = useCallback(async (name: string) => {
     await fetch(`/api/db/templates/${templateId}`, {
       method: 'PUT',
@@ -241,6 +236,11 @@ export function TemplateEditorPage({ templateId, onBack }: ITemplateEditorPagePr
       handleWidgetAdd(selectedTaskId, widgetType);
     }
   }, [selectedTaskId, handleWidgetAdd]);
+
+  if (tLoading) return <LoadingState message="Loading template..." />;
+  if (!template) return <ErrorState message="Template not found" />;
+
+  const totalTasks = template.template_tasks.filter(t => t.task_type !== 'section_header').length;
 
   return (
     <div className={styles.container}>
