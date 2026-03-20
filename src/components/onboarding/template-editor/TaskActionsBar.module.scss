@@ -1,0 +1,62 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  height: 32px;
+  align-items: center;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: row;
+
+  .actionButton {
+    &:first-child {
+      border-radius: 4px 0 0 4px;
+    }
+
+    &:last-child {
+      border-radius: 0 4px 4px 0;
+    }
+
+    &:first-child:last-child {
+      border-radius: 4px;
+    }
+
+    // Remove double borders between grouped buttons
+    & + .actionButton {
+      margin-left: -1px;
+    }
+  }
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 32px;
+  padding: 0 6px;
+  border: 1px solid var(--amino-gray-300);
+  background: transparent;
+  color: var(--amino-gray-500);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.15s, border-color 0.15s;
+
+  &:hover {
+    border-color: var(--amino-blue-400);
+    color: var(--amino-gray-700);
+    z-index: 1;
+    position: relative;
+  }
+
+  &.active {
+    color: var(--amino-blue-600);
+  }
+}
+
+.buttonLabel {
+  line-height: 1;
+}

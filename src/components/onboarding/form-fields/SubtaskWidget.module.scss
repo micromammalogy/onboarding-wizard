@@ -1,0 +1,120 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--amino-gray-700);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.subtaskRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 4px;
+  border-radius: 4px;
+  transition: background-color 0.1s;
+
+  &:hover {
+    background-color: var(--amino-gray-50);
+
+    .deleteButton {
+      opacity: 1;
+    }
+  }
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border: 1px solid var(--amino-gray-300);
+  border-radius: 2px;
+  background: var(--amino-surface-color);
+  color: var(--amino-surface-color);
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+
+  &:hover {
+    border-color: var(--amino-blue-400);
+  }
+
+  &.checked {
+    background-color: var(--amino-blue-600);
+    border-color: var(--amino-blue-600);
+    color: #fff;
+  }
+}
+
+.textInput {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--amino-gray-900);
+  outline: none;
+  padding: 4px 0;
+  line-height: 1.4;
+
+  &::placeholder {
+    color: var(--amino-gray-400);
+  }
+
+  &.completed {
+    text-decoration: line-through;
+    color: var(--amino-gray-400);
+  }
+}
+
+.deleteButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: none;
+  color: var(--amino-gray-300);
+  cursor: pointer;
+  padding: 0;
+  opacity: 0;
+  transition: opacity 0.1s, color 0.1s;
+
+  &:hover {
+    color: var(--amino-red-500);
+  }
+}
+
+.addButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border: none;
+  background: none;
+  color: var(--amino-blue-600);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.1s;
+
+  &:hover {
+    background-color: var(--amino-blue-50);
+  }
+}

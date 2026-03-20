@@ -3,38 +3,23 @@
   flex-direction: column;
   height: calc(100vh - 64px);
   overflow: hidden;
+  background: #f2f8fc;
 }
 
-.headerBar {
+.topBar {
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 12px 24px;
-  border-bottom: 1px solid var(--amino-border-subtle);
+  padding: 8px 24px;
   background: var(--amino-gray-0);
+  border-bottom: 1px solid var(--amino-border-subtle);
   flex-shrink: 0;
 }
 
-.headerInfo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.title {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--amino-gray-900);
-  margin: 0;
-}
-
-.meta {
-  font-size: 13px;
-  color: var(--amino-gray-500);
-}
-
-.headerActions {
-  margin-left: auto;
+.topBarTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--amino-gray-600);
 }
 
 .splitPane {
@@ -43,7 +28,7 @@
   overflow: hidden;
 }
 
-.emptyDetail {
+.emptyContent {
   flex: 1;
   display: flex;
   align-items: center;

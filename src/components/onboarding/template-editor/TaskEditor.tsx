@@ -8,6 +8,7 @@ import { Badge } from '@zonos/amino/components/badge/Badge';
 import { PlusIcon } from '@zonos/amino/icons/PlusIcon';
 import { RemoveCircleIcon } from '@zonos/amino/icons/RemoveCircleIcon';
 import type { ITemplateTask, ITemplateWidget, ITemplateRule, ITaskPermissionRole, IAutomationProvider, ITaskAutomation } from '@/types/database';
+import { TaskActionsBar } from './TaskActionsBar';
 import styles from './TaskEditor.module.scss';
 
 type ITaskEditorProps = {
@@ -38,6 +39,7 @@ const WIDGET_TYPE_OPTIONS = [
   { value: 'url', label: 'URL' },
   { value: 'file', label: 'File Upload' },
   { value: 'text_content', label: 'Content Block' },
+  { value: 'subtask', label: 'Subtask Checklist' },
 ];
 
 const WIDGET_TYPE_LABELS: Record<string, string> = Object.fromEntries(
@@ -110,6 +112,13 @@ export function TaskEditor({
           )}
         </div>
       </div>
+
+      {/* Task actions bar */}
+      <TaskActionsBar
+        task={task}
+        rules={taskRules}
+        onTaskUpdate={onTaskUpdate}
+      />
 
       {/* Task settings */}
       <div className={styles.settings}>

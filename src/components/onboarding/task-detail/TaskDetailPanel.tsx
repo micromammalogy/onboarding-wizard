@@ -4,6 +4,7 @@ import type { ITask, ITaskUpdate, ITemplateWidget } from '@/types/database';
 import { TaskHeader } from './TaskHeader';
 import { FormFieldRenderer } from '../form-fields/FormFieldRenderer';
 import { TaskComments } from './TaskComments';
+import { ActivityFeed } from './ActivityFeed';
 import styles from './TaskDetailPanel.module.scss';
 
 type ITaskDetailPanelProps = {
@@ -51,6 +52,8 @@ export function TaskDetailPanel({
       )}
 
       <TaskComments taskId={task.id} />
+
+      <ActivityFeed taskId={task.id} />
     </div>
   );
 }

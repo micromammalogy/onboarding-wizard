@@ -15,6 +15,7 @@ import { TextContentWidget } from './TextContentWidget';
 import { ImageWidget } from './ImageWidget';
 import { VideoWidget } from './VideoWidget';
 import { EmbedWidget } from './EmbedWidget';
+import { SubtaskWidget } from './SubtaskWidget';
 import { ConditionalWrapper } from '../ConditionalWrapper';
 
 type IFormFieldRendererProps = {
@@ -95,6 +96,9 @@ export function FormFieldRenderer({ widget, taskId }: IFormFieldRendererProps) {
       break;
     case 'send_rich_email':
       field = <SendEmailField {...fieldProps} />;
+      break;
+    case 'subtask':
+      field = <SubtaskWidget {...fieldProps} />;
       break;
     case 'hidden':
       return null;

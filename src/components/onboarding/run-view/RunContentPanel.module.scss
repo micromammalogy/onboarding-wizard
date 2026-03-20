@@ -1,0 +1,74 @@
+.panel {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  padding: 32px 24px;
+  background: transparent;
+}
+
+.card {
+  width: 100%;
+  max-width: 700px;
+  background: var(--amino-gray-0);
+  border-radius: 8px;
+  border: 1px solid var(--amino-border-subtle);
+  padding: 24px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-self: flex-start;
+}
+
+.taskName {
+  font-size: 18px;
+  font-weight: 500;
+  color: #1e2b36;
+  margin: 0;
+}
+
+.taskDescription {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--amino-gray-500);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fieldWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+// Run-view style overrides: labels 16px/500, transparent textarea bg
+.fieldWrapper :global(label) {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.fieldWrapper :global(textarea) {
+  background: transparent;
+}
+
+.auditTrail {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--amino-gray-400);
+  padding-left: 2px;
+}
+
+.emptyFields {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 16px;
+  color: var(--amino-gray-500);
+  font-size: 14px;
+}

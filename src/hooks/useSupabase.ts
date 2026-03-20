@@ -8,6 +8,15 @@ import type {
   ITaskFieldValue,
   ITemplateWidget,
   ITemplateRule,
+  IComment,
+  ICommentCreate,
+  INotification,
+  IActivityLog,
+  IStandaloneTask,
+  IStandaloneTaskCreate,
+  IStandaloneTaskUpdate,
+  IDataSet,
+  IDataSetItem,
 } from '@/types/database';
 
 // Stable empty array to prevent infinite re-render loops when SWR errors
@@ -258,4 +267,224 @@ export function useUsers(role?: string) {
   );
 
   return { users: data ?? EMPTY_ARRAY, error, isLoading };
+}
+
+// --- Comments ---
+
+export function useComments(taskId: string | null) {
+  const url = taskId ? `/api/db/comments?task_id=${taskId}` : null;
+
+  const { data, error, isLoading, mutate } = useSWR<IComment[]>(
+    url,
+    () => dbFetcher<IComment[]>(url!),
+    { revalidateOnFocus: false, shouldRetryOnError: false },
+  );
+
+  const createComment = async (comment: ICommentCreate) => {
+    const result = await dbMutate<IComment>('/api/db/comments', 'POST', comment);
+    mutate();
+    return result;
+  };
+
+  const deleteComment = async (commentId: string) => {
+    await dbMutate<void>(`/api/db/comments/${commentId}`, 'DELETE');
+    mutate();
+  };
+
+  return {
+    comments: data ?? EMPTY_ARRAY,
+    error,
+    isLoading: !error && isLoading,
+    mutate,
+    createComment,
+    deleteComment,
+  };
+}
+
+// --- Notifications ---
+
+export function useNotifications(userId: string | null) {
+  const url = userId ? `/api/db/notifications?user_id=${userId}` : null;
+
+  const { data, error, isLoading, mutate } = useSWR<INotification[]>(
+    url,
+    () => dbFetcher<INotification[]>(url!),
+    { revalidateOnFocus: false, shouldRetryOnError: false },
+  );
+
+  const markRead = async (notificationId: string) => {
+    await dbMutate<INotification>(
+      `/api/db/notifications/${notificationId}`,
+      'PUT',
+      { is_read: true },
+    );
+    mutate();
+  };
+
+  const markAllRead = async () => {
+    if (!userId) return;
+    await dbMutate<unknown>(
+      '/api/db/notifications/mark-all-read',
+      'PUT',
+      { user_id: userId },
+    );
+    mutate();
+  };
+
+  const unreadCount = (data ?? []).filter(n => !n.is_read).length;
+
+  return {
+    notifications: data ?? EMPTY_ARRAY,
+    unreadCount,
+    error,
+    isLoading: !error && isLoading,
+    mutate,
+    markRead,
+    markAllRead,
+  };
+}
+
+// --- Activity Log ---
+
+type IActivityLogParams = {
+  projectId?: string;
+  taskId?: string;
+};
+
+export function useActivityLog(params: IActivityLogParams) {
+  const { projectId, taskId } = params;
+  const search = new URLSearchParams();
+  if (projectId) search.set('project_id', projectId);
+  if (taskId) search.set('task_id', taskId);
+  const qs = search.toString();
+  const url = qs ? `/api/db/activity-log?${qs}` : null;
+
+  const { data, error, isLoading } = useSWR<IActivityLog[]>(
+    url,
+    () => dbFetcher<IActivityLog[]>(url!),
+    { revalidateOnFocus: false, shouldRetryOnError: false },
+  );
+
+  return {
+    activityLog: data ?? EMPTY_ARRAY,
+    error,
+    isLoading: !error && isLoading,
+  };
+}
+
+// --- Standalone Tasks ---
+
+export function useStandaloneTasks(userId: string | null) {
+  const url = userId ? `/api/db/standalone-tasks?user_id=${userId}` : null;
+
+  const { data, error, isLoading, mutate } = useSWR<IStandaloneTask[]>(
+    url,
+    () => dbFetcher<IStandaloneTask[]>(url!),
+    { revalidateOnFocus: false, shouldRetryOnError: false },
+  );
+
+  const createTask = async (task: IStandaloneTaskCreate) => {
+    const result = await dbMutate<IStandaloneTask>(
+      '/api/db/standalone-tasks',
+      'POST',
+      task,
+    );
+    mutate();
+    return result;
+  };
+
+  const updateTask = async (taskId: string, updates: IStandaloneTaskUpdate) => {
+    const result = await dbMutate<IStandaloneTask>(
+      `/api/db/standalone-tasks/${taskId}`,
+      'PUT',
+      updates,
+    );
+    mutate();
+    return result;
+  };
+
+  const deleteTask = async (taskId: string) => {
+    await dbMutate<void>(`/api/db/standalone-tasks/${taskId}`, 'DELETE');
+    mutate();
+  };
+
+  return {
+    standaloneTasks: data ?? EMPTY_ARRAY,
+    error,
+    isLoading: !error && isLoading,
+    mutate,
+    createTask,
+    updateTask,
+    deleteTask,
+  };
+}
+
+// --- Data Sets ---
+
+export function useDataSets() {
+  const url = '/api/db/data-sets';
+
+  const { data, error, isLoading, mutate } = useSWR<IDataSet[]>(
+    url,
+    () => dbFetcher<IDataSet[]>(url),
+    { revalidateOnFocus: false, shouldRetryOnError: false },
+  );
+
+  return {
+    dataSets: data ?? EMPTY_ARRAY,
+    error,
+    isLoading: !error && isLoading,
+    mutate,
+  };
+}
+
+type IDataSetWithItems = IDataSet & { items: IDataSetItem[] };
+
+export function useDataSet(id: string | null) {
+  const url = id ? `/api/db/data-sets/${id}` : null;
+
+  const { data, error, isLoading, mutate } = useSWR<IDataSetWithItems>(
+    url,
+    () => dbFetcher<IDataSetWithItems>(url!),
+    { revalidateOnFocus: false, shouldRetryOnError: false },
+  );
+
+  return {
+    dataSet: data ?? null,
+    error,
+    isLoading: !error && isLoading,
+    mutate,
+  };
+}
+
+// --- Search ---
+
+type ISearchResults = {
+  projects: Array<Pick<IProject, 'id' | 'merchant_name' | 'merchant_id' | 'status' | 'created_at'>>;
+  templates: Array<{ id: string; name: string; description: string | null; is_active: boolean; created_at: string }>;
+  tasks: Array<Pick<ITask, 'id' | 'title' | 'project_id' | 'status' | 'assignee_type' | 'created_at'>>;
+};
+
+export function useSearch(query: string) {
+  // Debounce: only fetch when query has 2+ characters
+  const trimmed = query.trim();
+  const url = trimmed.length >= 2 ? `/api/db/search?q=${encodeURIComponent(trimmed)}` : null;
+
+  const { data, error, isLoading } = useSWR<ISearchResults>(
+    url,
+    () => dbFetcher<ISearchResults>(url!),
+    {
+      revalidateOnFocus: false,
+      shouldRetryOnError: false,
+      dedupingInterval: 300,
+    },
+  );
+
+  const emptyResults: ISearchResults = { projects: [], templates: [], tasks: [] };
+
+  return {
+    results: data ?? emptyResults,
+    error,
+    isLoading: !error && isLoading,
+  };
 }

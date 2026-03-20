@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-type IOnboardingView = 'my-work' | 'project-list' | 'project-detail' | 'template-list' | 'reports' | 'data-sets';
+type IOnboardingView = 'my-work' | 'project-list' | 'project-detail' | 'template-list' | 'reports' | 'data-sets' | 'run-view';
 
 type IOnboardingNavState = {
   view: IOnboardingView;
@@ -9,6 +9,7 @@ type IOnboardingNavState = {
   setView: (view: IOnboardingView) => void;
   openMyWork: () => void;
   openProject: (projectId: string) => void;
+  openRunView: (projectId: string) => void;
   selectTask: (taskId: string | null) => void;
   backToList: () => void;
   openTemplates: () => void;
@@ -24,6 +25,8 @@ export const useOnboardingNavStore = create<IOnboardingNavState>(set => ({
   openMyWork: () => set({ view: 'my-work', selectedProjectId: null, selectedTaskId: null }),
   openProject: projectId =>
     set({ view: 'project-detail', selectedProjectId: projectId, selectedTaskId: null }),
+  openRunView: projectId =>
+    set({ view: 'run-view', selectedProjectId: projectId, selectedTaskId: null }),
   selectTask: taskId => set({ selectedTaskId: taskId }),
   backToList: () => set({ view: 'project-list', selectedProjectId: null, selectedTaskId: null }),
   openTemplates: () => set({ view: 'template-list', selectedProjectId: null, selectedTaskId: null }),

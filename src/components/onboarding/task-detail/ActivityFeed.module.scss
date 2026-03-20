@@ -1,0 +1,85 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--amino-border-subtle);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sectionTitle {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--amino-gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.entryCount {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--amino-gray-400);
+}
+
+.emptyState {
+  font-size: 12px;
+  color: var(--amino-gray-400);
+  padding: 8px 0;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.entry {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.avatar {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 1px;
+}
+
+.entryContent {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px;
+  line-height: 1.4;
+}
+
+.actorName {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--amino-gray-700);
+}
+
+.actionText {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--amino-gray-500);
+}
+
+.timestamp {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--amino-gray-400);
+}

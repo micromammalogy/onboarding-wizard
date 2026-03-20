@@ -7,9 +7,14 @@ import { ProjectDetailPage } from '@/components/onboarding/ProjectDetailPage';
 import { TemplateListPage } from '@/components/onboarding/TemplateListPage';
 import { ReportsPage } from '@/components/onboarding/ReportsPage';
 import { DataSetsPage } from '@/components/onboarding/DataSetsPage';
+import { RunView } from '@/components/onboarding/run-view/RunView';
 
 export default function OnboardingPage() {
   const { view, selectedProjectId } = useOnboardingNavStore();
+
+  if (view === 'run-view' && selectedProjectId) {
+    return <RunView projectId={selectedProjectId} />;
+  }
 
   if (view === 'project-detail' && selectedProjectId) {
     return <ProjectDetailPage projectId={selectedProjectId} />;

@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useMemo } from 'react';
-import { Badge } from '@zonos/amino/components/badge/Badge';
 import { Button } from '@zonos/amino/components/button/Button';
 import { ArrowLeftIcon } from '@zonos/amino/icons/ArrowLeftIcon';
 import { useProject, useTasks, useFieldValuesData, useAllTemplateWidgets, useTemplateRules } from '@/hooks/useSupabase';
@@ -10,56 +9,36 @@ import { useFieldValues } from '@/hooks/useFieldValues';
 import { useTaskDueDates } from '@/hooks/useTaskDueDates';
 import { LoadingState } from '@/components/ui/LoadingState';
 import { ErrorState } from '@/components/ui/ErrorState';
-import { TaskListPanel } from '@/components/onboarding/task-list/TaskListPanel';
-import { TaskDetailPanel } from '@/components/onboarding/task-detail/TaskDetailPanel';
+import { RunProgressBar } from '@/components/onboarding/RunProgressBar';
+import { RunTaskList } from './RunTaskList';
+import { RunContentPanel } from './RunContentPanel';
 import { toResolvedConditionalRule, toResolvedDueDateRule } from '@/lib/rules/types';
-import type { IProjectStatus } from '@/types/database';
 import type { IResolvedConditionalRule, IResolvedDueDateRule, IHiddenByDefaultMap } from '@/lib/rules/types';
-import styles from './ProjectDetailPage.module.scss';
+import styles from './RunView.module.scss';
 
-type IProjectDetailPageProps = {
+type IRunViewProps = {
   projectId: string;
 };
 
-const STATUS_LABELS: Record<IProjectStatus, string> = {
-  not_started: 'Not started',
-  in_progress: 'In progress',
-  on_hold: 'On hold',
-  completed: 'Completed',
-  canceled: 'Canceled',
-};
+const COMPLETE_STATUSES = ['complete', 'ob_verified', 'merchant_complete'];
 
-type BadgeColor = 'blue' | 'cyan' | 'gray' | 'green' | 'orange' | 'purple' | 'red';
-
-const STATUS_COLORS: Record<IProjectStatus, BadgeColor> = {
-  not_started: 'gray',
-  in_progress: 'blue',
-  on_hold: 'orange',
-  completed: 'green',
-  canceled: 'red',
-};
-
-export function ProjectDetailPage({ projectId }: IProjectDetailPageProps) {
+export function RunView({ projectId }: IRunViewProps) {
   const { project, isLoading: projectLoading, error: projectError, mutate: mutateProject } = useProject(projectId);
-  const { tasks, isLoading: tasksLoading, error: tasksError, mutate: mutateTasks, updateTask, createTask } = useTasks(projectId);
-
-  // These hooks gracefully return empty arrays if the tables don't exist yet
+  const { tasks, isLoading: tasksLoading, error: tasksError, mutate: mutateTasks, updateTask } = useTasks(projectId);
   const { fieldValues, isLoading: fvLoading } = useFieldValuesData(projectId);
   const { widgets } = useAllTemplateWidgets(project?.template_id ?? null);
   const { rules: rawRules, isLoading: rulesLoading } = useTemplateRules(project?.template_id ?? null);
 
   const selectedTaskId = useOnboardingNavStore(s => s.selectedTaskId);
   const selectTask = useOnboardingNavStore(s => s.selectTask);
-  const backToList = useOnboardingNavStore(s => s.backToList);
-  const openRunView = useOnboardingNavStore(s => s.openRunView);
+  const openProject = useOnboardingNavStore(s => s.openProject);
 
   const initFieldValues = useFieldValues(s => s.init);
   const resetFieldValues = useFieldValues(s => s.reset);
   const isVisible = useFieldValues(s => s.isVisible);
 
-  // Resolve rules
+  // Resolve rules (same logic as ProjectDetailPage)
   const { conditionalRules, dueDateRules } = useMemo(() => {
-    // Build both directions: key → ps_group_id AND ps_group_id → key
     const widgetKeyToId = new Map<string, string>();
     const psGroupIdToKey = new Map<string, string>();
     for (const w of widgets) {
@@ -70,7 +49,6 @@ export function ProjectDetailPage({ projectId }: IProjectDetailPageProps) {
     }
 
     const taskIdMap = new Map<string, string>();
-
     const conditional: IResolvedConditionalRule[] = [];
     const dueDate: IResolvedDueDateRule[] = [];
 
@@ -87,7 +65,7 @@ export function ProjectDetailPage({ projectId }: IProjectDetailPageProps) {
     return { conditionalRules: conditional, dueDateRules: dueDate };
   }, [rawRules, widgets]);
 
-  // Build hidden_by_default map from widgets and tasks
+  // Build hidden_by_default map
   const hiddenByDefault: IHiddenByDefaultMap = useMemo(() => {
     const map: IHiddenByDefaultMap = new Map();
     for (const w of widgets) {
@@ -97,7 +75,6 @@ export function ProjectDetailPage({ projectId }: IProjectDetailPageProps) {
     }
     for (const t of tasks) {
       if (t.template_task_id) {
-        // is_visible may not exist on older rows
         const visible = 'is_visible' in t ? t.is_visible : true;
         if (!visible) {
           map.set(t.template_task_id, true);
@@ -107,7 +84,7 @@ export function ProjectDetailPage({ projectId }: IProjectDetailPageProps) {
     return map;
   }, [widgets, tasks]);
 
-  // Initialize field values store when data loads (non-blocking)
+  // Initialize field values store
   useEffect(() => {
     if (!fvLoading && !rulesLoading && projectId) {
       initFieldValues({
@@ -117,11 +94,10 @@ export function ProjectDetailPage({ projectId }: IProjectDetailPageProps) {
         hiddenByDefault,
       });
     }
-
     return () => resetFieldValues();
   }, [projectId, fvLoading, rulesLoading, fieldValues, conditionalRules, hiddenByDefault, initFieldValues, resetFieldValues]);
 
-  // Auto-select first task when tasks load
+  // Auto-select first task
   useEffect(() => {
     if (!selectedTaskId && tasks.length > 0) {
       const firstVisible = tasks.find(t => isVisible(t.template_task_id ?? t.id));
@@ -131,11 +107,10 @@ export function ProjectDetailPage({ projectId }: IProjectDetailPageProps) {
     }
   }, [tasks, selectedTaskId, selectTask, isVisible]);
 
-  // Compute due dates (returns Map<templateTaskId, Date>)
+  // Compute due dates
   const projectStartDate = project?.start_date ? new Date(project.start_date) : null;
   const rawDueDates = useTaskDueDates(dueDateRules, projectStartDate);
 
-  // Remap template task IDs → project task IDs so lookups work with task.id
   const computedDueDates = useMemo(() => {
     if (rawDueDates.size === 0) return rawDueDates;
     const mapped = new Map<string, Date>();
@@ -148,31 +123,23 @@ export function ProjectDetailPage({ projectId }: IProjectDetailPageProps) {
     return mapped;
   }, [rawDueDates, tasks]);
 
-  // Compute badge data: which template tasks have email widgets, conditional rules, due date rules
+  // Task badge data
   const taskBadges = useMemo(() => {
     const emailTaskIds = new Set<string>();
     const conditionalTaskIds = new Set<string>();
     const dueDateTaskIds = new Set<string>();
 
-    // Email tasks: template tasks that have send_rich_email widgets
     for (const w of widgets) {
       if (w.widget_type === 'send_rich_email') {
         emailTaskIds.add(w.template_task_id);
       }
     }
-
-    // Conditional tasks: tasks targeted by conditional rules
     for (const rule of rawRules) {
       if (rule.rule_type === 'conditional') {
         for (const tid of rule.target_task_ids) {
           conditionalTaskIds.add(tid);
         }
-      }
-    }
-
-    // Due date tasks: tasks targeted by due date rules
-    for (const rule of rawRules) {
-      if (rule.rule_type === 'due_date') {
+      } else if (rule.rule_type === 'due_date') {
         for (const tid of rule.target_task_ids) {
           dueDateTaskIds.add(tid);
         }
@@ -182,11 +149,17 @@ export function ProjectDetailPage({ projectId }: IProjectDetailPageProps) {
     return { emailTaskIds, conditionalTaskIds, dueDateTaskIds };
   }, [widgets, rawRules]);
 
+  // Progress
+  const totalCompleted = tasks.filter(t => {
+    const vid = t.template_task_id ?? t.id;
+    return isVisible(vid) && COMPLETE_STATUSES.includes(t.status);
+  }).length;
+  const totalVisible = tasks.filter(t => isVisible(t.template_task_id ?? t.id)).length;
+
   const selectedTask = tasks.find(t => t.id === selectedTaskId) ?? null;
 
-  // Only block on core data (project + tasks), not the new Phase 2 tables
   if (projectLoading || tasksLoading) {
-    return <LoadingState message="Loading project..." />;
+    return <LoadingState message="Loading run..." />;
   }
 
   if (projectError) {
@@ -203,59 +176,47 @@ export function ProjectDetailPage({ projectId }: IProjectDetailPageProps) {
 
   return (
     <div className={styles.container}>
-      {/* Project header bar */}
-      <div className={styles.headerBar}>
+      {/* Back to editor bar */}
+      <div className={styles.topBar}>
         <Button
           size="sm"
           variant="subtle"
           icon={<ArrowLeftIcon size={16} />}
-          onClick={backToList}
+          onClick={() => openProject(projectId)}
         >
-          Projects
+          Back to editor
         </Button>
-        <div className={styles.headerInfo}>
-          <h1 className={styles.title}>{project.merchant_name}</h1>
-          <Badge color={STATUS_COLORS[project.status]}>
-            {STATUS_LABELS[project.status]}
-          </Badge>
-          <span className={styles.meta}>#{project.merchant_id}</span>
-          {project.platform && (
-            <span className={styles.meta}>{project.platform}</span>
-          )}
-        </div>
-        <div className={styles.headerActions}>
-          <Button
-            size="sm"
-            variant="subtle"
-            onClick={() => openRunView(projectId)}
-          >
-            View as Run
-          </Button>
-        </div>
+        <span className={styles.topBarTitle}>{project.merchant_name}</span>
       </div>
+
+      {/* Progress bar */}
+      <RunProgressBar
+        completedTasks={totalCompleted}
+        totalTasks={totalVisible}
+      />
 
       {/* Split pane */}
       <div className={styles.splitPane}>
-        <TaskListPanel
+        <RunTaskList
           tasks={tasks}
           selectedTaskId={selectedTaskId}
           dueDates={computedDueDates}
           projectId={projectId}
+          projectName={project.merchant_name}
           taskBadges={taskBadges}
           onUpdate={updateTask}
-          onCreate={createTask}
         />
 
         {selectedTask ? (
-          <TaskDetailPanel
+          <RunContentPanel
             task={selectedTask}
             widgets={widgets}
             computedDueDate={computedDueDates.get(selectedTask.id) ?? null}
             onUpdate={updateTask}
           />
         ) : (
-          <div className={styles.emptyDetail}>
-            Select a task to view its details
+          <div className={styles.emptyContent}>
+            Select a task to begin
           </div>
         )}
       </div>
