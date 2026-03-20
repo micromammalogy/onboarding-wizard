@@ -2,7 +2,7 @@
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 100;
+  z-index: 200;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -209,33 +209,34 @@
   }
 }
 
-// Search button in header
+// Search button in header — Process Street style
 .searchButton {
   display: flex;
   align-items: center;
   gap: 8px;
   width: 180px;
-  height: 32px;
-  padding: 0 10px;
-  background: var(--amino-gray-0);
-  border: 1px solid var(--amino-border-subtle);
-  border-radius: 8px;
+  height: 40px;
+  padding: 0 12px;
+  background: #ffffff;
+  border: 2px solid #dee4e8;
+  border-radius: 4px;
   cursor: pointer;
-  font-family: inherit;
-  font-size: 13px;
-  color: var(--amino-gray-400);
+  font-family: Inter, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', system-ui, sans-serif;
+  font-size: 14px;
+  color: #8e9eac;
   transition:
     border-color 0.15s,
     box-shadow 0.15s;
 
   &:hover {
-    border-color: var(--amino-gray-300);
+    border-color: #c2cdd6;
   }
 }
 
 .searchButtonIcon {
   flex-shrink: 0;
-  color: var(--amino-gray-400);
+  color: #8e9eac;
 }
 
 .searchButtonText {
@@ -247,8 +248,8 @@
   flex-shrink: 0;
   font-size: 11px;
   font-weight: 500;
-  padding: 1px 5px;
-  background: var(--amino-gray-100);
+  padding: 2px 6px;
+  background: #eef0f2;
   border-radius: 4px;
-  color: var(--amino-gray-500);
+  color: #5f7482;
 }

@@ -1,42 +1,33 @@
 'use client';
 
-import { Layout } from '@zonos/amino/components/layout/Layout';
 import { AuthGate } from '@/components/auth/AuthGate';
-import { OnboardingSidebar } from '@/components/onboarding/OnboardingSidebar';
-import { OnboardingHeader } from '@/components/onboarding/OnboardingHeader';
+import { TopNav } from '@/components/onboarding/TopNav';
 import { GlobalSearch } from '@/components/onboarding/GlobalSearch';
+import { useOnboardingNavStore } from '@/hooks/useOnboardingNavStore';
 import styles from './Layout.module.scss';
+
+/** Views that need full-width content with no padding */
+const FULL_WIDTH_VIEWS = new Set(['run-view']);
 
 export default function OnboardingLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const view = useOnboardingNavStore(s => s.view);
+  const noPadding = FULL_WIDTH_VIEWS.has(view);
+
   return (
     <AuthGate>
       <GlobalSearch />
-      <Layout
-        noPaddingContent
-        sidebar={<OnboardingSidebar />}
-        content={
-          <div className={styles.content}>
-            <div className={styles.headerNav}>
-              <OnboardingHeader />
-            </div>
-            <div className={styles.bodyWrapper}>
-              <div className={styles.pageWrapper}>{children}</div>
-            </div>
-          </div>
-        }
-        footer={null}
-        style={
-          {
-            '--dashboard-layout-width': '1440px',
-            '--dashboard-layout-min-width': '700px',
-            '--dashboard-layout-padding': '32px',
-          } as React.CSSProperties
-        }
-      />
+      <div className={styles.app}>
+        <TopNav />
+        <main
+          className={`${styles.pageContent} ${noPadding ? styles.pageContentNoPadding : ''}`}
+        >
+          {children}
+        </main>
+      </div>
     </AuthGate>
   );
 }

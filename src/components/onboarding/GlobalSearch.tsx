@@ -478,7 +478,7 @@ export function SearchButton() {
       onClick={() => setOpen(true)}
       type="button"
     >
-      <SearchIcon size={14} className={styles.searchButtonIcon} />
+      <SearchIcon size={16} className={styles.searchButtonIcon} />
       <span className={styles.searchButtonText}>Search</span>
       <span className={styles.searchButtonShortcut}>⌘K</span>
     </button>

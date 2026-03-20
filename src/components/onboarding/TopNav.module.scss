@@ -1,0 +1,241 @@
+/* =====================================================
+   Process Street — Top Navigation Bar
+   62px fixed, white bg, no border/shadow
+   ===================================================== */
+
+.topNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 62px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 100;
+  font-family: Inter, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', system-ui, sans-serif;
+}
+
+/* --- Left section: org logo --- */
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.orgLogo {
+  width: 36px;
+  height: 32px;
+  border-radius: 6px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+/* --- Center section: nav links --- */
+
+.centerSection {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: none;
+  background: transparent;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #434f5c;
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s;
+  white-space: nowrap;
+  font-family: inherit;
+
+  &:hover {
+    color: #151d23;
+    background: #f2f8fc;
+  }
+}
+
+.navLinkActive {
+  color: #0079ca;
+  background: #ebf4fb;
+
+  &:hover {
+    color: #0079ca;
+    background: #ebf4fb;
+  }
+}
+
+.navLinkIcon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* --- Right section: search, new, notifications, user --- */
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.newButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 40px;
+  padding: 0 16px;
+  background: #0079ca;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: inherit;
+  transition: background 0.15s;
+
+  &:hover {
+    background: #006cb5;
+  }
+}
+
+/* --- User avatar + dropdown --- */
+
+.userMenuWrapper {
+  position: relative;
+}
+
+.userAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.userDropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 260px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow:
+    rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  z-index: 200;
+  overflow: hidden;
+}
+
+.userDropdownHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+}
+
+.userDropdownAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.userDropdownInfo {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.userDropdownName {
+  font-size: 14px;
+  font-weight: 500;
+  color: #151d23;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.userDropdownOrg {
+  font-size: 12px;
+  color: #8e9eac;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.userDropdownDivider {
+  height: 1px;
+  background: #dee4e8;
+  margin: 0 16px;
+}
+
+.userDropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 16px;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 400;
+  color: #434f5c;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+  transition: background 0.1s;
+
+  &:hover {
+    background: #f2f8fc;
+  }
+
+  &:last-child {
+    color: #e83857;
+
+    &:hover {
+      background: #fef2f2;
+    }
+  }
+}
