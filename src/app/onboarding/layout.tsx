@@ -4,6 +4,7 @@ import { Layout } from '@zonos/amino/components/layout/Layout';
 import { AuthGate } from '@/components/auth/AuthGate';
 import { OnboardingSidebar } from '@/components/onboarding/OnboardingSidebar';
 import { OnboardingHeader } from '@/components/onboarding/OnboardingHeader';
+import { GlobalSearch } from '@/components/onboarding/GlobalSearch';
 import styles from './Layout.module.scss';
 
 export default function OnboardingLayout({
@@ -13,6 +14,7 @@ export default function OnboardingLayout({
 }) {
   return (
     <AuthGate>
+      <GlobalSearch />
       <Layout
         noPaddingContent
         sidebar={<OnboardingSidebar />}

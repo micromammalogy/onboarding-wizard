@@ -211,6 +211,41 @@ export function useTemplateRules(templateId: string | null) {
   return { rules: data ?? EMPTY_ARRAY, error, isLoading: !error && isLoading };
 }
 
+// --- All User Tasks (My Work) ---
+
+type IMyWorkTask = ITask & {
+  assignee: Pick<IUser, 'id' | 'name' | 'email'> | null;
+  project: Pick<IProject, 'id' | 'merchant_name' | 'merchant_id' | 'template_id' | 'status'> | null;
+};
+
+export function useAllUserTasks(params: { assignee_id?: string; skip?: boolean } = {}) {
+  const { skip = false, assignee_id } = params;
+  const search = new URLSearchParams();
+  search.set('all', 'true');
+  if (assignee_id) search.set('assignee_id', assignee_id);
+  const url = `/api/db/tasks?${search.toString()}`;
+
+  const { data, error, isLoading, mutate } = useSWR<IMyWorkTask[]>(
+    skip ? null : url,
+    () => dbFetcher<IMyWorkTask[]>(url),
+    { revalidateOnFocus: false },
+  );
+
+  const updateTask = async (taskId: string, updates: ITaskUpdate) => {
+    const result = await dbMutate<ITask>(`/api/db/tasks/${taskId}`, 'PUT', updates);
+    mutate();
+    return result;
+  };
+
+  return {
+    tasks: data ?? EMPTY_ARRAY,
+    error,
+    isLoading,
+    mutate,
+    updateTask,
+  };
+}
+
 // --- Users ---
 
 export function useUsers(role?: string) {

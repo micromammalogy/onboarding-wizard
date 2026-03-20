@@ -3,7 +3,9 @@
 import { DashboardIcon } from '@zonos/amino/icons/DashboardIcon';
 import { BagIcon } from '@zonos/amino/icons/BagIcon';
 import { ChartIcon } from '@zonos/amino/icons/ChartIcon';
+import { CheckmarkIcon } from '@zonos/amino/icons/CheckmarkIcon';
 import { FileIcon } from '@zonos/amino/icons/FileIcon';
+import { FolderListIcon } from '@zonos/amino/icons/FolderListIcon';
 import { ChevronLeftIcon } from '@zonos/amino/icons/ChevronLeftIcon';
 import { LogoutIcon } from '@zonos/amino/icons/LogoutIcon';
 import { useOnboardingNavStore } from '@/hooks/useOnboardingNavStore';
@@ -17,7 +19,7 @@ const activeStyle: React.CSSProperties = {
 };
 
 export function OnboardingSidebar() {
-  const { view, backToList, openTemplates, openReports } = useOnboardingNavStore();
+  const { view, openMyWork, backToList, openTemplates, openReports, openDataSets } = useOnboardingNavStore();
   const { organizationName, logout } = useAuthStore();
 
   const userInitial = (organizationName || '?').charAt(0).toUpperCase();
@@ -36,6 +38,15 @@ export function OnboardingSidebar() {
       <nav className={styles.navSection}>
         <div className={styles.navGroup}>
           <div className={styles.navGroupHeader}>Onboarding</div>
+          <div className={styles.navItemWrapper} onClick={openMyWork}>
+            <div
+              className={styles.navItem}
+              style={view === 'my-work' ? activeStyle : undefined}
+            >
+              <CheckmarkIcon size={16} />
+              My Work
+            </div>
+          </div>
           <div className={styles.navItemWrapper} onClick={backToList}>
             <div
               className={styles.navItem}
@@ -61,6 +72,15 @@ export function OnboardingSidebar() {
             >
               <ChartIcon size={16} />
               Reports
+            </div>
+          </div>
+          <div className={styles.navItemWrapper} onClick={openDataSets}>
+            <div
+              className={styles.navItem}
+              style={view === 'data-sets' ? activeStyle : undefined}
+            >
+              <FolderListIcon size={16} />
+              Data Sets
             </div>
           </div>
         </div>

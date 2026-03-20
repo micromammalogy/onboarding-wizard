@@ -6,7 +6,6 @@ import { Button } from '@zonos/amino/components/button/Button';
 import { Input } from '@zonos/amino/components/input/Input';
 import { Badge } from '@zonos/amino/components/badge/Badge';
 import { Select } from '@zonos/amino/components/select/Select';
-import { ChevronLeftIcon } from '@zonos/amino/icons/ChevronLeftIcon';
 import { PlusIcon } from '@zonos/amino/icons/PlusIcon';
 import { RemoveCircleIcon } from '@zonos/amino/icons/RemoveCircleIcon';
 import { ArrowUpIcon } from '@zonos/amino/icons/ArrowUpIcon';
@@ -17,6 +16,8 @@ import { ErrorState } from '@/components/ui/ErrorState';
 import { TaskEditor } from './TaskEditor';
 import { ConditionalRuleEditor } from './ConditionalRuleEditor';
 import { DueDateRuleViewer } from './DueDateRuleViewer';
+import { FocusBar } from './FocusBar';
+import { InsertWidgetDrawer } from './InsertWidgetDrawer';
 import styles from './TemplateEditorPage.module.scss';
 
 type ITemplateWithTasks = ITemplate & {
@@ -53,6 +54,7 @@ export function TemplateEditorPage({ templateId, onBack }: ITemplateEditorPagePr
   const [activeTab, setActiveTab] = useState<'tasks' | 'rules' | 'due-dates' | 'triggers'>('tasks');
   const [editingName, setEditingName] = useState(false);
   const [nameValue, setNameValue] = useState('');
+  const [drawerOpen, setDrawerOpen] = useState(true);
 
   const sections = useMemo(() => {
     if (!template?.template_tasks) return [];
@@ -225,49 +227,36 @@ export function TemplateEditorPage({ templateId, onBack }: ITemplateEditorPagePr
 
   const totalTasks = template.template_tasks.filter(t => t.task_type !== 'section_header').length;
 
+  const handleFocusBarNameChange = useCallback(async (name: string) => {
+    await fetch(`/api/db/templates/${templateId}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name }),
+    });
+    mutateTemplate();
+  }, [templateId, mutateTemplate]);
+
+  const handleDrawerWidgetAdd = useCallback((widgetType: string) => {
+    if (selectedTaskId) {
+      handleWidgetAdd(selectedTaskId, widgetType);
+    }
+  }, [selectedTaskId, handleWidgetAdd]);
+
   return (
     <div className={styles.container}>
-      {/* Top bar */}
-      <div className={styles.topBar}>
-        <button className={styles.backButton} onClick={onBack}>
-          <ChevronLeftIcon size={14} />
-          Back to templates
-        </button>
-        <div className={styles.topBarActions}>
-          <Badge color="blue">{totalTasks} tasks</Badge>
-          <Badge color="purple">{conditionalRules.length} rules</Badge>
-          <Badge color="cyan">{dueDateRules.length} due dates</Badge>
-          <Badge color="green">{widgets?.length ?? 0} widgets</Badge>
-        </div>
-      </div>
-
-      {/* Template name */}
-      <div className={styles.templateHeader}>
-        {editingName ? (
-          <div className={styles.nameEdit}>
-            <Input
-              value={nameValue}
-              onChange={e => setNameValue(e.target.value)}
-              size="lg"
-              autoFocus
-              onKeyDown={e => {
-                if (e.key === 'Enter') handleUpdateTemplateName();
-                if (e.key === 'Escape') setEditingName(false);
-              }}
-            />
-            <Button size="sm" onClick={handleUpdateTemplateName}>Save</Button>
-            <Button size="sm" variant="subtle" onClick={() => setEditingName(false)}>Cancel</Button>
-          </div>
-        ) : (
-          <h1
-            className={styles.templateName}
-            onClick={() => { setEditingName(true); setNameValue(template.name); }}
-            title="Click to edit"
-          >
-            {template.name}
-          </h1>
-        )}
-      </div>
+      {/* FocusBar replaces old topBar + tabs */}
+      <FocusBar
+        templateName={template.name}
+        activeTab={activeTab}
+        onTabChange={setActiveTab}
+        onBack={onBack}
+        onNameChange={handleFocusBarNameChange}
+        stats={{
+          taskCount: totalTasks,
+          ruleCount: conditionalRules.length,
+          widgetCount: widgets?.length ?? 0,
+        }}
+      />
 
       {/* Cover image */}
       <div className={styles.coverImageSection}>
@@ -301,34 +290,6 @@ export function TemplateEditorPage({ templateId, onBack }: ITemplateEditorPagePr
             }}
           />
         )}
-      </div>
-
-      {/* Tabs */}
-      <div className={styles.tabs}>
-        <button
-          className={`${styles.tab} ${activeTab === 'tasks' ? styles.tabActive : ''}`}
-          onClick={() => setActiveTab('tasks')}
-        >
-          Tasks & Widgets
-        </button>
-        <button
-          className={`${styles.tab} ${activeTab === 'rules' ? styles.tabActive : ''}`}
-          onClick={() => setActiveTab('rules')}
-        >
-          Conditional Rules ({conditionalRules.length})
-        </button>
-        <button
-          className={`${styles.tab} ${activeTab === 'due-dates' ? styles.tabActive : ''}`}
-          onClick={() => setActiveTab('due-dates')}
-        >
-          Due Dates ({dueDateRules.length})
-        </button>
-        <button
-          className={`${styles.tab} ${activeTab === 'triggers' ? styles.tabActive : ''}`}
-          onClick={() => setActiveTab('triggers')}
-        >
-          Triggers
-        </button>
       </div>
 
       {activeTab === 'tasks' && (
@@ -405,6 +366,13 @@ export function TemplateEditorPage({ templateId, onBack }: ITemplateEditorPagePr
               </div>
             )}
           </div>
+
+          {/* Insert Widget Drawer */}
+          <InsertWidgetDrawer
+            isOpen={drawerOpen}
+            onToggle={() => setDrawerOpen(!drawerOpen)}
+            onWidgetAdd={handleDrawerWidgetAdd}
+          />
         </div>
       )}
 

@@ -5,89 +5,9 @@
   height: 100%;
 }
 
-.topBar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--amino-gray-200);
-}
-
-.backButton {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  border: none;
-  background: none;
-  color: var(--amino-gray-600);
-  font-size: 13px;
-  cursor: pointer;
-
-  &:hover {
-    color: var(--amino-blue-600);
-  }
-}
-
-.topBarActions {
-  display: flex;
-  gap: 8px;
-}
-
-.templateHeader {
-  padding: 16px 0;
-}
-
-.templateName {
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--amino-gray-900);
-  cursor: pointer;
-
-  &:hover {
-    color: var(--amino-blue-700);
-  }
-}
-
-.nameEdit {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-
-.tabs {
-  display: flex;
-  gap: 0;
-  border-bottom: 2px solid var(--amino-gray-200);
-  margin-bottom: 16px;
-}
-
-.tab {
-  padding: 10px 20px;
-  font-size: 14px;
-  font-weight: 500;
-  border: none;
-  background: none;
-  color: var(--amino-gray-500);
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -2px;
-  transition: all 0.15s;
-
-  &:hover {
-    color: var(--amino-gray-700);
-  }
-}
-
-.tabActive {
-  color: var(--amino-blue-700);
-  border-bottom-color: var(--amino-blue-600);
-  font-weight: 600;
-}
-
 .editorLayout {
   display: grid;
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: 320px 1fr auto;
   gap: 0;
   flex: 1;
   min-height: 0;
@@ -210,6 +130,7 @@
 
 .coverImageSection {
   margin-bottom: 8px;
+  padding: 12px 0;
 }
 
 .coverImagePreview {

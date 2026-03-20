@@ -1,10 +1,12 @@
 'use client';
 
 import { useOnboardingNavStore } from '@/hooks/useOnboardingNavStore';
+import { MyWorkPage } from '@/components/onboarding/MyWorkPage';
 import { ProjectListPage } from '@/components/onboarding/ProjectListPage';
 import { ProjectDetailPage } from '@/components/onboarding/ProjectDetailPage';
 import { TemplateListPage } from '@/components/onboarding/TemplateListPage';
 import { ReportsPage } from '@/components/onboarding/ReportsPage';
+import { DataSetsPage } from '@/components/onboarding/DataSetsPage';
 
 export default function OnboardingPage() {
   const { view, selectedProjectId } = useOnboardingNavStore();
@@ -19,6 +21,14 @@ export default function OnboardingPage() {
 
   if (view === 'reports') {
     return <ReportsPage />;
+  }
+
+  if (view === 'data-sets') {
+    return <DataSetsPage />;
+  }
+
+  if (view === 'my-work') {
+    return <MyWorkPage />;
   }
 
   return <ProjectListPage />;

@@ -1,0 +1,258 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.pageHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--amino-gray-900);
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--amino-gray-500);
+  margin: 0;
+}
+
+// Card list
+.cardList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card {
+  background: var(--amino-gray-0);
+  border: 1px solid var(--amino-border-subtle);
+  border-radius: 12px;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: border-color 0.15s;
+
+  &:hover {
+    border-color: var(--amino-blue-300);
+  }
+}
+
+.cardActive {
+  border-color: var(--amino-blue-500);
+  box-shadow: 0 0 0 1px var(--amino-blue-500);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cardTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--amino-gray-900);
+}
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cardDesc {
+  font-size: 13px;
+  color: var(--amino-gray-500);
+  margin: 4px 0 0;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--amino-gray-400);
+}
+
+// Detail panel
+.detail {
+  background: var(--amino-gray-0);
+  border: 1px solid var(--amino-border-subtle);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.detailHeader {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--amino-border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detailTitleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.detailTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--amino-gray-900);
+  margin: 0;
+}
+
+.detailDesc {
+  font-size: 14px;
+  color: var(--amino-gray-600);
+  margin: 0;
+}
+
+.detailActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+// Items list
+.itemsSection {
+  padding: 0;
+}
+
+.itemsSectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background: var(--amino-gray-50);
+  border-bottom: 1px solid var(--amino-border-subtle);
+}
+
+.itemsSectionTitle {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--amino-gray-600);
+}
+
+.itemsSectionCount {
+  font-size: 12px;
+  color: var(--amino-gray-500);
+}
+
+.itemsList {
+  padding: 0;
+}
+
+.itemRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 24px;
+  border-bottom: 1px solid var(--amino-border-subtle);
+  font-size: 14px;
+  color: var(--amino-gray-800);
+
+  &:nth-child(even) {
+    background: var(--amino-gray-50);
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.itemRowActions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.15s;
+
+  .itemRow:hover & {
+    opacity: 1;
+  }
+}
+
+.moveButton {
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 2px;
+  cursor: pointer;
+  color: var(--amino-gray-400);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    color: var(--amino-gray-700);
+    background: var(--amino-gray-100);
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+}
+
+.removeButton {
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 2px;
+  cursor: pointer;
+  color: var(--amino-gray-400);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    color: var(--amino-red-600);
+    background: var(--amino-red-50);
+  }
+}
+
+// Add item row
+.addItemRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-top: 1px solid var(--amino-border-subtle);
+}
+
+.addItemInput {
+  flex: 1;
+}
+
+// Edit fields
+.editFields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+// Empty state
+.emptyState {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--amino-gray-400);
+  font-size: 14px;
+}

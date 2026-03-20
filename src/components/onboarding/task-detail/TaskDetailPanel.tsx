@@ -3,6 +3,7 @@
 import type { ITask, ITaskUpdate, ITemplateWidget } from '@/types/database';
 import { TaskHeader } from './TaskHeader';
 import { FormFieldRenderer } from '../form-fields/FormFieldRenderer';
+import { TaskComments } from './TaskComments';
 import styles from './TaskDetailPanel.module.scss';
 
 type ITaskDetailPanelProps = {
@@ -48,6 +49,8 @@ export function TaskDetailPanel({
           No form fields for this task.
         </div>
       )}
+
+      <TaskComments taskId={task.id} />
     </div>
   );
 }

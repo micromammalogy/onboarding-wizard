@@ -6,6 +6,8 @@ import { ChevronRightIcon } from '@zonos/amino/icons/ChevronRightIcon';
 import { useOnboardingNavStore } from '@/hooks/useOnboardingNavStore';
 import { useProject } from '@/hooks/useSupabase';
 import { CreateProjectDialog } from './CreateProjectDialog';
+import { SearchButton } from './GlobalSearch';
+import { NotificationCenter } from './NotificationCenter';
 import styles from '../../app/onboarding/Layout.module.scss';
 
 export function OnboardingHeader() {
@@ -41,6 +43,8 @@ export function OnboardingHeader() {
         )}
       </div>
       <div className={styles.headerRight}>
+        <SearchButton />
+        <NotificationCenter />
         {view === 'project-list' && (
           <Button
             size="sm"

@@ -1,0 +1,127 @@
+.toggleContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 16px;
+  width: 48px;
+  flex-shrink: 0;
+}
+
+.toggleButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 9999px;
+  background: var(--amino-gray-900);
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s;
+
+  &:hover {
+    background: var(--amino-gray-800);
+    transform: scale(1.05);
+  }
+}
+
+.drawer {
+  width: 180px;
+  flex-shrink: 0;
+  border-left: 1px solid var(--amino-gray-200);
+  background: #ffffff;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawerHeader {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 8px 0;
+}
+
+.closeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--amino-gray-400);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+
+  &:hover {
+    background: var(--amino-gray-100);
+    color: var(--amino-gray-700);
+  }
+}
+
+.drawerContent {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionLabel {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--amino-gray-400);
+  padding: 8px 16px 4px;
+}
+
+.widgetList {
+  display: flex;
+  flex-direction: column;
+}
+
+.widgetButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  height: 40px;
+  padding: 0 16px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.1s;
+
+  &:hover {
+    background: var(--amino-blue-50);
+  }
+}
+
+.widgetIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--amino-gray-500);
+}
+
+.widgetLabel {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--amino-gray-700);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.divider {
+  height: 1px;
+  margin: 8px 16px;
+  background: var(--amino-gray-200);
+}
