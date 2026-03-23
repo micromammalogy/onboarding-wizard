@@ -6,6 +6,7 @@ import { FileIcon } from '@zonos/amino/icons/FileIcon';
 import { ChartIcon } from '@zonos/amino/icons/ChartIcon';
 import { FolderListIcon } from '@zonos/amino/icons/FolderListIcon';
 import { PlusIcon } from '@zonos/amino/icons/PlusIcon';
+import { CommentIcon } from '@zonos/amino/icons/CommentIcon';
 import { DashboardIcon } from '@zonos/amino/icons/DashboardIcon';
 import { LogoutIcon } from '@zonos/amino/icons/LogoutIcon';
 import { useOnboardingNavStore } from '@/hooks/useOnboardingNavStore';
@@ -165,6 +166,14 @@ export function TopNav() {
           </button>
 
           <NotificationCenter />
+
+          <button
+            className={styles.iconButton}
+            type="button"
+            title="Comments"
+          >
+            <CommentIcon size={20} />
+          </button>
 
           <div ref={userMenuRef} className={styles.userMenuWrapper}>
             <button

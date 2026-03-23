@@ -2,10 +2,9 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 16px;
+  padding: 8px 16px;
   cursor: pointer;
   transition: background 0.1s;
-  border-left: 3px solid transparent;
 
   &:hover {
     background: var(--amino-gray-50);
@@ -17,11 +16,33 @@
 }
 
 .itemSelected {
-  background: var(--amino-blue-50);
-  border-left-color: var(--amino-blue-500);
+  background: #0079ca;
 
   &:hover {
-    background: var(--amino-blue-50);
+    background: #0079ca;
+  }
+
+  .title {
+    color: #ffffff;
+  }
+
+  .titleDone {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .dueDate {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .checkboxEmpty {
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .badgeStopGate,
+  .badgeEmail,
+  .badgeConditional,
+  .badgeDueDate {
+    opacity: 0.8;
   }
 }
 
@@ -43,10 +64,10 @@
 }
 
 .checkboxEmpty {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  border: 2px solid var(--amino-gray-300);
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  border: 1px solid #dee4e8;
   transition: border-color 0.15s;
 
   &:hover {
@@ -55,10 +76,10 @@
 }
 
 .checkboxDone {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: var(--amino-green-500);
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  background: #0079ca;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,9 +91,9 @@
 }
 
 .title {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 400;
-  color: var(--amino-gray-800);
+  color: #1e2b36;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

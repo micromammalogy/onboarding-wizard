@@ -1,8 +1,8 @@
 .panel {
   display: flex;
   flex-direction: column;
-  width: 320px;
-  min-width: 320px;
+  width: 480px;
+  min-width: 480px;
   border-right: 1px solid var(--amino-border-subtle);
   background: var(--amino-gray-0);
   overflow: hidden;
@@ -29,13 +29,13 @@
 }
 
 .progressBar {
-  height: 3px;
-  background: var(--amino-gray-200);
+  height: 4px;
+  background: #f5f5f5;
 }
 
 .progressFill {
   height: 100%;
-  background: var(--amino-green-500);
+  background: #0079ca;
   transition: width 0.3s ease;
 }
 

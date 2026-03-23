@@ -38,7 +38,7 @@
   padding: 0 6px;
   border: 1px solid var(--amino-gray-300);
   background: transparent;
-  color: var(--amino-gray-500);
+  color: #5f7482;
   font-size: 12px;
   font-weight: 700;
   cursor: pointer;
@@ -53,7 +53,7 @@
   }
 
   &.active {
-    color: var(--amino-blue-600);
+    color: #0079ca;
   }
 }
 

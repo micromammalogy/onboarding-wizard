@@ -443,13 +443,6 @@ export function MyWorkPage() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.pageHeader}>
-        <h1 className={styles.title}>My Work</h1>
-        <p className={styles.subtitle}>
-          {totalTasks} task{totalTasks !== 1 ? 's' : ''} across all projects
-        </p>
-      </div>
-
       <div className={styles.filters}>
         <div className={styles.searchWrapper}>
           <Input
@@ -492,6 +485,14 @@ export function MyWorkPage() {
         </div>
 
         <div className={styles.filterSpacer} />
+
+        <button
+          className={styles.addTaskButton}
+          type="button"
+          onClick={() => {/* TODO: add standalone task */}}
+        >
+          + Task
+        </button>
 
         <div className={styles.columnPickerWrapper} ref={pickerRef}>
           <Button

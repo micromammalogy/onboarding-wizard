@@ -10,10 +10,11 @@
   width: 100%;
   height: 62px;
   background: #ffffff;
+  border-bottom: 2px solid #dee4e8;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px;
+  padding: 0 12px;
   z-index: 100;
   font-family: Inter, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
     'Fira Sans', 'Droid Sans', 'Helvetica Neue', system-ui, sans-serif;
@@ -28,9 +29,9 @@
 }
 
 .orgLogo {
-  width: 36px;
+  width: 32px;
   height: 32px;
-  border-radius: 6px;
+  border-radius: 9999px;
   border: none;
   display: flex;
   align-items: center;
@@ -61,28 +62,25 @@
   padding: 8px 16px;
   border: none;
   background: transparent;
-  border-radius: 24px;
+  border-radius: 4px;
   font-size: 16px;
   font-weight: 500;
-  color: #434f5c;
+  color: #5f7482;
   cursor: pointer;
-  transition: color 0.15s, background 0.15s;
+  transition: color 0.15s;
   white-space: nowrap;
   font-family: inherit;
 
   &:hover {
     color: #151d23;
-    background: #f2f8fc;
   }
 }
 
 .navLinkActive {
   color: #0079ca;
-  background: #ebf4fb;
 
   &:hover {
     color: #0079ca;
-    background: #ebf4fb;
   }
 }
 
@@ -120,6 +118,24 @@
 
   &:hover {
     background: #006cb5;
+  }
+}
+
+.iconButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  color: #085f98;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s;
+
+  &:hover {
+    background: #f2f8fc;
   }
 }
 
